@@ -511,59 +511,49 @@
             }
         }
         
-        /* PDF Modal Styles */
-        .pdf-modal {
+        /* PDF Viewer Styles */
+        .pdf-container {
             display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            animation: fadeIn 0.3s;
-        }
-        
-        .pdf-modal-content {
-            position: relative;
-            margin: 2% auto;
-            width: 90%;
-            height: 90vh;
-            background: white;
-            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px solid #0ea5e9;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            background: #f8fafc;
         }
         
-        .pdf-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            color: white;
-            background: #ef4444;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            border: none;
+        .pdf-container.active {
+            display: block;
         }
         
-        .pdf-close:hover {
-            background: #dc2626;
-            transform: scale(1.1);
-        }
-        
-        .pdf-viewer {
+        .pdf-viewer-inline {
             width: 100%;
-            height: 100%;
+            height: 600px;
             border: none;
+        }
+        
+        .pdf-header {
+            background: #0ea5e9;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .pdf-close-btn {
+            background: white;
+            color: #0ea5e9;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .pdf-close-btn:hover {
+            background: #f1f5f9;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -659,7 +649,14 @@
                     <li>Optimized NaOH molarity in metakaolin-based geopolymer concrete for lunar habitat construction</li>
                     <li>Tested setting time and compressive strength for in-situ resource utilization (ISRU) applications</li>
                 </ul>
-                <a href="#" onclick="openPDF('https://raw.githubusercontent.com/janierlani/portfolio/main/Geopolymers%20research%20(1).pdf'); return false;" class="item-link">📄 Read Paper</a>
+                <button onclick="togglePDF('pdf1', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Geopolymers%20research%20(1).pdf')" class="item-link">📄 View Paper</button>
+                <div id="pdf1" class="pdf-container">
+                    <div class="pdf-header">
+                        <span>📄 Lunar Regolith-Based Geopolymer Concrete</span>
+                        <button onclick="togglePDF('pdf1')" class="pdf-close-btn">Close</button>
+                    </div>
+                    <iframe class="pdf-viewer-inline" src=""></iframe>
+                </div>
             </div>
             
             <div class="project-item">
@@ -673,7 +670,14 @@
                     <li>Fine-tuned Alpaca-7B LLM for AI-driven behavioral modeling in long-duration space missions</li>
                     <li>Developed LorelAI, an AI social assistant addressing psychological challenges of isolation and crew dynamics</li>
                 </ul>
-                <a href="#" onclick="openPDF('https://raw.githubusercontent.com/janierlani/portfolio/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf'); return false;" class="item-link">📄 Read Paper</a>
+                <button onclick="togglePDF('pdf2', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf')" class="item-link">📄 View Paper</button>
+                <div id="pdf2" class="pdf-container">
+                    <div class="pdf-header">
+                        <span>📄 Design Recommendations for Interactive Chatbots</span>
+                        <button onclick="togglePDF('pdf2')" class="pdf-close-btn">Close</button>
+                    </div>
+                    <iframe class="pdf-viewer-inline" src=""></iframe>
+                </div>
             </div>
 
             <div class="project-item">
@@ -685,7 +689,14 @@
                     <li>Studied how spaceflight-driven neurophysiological changes affect decision-making under risk and uncertainty using Prospect Theory</li>
                     <li>Analyzed specific brain regions and neuromodulatory system alterations; mentored by Dartmouth professor</li>
                 </ul>
-                <a href="#" onclick="openPDF('https://raw.githubusercontent.com/janierlani/portfolio/main/Neuroeconomics%20in%20the%20Orbit.pdf'); return false;" class="item-link">📄 Read Paper</a>
+                <button onclick="togglePDF('pdf3', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Neuroeconomics%20in%20the%20Orbit.pdf')" class="item-link">📄 View Paper</button>
+                <div id="pdf3" class="pdf-container">
+                    <div class="pdf-header">
+                        <span>📄 Neuroeconomics in Orbit</span>
+                        <button onclick="togglePDF('pdf3')" class="pdf-close-btn">Close</button>
+                    </div>
+                    <iframe class="pdf-viewer-inline" src=""></iframe>
+                </div>
             </div>
 
             <div class="project-item">
@@ -697,7 +708,14 @@
                     <li>Authored 7,500-word paper on peripheral and central pain pathways in degenerative disease</li>
                     <li>Published in National High School Journal of Science; mentored by Georgetown M.D./Ph.D.</li>
                 </ul>
-                <a href="#" onclick="openPDF('https://raw.githubusercontent.com/janierlani/portfolio/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf'); return false;" class="item-link">📄 Read Paper</a>
+                <button onclick="togglePDF('pdf4', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf')" class="item-link">📄 View Paper</button>
+                <div id="pdf4" class="pdf-container">
+                    <div class="pdf-header">
+                        <span>📄 Neuropathic Pain Mechanisms</span>
+                        <button onclick="togglePDF('pdf4')" class="pdf-close-btn">Close</button>
+                    </div>
+                    <iframe class="pdf-viewer-inline" src=""></iframe>
+                </div>
             </div>
         </div>
 
