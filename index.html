@@ -225,6 +225,7 @@
             object-fit: contain;
             display: block;
             background: #f1f5f9;
+            object-position: top;
         }
         
         .photo-caption {
@@ -480,6 +481,11 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .pdf-modal-content {
+                width: 95%;
+                height: 90vh;
+            }
         }
         
         @media (max-width: 480px) {
@@ -503,6 +509,61 @@
             .photo-item img {
                 height: 280px;
             }
+        }
+        
+        /* PDF Modal Styles */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s;
+        }
+        
+        .pdf-modal-content {
+            position: relative;
+            margin: 2% auto;
+            width: 90%;
+            height: 90vh;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        
+        .pdf-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            background: #ef4444;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            border: none;
+        }
+        
+        .pdf-close:hover {
+            background: #dc2626;
+            transform: scale(1.1);
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
@@ -598,7 +659,7 @@
                     <li>Optimized NaOH molarity in metakaolin-based geopolymer concrete for lunar habitat construction</li>
                     <li>Tested setting time and compressive strength for in-situ resource utilization (ISRU) applications</li>
                 </ul>
-                <a href="https://drive.google.com/file/d/1f3oKzIOHC3gdziO7DjNhRl8qKkOjuBi7/view?usp=sharing" target="_blank" class="item-link">📄 Read Paper</a>
+                <a href="#" onclick="openPDF('https://raw.githubusercontent.com/janierlani/portfolio/main/Geopolymers%20research%20(1).pdf'); return false;" class="item-link">📄 Read Paper</a>
             </div>
             
             <div class="project-item">
@@ -612,7 +673,7 @@
                     <li>Fine-tuned Alpaca-7B LLM for AI-driven behavioral modeling in long-duration space missions</li>
                     <li>Developed LorelAI, an AI social assistant addressing psychological challenges of isolation and crew dynamics</li>
                 </ul>
-                <a href="https://docs.google.com/document/d/1MSgMFnMqFjtS5veeJXRaVv-trLwvaR8x2jg4aTuBOe4/edit?usp=sharing" target="_blank" class="item-link">📄 Read Paper</a>
+                <a href="#" onclick="openPDF('https://raw.githubusercontent.com/janierlani/portfolio/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf'); return false;" class="item-link">📄 Read Paper</a>
             </div>
 
             <div class="project-item">
@@ -624,7 +685,7 @@
                     <li>Studied how spaceflight-driven neurophysiological changes affect decision-making under risk and uncertainty using Prospect Theory</li>
                     <li>Analyzed specific brain regions and neuromodulatory system alterations; mentored by Dartmouth professor</li>
                 </ul>
-                <a href="https://drive.google.com/file/d/1UifPoRhG8_8iFS_U3JaqIQTSqpkhF4Cc/view?usp=sharing" target="_blank" class="item-link">📄 Read Paper</a>
+                <a href="#" onclick="openPDF('https://raw.githubusercontent.com/janierlani/portfolio/main/Neuroeconomics%20in%20the%20Orbit.pdf'); return false;" class="item-link">📄 Read Paper</a>
             </div>
 
             <div class="project-item">
@@ -636,7 +697,7 @@
                     <li>Authored 7,500-word paper on peripheral and central pain pathways in degenerative disease</li>
                     <li>Published in National High School Journal of Science; mentored by Georgetown M.D./Ph.D.</li>
                 </ul>
-                <a href="https://drive.google.com/file/d/1I6yCOfegQAXDR4arXTzk2n7je-xmu0ZT/view?usp=sharing" target="_blank" class="item-link">📄 Read Paper</a>
+                <a href="#" onclick="openPDF('https://raw.githubusercontent.com/janierlani/portfolio/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf'); return false;" class="item-link">📄 Read Paper</a>
             </div>
         </div>
 
@@ -648,7 +709,7 @@
                     <div class="item-title">NASA Johnson Space Center - United Space School</div>
                     <div class="item-date">Apr 2025 - Aug 2025</div>
                 </div>
-                <div class="item-subtitle">Materials Selection Lead</div>
+                <div class="item-subtitle">Materials Selection</div>
                 <ul>
                     <li>Applied CAD and CFD tools to analyze thermal protection systems for inflatable decelerators and crewed landers</li>
                     <li>Selected as one of 40 delegates globally for a Mars mission design project; researched C-C composites and refractory materials</li>
