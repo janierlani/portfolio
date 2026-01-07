@@ -317,51 +317,6 @@
             box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
         }
         
-        /* PDF Viewer Styles */
-        .pdf-container {
-            display: none;
-            margin-top: 20px;
-            border: 2px solid #0ea5e9;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #f8fafc;
-        }
-        
-        .pdf-container.active {
-            display: block;
-        }
-        
-        .pdf-viewer-inline {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-        
-        .pdf-header {
-            background: #0ea5e9;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .pdf-close-btn {
-            background: white;
-            color: #0ea5e9;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .pdf-close-btn:hover {
-            background: #f1f5f9;
-            transform: scale(1.05);
-        }
-        
         /* Skills Grid */
         .skills-grid {
             display: grid;
@@ -617,14 +572,7 @@
                     <li>Optimized NaOH molarity in metakaolin-based geopolymer concrete for lunar habitat construction</li>
                     <li>Tested setting time and compressive strength for in-situ resource utilization (ISRU) applications</li>
                 </ul>
-                <button onclick="togglePDF('pdf1', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Geopolymers%20research%20(1).pdf')" class="item-link">View Paper</button>
-                <div id="pdf1" class="pdf-container">
-                    <div class="pdf-header">
-                        <span>Lunar Regolith-Based Geopolymer Concrete</span>
-                        <button onclick="togglePDF('pdf1')" class="pdf-close-btn">Close</button>
-                    </div>
-                    <iframe class="pdf-viewer-inline" src=""></iframe>
-                </div>
+                <a href="https://github.com/janierlani/portfolio/raw/main/Geopolymers%20research%20(1).pdf" target="_blank" class="item-link">View Paper</a>
             </div>
 
             <div class="project-item">
@@ -636,14 +584,7 @@
                     <li>Conducted stress analysis of spherical and hemispherical geopolymer structures, accounting for wall thickness and lunar gravity; applied Lagrange multipliers and optimization methods to determine optimal habitat geometry</li>
                     <li>Used Taylor series expansion to analyze sensitivity of structural stress to angular deviations during 3D printing and construction; quantified allowable angular tolerances to keep stresses within safe limits for lunar base supports</li>
                 </ul>
-                <button onclick="togglePDF('pdf5', 'https://raw.githubusercontent.com/janierlani/portfolio/main/MATH%20IA.pdf')" class="item-link">View Paper</button>
-                <div id="pdf5" class="pdf-container">
-                    <div class="pdf-header">
-                        <span>Stress analysis of dome-shaped lunar bases</span>
-                        <button onclick="togglePDF('pdf5')" class="pdf-close-btn">Close</button>
-                    </div>
-                    <iframe class="pdf-viewer-inline" src=""></iframe>
-                </div>
+                <a href="https://github.com/janierlani/portfolio/raw/main/MATH%20IA.pdf" target="_blank" class="item-link">View Paper</a>
             </div>
             
             <div class="project-item">
@@ -657,14 +598,7 @@
                     <li>Fine-tuned Alpaca-7B LLM for AI-driven behavioral modeling in long-duration space missions</li>
                     <li>Developed LorelAI, an AI social assistant addressing psychological challenges of isolation and crew dynamics</li>
                 </ul>
-                <button onclick="togglePDF('pdf2', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf')" class="item-link">View Paper</button>
-                <div id="pdf2" class="pdf-container">
-                    <div class="pdf-header">
-                        <span>Design Recommendations for Interactive Chatbots</span>
-                        <button onclick="togglePDF('pdf2')" class="pdf-close-btn">Close</button>
-                    </div>
-                    <iframe class="pdf-viewer-inline" src=""></iframe>
-                </div>
+                <a href="https://github.com/janierlani/portfolio/raw/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf" target="_blank" class="item-link">View Paper</a>
             </div>
 
             <div class="project-item">
@@ -676,14 +610,7 @@
                     <li>Studied how spaceflight-driven neurophysiological changes affect decision-making under risk and uncertainty using Prospect Theory</li>
                     <li>Analyzed specific brain regions and neuromodulatory system alterations; mentored by Dartmouth professor</li>
                 </ul>
-                <button onclick="togglePDF('pdf3', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Neuroeconomics%20in%20the%20Orbit.pdf')" class="item-link">View Paper</button>
-                <div id="pdf3" class="pdf-container">
-                    <div class="pdf-header">
-                        <span>Neuroeconomics in Orbit</span>
-                        <button onclick="togglePDF('pdf3')" class="pdf-close-btn">Close</button>
-                    </div>
-                    <iframe class="pdf-viewer-inline" src=""></iframe>
-                </div>
+                <a href="https://github.com/janierlani/portfolio/raw/main/Neuroeconomics%20in%20the%20Orbit.pdf" target="_blank" class="item-link">View Paper</a>
             </div>
 
             <div class="project-item">
@@ -695,45 +622,7 @@
                     <li>Authored 7,500-word paper on peripheral and central pain pathways in degenerative disease</li>
                     <li>Published in National High School Journal of Science; mentored by Georgetown M.D./Ph.D.</li>
                 </ul>
-                <button onclick="togglePDF('pdf4', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf')" class="item-link">View Paper</button>
-                <div id="pdf4" class="pdf-container">
-                    <div class="pdf-header">
-                        <span>Neuropathic Pain Mechanisms</span>
-                        <button onclick="togglePDF('pdf4')" class="pdf-close-btn">Close</button>
-                    </div>
-                    <iframe class="pdf-viewer-inline" src=""></iframe>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Dimension optimisation and stress analysis of dome-shaped lunar bases</div>
-                    <div class="item-date">Jan 2025</div>
-                </div>
-                <ul>
-                    <li>Conducted stress analysis of spherical and hemispherical geopolymer structures, accounting for wall thickness and lunar gravity; applied Lagrange multipliers and optimization methods to determine optimal habitat geometry</li>
-                    <li>Used Taylor series expansion to analyze sensitivity of structural stress to angular deviations during 3D printing and construction; quantified allowable angular tolerances to keep stresses within safe limits for lunar base supports</li>
-                </ul>
-                <button onclick="togglePDF('pdf5', 'https://raw.githubusercontent.com/janierlani/portfolio/main/MATH%20IA.pdf')" class="item-link">View Paper</button>
-                <div id="pdf5" class="pdf-container">
-                    <div class="pdf-header">
-                        <span>Stress analysis of dome-shaped lunar bases</span>
-                        <button onclick="togglePDF('pdf5')" class="pdf-close-btn">Close</button>
-                    </div>
-                    <iframe class="pdf-viewer-inline" src=""></iframe>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>Experience</h2>
-                <div id="pdf4" class="pdf-container">
-                    <div class="pdf-header">
-                        <span>Neuropathic Pain Mechanisms</span>
-                        <button onclick="togglePDF('pdf4')" class="pdf-close-btn">Close</button>
-                    </div>
-                    <iframe class="pdf-viewer-inline" src=""></iframe>
-                </div>
+                <a href="https://github.com/janierlani/portfolio/raw/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf" target="_blank" class="item-link">View Paper</a>
             </div>
         </div>
 
@@ -845,3 +734,54 @@
 
         <div class="card">
             <h2>Honors & Awards</h2>
+            
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-title">Rhodes Trust & Schmidt Futures RISE Global Finalist</div>
+                    <div class="award-detail">1 of 500 selected from 100,000+ applicants</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Georgia Tech MSE Department Scholarship</div>
+                    <div class="award-detail">$16,000 (4-year)</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">NASA Space Apps Challenge</div>
+                    <div class="award-detail">Top 10% of 5,500+ teams worldwide; Global Judging Nominee</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Space Tech Battle (Astana Hub)</div>
+                    <div class="award-detail">Top 10 of 200 company finalists; developed innovative space technology (AI social assistant for space) with venture capital investors</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Eurasian Tumaris Tech Startup Incubator</div>
+                    <div class="award-detail">Top 15 finalist out of 200+ teams</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Nursultan Nazarbayev Educational Foundation Grant</div>
+                    <div class="award-detail">$25,000; 1 of 17 selected from 110</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">AWSD Youth Movement</div>
+                    <div class="award-detail">Top 9 Inspiring Young Leaders</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Republican Remote Olympiad (Chemistry)</div>
+                    <div class="award-detail">2nd place</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Zhaniya Turganova. All rights reserved.</p>
+        <p>Materials Science & Aerospace Engineering | Georgia Institute of Technology</p>
+    </footer>
+</body>
+</html>
