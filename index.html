@@ -175,26 +175,66 @@
         .card {
             background: white;
             border-radius: 20px;
-            padding: 50px;
-            margin-bottom: 40px;
+            padding: 0;
+            margin-bottom: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            padding: 30px 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .card-header:hover {
+            background: #f8fafc;
+        }
+        
+        .card-header.active {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 40px;
+        }
+        
+        .card-content.active {
+            max-height: 5000px;
+            padding: 20px 40px 40px;
         }
         
         h2 {
             color: #0f172a;
             font-size: 2.2rem;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #0ea5e9;
+            margin: 0;
+            padding: 0;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        
+        .section-title {
             display: flex;
             align-items: center;
             gap: 15px;
         }
         
-        h2::before {
-            content: '🚀';
-            font-size: 2rem;
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: #0ea5e9;
+        }
+        
+        .toggle-icon.active {
+            transform: rotate(180deg);
         }
         
         /* Photo Gallery */
@@ -425,11 +465,6 @@
                 font-size: 1.6rem;
             }
             
-            .profile-photo {
-                width: 200px;
-                height: 200px;
-            }
-            
             .tagline {
                 font-size: 1.2rem;
             }
@@ -449,7 +484,19 @@
             }
             
             .card {
-                padding: 30px 20px;
+                padding: 0;
+            }
+            
+            .card-header {
+                padding: 25px 20px;
+            }
+            
+            .card-content {
+                padding: 0 20px;
+            }
+            
+            .card-content.active {
+                padding: 20px 20px 30px;
             }
             
             .photo-gallery {
@@ -583,7 +630,15 @@
 
     <main>
         <div class="card">
-            <h2>Featured Moments</h2>
+            <div class="card-header active" onclick="toggleSection('photos')">
+                <h2>
+                    <span class="section-title">
+                        <span>Featured Moments</span>
+                    </span>
+                    <span class="toggle-icon active" id="photos-icon">▼</span>
+                </h2>
+            </div>
+            <div class="card-content active" id="photos-content">
             
             <div class="photo-gallery">
                 <div class="photo-item">
@@ -634,10 +689,20 @@
                     </div>
                 </div>
             </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card" id="research">
-            <h2>Research & Projects</h2>
+        <div class="card">
+            <div class="card-header" onclick="toggleSection('research')">
+                <h2>
+                    <span class="section-title">
+                        <span>Research & Projects</span>
+                    </span>
+                    <span class="toggle-icon" id="research-icon">▼</span>
+                </h2>
+            </div>
+            <div class="card-content" id="research-content">
             
             <div class="project-item">
                 <div class="item-header">
@@ -649,10 +714,10 @@
                     <li>Optimized NaOH molarity in metakaolin-based geopolymer concrete for lunar habitat construction</li>
                     <li>Tested setting time and compressive strength for in-situ resource utilization (ISRU) applications</li>
                 </ul>
-                <button onclick="togglePDF('pdf1', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Geopolymers%20research%20(1).pdf')" class="item-link">📄 View Paper</button>
+                <button onclick="togglePDF('pdf1', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Geopolymers%20research%20(1).pdf')" class="item-link">View Paper</button>
                 <div id="pdf1" class="pdf-container">
                     <div class="pdf-header">
-                        <span>📄 Lunar Regolith-Based Geopolymer Concrete</span>
+                        <span>Lunar Regolith-Based Geopolymer Concrete</span>
                         <button onclick="togglePDF('pdf1')" class="pdf-close-btn">Close</button>
                     </div>
                     <iframe class="pdf-viewer-inline" src=""></iframe>
@@ -670,10 +735,10 @@
                     <li>Fine-tuned Alpaca-7B LLM for AI-driven behavioral modeling in long-duration space missions</li>
                     <li>Developed LorelAI, an AI social assistant addressing psychological challenges of isolation and crew dynamics</li>
                 </ul>
-                <button onclick="togglePDF('pdf2', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf')" class="item-link">📄 View Paper</button>
+                <button onclick="togglePDF('pdf2', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf')" class="item-link">View Paper</button>
                 <div id="pdf2" class="pdf-container">
                     <div class="pdf-header">
-                        <span>📄 Design Recommendations for Interactive Chatbots</span>
+                        <span>Design Recommendations for Interactive Chatbots</span>
                         <button onclick="togglePDF('pdf2')" class="pdf-close-btn">Close</button>
                     </div>
                     <iframe class="pdf-viewer-inline" src=""></iframe>
@@ -689,10 +754,10 @@
                     <li>Studied how spaceflight-driven neurophysiological changes affect decision-making under risk and uncertainty using Prospect Theory</li>
                     <li>Analyzed specific brain regions and neuromodulatory system alterations; mentored by Dartmouth professor</li>
                 </ul>
-                <button onclick="togglePDF('pdf3', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Neuroeconomics%20in%20the%20Orbit.pdf')" class="item-link">📄 View Paper</button>
+                <button onclick="togglePDF('pdf3', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Neuroeconomics%20in%20the%20Orbit.pdf')" class="item-link">View Paper</button>
                 <div id="pdf3" class="pdf-container">
                     <div class="pdf-header">
-                        <span>📄 Neuroeconomics in Orbit</span>
+                        <span>Neuroeconomics in Orbit</span>
                         <button onclick="togglePDF('pdf3')" class="pdf-close-btn">Close</button>
                     </div>
                     <iframe class="pdf-viewer-inline" src=""></iframe>
@@ -708,19 +773,28 @@
                     <li>Authored 7,500-word paper on peripheral and central pain pathways in degenerative disease</li>
                     <li>Published in National High School Journal of Science; mentored by Georgetown M.D./Ph.D.</li>
                 </ul>
-                <button onclick="togglePDF('pdf4', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf')" class="item-link">📄 View Paper</button>
+                <button onclick="togglePDF('pdf4', 'https://raw.githubusercontent.com/janierlani/portfolio/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf')" class="item-link">View Paper</button>
                 <div id="pdf4" class="pdf-container">
                     <div class="pdf-header">
-                        <span>📄 Neuropathic Pain Mechanisms</span>
+                        <span>Neuropathic Pain Mechanisms</span>
                         <button onclick="togglePDF('pdf4')" class="pdf-close-btn">Close</button>
                     </div>
                     <iframe class="pdf-viewer-inline" src=""></iframe>
                 </div>
             </div>
+            </div>
         </div>
 
-        <div class="card" id="experience">
-            <h2>Experience</h2>
+        <div class="card">
+            <div class="card-header" onclick="toggleSection('experience')">
+                <h2>
+                    <span class="section-title">
+                        <span>Experience</span>
+                    </span>
+                    <span class="toggle-icon" id="experience-icon">▼</span>
+                </h2>
+            </div>
+            <div class="card-content" id="experience-content">
             
             <div class="experience-item">
                 <div class="item-header">
@@ -802,31 +876,49 @@
                     <li>Participated in Google IPO simulation at Morgan Stanley NYC</li>
                 </ul>
             </div>
-        </div>
-
-        <div class="card">
-            <h2>Skills & Technical Expertise</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>🔬 Laboratory</h3>
-                    <p>Scanning Electron Microscopy - SEM (Hitachi SU-8230), Thermogravimetric Analysis (TGA), Differential Scanning Calorimetry (DSC), Energy-Dispersive X-ray Spectroscopy (EDS), Instron Universal Testing Machine (UTM), Microhardness Tester, UV-Visible Spectroscopy (UV-Vis), Optical Microscopy, Contact Angle Goniometer</p>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>💻 Programming</h3>
-                    <p>Python, MATLAB, SystemVerilog, ImageJ</p>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>🛠️ Software & CAD</h3>
-                    <p>SolidWorks, COMSOL Multiphysics, Altium Designer, Arduino IDE, Android Studio, VS Code, Excel</p>
-                </div>
             </div>
         </div>
 
         <div class="card">
-            <h2>Honors & Awards</h2>
+            <div class="card-header" onclick="toggleSection('skills')">
+                <h2>
+                    <span class="section-title">
+                        <span>Skills & Technical Expertise</span>
+                    </span>
+                    <span class="toggle-icon" id="skills-icon">▼</span>
+                </h2>
+            </div>
+            <div class="card-content" id="skills-content">
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Laboratory</h3>
+                    <p>Scanning Electron Microscopy - SEM (Hitachi SU-8230), Thermogravimetric Analysis (TGA), Differential Scanning Calorimetry (DSC), Energy-Dispersive X-ray Spectroscopy (EDS), Instron Universal Testing Machine (UTM), Microhardness Tester, UV-Visible Spectroscopy (UV-Vis), Optical Microscopy, Contact Angle Goniometer</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <p>Python, MATLAB, SystemVerilog, ImageJ</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Software & CAD</h3>
+                    <p>SolidWorks, COMSOL Multiphysics, Altium Designer, Arduino IDE, Android Studio, VS Code, Excel</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" onclick="toggleSection('awards')">
+                <h2>
+                    <span class="section-title">
+                        <span>Honors & Awards</span>
+                    </span>
+                    <span class="toggle-icon" id="awards-icon">▼</span>
+                </h2>
+            </div>
+            <div class="card-content" id="awards-content">
             
             <div class="awards-grid">
                 <div class="award-item">
