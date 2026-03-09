@@ -14,52 +14,228 @@
         }
         
         :root {
-            --accent:   #00c853;
-            --accent2:  #b388ff;
-            --gold:     #ffd54f;
-            --border-c: #c8e6c9;
+            --accent:   #4a90d9;
+            --accent2:  #9b2335;
+            --gold:     #c9a0a8;
+            --border-c: #c5d5ea;
         }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #1a2e1d;
-            background: #f0f7f1;
+            color: #0e1a2e;
+            background: #f4f5f8;
         }
         
-        /* Hero Section */
+        /* ── HERO ── */
         .hero {
-            background: linear-gradient(135deg, #071209 0%, #0a1f0e 50%, #0d1a10 100%);
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            min-height: 100vh;
+            background: #090d1a;
             color: white;
-            padding: 80px 20px 100px;
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
-        
+
+        /* PCB grid overlay */
         .hero::before {
             content: '';
-            position: absolute;
-            width: 100%; height: 100%;
-            top: 0; left: 0;
+            position: absolute; inset: 0;
             background-image:
-                linear-gradient(rgba(0,200,83,.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,200,83,.06) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
+                linear-gradient(rgba(74,144,217,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74,144,217,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+            pointer-events: none; z-index: 0;
         }
 
-        .hero-glow {
-            position: absolute;
-            width: 100%; height: 100%;
-            top: 0; left: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(0,200,83,.14) 0%, transparent 50%),
-                radial-gradient(circle at 80% 30%, rgba(179,136,255,.10) 0%, transparent 45%),
-                radial-gradient(circle at 60% 80%, rgba(255,213,79,.07) 0%, transparent 40%);
-            pointer-events: none;
+        .hero-left {
+            padding: 70px 64px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative; z-index: 2;
+            border-right: 1px solid rgba(74,144,217,.15);
         }
-        
+
+        /* Ambient glow on left */
+        .hero-left::after {
+            content: '';
+            position: absolute;
+            width: 600px; height: 600px;
+            top: -100px; left: -100px;
+            background: radial-gradient(circle, rgba(74,144,217,.1) 0%, transparent 65%);
+            pointer-events: none; z-index: -1;
+        }
+
+        .hero-eyebrow {
+            display: flex; align-items: center; gap: 12px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .72rem; letter-spacing: .18em;
+            text-transform: uppercase; color: #4a90d9;
+            margin-bottom: 36px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block; width: 36px; height: 1px;
+            background: #4a90d9;
+        }
+
+        .hero-name {
+            font-size: clamp(3rem, 5vw, 5.5rem);
+            font-weight: 700;
+            line-height: .95;
+            letter-spacing: -.03em;
+            margin-bottom: 8px;
+        }
+        .hero-name-last {
+            color: #4a90d9;
+            display: block;
+        }
+
+        .hero-tagline {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .85rem;
+            letter-spacing: .12em;
+            color: rgba(255,255,255,.45);
+            text-transform: uppercase;
+            margin-bottom: 36px;
+            margin-top: 16px;
+        }
+
+        .hero-bio {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,.68);
+            font-weight: 300;
+            max-width: 500px;
+            margin-bottom: 44px;
+            padding-left: 18px;
+            border-left: 2px solid rgba(155,35,53,.5);
+        }
+
+        /* stat strip */
+        .hero-stats {
+            display: flex; gap: 0;
+            border: 1px solid rgba(74,144,217,.2);
+            margin-bottom: 40px;
+            max-width: 480px;
+        }
+        .hero-stat {
+            flex: 1; padding: 14px 16px; text-align: center;
+            border-right: 1px solid rgba(74,144,217,.2);
+        }
+        .hero-stat:last-child { border-right: none; }
+        .hero-stat .n {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.3rem; font-weight: 600;
+            color: #4a90d9; display: block; line-height: 1;
+        }
+        .hero-stat .l {
+            font-size: .62rem; letter-spacing: .1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.35);
+            display: block; margin-top: 4px;
+        }
+
+        /* contact + cta */
+        .hero-links {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 28px;
+        }
+        .hero-links a {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .72rem; letter-spacing: .05em;
+            color: rgba(255,255,255,.5);
+            text-decoration: none;
+            padding: 6px 14px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 2px;
+            transition: all .2s;
+        }
+        .hero-links a:hover {
+            color: #4a90d9; border-color: rgba(74,144,217,.4);
+            background: rgba(74,144,217,.07);
+        }
+
+        .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn {
+            padding: 13px 30px; border-radius: 3px;
+            text-decoration: none; font-weight: 600;
+            font-size: .92rem; transition: all .25s;
+            display: inline-block; letter-spacing: .02em;
+        }
+        .btn-primary {
+            background: #4a90d9; color: #090d1a;
+            box-shadow: 0 4px 24px rgba(74,144,217,.3);
+        }
+        .btn-primary:hover {
+            background: #7eb8f7;
+            box-shadow: 0 6px 32px rgba(74,144,217,.5);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: transparent; color: rgba(255,255,255,.7);
+            border: 1px solid rgba(255,255,255,.2);
+        }
+        .btn-secondary:hover {
+            border-color: rgba(74,144,217,.5);
+            color: #4a90d9; transform: translateY(-2px);
+        }
+
+        /* right photo panel */
+        .hero-photo-panel {
+            position: relative; overflow: hidden; z-index: 1;
+        }
+        .hero-photo-panel img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top center;
+            display: block;
+            filter: grayscale(10%) contrast(1.05);
+        }
+        /* green tint overlay on photo */
+        .hero-photo-panel::before {
+            content: '';
+            position: absolute; inset: 0; z-index: 1;
+            background: linear-gradient(
+                to right,
+                rgba(7,18,9,.6) 0%,
+                rgba(7,18,9,.1) 40%,
+                transparent 100%
+            );
+        }
+        /* bottom label */
+        .hero-photo-panel::after {
+            content: 'Georgia Tech · MSE · Class of 2028';
+            position: absolute; bottom: 20px; right: 20px; z-index: 2;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .62rem; letter-spacing: .12em;
+            text-transform: uppercase; color: rgba(255,255,255,.4);
+        }
+
+        /* decorative corner brackets */
+        .hero-bracket {
+            position: absolute; z-index: 3;
+            width: 20px; height: 20px;
+        }
+        .hero-bracket-tl { top: 16px; left: 16px;
+            border-top: 1px solid rgba(74,144,217,.5);
+            border-left: 1px solid rgba(74,144,217,.5); }
+        .hero-bracket-br { bottom: 16px; right: 16px;
+            border-bottom: 1px solid rgba(74,144,217,.5);
+            border-right: 1px solid rgba(74,144,217,.5); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .hero-left > * { animation: fadeIn .7s ease both; }
+        .hero-left > *:nth-child(1) { animation-delay: .1s; }
+        .hero-left > *:nth-child(2) { animation-delay: .2s; }
+        .hero-left > *:nth-child(3) { animation-delay: .3s; }
+        .hero-left > *:nth-child(4) { animation-delay: .4s; }
+        .hero-left > *:nth-child(5) { animation-delay: .5s; }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -68,117 +244,9 @@
             z-index: 1;
         }
         
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .profile-photo {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 35px;
-            border: 8px solid rgba(255,255,255,0.4);
-            box-shadow: 0 15px 60px rgba(0,0,0,0.5), 0 0 80px rgba(0,200,83,0.45), 0 0 140px rgba(179,136,255,0.2);
-            display: block;
-            animation: fadeIn 1s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            letter-spacing: -0.5px;
-        }
-        
-        .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            opacity: 0.95;
-            color: #69f0ae;
-            font-weight: 500;
-        }
-        
-        .subtitle {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            margin-bottom: 35px;
-        }
-        
-        .contact-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 35px;
-            font-size: 1.05rem;
-        }
-        
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            padding: 8px 16px;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .contact-links a:hover {
-            background: rgba(0,200,83,0.3);
-            transform: translateY(-2px);
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 14px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-            font-size: 1.05rem;
-        }
-        
-        .btn-primary {
-            background: #00c853;
-            color: #071209;
-            box-shadow: 0 4px 20px rgba(0,200,83,0.35);
-        }
-        
-        .btn-primary:hover {
-            background: #69f0ae;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 28px rgba(0,200,83,0.5);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: #69f0ae;
-            border: 2px solid #69f0ae;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(0,200,83,0.15);
-            transform: translateY(-3px);
-        }
-        
-        /* Main Content */
         main {
             max-width: 1200px;
-            margin: -50px auto 60px;
+            margin: 0 auto 60px;
             padding: 0 20px;
             position: relative;
             z-index: 2;
@@ -190,15 +258,15 @@
             padding: 50px;
             margin-bottom: 40px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            border: 1px solid #c8e6c9;
+            border: 1px solid #c5d5ea;
         }
         
         h2 {
-            color: #0d2010;
+            color: #091525;
             font-size: 2.2rem;
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
         }
         
         /* Photo Gallery */
@@ -259,7 +327,7 @@
         .experience-item, .project-item {
             margin-bottom: 35px;
             padding-bottom: 30px;
-            border-bottom: 2px solid #c8e6c9;
+            border-bottom: 2px solid #c5d5ea;
         }
         
         .experience-item:last-child, .project-item:last-child {
@@ -279,7 +347,7 @@
         .item-title {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #0d2010;
+            color: #091525;
         }
         
         .item-date {
@@ -310,7 +378,7 @@
         
         .item-link {
             color: white;
-            background: #00c853;
+            background: #4a90d9;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -326,7 +394,7 @@
         .item-link:hover {
             background: #009624;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,200,83,0.35);
+            box-shadow: 0 4px 12px rgba(74,144,217,0.35);
         }
 
         /* SJ project badge row */
@@ -391,7 +459,7 @@
         }
         
         .skill-category h3 {
-            color: #0d2010;
+            color: #091525;
             margin-bottom: 12px;
             font-size: 1.2rem;
         }
@@ -419,12 +487,12 @@
         
         .award-item:hover {
             transform: translateX(8px);
-            box-shadow: 0 5px 20px rgba(179,136,255,0.25);
+            box-shadow: 0 5px 20px rgba(155,35,53,0.25);
         }
         
         .award-title {
             font-weight: 700;
-            color: #0d2010;
+            color: #091525;
             margin-bottom: 6px;
             font-size: 1.1rem;
         }
@@ -454,7 +522,7 @@
         .theme-header {
             display: flex; align-items: center; gap: 18px;
             margin-bottom: 30px; padding-bottom: 20px;
-            border-bottom: 2px solid #c8e6c9;
+            border-bottom: 2px solid #c5d5ea;
         }
         .theme-icon {
             font-size: 2rem; line-height: 1;
@@ -495,7 +563,7 @@
             width: 10px; height: 10px; border-radius: 50%;
             flex-shrink: 0; margin-top: 7px;
         }
-        .chip-dot  { background: #2e7d32; box-shadow: 0 0 0 3px #c8e6c9; }
+        .chip-dot  { background: #2e7d32; box-shadow: 0 0 0 3px #c5d5ea; }
         .mat-dot   { background: #6a1b9a; box-shadow: 0 0 0 3px #e1bee7; }
         .space-dot { background: #e65100; box-shadow: 0 0 0 3px #ffe0b2; }
         .entry-body { flex: 1; }
@@ -504,7 +572,7 @@
             align-items: baseline; gap: 12px; flex-wrap: wrap;
             margin-bottom: 2px;
         }
-        .entry-title { font-weight: 700; font-size: 1rem; color: #0d2010; }
+        .entry-title { font-weight: 700; font-size: 1rem; color: #091525; }
         .entry-date  { font-size: .82rem; color: #78909c; white-space: nowrap; font-style: italic; }
         .entry-sub   { font-size: .88rem; color: #546e7a; font-style: italic; margin-bottom: 6px; }
         .entry-list  { margin-left: 16px; margin-top: 6px; }
@@ -574,7 +642,7 @@
             font-size: 1.3rem; flex-shrink: 0;
             width: 28px; text-align: center; margin-top: 1px;
         }
-        .award-row-title { font-weight: 600; font-size: .95rem; color: #1a2e1d; margin-bottom: 2px; }
+        .award-row-title { font-weight: 600; font-size: .95rem; color: #0e1a2e; margin-bottom: 2px; }
         .award-row-detail { font-size: .83rem; color: #78909c; }
 
         @media (max-width: 768px) {
@@ -584,7 +652,7 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #071209, #0d1a10);
+            background: linear-gradient(135deg, #090d1a, #0f1830);
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -595,6 +663,11 @@
             margin: 8px 0;
         }
         
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-photo-panel { height: 380px; border-top: 1px solid rgba(74,144,217,.15); }
+            .hero-left { padding: 50px 24px 40px; }
+        }
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.6rem; }
@@ -625,29 +698,48 @@
 </head>
 <body>
     <div class="hero">
-        <div class="hero-glow"></div>
-        <div class="container">
-            <div class="hero-content">
-                <img src="https://github.com/janierlani/portfolio/blob/main/headshot.JPEG?raw=true" alt="Zhaniya Turganova" class="profile-photo">
-                <h1>Zhaniya Turganova</h1>
-                <p class="tagline">Materials Engineering · Chip Design · Aerospace</p>
-                <p class="subtitle">Georgia Institute of Technology • Class of 2028 • 3.80 GPA</p>
-                <p style="max-width:680px;margin:0 auto 30px;color:rgba(255,255,255,0.75);font-size:1.05rem;line-height:1.8;font-weight:300;">
-                    I work at the intersection of materials science and chip design — studying how the physics of matter at the atomic scale shapes what's possible in semiconductors, and building the hardware that brings those devices to life. My goal is to push computing forward by understanding the materials that make it possible, from silicon fab to RTL-to-GDS.
+        <!-- LEFT: text content -->
+        <div class="hero-left">
+            <div>
+                <div class="hero-eyebrow">Portfolio · 2025–2026</div>
+
+                <h1 class="hero-name">
+                    Zhaniya<br>
+                    <span class="hero-name-last">Turganova</span>
+                </h1>
+
+                <p class="hero-tagline">Materials Science · Chip Design · Aerospace</p>
+
+                <p class="hero-bio">
+                    I work at the intersection of materials science and chip design — studying how atomic-scale physics shapes what's possible in semiconductors, and building the hardware that brings those devices to life.
                 </p>
-                
-                <div class="contact-links">
-                    <a href="tel:6786565140">(678) 656-5140</a>
-                    <a href="mailto:zturganova3@gatech.edu">zturganova3@gatech.edu</a>
-                    <a href="mailto:janierlani@gmail.com">janierlani@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/janierlani" target="_blank">LinkedIn</a>
+
+                <div class="hero-stats">
+                    <div class="hero-stat"><span class="n">3.80</span><span class="l">GPA</span></div>
+                    <div class="hero-stat"><span class="n">3</span><span class="l">Research Labs</span></div>
+                    <div class="hero-stat"><span class="n">0</span><span class="l">DRC Violations</span></div>
+                    <div class="hero-stat"><span class="n">3</span><span class="l">Papers</span></div>
                 </div>
-                
-                <div class="cta-buttons">
-                    <a href="mailto:zturganova3@gatech.edu" class="btn btn-primary">Get in Touch</a>
-                    <a href="#chip" class="btn btn-secondary">View Research</a>
+
+                <div class="hero-links">
+                    <a href="mailto:zturganova3@gatech.edu">zturganova3@gatech.edu</a>
+                    <a href="https://www.linkedin.com/in/janierlani" target="_blank">LinkedIn ↗</a>
+                    <a href="https://github.com/janierlani" target="_blank">GitHub ↗</a>
+                    <a href="tel:6786565140">(678) 656-5140</a>
                 </div>
             </div>
+
+            <div class="hero-cta">
+                <a href="mailto:zturganova3@gatech.edu" class="btn btn-primary">Get in Touch</a>
+                <a href="#chip" class="btn btn-secondary">View Research ↓</a>
+            </div>
+        </div>
+
+        <!-- RIGHT: photo -->
+        <div class="hero-photo-panel">
+            <div class="hero-bracket hero-bracket-tl"></div>
+            <div class="hero-bracket hero-bracket-br"></div>
+            <img src="https://github.com/janierlani/portfolio/blob/main/headshot.JPEG?raw=true" alt="Zhaniya Turganova">
         </div>
     </div>
 
@@ -1146,7 +1238,7 @@
             padding:14px 20px; border-bottom:1px solid #e0e0e0;
             background:#f5f5f5; flex-shrink:0;
         ">
-            <span id="pdf-title" style="font-family:'Inter',sans-serif; font-size:.95rem; font-weight:600; color:#1a2e1d;"></span>
+            <span id="pdf-title" style="font-family:'Inter',sans-serif; font-size:.95rem; font-weight:600; color:#0e1a2e;"></span>
             <div style="display:flex;gap:16px;align-items:center;">
                 <a id="pdf-download" href="#" target="_blank" style="
                     font-size:.78rem; color:#555; text-decoration:none;
