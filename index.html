@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhaniya Turganova | Materials Engineering & Aerospace Research</title>
+    <title>Zhaniya Turganova | Materials Engineering · Chip Design · Aerospace</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -12,24 +14,22 @@
         }
         
         :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
-            --accent: #0ea5e9;
-            --light-accent: #38bdf8;
-            --dark: #020617;
-            --light: #f8fafc;
+            --accent:   #00c853;
+            --accent2:  #b388ff;
+            --gold:     #ffd54f;
+            --border-c: #c8e6c9;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #1e293b;
-            background: #ffffff;
+            color: #1a2e1d;
+            background: #f0f7f1;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background: linear-gradient(135deg, #071209 0%, #0a1f0e 50%, #0d1a10 100%);
             color: white;
             padding: 80px 20px 100px;
             text-align: center;
@@ -40,13 +40,24 @@
         .hero::before {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            background-image:
+                linear-gradient(rgba(0,200,83,.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,200,83,.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0,200,83,.14) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, rgba(179,136,255,.10) 0%, transparent 45%),
+                radial-gradient(circle at 60% 80%, rgba(255,213,79,.07) 0%, transparent 40%);
+            pointer-events: none;
         }
         
         .container {
@@ -69,7 +80,7 @@
             object-fit: cover;
             margin: 0 auto 35px;
             border: 8px solid rgba(255,255,255,0.4);
-            box-shadow: 0 15px 60px rgba(0,0,0,0.4), 0 0 80px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 15px 60px rgba(0,0,0,0.5), 0 0 80px rgba(0,200,83,0.45), 0 0 140px rgba(179,136,255,0.2);
             display: block;
             animation: fadeIn 1s ease;
         }
@@ -91,7 +102,7 @@
             font-size: 1.5rem;
             margin-bottom: 10px;
             opacity: 0.95;
-            color: #93c5fd;
+            color: #69f0ae;
             font-weight: 500;
         }
         
@@ -120,7 +131,7 @@
         }
         
         .contact-links a:hover {
-            background: rgba(59, 130, 246, 0.4);
+            background: rgba(0,200,83,0.3);
             transform: translateY(-2px);
         }
         
@@ -154,12 +165,12 @@
         
         .btn-secondary {
             background: transparent;
-            color: white;
-            border: 2px solid white;
+            color: #69f0ae;
+            border: 2px solid #69f0ae;
         }
         
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.15);
+            background: rgba(0,200,83,0.15);
             transform: translateY(-3px);
         }
         
@@ -178,15 +189,15 @@
             padding: 50px;
             margin-bottom: 40px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            border: 1px solid #e2e8f0;
+            border: 1px solid #c8e6c9;
         }
         
         h2 {
-            color: #0f172a;
+            color: #0d2010;
             font-size: 2.2rem;
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #0ea5e9;
+            border-bottom: 3px solid var(--accent);
         }
         
         /* Photo Gallery */
@@ -247,7 +258,7 @@
         .experience-item, .project-item {
             margin-bottom: 35px;
             padding-bottom: 30px;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid #c8e6c9;
         }
         
         .experience-item:last-child, .project-item:last-child {
@@ -267,7 +278,7 @@
         .item-title {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #0f172a;
+            color: #0d2010;
         }
         
         .item-date {
@@ -298,7 +309,7 @@
         
         .item-link {
             color: white;
-            background: #0ea5e9;
+            background: #00c853;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -312,9 +323,55 @@
         }
         
         .item-link:hover {
-            background: #0284c7;
+            background: #009624;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+            box-shadow: 0 4px 12px rgba(0,200,83,0.35);
+        }
+
+        /* SJ project badge row */
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0 14px;
+        }
+        .tech-badge {
+            font-size: 0.78rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+        .badge-sv  { background: #ede9fe; color: #6d28d9; }
+        .badge-pd  { background: #d1fae5; color: #065f46; }
+        .badge-dv  { background: #fef3c7; color: #92400e; }
+        .badge-gt  { background: #fee2e2; color: #991b1b; }
+
+        /* SJ stat row */
+        .project-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 14px 0;
+        }
+        .project-stat {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 8px 16px;
+            text-align: center;
+        }
+        .project-stat .val {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0284c7;
+            display: block;
+        }
+        .project-stat .lbl {
+            font-size: 0.72rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         /* Skills Grid */
@@ -326,14 +383,14 @@
         }
         
         .skill-category {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #f1f8f2 0%, #e8f5e9 100%);
             padding: 25px;
             border-radius: 12px;
-            border-left: 5px solid #0ea5e9;
+            border-left: 5px solid var(--accent);
         }
         
         .skill-category h3 {
-            color: #0f172a;
+            color: #0d2010;
             margin-bottom: 12px;
             font-size: 1.2rem;
         }
@@ -352,33 +409,47 @@
         }
         
         .award-item {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            background: linear-gradient(135deg, #f9f6ff 0%, #ede7f6 100%);
             padding: 20px 25px;
             border-radius: 12px;
-            border-left: 5px solid #22c55e;
+            border-left: 5px solid var(--accent2);
             transition: all 0.3s;
         }
         
         .award-item:hover {
             transform: translateX(8px);
-            box-shadow: 0 5px 20px rgba(34, 197, 94, 0.2);
+            box-shadow: 0 5px 20px rgba(179,136,255,0.25);
         }
         
         .award-title {
             font-weight: 700;
-            color: #0f172a;
+            color: #0d2010;
             margin-bottom: 6px;
             font-size: 1.1rem;
         }
         
         .award-detail {
-            color: #15803d;
+            color: #6a1b9a;
             font-size: 0.98rem;
         }
         
+        /* SJ badges */
+        .tech-badges { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
+        .tech-badge { font-size:.78rem; padding:3px 10px; border-radius:4px; font-weight:600; letter-spacing:.03em; }
+        .badge-sv  { background:#ede9fe; color:#6d28d9; }
+        .badge-pd  { background:#e8f5e9; color:#1b5e20; }
+        .badge-dv  { background:#fef3c7; color:#92400e; }
+        .badge-gt  { background:#fee2e2; color:#991b1b; }
+
+        /* SJ stats */
+        .project-stats { display:flex; flex-wrap:wrap; gap:14px; margin:14px 0; }
+        .project-stat { background:#f1f8f2; border:1px solid #a5d6a7; border-radius:8px; padding:8px 16px; text-align:center; }
+        .project-stat .val { font-size:1.2rem; font-weight:700; color:#2e7d32; display:block; }
+        .project-stat .lbl { font-size:.72rem; color:#64748b; text-transform:uppercase; letter-spacing:.05em; }
+
         /* Footer */
         footer {
-            background: #0f172a;
+            background: linear-gradient(135deg, #071209, #0d1a10);
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -390,103 +461,41 @@
         }
         
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.6rem;
-            }
-            
-            .profile-photo {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .contact-links {
-                flex-direction: column;
-                gap: 12px;
-            }
-            
-            .contact-links a {
-                display: block;
-                text-align: center;
-            }
-            
-            .card {
-                padding: 30px 20px;
-            }
-            
-            .photo-gallery {
-                grid-template-columns: 1fr;
-            }
-            
-            .photo-item img {
-                height: 320px;
-            }
-            
-            .item-header {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .item-title {
-                font-size: 1.2rem;
-            }
-            
-            .item-date {
-                font-size: 0.9rem;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            .profile-photo { width: 200px; height: 200px; }
+            .tagline { font-size: 1.2rem; }
+            .subtitle { font-size: 1rem; }
+            .contact-links { flex-direction: column; gap: 12px; }
+            .contact-links a { display: block; text-align: center; }
+            .card { padding: 30px 20px; }
+            .photo-gallery { grid-template-columns: 1fr; }
+            .photo-item img { height: 320px; }
+            .item-header { flex-direction: column; gap: 5px; }
+            .item-title { font-size: 1.2rem; }
+            .item-date { font-size: 0.9rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .btn { width: 100%; text-align: center; }
+            .project-stats { gap: 10px; }
         }
         
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .profile-photo {
-                width: 160px;
-                height: 160px;
-            }
-            
-            .hero {
-                padding: 40px 15px 60px;
-            }
-            
-            .card {
-                padding: 25px 15px;
-            }
-            
-            .photo-item img {
-                height: 280px;
-            }
+            h1 { font-size: 1.8rem; }
+            .profile-photo { width: 160px; height: 160px; }
+            .hero { padding: 40px 15px 60px; }
+            .card { padding: 25px 15px; }
+            .photo-item img { height: 280px; }
         }
     </style>
 </head>
 <body>
     <div class="hero">
+        <div class="hero-glow"></div>
         <div class="container">
             <div class="hero-content">
                 <img src="https://github.com/janierlani/portfolio/blob/main/headshot.JPEG?raw=true" alt="Zhaniya Turganova" class="profile-photo">
                 <h1>Zhaniya Turganova</h1>
-                <p class="tagline">Materials Science & Aerospace Engineering</p>
+                <p class="tagline">Materials Engineering · Chip Design · Aerospace</p>
                 <p class="subtitle">Georgia Institute of Technology • Class of 2028 • 3.80 GPA</p>
                 
                 <div class="contact-links">
@@ -507,7 +516,6 @@
     <main>
         <div class="card">
             <h2>Featured Moments</h2>
-            
             <div class="photo-gallery">
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/space%20tech%20battle.jpg?raw=true" alt="Space Tech Battle Winner">
@@ -516,7 +524,6 @@
                         <small>Top 10 of 200 companies - Developed LorelAI, an AI social assistant for long-duration space missions</small>
                     </div>
                 </div>
-                
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/suni%20williams.png?raw=true" alt="With Astronaut Suni Williams">
                     <div class="photo-caption">
@@ -524,7 +531,6 @@
                         <small>NASA Johnson Space Center - "Stay hopeful and purposeful in pursuing your dreams"</small>
                     </div>
                 </div>
-                
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/luca%20parmitano%20picture.JPEG?raw=true" alt="With ESA Astronaut Luca Parmitano">
                     <div class="photo-caption">
@@ -532,7 +538,6 @@
                         <small>International Space Station veteran and spacewalk record holder</small>
                     </div>
                 </div>
-                
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/presenting%20at%20Upenn.jpg?raw=true" alt="UPenn Final Project Presentation">
                     <div class="photo-caption">
@@ -540,7 +545,6 @@
                         <small>Presenting final project at UPenn M&T Summer Institute</small>
                     </div>
                 </div>
-                
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/Upenn%20m&tsi.jpg?raw=true" alt="UPenn M&T Summer Institute">
                     <div class="photo-caption">
@@ -548,7 +552,6 @@
                         <small>Top 5 of 15 teams - Smart IoT device development, business strategy, and Google IPO simulation at Morgan Stanley NYC</small>
                     </div>
                 </div>
-                
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/united%20space%20school.JPEG?raw=true" alt="United Space School 2025">
                     <div class="photo-caption">
@@ -561,7 +564,36 @@
 
         <div class="card" id="research">
             <h2>Research & Projects</h2>
-            
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Silicon Jackets — Digital Design · Design Verification · Physical Design</div>
+                    <div class="item-date">Spring 2026</div>
+                </div>
+                <div class="item-subtitle">Georgia Tech Chip Design Club · Cadence Genus · Innovus · Tempus · Xcelium · IMC</div>
+                <div class="tech-badges">
+                    <span class="tech-badge badge-gt">Georgia Tech</span>
+                    <span class="tech-badge badge-sv">SystemVerilog</span>
+                    <span class="tech-badge badge-pd">Physical Design</span>
+                    <span class="tech-badge badge-dv">Design Verification</span>
+                </div>
+                <div class="project-stats">
+                    <div class="project-stat"><span class="val">98.94%</span><span class="lbl">Coverage</span></div>
+                    <div class="project-stat"><span class="val">100%</span><span class="lbl">Assertions</span></div>
+                    <div class="project-stat"><span class="val">0</span><span class="lbl">DRC Violations</span></div>
+                    <div class="project-stat"><span class="val">+0.01 ns</span><span class="lbl">Final WNS</span></div>
+                </div>
+                <ul>
+                    <li>Designed a 64-bit calculator in SystemVerilog with a 7-state FSM controller, parameterized 32-bit ripple-carry adder using generate loops, and dual-SRAM memory interface; architected two-stage carry-chained addition across lower and upper 32-bit halves</li>
+                    <li>Built a parameterized UVM-style testbench with constrained-random sequence items enforcing non-overlapping read/write address ranges, driver with clocking block synchronization, monitor with one-cycle read-latency tracking, and scoreboard with a dual-memory golden model and 64-bit carry-propagation checker</li>
+                    <li>Achieved 98.94% functional coverage and 100% SVA pass rate across 7 assertions in Cadence IMC, covering FSM transitions, reset behavior, write/read signal validity, and buffer control correctness</li>
+                    <li>Executed complete RTL-to-GDS flow in Cadence Innovus via YAML flowtool automation; also ran OpenLane on an open-source PDK to compare floorplan, PDN generation, and GDS streamout across toolchains</li>
+                    <li>Diagnosed and resolved 1,000+ DRC violations to zero by tracing root cause to SRAM LEF OBS constraints; fixed via routing layer expansion (MET1–MET5), placement halos, and macro routing blockages</li>
+                    <li>Achieved timing closure from WNS = −2.701 ns to WNS ≥ +0.01 ns by iterating SDC constraints; wrote custom Tcl procedures using get_db to automate timing path visualization and clock tree buffer fanout analysis</li>
+                </ul>
+                <a href="https://janierlani.github.io/sj_project" target="_blank" class="item-link">View Full Project →</a>
+            </div>
+
             <div class="project-item">
                 <div class="item-header">
                     <div class="item-title">Lunar Regolith-Based Geopolymer Concrete for Additive Manufacturing</div>
@@ -688,12 +720,35 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">HyTech Formula SAE Racing, Georgia Tech</div>
-                    <div class="item-date">Aug 2025 - Present</div>
+                    <div class="item-date">Aug 2025 – Present</div>
                 </div>
                 <div class="item-subtitle">Electrical Engineering Team Member</div>
                 <ul>
-                    <li>Designed a 2-layer PCB in Altium using a 555 timer circuit; calculated RC values to meet frequency and duty-cycle requirements</li>
-                    <li>Integrated USB-C power, created custom footprints, and completed layout/routing with DRC verification</li>
+                    <li>Designed a PCB in Altium Designer using a 555 timer circuit; created custom symbols/footprints from datasheets, calculated RC values, performed trace routing, via placement, copper pour, and full DRC verification</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Facchetti Laboratory, Georgia Tech</div>
+                    <div class="item-date">Jan 2026 – Present</div>
+                </div>
+                <div class="item-subtitle">Undergraduate Researcher</div>
+                <ul>
+                    <li>Fabricating and characterizing organic electrochemical transistors (OECTs) for neuromorphic computing applications</li>
+                    <li>Performed e-beam evaporation of gold contacts, photolithographic mask alignment, and spin coating of semiconducting polymer active layers; measured device transfer curves and transconductance</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">2D Heterostructure Synthesis VIP, Georgia Tech</div>
+                    <div class="item-date">Jan 2026 – Present</div>
+                </div>
+                <div class="item-subtitle">Undergraduate Researcher</div>
+                <ul>
+                    <li>Studying MBE growth of γ-InSe thin films on Si(100), analyzing RHEED, XRD, AFM/SEM morphology, and Hall mobility across varying Se/In flux ratios and substrate temperatures</li>
+                    <li>Developing a mechanical transfer method for exfoliating MBE-grown InSe films from sapphire onto silicon, enabling high-mobility 2D channel layers on industry-standard wafers</li>
                 </ul>
             </div>
 
@@ -713,64 +768,57 @@
 
         <div class="card">
             <h2>Skills & Technical Expertise</h2>
-            
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Laboratory</h3>
-                    <p>Scanning Electron Microscopy - SEM (Hitachi SU-8230), Thermogravimetric Analysis (TGA), Differential Scanning Calorimetry (DSC), Energy-Dispersive X-ray Spectroscopy (EDS), Instron Universal Testing Machine (UTM), Microhardness Tester, UV-Visible Spectroscopy (UV-Vis), Optical Microscopy, Contact Angle Goniometer</p>
+                    <h3>EDA & Design</h3>
+                    <p>Cadence Innovus, Cadence Genus, Cadence IMC, Xcelium, Altium Designer, OpenLane, Tcl scripting, YAML flow configuration</p>
                 </div>
-                
                 <div class="skill-category">
-                    <h3>Programming</h3>
-                    <p>Python, MATLAB, SystemVerilog, ImageJ</p>
+                    <h3>HDL & Programming</h3>
+                    <p>SystemVerilog, Verilog, Python, MATLAB</p>
                 </div>
-                
                 <div class="skill-category">
-                    <h3>Software & CAD</h3>
-                    <p>SolidWorks, COMSOL Multiphysics, Altium Designer, Arduino IDE, Android Studio, VS Code, Excel</p>
+                    <h3>Characterization & Lab</h3>
+                    <p>SEM (Hitachi SU-8230), XRD, TGA, DSC, AFM, e-beam evaporation, photolithography, spin coating</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Concepts</h3>
+                    <p>RTL-to-GDS, floorplanning, CTS, STA, DRC, LEF/DEF, SRAM macro integration, UVM testbench architecture</p>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <h2>Honors & Awards</h2>
-            
             <div class="awards-grid">
                 <div class="award-item">
                     <div class="award-title">Rhodes Trust & Schmidt Futures RISE Global Finalist</div>
                     <div class="award-detail">1 of 500 selected from 100,000+ applicants</div>
                 </div>
-                
                 <div class="award-item">
                     <div class="award-title">Georgia Tech MSE Department Scholarship</div>
                     <div class="award-detail">$16,000 (4-year)</div>
                 </div>
-                
                 <div class="award-item">
                     <div class="award-title">NASA Space Apps Challenge</div>
                     <div class="award-detail">Top 10% of 5,500+ teams worldwide; Global Judging Nominee</div>
                 </div>
-                
                 <div class="award-item">
                     <div class="award-title">Space Tech Battle (Astana Hub)</div>
                     <div class="award-detail">Top 10 of 200 company finalists; developed innovative space technology (AI social assistant for space) with venture capital investors</div>
                 </div>
-                
                 <div class="award-item">
                     <div class="award-title">Eurasian Tumaris Tech Startup Incubator</div>
                     <div class="award-detail">Top 15 finalist out of 200+ teams</div>
                 </div>
-                
                 <div class="award-item">
                     <div class="award-title">Nursultan Nazarbayev Educational Foundation Grant</div>
                     <div class="award-detail">$25,000; 1 of 17 selected from 110</div>
                 </div>
-                
                 <div class="award-item">
                     <div class="award-title">AWSD Youth Movement</div>
                     <div class="award-detail">Top 9 Inspiring Young Leaders</div>
                 </div>
-                
                 <div class="award-item">
                     <div class="award-title">Republican Remote Olympiad (Chemistry)</div>
                     <div class="award-detail">2nd place</div>
@@ -781,7 +829,7 @@
 
     <footer>
         <p>&copy; 2025 Zhaniya Turganova. All rights reserved.</p>
-        <p>Materials Science & Aerospace Engineering | Georgia Institute of Technology</p>
+        <p>Materials Engineering · Chip Design · Aerospace | Georgia Institute of Technology</p>
     </footer>
 </body>
 </html>
