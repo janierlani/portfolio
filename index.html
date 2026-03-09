@@ -283,52 +283,47 @@
         }
         
         .logo-strip {
-            background: #0d1428;
-            border-bottom: 1px solid rgba(74,144,217,.15);
-            padding: 28px 60px 32px;
+            background: #ffffff;
+            border-top: 1px solid #e8edf2;
+            border-bottom: 1px solid #e8edf2;
+            padding: 24px 60px;
         }
         .logo-strip-label {
             font-family: 'IBM Plex Mono', monospace;
             font-size: .62rem;
             letter-spacing: .22em;
             text-transform: uppercase;
-            color: rgba(255,255,255,.2);
-            margin-bottom: 24px;
+            color: #aab4c0;
+            margin-bottom: 20px;
             text-align: center;
         }
         .logo-strip-items {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 44px;
+            gap: 48px;
             flex-wrap: wrap;
         }
         .logo-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: .7;
-            transition: opacity .3s, transform .3s;
+            opacity: .75;
+            transition: opacity .25s, transform .25s;
         }
         .logo-item:hover {
             opacity: 1;
             transform: translateY(-2px);
         }
         .logo-item img {
-            height: 64px;
+            height: 56px;
             width: auto;
-            max-width: 180px;
+            max-width: 160px;
             object-fit: contain;
             display: block;
-            filter: brightness(1) contrast(1);
         }
-        /* Penn M&T logo is dark navy — brighten for dark bg */
         .logo-item:nth-child(5) img {
-            filter: brightness(10) saturate(0) invert(0);
-        }
-        .logo-item:nth-child(5):hover img {
-            filter: brightness(1) saturate(1);
-            opacity: 1;
+            filter: none;
         }
 
         main {
