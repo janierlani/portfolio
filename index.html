@@ -153,14 +153,15 @@
         }
         
         .btn-primary {
-            background: white;
-            color: var(--secondary);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background: #00c853;
+            color: #071209;
+            box-shadow: 0 4px 20px rgba(0,200,83,0.35);
         }
         
         .btn-primary:hover {
+            background: #69f0ae;
             transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 28px rgba(0,200,83,0.5);
         }
         
         .btn-secondary {
@@ -510,7 +511,7 @@
                 
                 <div class="cta-buttons">
                     <a href="mailto:zturganova3@gatech.edu" class="btn btn-primary">Get in Touch</a>
-                    <a href="#research" class="btn btn-secondary">View Research</a>
+                    <a href="#chip" class="btn btn-secondary">View Research</a>
                 </div>
             </div>
         </div>
@@ -565,10 +566,9 @@
             </div>
         </div>
 
-        <div class="card" id="research">
-            <h2>Research &amp; Projects</h2>
+        <div class="card" id="chip">
+            <h2>⬡ Chip Design &amp; Hardware</h2>
 
-            <!-- Silicon Jackets — most recent, chip-related -->
             <div class="project-item">
                 <div class="item-header">
                     <div class="item-title">Silicon Jackets — Digital Design · Design Verification · Physical Design</div>
@@ -591,11 +591,95 @@
                     <li>Designed a 64-bit calculator in SystemVerilog with a 7-state FSM controller, parameterized 32-bit ripple-carry adder using generate loops, and dual-SRAM memory interface; architected two-stage carry-chained addition across lower and upper 32-bit halves</li>
                     <li>Built a parameterized UVM-style testbench with constrained-random sequence items, driver with clocking block synchronization, monitor with one-cycle read-latency tracking, and scoreboard with 64-bit carry-propagation checking</li>
                     <li>Achieved 98.94% functional coverage and 100% SVA pass rate across 7 assertions in Cadence IMC, covering FSM transitions, reset behavior, write/read signal validity, and buffer control correctness</li>
-                    <li>Executed complete RTL-to-GDS flow in Cadence Innovus via YAML flowtool automation; also ran OpenLane on an open-source PDK to compare floorplan, PDN generation, and GDS streamout across toolchains</li>
+                    <li>Executed complete RTL-to-GDS flow in Cadence Innovus via YAML flowtool automation; also ran OpenLane on open-source PDK to compare floorplan, PDN generation, and GDS streamout across toolchains</li>
                     <li>Diagnosed and resolved 1,000+ DRC violations to zero — root cause: SRAM LEF OBS constraints; fixed via routing layer expansion (MET1–MET5), placement halos, and macro routing blockages</li>
                     <li>Achieved timing closure from WNS = −2.701 ns to WNS ≥ +0.01 ns by iterating SDC constraints; wrote custom Tcl procedures to automate timing path visualization and clock tree buffer fanout analysis</li>
                 </ul>
                 <a href="https://janierlani.github.io/sj_project" target="_blank" class="item-link">View Full Project →</a>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">HyTech Formula SAE Racing, Georgia Tech</div>
+                    <div class="item-date">Aug 2025 – Present</div>
+                </div>
+                <div class="item-subtitle">Electrical Engineering Team Member</div>
+                <ul>
+                    <li>Designed a PCB in Altium Designer using a 555 timer circuit; created custom symbols/footprints from datasheets, calculated RC values, performed trace routing, via placement, copper pour, and full DRC verification</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">UniSAT Nano-Satellite Educational Programme</div>
+                    <div class="item-date">2024</div>
+                </div>
+                <div class="item-subtitle">Participant · 1 of 20 Selected</div>
+                <ul>
+                    <li>Studied nanosatellite assembly, 3D modeling, PCB design, and IoT systems</li>
+                    <li>Designed, integrated, and tested onboard data-collection sensors</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="materials">
+            <h2>⬡ Materials Science &amp; Device Research</h2>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Facchetti Laboratory, Georgia Tech</div>
+                    <div class="item-date">Jan 2026 – Present</div>
+                </div>
+                <div class="item-subtitle">Undergraduate Researcher · Organic Electrochemical Transistors</div>
+                <ul>
+                    <li>Fabricating and characterizing organic electrochemical transistors (OECTs) for neuromorphic computing applications</li>
+                    <li>Performed e-beam evaporation of gold contacts, photolithographic mask alignment, and spin coating of semiconducting polymer active layers; measured device transfer curves and transconductance</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">2D Heterostructure Synthesis VIP, Georgia Tech</div>
+                    <div class="item-date">Jan 2026 – Present</div>
+                </div>
+                <div class="item-subtitle">Undergraduate Researcher · MBE Growth of InSe</div>
+                <ul>
+                    <li>Studying MBE growth of γ-InSe thin films on Si(100); analyzing RHEED, XRD, AFM/SEM morphology, and Hall mobility across varying Se/In flux ratios and substrate temperatures</li>
+                    <li>Developing a mechanical transfer method for exfoliating MBE-grown InSe films from sapphire onto silicon, enabling high-mobility 2D channel layers on industry-standard wafers</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Kacher Laboratory, Georgia Tech</div>
+                    <div class="item-date">Aug 2025 – Present</div>
+                </div>
+                <div class="item-subtitle">Undergraduate Researcher &amp; Entrepreneurship Assistant · ARPA-E ROSIE Project</div>
+                <ul>
+                    <li>Performing thermal (TGA, DSC) and structural (SEM, XRD) characterization to study hydrogen reduction of iron oxide to steel</li>
+                    <li>Processing stainless steel pellets for microstructural analysis via casting, heat treatment, cutting, mounting, and polishing</li>
+                    <li>Supporting customer discovery, market research, and techno-economic modeling for ARPA-E-funded sustainable steel manufacturing</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Piper Aircraft</div>
+                    <div class="item-date">Jun 2026 – Aug 2026</div>
+                </div>
+                <div class="item-subtitle">Materials &amp; Processing Engineering Intern · Vero Beach, FL &nbsp;<span style="color:#00c853;font-weight:600;font-size:.85rem;">Incoming</span></div>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">ALSIB &amp; Standart Steel LLC</div>
+                    <div class="item-date">Aug 2024 – Sep 2024</div>
+                </div>
+                <div class="item-subtitle">Manufacturing &amp; Process Engineering Intern · Almaty, Kazakhstan</div>
+                <ul>
+                    <li>Operated decoilers, roll-forming lines, hydraulic shearing units, and press-forming systems</li>
+                    <li>Calibrated machine parameters to maintain sheet geometry, stable throughput, and reduced scrap</li>
+                </ul>
             </div>
 
             <div class="project-item">
@@ -617,112 +701,17 @@
                     <div class="item-date">Jan 2025</div>
                 </div>
                 <ul>
-                    <li>Conducted stress analysis of spherical and hemispherical geopolymer structures; applied Lagrange multipliers to determine optimal habitat geometry for lunar gravity and wall thickness constraints</li>
+                    <li>Conducted stress analysis of spherical and hemispherical geopolymer structures; applied Lagrange multipliers to determine optimal habitat geometry</li>
                     <li>Used Taylor series expansion to quantify allowable angular tolerances during 3D printing construction</li>
                 </ul>
                 <a href="https://github.com/janierlani/portfolio/raw/main/MATH%20IA.pdf" target="_blank" class="item-link">View Paper</a>
             </div>
-
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Neuroeconomics in Orbit: Astronaut Decision-Making via Prospect Theory</div>
-                    <div class="item-date">2024</div>
-                </div>
-                <ul>
-                    <li>Studied how spaceflight-driven neurophysiological changes affect decision-making under risk and uncertainty using Prospect Theory</li>
-                    <li>Analyzed brain region and neuromodulatory system alterations; mentored by Dartmouth professor</li>
-                </ul>
-                <a href="https://github.com/janierlani/portfolio/raw/main/Neuroeconomics%20in%20the%20Orbit.pdf" target="_blank" class="item-link">View Paper</a>
-            </div>
-
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Design Recommendations for Interactive Chatbots for Space Missions</div>
-                    <div class="item-date">Aug 2023 – 2024</div>
-                </div>
-                <div class="item-subtitle">University of Hawai'i at Mānoa</div>
-                <ul>
-                    <li>Authored an 11,000+ word IRB-approved study with 8 participants (4 NASA HI-SEAS, 4 Kazakhstan Space Agency)</li>
-                    <li>Fine-tuned Alpaca-7B LLM for AI-driven behavioral modeling in long-duration space missions</li>
-                    <li>Developed LorelAI, an AI social assistant addressing psychological challenges of isolation and crew dynamics</li>
-                </ul>
-                <a href="https://github.com/janierlani/portfolio/raw/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf" target="_blank" class="item-link">View Paper</a>
-            </div>
-
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Peripheral and Central Mechanisms of Neuropathic Pain in Degenerative Diseases</div>
-                    <div class="item-date">Mar 2023 – Oct 2024</div>
-                </div>
-                <ul>
-                    <li>Authored 7,500-word paper on peripheral and central pain pathways in degenerative disease</li>
-                    <li>Published in National High School Journal of Science; mentored by Georgetown M.D./Ph.D.</li>
-                </ul>
-                <a href="https://github.com/janierlani/portfolio/raw/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf" target="_blank" class="item-link">View Paper</a>
-            </div>
         </div>
 
-        <div class="card">
-            <h2>Experience</h2>
+        <div class="card" id="space">
+            <h2>⬡ Space &amp; Entrepreneurship</h2>
 
-            <!-- INCOMING / CURRENT — newest first -->
-            <div class="experience-item">
-                <div class="item-header">
-                    <div class="item-title">Piper Aircraft</div>
-                    <div class="item-date">Jun 2026 – Aug 2026</div>
-                </div>
-                <div class="item-subtitle">Materials &amp; Processing Engineering Intern · Vero Beach, FL <span style="color:#00c853;font-weight:600;font-size:.85rem;margin-left:8px;">Incoming</span></div>
-            </div>
-
-            <div class="experience-item">
-                <div class="item-header">
-                    <div class="item-title">Facchetti Laboratory, Georgia Tech</div>
-                    <div class="item-date">Jan 2026 – Present</div>
-                </div>
-                <div class="item-subtitle">Undergraduate Researcher</div>
-                <ul>
-                    <li>Fabricating and characterizing organic electrochemical transistors (OECTs) for neuromorphic computing applications</li>
-                    <li>Performed e-beam evaporation of gold contacts, photolithographic mask alignment, and spin coating of semiconducting polymer active layers; measured device transfer curves and transconductance</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="item-header">
-                    <div class="item-title">2D Heterostructure Synthesis VIP, Georgia Tech</div>
-                    <div class="item-date">Jan 2026 – Present</div>
-                </div>
-                <div class="item-subtitle">Undergraduate Researcher</div>
-                <ul>
-                    <li>Studying MBE growth of γ-InSe thin films on Si(100); analyzing RHEED, XRD, AFM/SEM morphology, and Hall mobility across varying Se/In flux ratios and substrate temperatures</li>
-                    <li>Developing a mechanical transfer method for exfoliating MBE-grown InSe films from sapphire onto silicon, enabling high-mobility 2D channel layers on industry-standard wafers</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="item-header">
-                    <div class="item-title">Kacher Laboratory, Georgia Tech</div>
-                    <div class="item-date">Aug 2025 – Present</div>
-                </div>
-                <div class="item-subtitle">Undergraduate Researcher &amp; Entrepreneurship Assistant · ARPA-E ROSIE Project</div>
-                <ul>
-                    <li>Performing thermal (TGA, DSC) and structural (SEM, XRD) characterization to study hydrogen reduction of iron oxide to steel</li>
-                    <li>Processing stainless steel pellets for microstructural analysis via casting, heat treatment, cutting, mounting, and polishing</li>
-                    <li>Supporting customer discovery, market research, and techno-economic modeling for sustainable steel manufacturing (ARPA-E funded)</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="item-header">
-                    <div class="item-title">HyTech Formula SAE Racing, Georgia Tech</div>
-                    <div class="item-date">Aug 2025 – Present</div>
-                </div>
-                <div class="item-subtitle">Electrical Engineering Team Member</div>
-                <ul>
-                    <li>Designed a PCB in Altium Designer using a 555 timer circuit; created custom symbols/footprints from datasheets, calculated RC values, performed trace routing, via placement, copper pour, and full DRC verification</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
+            <div class="project-item">
                 <div class="item-header">
                     <div class="item-title">NASA Johnson Space Center — United Space School</div>
                     <div class="item-date">Apr 2025 – Aug 2025</div>
@@ -734,40 +723,51 @@
                 </ul>
             </div>
 
-            <div class="experience-item">
-                <div class="item-header">
-                    <div class="item-title">ALSIB &amp; Standart Steel LLC</div>
-                    <div class="item-date">Aug 2024 – Sep 2024</div>
-                </div>
-                <div class="item-subtitle">Manufacturing &amp; Process Engineering Intern · Almaty, Kazakhstan</div>
-                <ul>
-                    <li>Operated decoilers, roll-forming lines, hydraulic shearing units, and press-forming systems</li>
-                    <li>Calibrated machine parameters to maintain sheet geometry, stable throughput, and reduced scrap</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
+            <div class="project-item">
                 <div class="item-header">
                     <div class="item-title">UPenn Jerome Fisher M&amp;T Summer Institute</div>
                     <div class="item-date">Jul 2024 – Aug 2024</div>
                 </div>
-                <div class="item-subtitle">Software Designer &amp; Business Strategist · 1 of 75 selected from 1,000+</div>
+                <div class="item-subtitle">Software Designer &amp; Business Strategist · 1 of 75 from 1,000+ applicants</div>
                 <ul>
-                    <li>Built a smart IoT dog collar using CAD, Swift, Arduino, and Raspberry Pi; developed unit economics and GTM strategy</li>
-                    <li>Project ranked top 5 of 15 teams; participated in Google IPO simulation at Morgan Stanley NYC</li>
+                    <li>Built a smart IoT dog collar using CAD, Swift, Arduino, and Raspberry Pi; developed unit economics and GTM strategy; ranked top 5 of 15 teams</li>
+                    <li>Participated in Google IPO simulation at Morgan Stanley NYC</li>
                 </ul>
             </div>
 
-            <div class="experience-item">
+            <div class="project-item">
                 <div class="item-header">
-                    <div class="item-title">UniSAT Nano-Satellite Educational Programme</div>
+                    <div class="item-title">Design Recommendations for Interactive Chatbots for Space Missions</div>
+                    <div class="item-date">Aug 2023 – 2024</div>
+                </div>
+                <div class="item-subtitle">University of Hawai'i at Mānoa</div>
+                <ul>
+                    <li>Authored an 11,000+ word IRB-approved study with 8 participants (4 NASA HI-SEAS, 4 Kazakhstan Space Agency)</li>
+                    <li>Fine-tuned Alpaca-7B LLM for AI-driven behavioral modeling; developed LorelAI, an AI social assistant for long-duration missions</li>
+                </ul>
+                <a href="https://github.com/janierlani/portfolio/raw/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf" target="_blank" class="item-link">View Paper</a>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Neuroeconomics in Orbit: Astronaut Decision-Making via Prospect Theory</div>
                     <div class="item-date">2024</div>
                 </div>
-                <div class="item-subtitle">Participant · 1 of 20 Selected</div>
                 <ul>
-                    <li>Studied nanosatellite assembly, 3D modeling, PCB design, and IoT systems</li>
-                    <li>Designed, integrated, and tested onboard data-collection sensors</li>
+                    <li>Studied how spaceflight-driven neurophysiological changes affect decision-making under risk; mentored by Dartmouth professor</li>
                 </ul>
+                <a href="https://github.com/janierlani/portfolio/raw/main/Neuroeconomics%20in%20the%20Orbit.pdf" target="_blank" class="item-link">View Paper</a>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Peripheral and Central Mechanisms of Neuropathic Pain in Degenerative Diseases</div>
+                    <div class="item-date">Mar 2023 – Oct 2024</div>
+                </div>
+                <ul>
+                    <li>Authored 7,500-word paper published in National High School Journal of Science; mentored by Georgetown M.D./Ph.D.</li>
+                </ul>
+                <a href="https://github.com/janierlani/portfolio/raw/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf" target="_blank" class="item-link">View Paper</a>
             </div>
         </div>
 
