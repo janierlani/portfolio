@@ -448,6 +448,86 @@
         .project-stat .val { font-size:1.2rem; font-weight:700; color:#2e7d32; display:block; }
         .project-stat .lbl { font-size:.72rem; color:#64748b; text-transform:uppercase; letter-spacing:.05em; }
 
+
+        /* ── THEME CARDS ── */
+        .theme-card { padding: 40px 50px; }
+        .theme-header {
+            display: flex; align-items: center; gap: 18px;
+            margin-bottom: 30px; padding-bottom: 20px;
+            border-bottom: 2px solid #c8e6c9;
+        }
+        .theme-icon {
+            font-size: 2rem; line-height: 1;
+            width: 52px; height: 52px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 12px; flex-shrink: 0;
+        }
+        .theme-chip .theme-icon  { background: #e8f5e9; color: #2e7d32; }
+        .theme-mat  .theme-icon  { background: #ede7f6; color: #6a1b9a; }
+        .theme-space .theme-icon { background: #fff8e1; color: #e65100; }
+        .theme-chip  h2 { border-bottom: none; margin-bottom: 2px; padding-bottom: 0; color: #1b5e20; }
+        .theme-mat   h2 { border-bottom: none; margin-bottom: 2px; padding-bottom: 0; color: #4a148c; }
+        .theme-space h2 { border-bottom: none; margin-bottom: 2px; padding-bottom: 0; color: #bf360c; }
+        .theme-desc { color: #78909c; font-size: .88rem; margin: 0; }
+
+        /* ── TWO COLUMN ── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 48px;
+        }
+        .col-label {
+            font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+            text-transform: uppercase; color: #90a4ae;
+            margin-bottom: 18px; padding-bottom: 6px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* ── ENTRY (timeline item) ── */
+        .entry {
+            display: flex; gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .entry-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            flex-shrink: 0; margin-top: 7px;
+        }
+        .chip-dot  { background: #2e7d32; box-shadow: 0 0 0 3px #c8e6c9; }
+        .mat-dot   { background: #6a1b9a; box-shadow: 0 0 0 3px #e1bee7; }
+        .space-dot { background: #e65100; box-shadow: 0 0 0 3px #ffe0b2; }
+        .entry-body { flex: 1; }
+        .entry-head {
+            display: flex; justify-content: space-between;
+            align-items: baseline; gap: 12px; flex-wrap: wrap;
+            margin-bottom: 2px;
+        }
+        .entry-title { font-weight: 700; font-size: 1rem; color: #0d2010; }
+        .entry-date  { font-size: .82rem; color: #78909c; white-space: nowrap; font-style: italic; }
+        .entry-sub   { font-size: .88rem; color: #546e7a; font-style: italic; margin-bottom: 6px; }
+        .entry-list  { margin-left: 16px; margin-top: 6px; }
+        .entry-list li { font-size: .9rem; color: #455a64; margin-bottom: 5px; line-height: 1.6; }
+
+        /* ── TOOLS GRID ── */
+        .tools-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+        .tool-tag {
+            background: #e8f5e9; color: #2e7d32;
+            border: 1px solid #a5d6a7; border-radius: 4px;
+            font-size: .75rem; padding: 4px 10px; font-weight: 500;
+        }
+        .incoming-tag {
+            background: #e8f5e9; color: #2e7d32;
+            border: 1px solid #a5d6a7; border-radius: 4px;
+            font-size: .8rem; padding: 3px 10px; font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .two-col { grid-template-columns: 1fr; }
+            .theme-card { padding: 25px 18px; }
+        }
+
         /* Footer */
         footer {
             background: linear-gradient(135deg, #071209, #0d1a10);
@@ -518,256 +598,339 @@
     </div>
 
     <main>
+        <!-- ═══════════ PHOTOS ═══════════ -->
         <div class="card">
             <h2>Featured Moments</h2>
             <div class="photo-gallery">
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/space%20tech%20battle.jpg?raw=true" alt="Space Tech Battle Winner">
-                    <div class="photo-caption">
-                        <strong>Space Tech Battle Winner</strong>
-                        <small>Top 10 of 200 companies - Developed LorelAI, an AI social assistant for long-duration space missions</small>
-                    </div>
+                    <div class="photo-caption"><strong>Space Tech Battle Winner</strong><small>Top 10 of 200 companies — developed LorelAI, an AI social assistant for long-duration space missions</small></div>
                 </div>
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/suni%20williams.png?raw=true" alt="With Astronaut Suni Williams">
-                    <div class="photo-caption">
-                        <strong>With Astronaut Suni Williams</strong>
-                        <small>NASA Johnson Space Center - "Stay hopeful and purposeful in pursuing your dreams"</small>
-                    </div>
+                    <div class="photo-caption"><strong>With Astronaut Suni Williams</strong><small>NASA Johnson Space Center</small></div>
                 </div>
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/luca%20parmitano%20picture.JPEG?raw=true" alt="With ESA Astronaut Luca Parmitano">
-                    <div class="photo-caption">
-                        <strong>With ESA Astronaut Luca Parmitano</strong>
-                        <small>International Space Station veteran and spacewalk record holder</small>
-                    </div>
+                    <div class="photo-caption"><strong>With ESA Astronaut Luca Parmitano</strong><small>ISS veteran and spacewalk record holder</small></div>
                 </div>
                 <div class="photo-item">
-                    <img src="https://github.com/janierlani/portfolio/blob/main/presenting%20at%20Upenn.jpg?raw=true" alt="UPenn Final Project Presentation">
-                    <div class="photo-caption">
-                        <strong>UPenn Final Project Presentation</strong>
-                        <small>Presenting final project at UPenn M&T Summer Institute</small>
-                    </div>
+                    <img src="https://github.com/janierlani/portfolio/blob/main/presenting%20at%20Upenn.jpg?raw=true" alt="UPenn Presentation">
+                    <div class="photo-caption"><strong>UPenn Final Project Presentation</strong><small>UPenn M&T Summer Institute</small></div>
                 </div>
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/Upenn%20m&tsi.jpg?raw=true" alt="UPenn M&T Summer Institute">
-                    <div class="photo-caption">
-                        <strong>UPenn M&T Summer Institute</strong>
-                        <small>Top 5 of 15 teams - Smart IoT device development, business strategy, and Google IPO simulation at Morgan Stanley NYC</small>
-                    </div>
+                    <div class="photo-caption"><strong>UPenn M&T Summer Institute</strong><small>Top 5 of 15 teams — smart IoT device, Morgan Stanley NYC</small></div>
                 </div>
                 <div class="photo-item">
                     <img src="https://github.com/janierlani/portfolio/blob/main/united%20space%20school.JPEG?raw=true" alt="United Space School 2025">
-                    <div class="photo-caption">
-                        <strong>United Space School 2025</strong>
-                        <small>1 of 40 global delegates selected for Mars mission design project at NASA Johnson Space Center</small>
+                    <div class="photo-caption"><strong>United Space School 2025</strong><small>1 of 40 global delegates — Mars mission design at NASA JSC</small></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════ CHIP DESIGN ═══════════ -->
+        <div class="card theme-card theme-chip" id="chip">
+            <div class="theme-header">
+                <div class="theme-icon">◈</div>
+                <div>
+                    <h2>Chip Design &amp; Hardware</h2>
+                    <p class="theme-desc">RTL design, verification, physical design, PCB</p>
+                </div>
+            </div>
+
+            <div class="two-col">
+                <!-- LEFT: industry/clubs -->
+                <div class="col-block">
+                    <div class="col-label">Experience</div>
+
+                    <div class="entry">
+                        <div class="entry-dot chip-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Silicon Jackets — DD · DV · PD</span>
+                                <span class="entry-date">Aug 2025 – Present</span>
+                            </div>
+                            <div class="entry-sub">Georgia Tech Chip Design Club</div>
+                            <div class="tech-badges" style="margin:6px 0 8px;">
+                                <span class="tech-badge badge-sv">SystemVerilog</span>
+                                <span class="tech-badge badge-pd">Physical Design</span>
+                                <span class="tech-badge badge-dv">Design Verification</span>
+                            </div>
+                            <div class="project-stats" style="margin-bottom:10px;">
+                                <div class="project-stat"><span class="val">98.94%</span><span class="lbl">Coverage</span></div>
+                                <div class="project-stat"><span class="val">100%</span><span class="lbl">Assertions</span></div>
+                                <div class="project-stat"><span class="val">0</span><span class="lbl">DRC Violations</span></div>
+                                <div class="project-stat"><span class="val">+0.01 ns</span><span class="lbl">WNS</span></div>
+                            </div>
+                            <ul class="entry-list">
+                                <li>64-bit SRAM-backed calculator in SystemVerilog — 7-state FSM, parameterized ripple-carry adder, dual 1024×32 SRAM interface</li>
+                                <li>UVM-style testbench: constrained-random driver, monitor, scoreboard with 64-bit carry-propagation; 98.94% coverage in Cadence IMC</li>
+                                <li>Full RTL-to-GDS in Cadence Innovus + OpenLane; resolved 1,000+ DRC violations via LEF OBS analysis, routing layer expansion, placement halos</li>
+                                <li>Timing closure: WNS −2.701 ns → +0.01 ns via SDC iteration; custom Tcl procs for path viz &amp; fanout analysis</li>
+                            </ul>
+                            <a href="https://janierlani.github.io/sj_project" target="_blank" class="item-link" style="margin-top:10px;">View Full Project →</a>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-dot chip-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">HyTech Formula SAE Racing</span>
+                                <span class="entry-date">Aug 2025 – Present</span>
+                            </div>
+                            <div class="entry-sub">Electrical Engineering · Georgia Tech</div>
+                            <ul class="entry-list">
+                                <li>Designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-dot chip-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">UniSAT Nano-Satellite Programme</span>
+                                <span class="entry-date">2024</span>
+                            </div>
+                            <div class="entry-sub">1 of 20 Selected</div>
+                            <ul class="entry-list">
+                                <li>Nanosatellite assembly, 3D modeling, PCB design, IoT systems; designed and tested onboard data-collection sensors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: nothing else for chip — spacer -->
+                <div class="col-block col-empty">
+                    <div class="col-label">Tools</div>
+                    <div class="tools-grid">
+                        <span class="tool-tag">Cadence Innovus</span>
+                        <span class="tool-tag">Cadence Genus</span>
+                        <span class="tool-tag">Cadence IMC</span>
+                        <span class="tool-tag">Xcelium</span>
+                        <span class="tool-tag">OpenLane</span>
+                        <span class="tool-tag">Altium Designer</span>
+                        <span class="tool-tag">SystemVerilog</span>
+                        <span class="tool-tag">Tcl</span>
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">YAML flow</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card" id="chip">
-            <h2>⬡ Chip Design &amp; Hardware</h2>
-
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Silicon Jackets — Digital Design · Design Verification · Physical Design</div>
-                    <div class="item-date">Aug 2025 – Present</div>
+        <!-- ═══════════ MATERIALS ═══════════ -->
+        <div class="card theme-card theme-mat" id="materials">
+            <div class="theme-header">
+                <div class="theme-icon">◈</div>
+                <div>
+                    <h2>Materials Science &amp; Device Research</h2>
+                    <p class="theme-desc">Semiconductor devices, thin films, characterization, manufacturing</p>
                 </div>
-                <div class="item-subtitle">Georgia Tech Chip Design Club · Cadence Genus · Innovus · Tempus · Xcelium · IMC</div>
-                <div class="tech-badges">
-                    <span class="tech-badge badge-gt">Georgia Tech</span>
-                    <span class="tech-badge badge-sv">SystemVerilog</span>
-                    <span class="tech-badge badge-pd">Physical Design</span>
-                    <span class="tech-badge badge-dv">Design Verification</span>
-                </div>
-                <div class="project-stats">
-                    <div class="project-stat"><span class="val">98.94%</span><span class="lbl">Coverage</span></div>
-                    <div class="project-stat"><span class="val">100%</span><span class="lbl">Assertions</span></div>
-                    <div class="project-stat"><span class="val">0</span><span class="lbl">DRC Violations</span></div>
-                    <div class="project-stat"><span class="val">+0.01 ns</span><span class="lbl">Final WNS</span></div>
-                </div>
-                <ul>
-                    <li>Designed a 64-bit calculator in SystemVerilog with a 7-state FSM controller, parameterized 32-bit ripple-carry adder using generate loops, and dual-SRAM memory interface; architected two-stage carry-chained addition across lower and upper 32-bit halves</li>
-                    <li>Built a parameterized UVM-style testbench with constrained-random sequence items, driver with clocking block synchronization, monitor with one-cycle read-latency tracking, and scoreboard with 64-bit carry-propagation checking</li>
-                    <li>Achieved 98.94% functional coverage and 100% SVA pass rate across 7 assertions in Cadence IMC, covering FSM transitions, reset behavior, write/read signal validity, and buffer control correctness</li>
-                    <li>Executed complete RTL-to-GDS flow in Cadence Innovus via YAML flowtool automation; also ran OpenLane on open-source PDK to compare floorplan, PDN generation, and GDS streamout across toolchains</li>
-                    <li>Diagnosed and resolved 1,000+ DRC violations to zero — root cause: SRAM LEF OBS constraints; fixed via routing layer expansion (MET1–MET5), placement halos, and macro routing blockages</li>
-                    <li>Achieved timing closure from WNS = −2.701 ns to WNS ≥ +0.01 ns by iterating SDC constraints; wrote custom Tcl procedures to automate timing path visualization and clock tree buffer fanout analysis</li>
-                </ul>
-                <a href="https://janierlani.github.io/sj_project" target="_blank" class="item-link">View Full Project →</a>
             </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">HyTech Formula SAE Racing, Georgia Tech</div>
-                    <div class="item-date">Aug 2025 – Present</div>
-                </div>
-                <div class="item-subtitle">Electrical Engineering Team Member</div>
-                <ul>
-                    <li>Designed a PCB in Altium Designer using a 555 timer circuit; created custom symbols/footprints from datasheets, calculated RC values, performed trace routing, via placement, copper pour, and full DRC verification</li>
-                </ul>
-            </div>
+            <div class="two-col">
+                <div class="col-block">
+                    <div class="col-label">Research</div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">UniSAT Nano-Satellite Educational Programme</div>
-                    <div class="item-date">2024</div>
-                </div>
-                <div class="item-subtitle">Participant · 1 of 20 Selected</div>
-                <ul>
-                    <li>Studied nanosatellite assembly, 3D modeling, PCB design, and IoT systems</li>
-                    <li>Designed, integrated, and tested onboard data-collection sensors</li>
-                </ul>
-            </div>
-        </div>
+                    <div class="entry">
+                        <div class="entry-dot mat-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Facchetti Laboratory, Georgia Tech</span>
+                                <span class="entry-date">Jan 2026 – Present</span>
+                            </div>
+                            <div class="entry-sub">Undergraduate Researcher · Organic Electrochemical Transistors</div>
+                            <ul class="entry-list">
+                                <li>Fabricating OECTs for neuromorphic computing — e-beam evaporation of gold contacts, photolithographic mask alignment, spin coating of semiconducting polymer active layers</li>
+                                <li>Measuring transfer curves and transconductance across device geometries</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        <div class="card" id="materials">
-            <h2>⬡ Materials Science &amp; Device Research</h2>
+                    <div class="entry">
+                        <div class="entry-dot mat-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">2D Heterostructure Synthesis VIP</span>
+                                <span class="entry-date">Jan 2026 – Present</span>
+                            </div>
+                            <div class="entry-sub">Undergraduate Researcher · MBE Growth of γ-InSe · Georgia Tech</div>
+                            <ul class="entry-list">
+                                <li>MBE growth of γ-InSe on Si(100); characterizing via RHEED, XRD, AFM/SEM, and Hall mobility across Se/In flux ratios and temperatures</li>
+                                <li>Developing mechanical transfer of InSe films from sapphire → silicon for industry-standard 2D channel integration</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Facchetti Laboratory, Georgia Tech</div>
-                    <div class="item-date">Jan 2026 – Present</div>
-                </div>
-                <div class="item-subtitle">Undergraduate Researcher · Organic Electrochemical Transistors</div>
-                <ul>
-                    <li>Fabricating and characterizing organic electrochemical transistors (OECTs) for neuromorphic computing applications</li>
-                    <li>Performed e-beam evaporation of gold contacts, photolithographic mask alignment, and spin coating of semiconducting polymer active layers; measured device transfer curves and transconductance</li>
-                </ul>
-            </div>
+                    <div class="entry">
+                        <div class="entry-dot mat-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Kacher Laboratory, Georgia Tech</span>
+                                <span class="entry-date">Aug 2025 – Present</span>
+                            </div>
+                            <div class="entry-sub">Researcher &amp; Entrepreneurship Assistant · ARPA-E ROSIE</div>
+                            <ul class="entry-list">
+                                <li>TGA, DSC, SEM, XRD characterization of hydrogen-reduced iron oxide → steel; casting, heat treatment, mounting, polishing of stainless steel pellets</li>
+                                <li>Customer discovery, market research, and TEA modeling for ARPA-E-funded green steel manufacturing</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">2D Heterostructure Synthesis VIP, Georgia Tech</div>
-                    <div class="item-date">Jan 2026 – Present</div>
-                </div>
-                <div class="item-subtitle">Undergraduate Researcher · MBE Growth of InSe</div>
-                <ul>
-                    <li>Studying MBE growth of γ-InSe thin films on Si(100); analyzing RHEED, XRD, AFM/SEM morphology, and Hall mobility across varying Se/In flux ratios and substrate temperatures</li>
-                    <li>Developing a mechanical transfer method for exfoliating MBE-grown InSe films from sapphire onto silicon, enabling high-mobility 2D channel layers on industry-standard wafers</li>
-                </ul>
-            </div>
+                    <div class="entry">
+                        <div class="entry-dot mat-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Lunar Regolith Geopolymer Concrete</span>
+                                <span class="entry-date">Aug 2024 – Apr 2025</span>
+                            </div>
+                            <div class="entry-sub">Nazarbayev University</div>
+                            <ul class="entry-list">
+                                <li>Optimized NaOH molarity in metakaolin-based geopolymer for lunar ISRU habitat construction; tested setting time and compressive strength</li>
+                            </ul>
+                            <a href="https://github.com/janierlani/portfolio/raw/main/Geopolymers%20research%20(1).pdf" target="_blank" class="item-link" style="margin-top:8px;">View Paper</a>
+                        </div>
+                    </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Kacher Laboratory, Georgia Tech</div>
-                    <div class="item-date">Aug 2025 – Present</div>
+                    <div class="entry">
+                        <div class="entry-dot mat-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Stress Analysis of Dome-Shaped Lunar Bases</span>
+                                <span class="entry-date">Jan 2025</span>
+                            </div>
+                            <ul class="entry-list">
+                                <li>Lagrange multiplier optimization of hemispherical habitat geometry; Taylor series tolerance analysis for 3D-printed lunar structures</li>
+                            </ul>
+                            <a href="https://github.com/janierlani/portfolio/raw/main/MATH%20IA.pdf" target="_blank" class="item-link" style="margin-top:8px;">View Paper</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="item-subtitle">Undergraduate Researcher &amp; Entrepreneurship Assistant · ARPA-E ROSIE Project</div>
-                <ul>
-                    <li>Performing thermal (TGA, DSC) and structural (SEM, XRD) characterization to study hydrogen reduction of iron oxide to steel</li>
-                    <li>Processing stainless steel pellets for microstructural analysis via casting, heat treatment, cutting, mounting, and polishing</li>
-                    <li>Supporting customer discovery, market research, and techno-economic modeling for ARPA-E-funded sustainable steel manufacturing</li>
-                </ul>
-            </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Piper Aircraft</div>
-                    <div class="item-date">Jun 2026 – Aug 2026</div>
-                </div>
-                <div class="item-subtitle">Materials &amp; Processing Engineering Intern · Vero Beach, FL &nbsp;<span style="color:#00c853;font-weight:600;font-size:.85rem;">Incoming</span></div>
-            </div>
+                <div class="col-block">
+                    <div class="col-label">Industry</div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">ALSIB &amp; Standart Steel LLC</div>
-                    <div class="item-date">Aug 2024 – Sep 2024</div>
-                </div>
-                <div class="item-subtitle">Manufacturing &amp; Process Engineering Intern · Almaty, Kazakhstan</div>
-                <ul>
-                    <li>Operated decoilers, roll-forming lines, hydraulic shearing units, and press-forming systems</li>
-                    <li>Calibrated machine parameters to maintain sheet geometry, stable throughput, and reduced scrap</li>
-                </ul>
-            </div>
+                    <div class="entry">
+                        <div class="entry-dot mat-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Piper Aircraft</span>
+                                <span class="entry-date">Jun 2026 – Aug 2026</span>
+                            </div>
+                            <div class="entry-sub">Materials &amp; Processing Engineering Intern · Vero Beach, FL</div>
+                            <div style="margin-top:6px;"><span class="incoming-tag">Incoming</span></div>
+                        </div>
+                    </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Lunar Regolith-Based Geopolymer Concrete for Additive Manufacturing</div>
-                    <div class="item-date">Aug 2024 – Apr 2025</div>
+                    <div class="entry">
+                        <div class="entry-dot mat-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">ALSIB &amp; Standart Steel LLC</span>
+                                <span class="entry-date">Aug – Sep 2024</span>
+                            </div>
+                            <div class="entry-sub">Manufacturing &amp; Process Engineering Intern · Almaty, Kazakhstan</div>
+                            <ul class="entry-list">
+                                <li>Operated decoilers, roll-forming lines, hydraulic shearing units, press-forming systems; calibrated parameters to maintain sheet geometry and reduce scrap</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="item-subtitle">Nazarbayev University</div>
-                <ul>
-                    <li>Optimized NaOH molarity in metakaolin-based geopolymer concrete for lunar habitat construction</li>
-                    <li>Tested setting time and compressive strength for in-situ resource utilization (ISRU) applications</li>
-                </ul>
-                <a href="https://github.com/janierlani/portfolio/raw/main/Geopolymers%20research%20(1).pdf" target="_blank" class="item-link">View Paper</a>
-            </div>
-
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Dimension Optimisation and Stress Analysis of Dome-Shaped Lunar Bases</div>
-                    <div class="item-date">Jan 2025</div>
-                </div>
-                <ul>
-                    <li>Conducted stress analysis of spherical and hemispherical geopolymer structures; applied Lagrange multipliers to determine optimal habitat geometry</li>
-                    <li>Used Taylor series expansion to quantify allowable angular tolerances during 3D printing construction</li>
-                </ul>
-                <a href="https://github.com/janierlani/portfolio/raw/main/MATH%20IA.pdf" target="_blank" class="item-link">View Paper</a>
             </div>
         </div>
 
-        <div class="card" id="space">
-            <h2>⬡ Space &amp; Entrepreneurship</h2>
-
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">NASA Johnson Space Center — United Space School</div>
-                    <div class="item-date">Apr 2025 – Aug 2025</div>
+        <!-- ═══════════ SPACE & ENTREPRENEURSHIP ═══════════ -->
+        <div class="card theme-card theme-space" id="space">
+            <div class="theme-header">
+                <div class="theme-icon">◈</div>
+                <div>
+                    <h2>Space &amp; Entrepreneurship</h2>
+                    <p class="theme-desc">Mission design, AI research, startup programs</p>
                 </div>
-                <div class="item-subtitle">Materials Selection Lead · 1 of 40 Global Delegates</div>
-                <ul>
-                    <li>Applied CAD and CFD tools to analyze thermal protection systems for inflatable decelerators and crewed landers</li>
-                    <li>Researched C-C composites and refractory materials for Mars mission design project at NASA JSC</li>
-                </ul>
             </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">UPenn Jerome Fisher M&amp;T Summer Institute</div>
-                    <div class="item-date">Jul 2024 – Aug 2024</div>
-                </div>
-                <div class="item-subtitle">Software Designer &amp; Business Strategist · 1 of 75 from 1,000+ applicants</div>
-                <ul>
-                    <li>Built a smart IoT dog collar using CAD, Swift, Arduino, and Raspberry Pi; developed unit economics and GTM strategy; ranked top 5 of 15 teams</li>
-                    <li>Participated in Google IPO simulation at Morgan Stanley NYC</li>
-                </ul>
-            </div>
+            <div class="two-col">
+                <div class="col-block">
+                    <div class="col-label">Programs &amp; Experience</div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Design Recommendations for Interactive Chatbots for Space Missions</div>
-                    <div class="item-date">Aug 2023 – 2024</div>
-                </div>
-                <div class="item-subtitle">University of Hawai'i at Mānoa</div>
-                <ul>
-                    <li>Authored an 11,000+ word IRB-approved study with 8 participants (4 NASA HI-SEAS, 4 Kazakhstan Space Agency)</li>
-                    <li>Fine-tuned Alpaca-7B LLM for AI-driven behavioral modeling; developed LorelAI, an AI social assistant for long-duration missions</li>
-                </ul>
-                <a href="https://github.com/janierlani/portfolio/raw/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf" target="_blank" class="item-link">View Paper</a>
-            </div>
+                    <div class="entry">
+                        <div class="entry-dot space-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">NASA Johnson Space Center — United Space School</span>
+                                <span class="entry-date">Apr – Aug 2025</span>
+                            </div>
+                            <div class="entry-sub">Materials Selection Lead · 1 of 40 Global Delegates</div>
+                            <ul class="entry-list">
+                                <li>CAD + CFD analysis of thermal protection systems for inflatable decelerators and crewed Mars landers; researched C-C composites and refractory materials</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Neuroeconomics in Orbit: Astronaut Decision-Making via Prospect Theory</div>
-                    <div class="item-date">2024</div>
+                    <div class="entry">
+                        <div class="entry-dot space-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">UPenn Jerome Fisher M&amp;T Summer Institute</span>
+                                <span class="entry-date">Jul – Aug 2024</span>
+                            </div>
+                            <div class="entry-sub">1 of 75 selected from 1,000+ applicants</div>
+                            <ul class="entry-list">
+                                <li>Built smart IoT dog collar (CAD, Swift, Arduino, Raspberry Pi); top 5 of 15 teams; Google IPO simulation at Morgan Stanley NYC</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <ul>
-                    <li>Studied how spaceflight-driven neurophysiological changes affect decision-making under risk; mentored by Dartmouth professor</li>
-                </ul>
-                <a href="https://github.com/janierlani/portfolio/raw/main/Neuroeconomics%20in%20the%20Orbit.pdf" target="_blank" class="item-link">View Paper</a>
-            </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <div class="item-title">Peripheral and Central Mechanisms of Neuropathic Pain in Degenerative Diseases</div>
-                    <div class="item-date">Mar 2023 – Oct 2024</div>
+                <div class="col-block">
+                    <div class="col-label">Research &amp; Publications</div>
+
+                    <div class="entry">
+                        <div class="entry-dot space-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">AI Chatbots for Space Missions</span>
+                                <span class="entry-date">2023 – 2024</span>
+                            </div>
+                            <div class="entry-sub">University of Hawai'i at Mānoa</div>
+                            <ul class="entry-list">
+                                <li>11,000+ word IRB-approved study (8 participants: NASA HI-SEAS + Kazakhstan Space Agency); fine-tuned Alpaca-7B; developed LorelAI social assistant</li>
+                            </ul>
+                            <a href="https://github.com/janierlani/portfolio/raw/main/Design%20Recommendations%20for%20Interactive%20Mental%20Health%20Chatbots%20used%20in%20Space%20Missions.pdf" target="_blank" class="item-link" style="margin-top:8px;">View Paper</a>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-dot space-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Neuroeconomics in Orbit</span>
+                                <span class="entry-date">2024</span>
+                            </div>
+                            <ul class="entry-list">
+                                <li>Prospect Theory analysis of spaceflight-driven neurophysiological changes on astronaut decision-making; mentored by Dartmouth professor</li>
+                            </ul>
+                            <a href="https://github.com/janierlani/portfolio/raw/main/Neuroeconomics%20in%20the%20Orbit.pdf" target="_blank" class="item-link" style="margin-top:8px;">View Paper</a>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-dot space-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Neuropathic Pain in Degenerative Diseases</span>
+                                <span class="entry-date">Mar 2023 – Oct 2024</span>
+                            </div>
+                            <ul class="entry-list">
+                                <li>7,500-word paper published in National High School Journal of Science; mentored by Georgetown M.D./Ph.D.</li>
+                            </ul>
+                            <a href="https://github.com/janierlani/portfolio/raw/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf" target="_blank" class="item-link" style="margin-top:8px;">View Paper</a>
+                        </div>
+                    </div>
                 </div>
-                <ul>
-                    <li>Authored 7,500-word paper published in National High School Journal of Science; mentored by Georgetown M.D./Ph.D.</li>
-                </ul>
-                <a href="https://github.com/janierlani/portfolio/raw/main/Neuropathic%20Pain%20Mechanisms%20and%20Treatment%20Approaches.pdf" target="_blank" class="item-link">View Paper</a>
             </div>
         </div>
 
