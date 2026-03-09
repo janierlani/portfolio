@@ -528,6 +528,60 @@
             .theme-card { padding: 25px 18px; }
         }
 
+        /* ── SKILLS + AWARDS COMBINED ── */
+        .sa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+            gap: 0 40px;
+            align-items: start;
+        }
+        .sa-divider {
+            background: #e0e0e0;
+            width: 1px;
+            align-self: stretch;
+        }
+        .sa-heading {
+            display: flex; align-items: center; gap: 14px;
+            margin-bottom: 28px;
+        }
+        .sa-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
+        }
+        .skill-group { margin-bottom: 20px; }
+        .skill-group-label {
+            font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+            text-transform: uppercase; color: #90a4ae;
+            margin-bottom: 8px;
+        }
+        .skill-pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+        .spill {
+            font-size: .78rem; padding: 4px 11px; border-radius: 20px;
+            font-weight: 500; white-space: nowrap;
+        }
+        .spill.green  { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+        .spill.purple { background: #ede7f6; color: #6a1b9a; border: 1px solid #ce93d8; }
+        .spill.amber  { background: #fff8e1; color: #e65100; border: 1px solid #ffcc80; }
+        .spill.slate  { background: #eceff1; color: #455a64; border: 1px solid #b0bec5; }
+
+        .award-row {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding-bottom: 14px; margin-bottom: 14px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .award-medal {
+            font-size: 1.3rem; flex-shrink: 0;
+            width: 28px; text-align: center; margin-top: 1px;
+        }
+        .award-row-title { font-weight: 600; font-size: .95rem; color: #1a2e1d; margin-bottom: 2px; }
+        .award-row-detail { font-size: .83rem; color: #78909c; }
+
+        @media (max-width: 768px) {
+            .sa-grid { grid-template-columns: 1fr; gap: 30px 0; }
+            .sa-divider { display: none; }
+        }
+
         /* Footer */
         footer {
             background: linear-gradient(135deg, #071209, #0d1a10);
@@ -934,62 +988,136 @@
             </div>
         </div>
 
-        <div class="card">
-            <h2>Skills & Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>EDA & Design</h3>
-                    <p>Cadence Innovus, Cadence Genus, Cadence IMC, Xcelium, Altium Designer, OpenLane, Tcl scripting, YAML flow configuration</p>
-                </div>
-                <div class="skill-category">
-                    <h3>HDL & Programming</h3>
-                    <p>SystemVerilog, Verilog, Python, MATLAB</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Characterization & Lab</h3>
-                    <p>SEM (Hitachi SU-8230), XRD, TGA, DSC, AFM, e-beam evaporation, photolithography, spin coating</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Concepts</h3>
-                    <p>RTL-to-GDS, floorplanning, CTS, STA, DRC, LEF/DEF, SRAM macro integration, UVM testbench architecture</p>
-                </div>
-            </div>
-        </div>
+        <!-- ═══════════ SKILLS + AWARDS COMBINED ═══════════ -->
+        <div class="card" style="padding:40px 50px;">
+            <div class="sa-grid">
 
-        <div class="card">
-            <h2>Honors & Awards</h2>
-            <div class="awards-grid">
-                <div class="award-item">
-                    <div class="award-title">Rhodes Trust & Schmidt Futures RISE Global Finalist</div>
-                    <div class="award-detail">1 of 500 selected from 100,000+ applicants</div>
+                <!-- LEFT: Skills -->
+                <div class="sa-col">
+                    <div class="sa-heading">
+                        <span class="sa-icon" style="background:#e8f5e9;color:#2e7d32;">⌨</span>
+                        <h2 style="border:none;padding:0;margin:0;font-size:1.5rem;">Skills</h2>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">EDA &amp; Physical Design</div>
+                        <div class="skill-pill-row">
+                            <span class="spill green">Cadence Innovus</span>
+                            <span class="spill green">Cadence Genus</span>
+                            <span class="spill green">Cadence IMC</span>
+                            <span class="spill green">Xcelium</span>
+                            <span class="spill green">OpenLane</span>
+                            <span class="spill green">Altium Designer</span>
+                            <span class="spill green">Tcl</span>
+                            <span class="spill green">YAML flow</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">HDL &amp; Programming</div>
+                        <div class="skill-pill-row">
+                            <span class="spill purple">SystemVerilog</span>
+                            <span class="spill purple">Verilog</span>
+                            <span class="spill purple">Python</span>
+                            <span class="spill purple">MATLAB</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">Lab &amp; Characterization</div>
+                        <div class="skill-pill-row">
+                            <span class="spill amber">SEM</span>
+                            <span class="spill amber">XRD</span>
+                            <span class="spill amber">TGA</span>
+                            <span class="spill amber">DSC</span>
+                            <span class="spill amber">AFM</span>
+                            <span class="spill amber">e-beam evaporation</span>
+                            <span class="spill amber">photolithography</span>
+                            <span class="spill amber">spin coating</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">Concepts</div>
+                        <div class="skill-pill-row">
+                            <span class="spill slate">RTL-to-GDS</span>
+                            <span class="spill slate">STA</span>
+                            <span class="spill slate">DRC</span>
+                            <span class="spill slate">CTS</span>
+                            <span class="spill slate">LEF/DEF</span>
+                            <span class="spill slate">SRAM integration</span>
+                            <span class="spill slate">UVM</span>
+                            <span class="spill slate">floorplanning</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="award-item">
-                    <div class="award-title">Georgia Tech MSE Department Scholarship</div>
-                    <div class="award-detail">$16,000 (4-year)</div>
-                </div>
-                <div class="award-item">
-                    <div class="award-title">NASA Space Apps Challenge</div>
-                    <div class="award-detail">Top 10% of 5,500+ teams worldwide; Global Judging Nominee</div>
-                </div>
-                <div class="award-item">
-                    <div class="award-title">Space Tech Battle (Astana Hub)</div>
-                    <div class="award-detail">Top 10 of 200 company finalists; developed innovative space technology (AI social assistant for space) with venture capital investors</div>
-                </div>
-                <div class="award-item">
-                    <div class="award-title">Eurasian Tumaris Tech Startup Incubator</div>
-                    <div class="award-detail">Top 15 finalist out of 200+ teams</div>
-                </div>
-                <div class="award-item">
-                    <div class="award-title">Nursultan Nazarbayev Educational Foundation Grant</div>
-                    <div class="award-detail">$25,000; 1 of 17 selected from 110</div>
-                </div>
-                <div class="award-item">
-                    <div class="award-title">AWSD Youth Movement</div>
-                    <div class="award-detail">Top 9 Inspiring Young Leaders</div>
-                </div>
-                <div class="award-item">
-                    <div class="award-title">Republican Remote Olympiad (Chemistry)</div>
-                    <div class="award-detail">2nd place</div>
+
+                <!-- DIVIDER -->
+                <div class="sa-divider"></div>
+
+                <!-- RIGHT: Awards -->
+                <div class="sa-col">
+                    <div class="sa-heading">
+                        <span class="sa-icon" style="background:#fff8e1;color:#e65100;">★</span>
+                        <h2 style="border:none;padding:0;margin:0;font-size:1.5rem;">Honors &amp; Awards</h2>
+                    </div>
+
+                    <div class="award-row">
+                        <div class="award-medal gold-medal">🥇</div>
+                        <div>
+                            <div class="award-row-title">Rhodes Trust &amp; Schmidt Futures RISE Global Finalist</div>
+                            <div class="award-row-detail">1 of 500 from 100,000+ applicants</div>
+                        </div>
+                    </div>
+                    <div class="award-row">
+                        <div class="award-medal gold-medal">🏅</div>
+                        <div>
+                            <div class="award-row-title">Nursultan Nazarbayev Educational Foundation Grant</div>
+                            <div class="award-row-detail">$25,000 · 1 of 17 selected from 110</div>
+                        </div>
+                    </div>
+                    <div class="award-row">
+                        <div class="award-medal gold-medal">🏅</div>
+                        <div>
+                            <div class="award-row-title">Georgia Tech MSE Department Scholarship</div>
+                            <div class="award-row-detail">$16,000 (4-year)</div>
+                        </div>
+                    </div>
+                    <div class="award-row">
+                        <div class="award-medal">🚀</div>
+                        <div>
+                            <div class="award-row-title">Space Tech Battle — Astana Hub</div>
+                            <div class="award-row-detail">Top 10 of 200 company finalists</div>
+                        </div>
+                    </div>
+                    <div class="award-row">
+                        <div class="award-medal">🚀</div>
+                        <div>
+                            <div class="award-row-title">NASA Space Apps Challenge</div>
+                            <div class="award-row-detail">Top 10% of 5,500+ teams · Global Judging Nominee</div>
+                        </div>
+                    </div>
+                    <div class="award-row">
+                        <div class="award-medal">🚀</div>
+                        <div>
+                            <div class="award-row-title">Eurasian Tumaris Tech Startup Incubator</div>
+                            <div class="award-row-detail">Top 15 of 200+ teams</div>
+                        </div>
+                    </div>
+                    <div class="award-row">
+                        <div class="award-medal">✦</div>
+                        <div>
+                            <div class="award-row-title">AWSD Youth Movement</div>
+                            <div class="award-row-detail">Top 9 Inspiring Young Leaders</div>
+                        </div>
+                    </div>
+                    <div class="award-row" style="border:none;padding-bottom:0;">
+                        <div class="award-medal">✦</div>
+                        <div>
+                            <div class="award-row-title">Republican Remote Olympiad — Chemistry</div>
+                            <div class="award-row-detail">2nd place</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
