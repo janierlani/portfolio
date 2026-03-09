@@ -104,9 +104,9 @@
         }
 
         .hero-bio {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: rgba(255,255,255,.68);
+            font-size: 1.15rem;
+            line-height: 1.85;
+            color: rgba(255,255,255,.72);
             font-weight: 300;
             max-width: 500px;
             margin-bottom: 44px;
@@ -128,14 +128,14 @@
         .hero-stat:last-child { border-right: none; }
         .hero-stat .n {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.3rem; font-weight: 600;
+            font-size: 1.7rem; font-weight: 600;
             color: #4a90d9; display: block; line-height: 1;
         }
         .hero-stat .l {
-            font-size: .62rem; letter-spacing: .1em;
+            font-size: .72rem; letter-spacing: .1em;
             text-transform: uppercase;
-            color: rgba(255,255,255,.35);
-            display: block; margin-top: 4px;
+            color: rgba(255,255,255,.45);
+            display: block; margin-top: 5px;
         }
 
         /* contact + cta */
@@ -145,42 +145,80 @@
         }
         .hero-links a {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: .72rem; letter-spacing: .05em;
-            color: rgba(255,255,255,.5);
+            font-size: .82rem; letter-spacing: .04em;
+            color: white;
             text-decoration: none;
-            padding: 6px 14px;
-            border: 1px solid rgba(255,255,255,.12);
-            border-radius: 2px;
-            transition: all .2s;
+            padding: 9px 18px;
+            border-radius: 4px;
+            display: flex; align-items: center; gap: 7px;
+            transition: all .25s;
+            font-weight: 500;
         }
-        .hero-links a:hover {
-            color: #4a90d9; border-color: rgba(74,144,217,.4);
-            background: rgba(74,144,217,.07);
+        .hero-links a:nth-child(1) {
+            background: linear-gradient(135deg, #4a90d9, #2d6bb5);
+            box-shadow: 0 3px 14px rgba(74,144,217,.45);
+        }
+        .hero-links a:nth-child(1):hover {
+            box-shadow: 0 5px 22px rgba(74,144,217,.7);
+            transform: translateY(-2px);
+        }
+        .hero-links a:nth-child(2) {
+            background: linear-gradient(135deg, #0077b5, #005e94);
+            box-shadow: 0 3px 14px rgba(0,119,181,.45);
+        }
+        .hero-links a:nth-child(2):hover {
+            box-shadow: 0 5px 22px rgba(0,119,181,.7);
+            transform: translateY(-2px);
+        }
+        .hero-links a:nth-child(3) {
+            background: linear-gradient(135deg, #333, #111);
+            box-shadow: 0 3px 14px rgba(0,0,0,.4);
+            border: 1px solid rgba(255,255,255,.15);
+        }
+        .hero-links a:nth-child(3):hover {
+            background: linear-gradient(135deg, #555, #333);
+            box-shadow: 0 5px 22px rgba(255,255,255,.2);
+            transform: translateY(-2px);
+        }
+        .hero-links a:nth-child(4) {
+            background: linear-gradient(135deg, #9b2335, #7a1a28);
+            box-shadow: 0 3px 14px rgba(155,35,53,.45);
+        }
+        .hero-links a:nth-child(4):hover {
+            box-shadow: 0 5px 22px rgba(155,35,53,.7);
+            transform: translateY(-2px);
         }
 
         .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
         .btn {
-            padding: 13px 30px; border-radius: 3px;
-            text-decoration: none; font-weight: 600;
-            font-size: .92rem; transition: all .25s;
-            display: inline-block; letter-spacing: .02em;
+            padding: 16px 40px; border-radius: 4px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1.05rem; transition: all .3s ease;
+            display: inline-block; letter-spacing: .03em;
+            position: relative; overflow: hidden;
         }
         .btn-primary {
-            background: #4a90d9; color: #090d1a;
-            box-shadow: 0 4px 24px rgba(74,144,217,.3);
+            background: linear-gradient(135deg, #4a90d9, #2d6bb5);
+            color: white;
+            box-shadow: 0 4px 20px rgba(74,144,217,.5), 0 0 0 0 rgba(74,144,217,.3);
+            border: none;
         }
         .btn-primary:hover {
-            background: #7eb8f7;
-            box-shadow: 0 6px 32px rgba(74,144,217,.5);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #6aaef7, #4a90d9);
+            box-shadow: 0 8px 32px rgba(74,144,217,.7), 0 0 40px rgba(74,144,217,.3);
+            transform: translateY(-3px);
         }
         .btn-secondary {
-            background: transparent; color: rgba(255,255,255,.7);
-            border: 1px solid rgba(255,255,255,.2);
+            background: linear-gradient(135deg, #9b2335, #7a1a28);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 20px rgba(155,35,53,.45), 0 0 0 0 rgba(155,35,53,.3);
         }
         .btn-secondary:hover {
-            border-color: rgba(74,144,217,.5);
-            color: #4a90d9; transform: translateY(-2px);
+            background: linear-gradient(135deg, #c42d44, #9b2335);
+            box-shadow: 0 8px 32px rgba(155,35,53,.65), 0 0 40px rgba(155,35,53,.3);
+            transform: translateY(-3px);
+            color: white;
         }
 
         /* right photo panel */
@@ -244,6 +282,53 @@
             z-index: 1;
         }
         
+        /* LOGO STRIP */
+        .logo-strip {
+            background: #f4f5f8;
+            border-bottom: 1px solid #c5d5ea;
+            padding: 28px 60px;
+        }
+        .logo-strip-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .65rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: #90a4b7;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .logo-strip-items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: .55;
+            transition: opacity .25s, transform .25s;
+        }
+        .logo-item:hover { opacity: 1; transform: scale(1.08); }
+        .logo-item img {
+            height: 44px; width: auto; max-width: 120px;
+            object-fit: contain;
+            filter: grayscale(100%) contrast(0.8);
+            transition: filter .25s;
+        }
+        .logo-item:hover img { filter: grayscale(0%) contrast(1); }
+        .logo-fallback {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: .75rem; font-weight: 600;
+            letter-spacing: .06em; color: #445566;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border: 1px solid #c5d5ea;
+            border-radius: 3px;
+        }
+
         main {
             max-width: 1200px;
             margin: 0 auto 60px;
@@ -255,7 +340,7 @@
         .card {
             background: white;
             border-radius: 20px;
-            padding: 50px;
+            padding: 60px;
             margin-bottom: 40px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             border: 1px solid #c5d5ea;
@@ -263,7 +348,7 @@
         
         h2 {
             color: #091525;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 2px solid var(--accent);
@@ -513,7 +598,7 @@
         /* SJ stats */
         .project-stats { display:flex; flex-wrap:wrap; gap:14px; margin:14px 0; }
         .project-stat { background:#f1f8f2; border:1px solid #a5d6a7; border-radius:8px; padding:8px 16px; text-align:center; }
-        .project-stat .val { font-size:1.2rem; font-weight:700; color:#2e7d32; display:block; }
+        .project-stat .val { font-size:1.4rem; font-weight:700; color:#2e7d32; display:block; }
         .project-stat .lbl { font-size:.72rem; color:#64748b; text-transform:uppercase; letter-spacing:.05em; }
 
 
@@ -572,11 +657,11 @@
             align-items: baseline; gap: 12px; flex-wrap: wrap;
             margin-bottom: 2px;
         }
-        .entry-title { font-weight: 700; font-size: 1rem; color: #091525; }
-        .entry-date  { font-size: .82rem; color: #78909c; white-space: nowrap; font-style: italic; }
-        .entry-sub   { font-size: .88rem; color: #546e7a; font-style: italic; margin-bottom: 6px; }
+        .entry-title { font-weight: 700; font-size: 1.1rem; color: #091525; }
+        .entry-date  { font-size: .88rem; color: #78909c; white-space: nowrap; font-style: italic; }
+        .entry-sub   { font-size: .95rem; color: #546e7a; font-style: italic; margin-bottom: 8px; }
         .entry-list  { margin-left: 16px; margin-top: 6px; }
-        .entry-list li { font-size: .9rem; color: #455a64; margin-bottom: 5px; line-height: 1.6; }
+        .entry-list li { font-size: .97rem; color: #455a64; margin-bottom: 7px; line-height: 1.65; }
 
         /* ── TOOLS GRID ── */
         .tools-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
@@ -625,7 +710,7 @@
         }
         .skill-pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
         .spill {
-            font-size: .78rem; padding: 4px 11px; border-radius: 20px;
+            font-size: .84rem; padding: 5px 14px; border-radius: 20px;
             font-weight: 500; white-space: nowrap;
         }
         .spill.green  { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
@@ -642,8 +727,8 @@
             font-size: 1.3rem; flex-shrink: 0;
             width: 28px; text-align: center; margin-top: 1px;
         }
-        .award-row-title { font-weight: 600; font-size: .95rem; color: #0e1a2e; margin-bottom: 2px; }
-        .award-row-detail { font-size: .83rem; color: #78909c; }
+        .award-row-title { font-weight: 600; font-size: 1.05rem; color: #0e1a2e; margin-bottom: 3px; }
+        .award-row-detail { font-size: .88rem; color: #78909c; }
 
         @media (max-width: 768px) {
             .sa-grid { grid-template-columns: 1fr; gap: 30px 0; }
@@ -722,10 +807,22 @@
                 </div>
 
                 <div class="hero-links">
-                    <a href="mailto:zturganova3@gatech.edu">zturganova3@gatech.edu</a>
-                    <a href="https://www.linkedin.com/in/janierlani" target="_blank">LinkedIn ↗</a>
-                    <a href="https://github.com/janierlani" target="_blank">GitHub ↗</a>
-                    <a href="tel:6786565140">(678) 656-5140</a>
+                    <a href="mailto:zturganova3@gatech.edu">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+                        zturganova3@gatech.edu
+                    </a>
+                    <a href="https://www.linkedin.com/in/janierlani" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/janierlani" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                    <a href="tel:6786565140">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.6 1.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+                        (678) 656-5140
+                    </a>
                 </div>
             </div>
 
@@ -743,6 +840,40 @@
         </div>
     </div>
 
+    <!-- INSTITUTION LOGOS -->
+    <div class="logo-strip">
+        <div class="logo-strip-label">Affiliated With</div>
+        <div class="logo-strip-items">
+            <div class="logo-item" title="Georgia Institute of Technology">
+                <img src="https://brand.gatech.edu/sites/default/files/2020-08/gt-logo-gold.png" alt="Georgia Tech" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="logo-fallback" style="display:none">Georgia Tech</div>
+            </div>
+            <div class="logo-item" title="NASA Johnson Space Center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png" alt="NASA">
+                <div class="logo-fallback" style="display:none">NASA</div>
+            </div>
+            <div class="logo-item" title="Foundation for International Space Education — United Space School">
+                <img src="https://unitedspaceschool.org/wp-content/uploads/2021/02/USS-Logo-300x300.png" alt="United Space School" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="logo-fallback" style="display:none">United Space School</div>
+            </div>
+            <div class="logo-item" title="Yale University — Yale Young Global Scholars">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_logo.svg/200px-Yale_University_logo.svg.png" alt="Yale University" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="logo-fallback" style="display:none">Yale</div>
+            </div>
+            <div class="logo-item" title="University of Pennsylvania — Jerome Fisher M&T">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UPenn_shield_with_banner.svg/200px-UPenn_shield_with_banner.svg.png" alt="UPenn">
+                <div class="logo-fallback" style="display:none">UPenn M&T</div>
+            </div>
+            <div class="logo-item" title="Piper Aircraft">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Piper_Aircraft_logo.svg/200px-Piper_Aircraft_logo.svg.png" alt="Piper Aircraft" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="logo-fallback" style="display:none">Piper Aircraft</div>
+            </div>
+            <div class="logo-item" title="ARPA-E / U.S. Department of Energy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/US-DeptOfEnergy-Seal.svg/160px-US-DeptOfEnergy-Seal.svg.png" alt="ARPA-E / DOE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="logo-fallback" style="display:none">ARPA-E</div>
+            </div>
+        </div>
+    </div>
     <main>
         <!-- ═══════════ PHOTOS ═══════════ -->
         <div class="card">
@@ -1026,6 +1157,21 @@
                             <div class="entry-sub">1 of 75 selected from 1,000+ applicants</div>
                             <ul class="entry-list">
                                 <li>Built smart IoT dog collar (CAD, Swift, Arduino, Raspberry Pi); top 5 of 15 teams; Google IPO simulation at Morgan Stanley NYC</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-dot space-dot"></div>
+                        <div class="entry-body">
+                            <div class="entry-head">
+                                <span class="entry-title">Yale Young Global Scholars — Innovations in Science &amp; Technology</span>
+                                <span class="entry-date">2023</span>
+                            </div>
+                            <div class="entry-sub">Yale University · 1 of 8,500+ applicants worldwide</div>
+                            <ul class="entry-list">
+                                <li>Designed a research proposal on ALS, studying inhibition of the C9ORF72 gene</li>
+                                <li>Completed advanced seminars and collaborative research; capstone project with international team</li>
                             </ul>
                         </div>
                     </div>
