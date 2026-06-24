@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhaniya Turganova · Technologist & Builder</title>
-    <meta name="description" content="Zhaniya Turganova — materials science, chip design, and aerospace. Research, hardware, and essays.">
+    <meta name="description" content="Zhaniya Turganova — materials science, chip design, and aerospace. Research, hardware, moments, and essays.">
     <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -13,31 +13,41 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
 
+    <!-- Audience quick-start popup (filled by render.js) -->
+    <div class="audience-overlay" id="audOverlay"></div>
+
     <nav class="topnav" id="topnav">
         <a href="index.html" class="nav-brand"><span class="mark"></span>Z. Turganova</a>
         <button class="nav-toggle" id="navToggle" aria-label="Menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
-        <div class="nav-links" id="navLinks">
-            <a href="#blog">Notebook</a>
+        <div class="nav-mid" id="navLinks">
+            <a href="#moments">Moments</a>
             <a href="#work">Work</a>
-            <a href="#gallery">Moments</a>
+            <a href="#blog">Notebook</a>
+            <a href="gallery.html">Gallery</a>
             <a href="#skills">Skills</a>
-            <a href="mailto:zturganova3@gatech.edu" class="nav-cta">Contact</a>
+        </div>
+        <div class="nav-right">
+            <button class="mode-toggle" id="modeToggle">Viewing: <span id="modeLabel">Recruiter</span> ▾</button>
+            <a href="#cta" class="nav-cta">Connect</a>
         </div>
     </nav>
 
     <main>
         <header class="hero" id="hero"><div class="loading">Loading…</div></header>
-        <section class="section" id="blog"></section>
+        <section class="moments" id="moments"></section>
+        <section class="section" id="intro"></section>
         <section class="section" id="work"></section>
-        <section class="section" id="gallery"></section>
+        <section class="section only-personal" id="thoughts"></section>
+        <section class="section" id="blog"></section>
         <section class="section" id="skills"></section>
+        <section class="section" id="cta"></section>
     </main>
 
     <footer>
         <div>Zhaniya Turganova — Materials Science · Chip Design · Aerospace</div>
-        <div>Georgia Institute of Technology &nbsp;·&nbsp; <a href="blog.html">Notebook</a> &nbsp;·&nbsp; <a href="admin.html">Edit site</a></div>
+        <div>Georgia Institute of Technology &nbsp;·&nbsp; <a href="blog.html">Notebook</a> &nbsp;·&nbsp; <a href="gallery.html">Gallery</a> &nbsp;·&nbsp; <a href="admin.html">Edit site</a></div>
     </footer>
 
     <!-- PDF modal -->

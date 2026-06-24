@@ -6,17 +6,15 @@
 <title>Studio · Edit your site</title>
 <meta name="robots" content="noindex">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:wght@300;400;500&display=swap');
-:root{--paper:#f4eee2;--surface:#fbf7ee;--ink:#1b2440;--soft:#424d6b;--faint:#8b8676;--rasp:#b8385d;--rasp-deep:#8d2746;--rule:rgba(27,36,64,.16);--ok:#1c7a3e;--warn:#b8860b;}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{--paper:#f3ece0;--surface:#fbf7ee;--ink:#18203a;--soft:#3f4a66;--faint:#837c6c;--rasp:#c02b54;--rasp-deep:#921f40;--teal:#1f7a73;--rule:rgba(24,32,58,.18);--ok:#1c7a3e;--warn:#b8860b;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Newsreader',Georgia,serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.5;}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.5;font-weight:450;}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;}
 .mono{font-family:'IBM Plex Mono',monospace;}
-code{font-family:'IBM Plex Mono',monospace;background:#efe7d6;padding:1px 5px;border-radius:4px;font-size:.85em;}
+code{font-family:'IBM Plex Mono',monospace;background:#ece2d1;padding:1px 5px;border-radius:4px;font-size:.85em;}
 a{color:var(--rasp-deep);}
-
-/* top bar */
-.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:16px;padding:14px 22px;background:rgba(244,238,226,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);}
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;padding:14px 22px;background:rgba(243,236,224,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);}
 .bar h1{font-size:1.15rem;display:flex;align-items:center;gap:10px;}
 .bar .mark{width:11px;height:11px;border:2px solid var(--rasp);transform:rotate(45deg);border-radius:2px;}
 .bar .spacer{flex:1;}
@@ -30,21 +28,16 @@ button.primary:hover{background:var(--rasp-deep);color:#fff8f0;}
 button.ghost{background:none;}
 button.danger{color:var(--rasp-deep);}
 button:disabled{opacity:.4;cursor:not-allowed;}
-
-.wrap{max-width:900px;margin:0 auto;padding:26px 22px 120px;}
+.wrap{max-width:920px;margin:0 auto;padding:26px 22px 120px;}
 .panel{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:22px;margin-bottom:18px;}
 .panel h2{font-size:1.25rem;margin-bottom:4px;}
 .muted{color:var(--faint);font-size:.92rem;}
-.notice{font-family:'IBM Plex Mono',monospace;font-size:.8rem;padding:12px 14px;border-radius:8px;margin:12px 0;border:1px solid var(--rule);background:#efe7d6;}
+.notice{font-family:'IBM Plex Mono',monospace;font-size:.8rem;padding:12px 14px;border-radius:8px;margin:12px 0;border:1px solid var(--rule);background:#ece2d1;}
 .notice.ok{color:var(--ok);border-color:var(--ok);background:#e9f5ec;}
 .notice.err{color:var(--rasp-deep);border-color:var(--rasp);background:#f7e7ea;}
-
-/* tabs */
 .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
 .tabs button{font-size:.8rem;}
 .tabs button.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-
-/* forms */
 label{display:block;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);margin:14px 0 5px;}
 input[type=text],input[type=url],input[type=email],textarea,select{width:100%;font-family:inherit;font-size:.98rem;padding:9px 11px;border:1px solid var(--rule);border-radius:7px;background:var(--paper);color:var(--ink);}
 input:focus,textarea:focus,select:focus{outline:none;border-color:var(--rasp);}
@@ -52,32 +45,21 @@ textarea{resize:vertical;min-height:70px;line-height:1.55;}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
 .hint{font-size:.78rem;color:var(--faint);margin-top:4px;}
-
-/* item cards */
 .item{border:1px solid var(--rule);border-radius:10px;padding:16px;margin-bottom:14px;background:var(--paper);}
 .item-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
-.item-head .t{font-family:'Fraunces',serif;font-weight:600;font-size:1.02rem;flex:1;}
+.item-head .t{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.02rem;flex:1;}
 .item-head .pill{font-family:'IBM Plex Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:999px;border:1px solid var(--rule);color:var(--soft);}
 .item-actions{display:flex;gap:5px;}
 .item-actions button{padding:5px 9px;font-size:.7rem;}
 .collapsed .item-body{display:none;}
 .add-btn{width:100%;border-style:dashed;padding:12px;}
-
-/* blog editor preview */
 .editor-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .preview{border:1px solid var(--rule);border-radius:8px;padding:16px;background:var(--paper);max-height:420px;overflow:auto;}
-.preview h2{font-size:1.3rem;margin:14px 0 8px;}
-.preview h3{font-size:1.1rem;margin:12px 0 6px;}
-.preview p{margin-bottom:12px;}
-.preview ul,.preview ol{margin:0 0 12px 20px;}
-.preview blockquote{border-left:3px solid var(--rasp);padding-left:14px;font-style:italic;margin:12px 0;}
+.preview h2{font-size:1.3rem;margin:14px 0 8px;}.preview h3{font-size:1.1rem;margin:12px 0 6px;}.preview p{margin-bottom:12px;}
+.preview ul,.preview ol{margin:0 0 12px 20px;}.preview blockquote{border-left:3px solid var(--rasp);padding-left:14px;font-style:italic;margin:12px 0;}
 @media(max-width:760px){.row,.row3,.editor-split{grid-template-columns:1fr;}}
-
-/* token gate */
-.gate{max-width:620px;margin:40px auto;}
-.gate ol{margin:14px 0 14px 20px;}
-.gate li{margin-bottom:8px;}
-.thumb{width:80px;height:96px;object-fit:cover;border-radius:6px 6px 3px 3px;border:1px solid var(--rule);}
+.gate{max-width:640px;margin:40px auto;}
+.thumb{width:80px;height:96px;object-fit:cover;border-radius:6px;border:1px solid var(--rule);}
 .uprow{display:flex;align-items:center;gap:14px;margin-top:8px;}
 </style>
 </head>
@@ -86,371 +68,209 @@ textarea{resize:vertical;min-height:70px;line-height:1.55;}
   <h1><span class="mark"></span>Studio</h1>
   <span class="spacer"></span>
   <span class="status off" id="status">Not connected</span>
-  <button class="ghost" id="reloadBtn" title="Reload content from GitHub" style="display:none;">↻ Reload</button>
+  <button class="ghost" id="reloadBtn" title="Reload from GitHub" style="display:none;">↻ Reload</button>
   <button id="downloadBtn" style="display:none;">↓ content.json</button>
   <button class="primary" id="publishBtn" style="display:none;">Publish to live</button>
 </div>
-
 <div class="wrap">
   <div id="msg"></div>
-
-  <!-- TOKEN GATE -->
   <div class="panel gate" id="gate">
     <h2>Connect to publish</h2>
-    <p class="muted">Edit your bio, experiences, and essays here, then publish straight to your live site. To do that, Studio needs a GitHub token with permission to write to your <code>portfolio</code> repo. It is stored only in this browser.</p>
-    <div class="notice">
-      <strong>One-time setup:</strong>
-      <ol style="margin:8px 0 0 18px;font-family:'Newsreader',serif;font-size:.92rem;">
-        <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com → Settings → Developer settings → Fine-grained tokens</a>.</li>
-        <li>Token name: <code>portfolio-studio</code>. Resource owner: <code>janierlani</code>. Expiration: your choice.</li>
-        <li>Repository access → <strong>Only select repositories</strong> → pick <code>janierlani/portfolio</code>.</li>
-        <li>Permissions → Repository permissions → <strong>Contents</strong> → <strong>Read and write</strong>.</li>
-        <li>Generate, copy the token (starts with <code>github_pat_</code>), and paste below.</li>
+    <p class="muted">Edit everything on your site here, then publish straight to live. Studio needs a GitHub token that can write to your <code>portfolio</code> repo. It's stored only in this browser.</p>
+    <div class="notice"><strong>One-time setup:</strong>
+      <ol style="margin:8px 0 0 18px;font-family:'Hanken Grotesk',sans-serif;font-size:.92rem;">
+        <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Settings → Developer settings → Fine-grained tokens</a>.</li>
+        <li>Resource owner <code>janierlani</code>; Repository access → <strong>Only select</strong> → <code>janierlani/portfolio</code>.</li>
+        <li>Permissions → Repository → <strong>Contents → Read and write</strong>. Generate &amp; copy.</li>
       </ol>
     </div>
     <label>GitHub token</label>
-    <input type="text" id="tokenInput" placeholder="github_pat_… (or ghp_… classic token with repo scope)" autocomplete="off">
+    <input type="text" id="tokenInput" placeholder="github_pat_… or ghp_… " autocomplete="off">
     <div class="uprow">
       <button class="primary" id="connectBtn">Connect</button>
-      <label style="display:inline-flex;align-items:center;gap:6px;margin:0;text-transform:none;letter-spacing:0;font-family:'Newsreader',serif;font-size:.9rem;color:var(--soft);"><input type="checkbox" id="remember" checked style="width:auto;"> Remember on this device</label>
+      <label style="display:inline-flex;align-items:center;gap:6px;margin:0;text-transform:none;letter-spacing:0;font-family:'Hanken Grotesk',sans-serif;font-size:.9rem;color:var(--soft);"><input type="checkbox" id="remember" checked style="width:auto;"> Remember on this device</label>
       <button class="ghost" id="previewOnlyBtn">Edit without connecting</button>
     </div>
-    <p class="hint">“Edit without connecting” lets you make changes and download an updated <code>content.json</code> to upload to GitHub yourself — no token needed.</p>
+    <p class="hint">“Edit without connecting” lets you change things and download an updated <code>content.json</code> to upload yourself — no token needed (but image upload &amp; one-click publish need a token).</p>
   </div>
 
-  <!-- EDITOR -->
   <div id="editor" style="display:none;">
     <div class="tabs" id="tabs">
       <button data-tab="profile" class="active">Profile</button>
       <button data-tab="experiences">Experiences</button>
       <button data-tab="blog">Blog</button>
+      <button data-tab="moments">Moments</button>
+      <button data-tab="gallery">Gallery</button>
       <button data-tab="skills">Skills</button>
       <button data-tab="awards">Awards</button>
-      <button data-tab="gallery">Gallery</button>
+      <button data-tab="setup">Text &amp; Setup</button>
     </div>
     <div id="tabContent"></div>
   </div>
 </div>
 
 <script>
-/* ===================== config ===================== */
-var OWNER='janierlani', REPO='portfolio', BRANCH='main', FILE='content.json';
-var API='https://api.github.com';
+var OWNER='janierlani', REPO='portfolio', BRANCH='main', FILE='content.json', API='https://api.github.com';
 var token=null, fileSha=null, state=null, connected=false, activeTab='profile';
-
-/* ===================== utils ===================== */
 function $(id){return document.getElementById(id);}
 function b64encode(str){return btoa(unescape(encodeURIComponent(str)));}
 function b64decode(b){return decodeURIComponent(escape(atob(b.replace(/\n/g,''))));}
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function msg(text,kind){var m=$('msg');m.innerHTML=text?'<div class="notice '+(kind||'')+'">'+esc(text)+'</div>':'';if(text)window.scrollTo({top:0,behavior:'smooth'});}
-function lines(arr){return (arr||[]).join('\n');}
+function msg(t,k){var m=$('msg');m.innerHTML=t?'<div class="notice '+(k||'')+'">'+t+'</div>':'';if(t)window.scrollTo({top:0,behavior:'smooth'});}
+function lines(a){return (a||[]).join('\n');}
 function splitLines(v){return v.split('\n').map(function(s){return s.trim();}).filter(Boolean);}
+function slug(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,48)||('item-'+Date.now());}
+function md(text){var ls=String(text||'').split('\n'),out=[],i=0;function inl(s){s=esc(s);return s.replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*]+)\*/g,'$1<em>$2</em>').replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>');}while(i<ls.length){var l=ls[i];if(/^\s*$/.test(l)){i++;continue;}if(/^###\s+/.test(l)){out.push('<h3>'+inl(l.replace(/^###\s+/,''))+'</h3>');i++;continue;}if(/^##\s+/.test(l)){out.push('<h2>'+inl(l.replace(/^##\s+/,''))+'</h2>');i++;continue;}if(/^#\s+/.test(l)){out.push('<h2>'+inl(l.replace(/^#\s+/,''))+'</h2>');i++;continue;}if(/^>\s?/.test(l)){var q=[];while(i<ls.length&&/^>\s?/.test(ls[i])){q.push(ls[i].replace(/^>\s?/,''));i++;}out.push('<blockquote>'+inl(q.join(' '))+'</blockquote>');continue;}if(/^\s*[-*]\s+/.test(l)){var u=[];while(i<ls.length&&/^\s*[-*]\s+/.test(ls[i])){u.push(ls[i].replace(/^\s*[-*]\s+/,''));i++;}out.push('<ul>'+u.map(function(x){return '<li>'+inl(x)+'</li>';}).join('')+'</ul>');continue;}var p=[];while(i<ls.length&&!/^\s*$/.test(ls[i])&&!/^(#{1,3}\s|>\s?|\s*[-*]\s)/.test(ls[i])){p.push(ls[i]);i++;}out.push('<p>'+inl(p.join(' '))+'</p>');}return out.join('');}
 
-/* tiny markdown for preview */
-function md(text){
-  var ls=String(text||'').split('\n'),out=[],i=0;
-  function inl(s){s=esc(s);s=s.replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*]+)\*/g,'$1<em>$2</em>').replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>');return s;}
-  while(i<ls.length){var l=ls[i];
-    if(/^\s*$/.test(l)){i++;continue;}
-    if(/^###\s+/.test(l)){out.push('<h3>'+inl(l.replace(/^###\s+/,''))+'</h3>');i++;continue;}
-    if(/^##\s+/.test(l)){out.push('<h2>'+inl(l.replace(/^##\s+/,''))+'</h2>');i++;continue;}
-    if(/^#\s+/.test(l)){out.push('<h2>'+inl(l.replace(/^#\s+/,''))+'</h2>');i++;continue;}
-    if(/^---+\s*$/.test(l)){out.push('<hr>');i++;continue;}
-    if(/^>\s?/.test(l)){var q=[];while(i<ls.length&&/^>\s?/.test(ls[i])){q.push(ls[i].replace(/^>\s?/,''));i++;}out.push('<blockquote>'+inl(q.join(' '))+'</blockquote>');continue;}
-    if(/^\s*[-*]\s+/.test(l)){var u=[];while(i<ls.length&&/^\s*[-*]\s+/.test(ls[i])){u.push(ls[i].replace(/^\s*[-*]\s+/,''));i++;}out.push('<ul>'+u.map(function(x){return '<li>'+inl(x)+'</li>';}).join('')+'</ul>');continue;}
-    var p=[];while(i<ls.length&&!/^\s*$/.test(ls[i])&&!/^(#{1,3}\s|>\s?|\s*[-*]\s|---+\s*$)/.test(ls[i])){p.push(ls[i]);i++;}
-    out.push('<p>'+inl(p.join(' '))+'</p>');
-  }
-  return out.join('');
-}
+/* GitHub */
+function gh(path,opts){opts=opts||{};var h={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};if(token)h['Authorization']='Bearer '+token;if(opts.body)h['Content-Type']='application/json';return fetch(API+path,{method:opts.method||'GET',headers:h,body:opts.body?JSON.stringify(opts.body):undefined}).then(function(r){return r.json().then(function(j){return {ok:r.ok,status:r.status,data:j};});});}
+function loadFromGitHub(){return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+FILE+'?ref='+BRANCH).then(function(res){if(!res.ok)throw new Error(res.data.message||('HTTP '+res.status));fileSha=res.data.sha;state=JSON.parse(b64decode(res.data.content));return state;});}
+function loadLocal(){return fetch('content.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(j){state=j;return j;});}
+function commitFile(path,b64,message,sha){var body={message:message,content:b64,branch:BRANCH};if(sha)body.sha=sha;return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+path,{method:'PUT',body:body}).then(function(res){if(!res.ok)throw new Error(res.data.message||('HTTP '+res.status));return res.data;});}
+function getSha(path){return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+encodeURIComponent(path).replace(/%2F/g,'/')+'?ref='+BRANCH).then(function(res){return res.ok?res.data.sha:null;});}
 
-/* ===================== GitHub API ===================== */
-function gh(path,opts){
-  opts=opts||{};
-  var h={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
-  if(token)h['Authorization']='Bearer '+token;
-  if(opts.body)h['Content-Type']='application/json';
-  return fetch(API+path,{method:opts.method||'GET',headers:h,body:opts.body?JSON.stringify(opts.body):undefined})
-    .then(function(r){return r.json().then(function(j){return {ok:r.ok,status:r.status,data:j};});});
-}
-function loadFromGitHub(){
-  return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+FILE+'?ref='+BRANCH).then(function(res){
-    if(!res.ok)throw new Error(res.data.message||('HTTP '+res.status));
-    fileSha=res.data.sha;
-    state=JSON.parse(b64decode(res.data.content));
-    return state;
-  });
-}
-function loadLocal(){
-  return fetch('content.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(j){state=j;return j;});
-}
-
-/* commit a file (text). Returns promise. */
-function commitFile(path,contentB64,message,sha){
-  var body={message:message,content:contentB64,branch:BRANCH};
-  if(sha)body.sha=sha;
-  return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+path,{method:'PUT',body:body}).then(function(res){
-    if(!res.ok)throw new Error(res.data.message||('HTTP '+res.status));
-    return res.data;
-  });
-}
-/* get sha of an existing file (or null) */
-function getSha(path){
-  return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+encodeURIComponent(path)+'?ref='+BRANCH).then(function(res){return res.ok?res.data.sha:null;});
-}
-
-/* ===================== collect DOM -> state ===================== */
+/* collect DOM -> state */
 function val(id){var e=$(id);return e?e.value:'';}
+function parsePairs(v,ka,kb){return splitLines(v).map(function(line){var pp=line.split('|');var o={};o[ka]=(pp[0]||'').trim();o[kb]=(pp[1]||'').trim();return o;});}
 function collect(){
-  // PROFILE
-  if($('p-name')){
-    var st=state.profile||{};
-    st.name=val('p-name');st.kicker=val('p-kicker');st.tagline=val('p-tagline');
-    st.bio=val('p-bio');st.location=val('p-location');st.email=val('p-email');st.phone=val('p-phone');
-    st.linkedin=val('p-linkedin');st.github=val('p-github');st.photo=val('p-photo');
-    st.stats=splitLines(val('p-stats')).map(function(line){var pp=line.split('|');return {value:(pp[0]||'').trim(),label:(pp[1]||'').trim()};});
-    state.profile=st;
-  }
-  // EXPERIENCES
-  if(document.querySelector('#exp-list')){
-    state.experiences=[].map.call(document.querySelectorAll('#exp-list .item'),function(it){
-      function f(c){var e=it.querySelector('.'+c);return e?e.value:'';}
-      var o={id:f('e-id')||slug(f('e-title')),cat:f('e-cat'),title:f('e-title'),org:f('e-org'),date:f('e-date'),
-        bullets:splitLines(f('e-bullets')),tags:f('e-tags').split(',').map(function(s){return s.trim();}).filter(Boolean),
-        incoming:it.querySelector('.e-incoming').checked};
-      var stats=splitLines(f('e-stats')).map(function(line){var pp=line.split('|');return {v:(pp[0]||'').trim(),l:(pp[1]||'').trim()};});
-      if(stats.length)o.stats=stats;
-      if(f('e-linkurl'))o.link={label:f('e-linklabel')||'View',url:f('e-linkurl')};
-      if(f('e-pdf'))o.pdf={label:f('e-pdflabel')||'View paper',file:f('e-pdf')};
-      return o;
-    });
-  }
-  // BLOG
-  if(document.querySelector('#post-list')){
-    state.posts=[].map.call(document.querySelectorAll('#post-list .item'),function(it){
-      function f(c){var e=it.querySelector('.'+c);return e?e.value:'';}
-      return {id:f('b-id')||slug(f('b-title')),cat:f('b-cat'),title:f('b-title'),date:f('b-date'),
-        readTime:f('b-read'),excerpt:f('b-excerpt'),body:f('b-body')};
-    });
-  }
-  // SKILLS
-  if(document.querySelector('#skill-list')){
-    state.skills=[].map.call(document.querySelectorAll('#skill-list .item'),function(it){
-      return {group:it.querySelector('.s-group').value,items:it.querySelector('.s-items').value.split(',').map(function(s){return s.trim();}).filter(Boolean)};
-    });
-  }
-  // AWARDS
-  if(document.querySelector('#award-list')){
-    state.awards=[].map.call(document.querySelectorAll('#award-list .item'),function(it){
-      return {title:it.querySelector('.a-title').value,detail:it.querySelector('.a-detail').value};
-    });
-  }
-  // GALLERY
-  if(document.querySelector('#gal-list')){
-    state.gallery=[].map.call(document.querySelectorAll('#gal-list .item'),function(it){
-      return {file:it.querySelector('.g-file').value,title:it.querySelector('.g-title').value,caption:it.querySelector('.g-caption').value};
-    });
-  }
+  if(!state)return state;
+  if($('p-name')){var st=state.profile||{};
+    st.name=val('p-name');st.kicker=val('p-kicker');st.tagline=val('p-tagline');st.bio=val('p-bio');st.personalBio=val('p-personalbio');
+    st.location=val('p-location');st.email=val('p-email');st.phone=val('p-phone');st.linkedin=val('p-linkedin');st.github=val('p-github');st.photo=val('p-photo');
+    st.stats=parsePairs(val('p-stats'),'value','label');
+    st.thoughtsTitle=val('p-thoughtstitle');
+    st.thoughts=splitLines(val('p-thoughts')).map(function(line){var pp=line.split('::');return {title:(pp[0]||'').trim(),body:(pp.slice(1).join('::')||'').trim()};});
+    state.profile=st;}
+  if(document.querySelector('#exp-list')){state.experiences=[].map.call(document.querySelectorAll('#exp-list .item'),function(it){function f(c){var e=it.querySelector('.'+c);return e?e.value:'';}var o={id:f('e-id')||slug(f('e-title')),cat:f('e-cat'),title:f('e-title'),org:f('e-org'),date:f('e-date'),bullets:splitLines(f('e-bullets')),tags:f('e-tags').split(',').map(function(s){return s.trim();}).filter(Boolean),personal:f('e-personal'),incoming:it.querySelector('.e-incoming').checked};var stats=parsePairs(f('e-stats'),'v','l').filter(function(s){return s.v||s.l;});if(stats.length)o.stats=stats;if(f('e-linkurl'))o.link={label:f('e-linklabel')||'View',url:f('e-linkurl')};if(f('e-pdf'))o.pdf={label:f('e-pdflabel')||'View paper',file:f('e-pdf')};return o;});}
+  if(document.querySelector('#post-list')){state.posts=[].map.call(document.querySelectorAll('#post-list .item'),function(it){function f(c){var e=it.querySelector('.'+c);return e?e.value:'';}return {id:f('b-id')||slug(f('b-title')),cat:f('b-cat'),title:f('b-title'),date:f('b-date'),readTime:f('b-read'),excerpt:f('b-excerpt'),body:f('b-body')};});}
+  if(document.querySelector('#skill-list')){state.skills=[].map.call(document.querySelectorAll('#skill-list .item'),function(it){return {group:it.querySelector('.s-group').value,items:it.querySelector('.s-items').value.split(',').map(function(s){return s.trim();}).filter(Boolean)};});}
+  if(document.querySelector('#award-list')){state.awards=[].map.call(document.querySelectorAll('#award-list .item'),function(it){return {title:it.querySelector('.a-title').value,detail:it.querySelector('.a-detail').value};});}
+  if(document.querySelector('#mom-list')){state.moments=[].map.call(document.querySelectorAll('#mom-list .item'),function(it){return {file:it.querySelector('.m-file').value,title:it.querySelector('.m-title').value,caption:it.querySelector('.m-caption').value};});}
+  if(document.querySelector('#gal-list')){state.gallery=[].map.call(document.querySelectorAll('#gal-list .item'),function(it){return {file:it.querySelector('.g-file').value,date:it.querySelector('.g-date').value,description:it.querySelector('.g-desc').value};});}
+  if($('cfg-formspree')){state.config=state.config||{};state.config.formspree=val('cfg-formspree');
+    state.ui=state.ui||{};state.ui.audience=state.ui.audience||{};state.ui.cta=state.ui.cta||{};
+    state.ui.audience.title=val('ui-aud-title');state.ui.audience.subtitle=val('ui-aud-sub');
+    state.ui.audience.options=splitLines(val('ui-aud-opts')).map(function(l){var p=l.split('|').map(function(s){return s.trim();});return {key:p[0]||'',mode:p[1]||'pro',label:p[2]||'',desc:p[3]||''};});
+    state.ui.cta.title=val('ui-cta-title');state.ui.cta.subtitle=val('ui-cta-sub');state.ui.cta.thanks=val('ui-cta-thanks');
+    state.ui.cta.options=splitLines(val('ui-cta-opts')).map(function(l){var p=l.split('|').map(function(s){return s.trim();});return {key:p[0]||'',label:p[1]||''};});}
   return state;
 }
-function slug(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,48)||('item-'+Date.now());}
 
-/* ===================== render tabs ===================== */
+/* tabs */
 function setTab(t){activeTab=t;[].forEach.call(document.querySelectorAll('#tabs button'),function(b){b.classList.toggle('active',b.dataset.tab===t);});renderTab();}
-function renderTab(){
-  var c=$('tabContent');
+function renderTab(){var c=$('tabContent');
   if(activeTab==='profile')c.innerHTML=tplProfile(state.profile||{});
   else if(activeTab==='experiences')renderList('exp');
   else if(activeTab==='blog')renderList('post');
+  else if(activeTab==='moments')renderList('mom');
+  else if(activeTab==='gallery')renderList('gal');
   else if(activeTab==='skills')renderList('skill');
   else if(activeTab==='awards')renderList('award');
-  else if(activeTab==='gallery')renderList('gal');
+  else if(activeTab==='setup')c.innerHTML=tplSetup(state);
 }
-
 function tplProfile(p){
-  return '<div class="panel"><h2>Profile</h2><p class="muted">The hero of your home page.</p>'
+  return '<div class="panel"><h2>Profile</h2><p class="muted">The hero and intro of your home page.</p>'
     +'<label>Name</label><input type="text" id="p-name" value="'+esc(p.name)+'">'
-    +'<div class="row"><div><label>Kicker (small line above name)</label><input type="text" id="p-kicker" value="'+esc(p.kicker)+'"></div>'
-    +'<div><label>Tagline</label><input type="text" id="p-tagline" value="'+esc(p.tagline)+'"></div></div>'
-    +'<label>Bio</label><textarea id="p-bio" style="min-height:96px;">'+esc(p.bio)+'</textarea><div class="hint">You can use *italics* and **bold**.</div>'
-    +'<div class="row"><div><label>Email</label><input type="text" id="p-email" value="'+esc(p.email)+'"></div>'
-    +'<div><label>Phone</label><input type="text" id="p-phone" value="'+esc(p.phone)+'"></div></div>'
-    +'<div class="row"><div><label>LinkedIn URL</label><input type="text" id="p-linkedin" value="'+esc(p.linkedin)+'"></div>'
-    +'<div><label>GitHub URL</label><input type="text" id="p-github" value="'+esc(p.github)+'"></div></div>'
+    +'<div class="row"><div><label>Kicker (line above name)</label><input type="text" id="p-kicker" value="'+esc(p.kicker)+'"></div><div><label>Tagline</label><input type="text" id="p-tagline" value="'+esc(p.tagline)+'"></div></div>'
+    +'<label>Bio — shown to recruiters</label><textarea id="p-bio" style="min-height:84px;">'+esc(p.bio)+'</textarea>'
+    +'<label>Personal bio — shown to friends / curious visitors</label><textarea id="p-personalbio" style="min-height:96px;">'+esc(p.personalBio)+'</textarea><div class="hint">Supports *italics* and **bold**.</div>'
+    +'<div class="row"><div><label>Email</label><input type="text" id="p-email" value="'+esc(p.email)+'"></div><div><label>Phone</label><input type="text" id="p-phone" value="'+esc(p.phone)+'"></div></div>'
+    +'<div class="row"><div><label>LinkedIn URL</label><input type="text" id="p-linkedin" value="'+esc(p.linkedin)+'"></div><div><label>GitHub URL</label><input type="text" id="p-github" value="'+esc(p.github)+'"></div></div>'
     +'<label>Location</label><input type="text" id="p-location" value="'+esc(p.location)+'">'
     +'<label>Stats — one per line, <code>value | label</code></label><textarea id="p-stats" style="min-height:96px;">'+esc(lines((p.stats||[]).map(function(s){return s.value+' | '+s.label;})))+'</textarea>'
+    +'<hr style="margin:20px 0;border:none;border-top:1px solid var(--rule);">'
+    +'<label>Thoughts section title (personal view)</label><input type="text" id="p-thoughtstitle" value="'+esc(p.thoughtsTitle)+'">'
+    +'<label>Thoughts — one per line, <code>Title :: body text</code></label><textarea id="p-thoughts" style="min-height:120px;">'+esc(lines((p.thoughts||[]).map(function(t){return t.title+' :: '+t.body;})))+'</textarea>'
+    +'<hr style="margin:20px 0;border:none;border-top:1px solid var(--rule);">'
     +'<label>Photo</label><input type="text" id="p-photo" value="'+esc(p.photo)+'">'
-    +'<div class="uprow"><img class="thumb" id="p-photo-thumb" src="'+esc(p.photo)+'" alt=""><div><input type="file" id="p-photo-file" accept="image/*"><div class="hint">Upload replaces your photo (commits to <code>img/</code>). Requires connection.</div></div></div>'
-    +'</div>';
+    +'<div class="uprow"><img class="thumb" id="p-photo-thumb" src="'+esc(p.photo)+'" alt=""><div><input type="file" id="p-photo-file" accept="image/*"><div class="hint">Upload replaces your photo (commits to <code>img/</code>). Needs connection.</div></div></div></div>';
+}
+function tplSetup(s){
+  s=s||{};var cfg=s.config||{};var ui=s.ui||{};var a=ui.audience||{};var c=ui.cta||{};
+  return '<div class="panel"><h2>Lead capture (Formspree)</h2><p class="muted">Where the “What now?” form sends submissions so you can track them.</p>'
+    +'<div class="notice"><strong>Setup:</strong> create a free form at <a href="https://formspree.io/" target="_blank" rel="noopener">formspree.io</a>, copy its endpoint (looks like <code>https://formspree.io/f/abcdwxyz</code>), paste below, Publish. Submissions then email you and appear in your Formspree dashboard. Leave blank to fall back to opening the visitor’s email app.</div>'
+    +'<label>Formspree endpoint URL</label><input type="text" id="cfg-formspree" value="'+esc(cfg.formspree)+'" placeholder="https://formspree.io/f/xxxxxxxx">'
+    +'<p class="hint">Track who submitted in your <a href="https://formspree.io/forms" target="_blank" rel="noopener">Formspree dashboard</a>.</p></div>'
+    +'<div class="panel"><h2>Quick-start popup text</h2>'
+    +'<label>Title</label><input type="text" id="ui-aud-title" value="'+esc(a.title)+'">'
+    +'<label>Subtitle</label><input type="text" id="ui-aud-sub" value="'+esc(a.subtitle)+'">'
+    +'<label>Options — one per line, <code>key | mode | label | description</code> (mode is <code>pro</code> or <code>personal</code>)</label>'
+    +'<textarea id="ui-aud-opts" style="min-height:96px;">'+esc(lines((a.options||[]).map(function(o){return [o.key,o.mode,o.label,o.desc].join(' | ');})))+'</textarea></div>'
+    +'<div class="panel"><h2>End-of-page “What now?” text</h2>'
+    +'<label>Title</label><input type="text" id="ui-cta-title" value="'+esc(c.title)+'">'
+    +'<label>Subtitle</label><input type="text" id="ui-cta-sub" value="'+esc(c.subtitle)+'">'
+    +'<label>Thank-you message</label><input type="text" id="ui-cta-thanks" value="'+esc(c.thanks)+'">'
+    +'<label>Options — one per line, <code>key | label</code></label><textarea id="ui-cta-opts" style="min-height:70px;">'+esc(lines((c.options||[]).map(function(o){return o.key+' | '+o.label;})))+'</textarea></div>';
 }
 
-/* generic list render */
-function renderList(kind){
-  collectIfRendered();
-  var c=$('tabContent');
+/* generic list */
+function renderList(kind){collectIfRendered();var c=$('tabContent');
   var cfg={
-    exp:{title:'Experiences',arr:'experiences',blank:function(){return {id:'',cat:'chip',title:'New experience',org:'',date:'',bullets:[],tags:[]};},body:tplExp,listId:'exp-list',label:'experience'},
-    post:{title:'Blog',arr:'posts',blank:function(){return {id:'',cat:'chip',title:'New essay',date:new Date().toISOString().slice(0,10),readTime:'3 min read',excerpt:'',body:'Write here. Use ## for headings, > for quotes, - for lists.'};},body:tplPost,listId:'post-list',label:'essay'},
-    skill:{title:'Skills',arr:'skills',blank:function(){return {group:'New group',items:[]};},body:tplSkill,listId:'skill-list',label:'group'},
-    award:{title:'Awards',arr:'awards',blank:function(){return {title:'New honor',detail:''};},body:tplAward,listId:'award-list',label:'award'},
-    gal:{title:'Gallery',arr:'gallery',blank:function(){return {file:'',title:'New photo',caption:''};},body:tplGal,listId:'gal-list',label:'photo'}
+    exp:{title:'Experiences',arr:'experiences',body:tplExp,listId:'exp-list',label:'experience'},
+    post:{title:'Blog',arr:'posts',body:tplPost,listId:'post-list',label:'essay'},
+    skill:{title:'Skills',arr:'skills',body:tplSkill,listId:'skill-list',label:'group'},
+    award:{title:'Awards',arr:'awards',body:tplAward,listId:'award-list',label:'award'},
+    mom:{title:'Moments',arr:'moments',body:tplMom,listId:'mom-list',label:'moment'},
+    gal:{title:'Gallery',arr:'gallery',body:tplGal,listId:'gal-list',label:'photo'}
   }[kind];
   var arr=state[cfg.arr]||(state[cfg.arr]=[]);
   var items=arr.map(function(o,idx){return itemShell(kind,o,idx,arr.length,cfg.body(o,idx));}).join('');
-  c.innerHTML='<div class="panel"><h2>'+cfg.title+'</h2><p class="muted">'+arr.length+' '+cfg.label+(arr.length===1?'':'s')+'. Click a title to collapse. Drag order with ▲▼.</p>'
-    +'<div id="'+cfg.listId+'">'+items+'</div>'
-    +'<button class="add-btn" data-add="'+kind+'">+ Add '+cfg.label+'</button></div>';
+  var note=kind==='mom'?'The “wow” photos at the top of your home page (landscape = full-width, portraits pair up).':kind==='gal'?'Your separate Gallery page — drop a photo, date, and description.':'Click a title to collapse. Reorder with ▲▼.';
+  c.innerHTML='<div class="panel"><h2>'+cfg.title+'</h2><p class="muted">'+arr.length+' '+cfg.label+(arr.length===1?'':'s')+'. '+note+'</p><div id="'+cfg.listId+'">'+items+'</div><button class="add-btn" data-add="'+kind+'">+ Add '+cfg.label+'</button></div>';
 }
-function itemShell(kind,o,idx,total,bodyHtml){
-  var name=o.title||o.group||o.file||'Item';
-  var pill=o.cat?'<span class="pill">'+esc(o.cat)+'</span>':'';
-  return '<div class="item" data-kind="'+kind+'" data-idx="'+idx+'">'
-    +'<div class="item-head"><span class="t" data-toggle>'+esc(name)+'</span>'+pill
-    +'<span class="item-actions"><button data-move="up" '+(idx===0?'disabled':'')+'>▲</button>'
-    +'<button data-move="down" '+(idx===total-1?'disabled':'')+'>▼</button>'
-    +'<button class="danger" data-del>Delete</button></span></div>'
-    +'<div class="item-body">'+bodyHtml+'</div></div>';
-}
-
-function tplExp(o){
-  return '<input type="hidden" class="e-id" value="'+esc(o.id)+'">'
-    +'<div class="row3"><div><label>Category</label><select class="e-cat">'+catOpts(o.cat)+'</select></div>'
-    +'<div><label>Date</label><input type="text" class="e-date" value="'+esc(o.date)+'"></div>'
-    +'<div><label style="text-transform:none;">Incoming?</label><input type="checkbox" class="e-incoming" '+(o.incoming?'checked':'')+' style="width:auto;margin-top:10px;"></div></div>'
-    +'<label>Title</label><input type="text" class="e-title" value="'+esc(o.title)+'">'
-    +'<label>Org / subtitle</label><input type="text" class="e-org" value="'+esc(o.org)+'">'
-    +'<label>Bullets — one per line</label><textarea class="e-bullets" style="min-height:80px;">'+esc(lines(o.bullets))+'</textarea>'
-    +'<div class="row"><div><label>Tags — comma separated</label><input type="text" class="e-tags" value="'+esc((o.tags||[]).join(', '))+'"></div>'
-    +'<div><label>Stats — <code>value | label</code> per line</label><textarea class="e-stats" style="min-height:60px;">'+esc(lines((o.stats||[]).map(function(s){return s.v+' | '+s.l;})))+'</textarea></div></div>'
-    +'<div class="row"><div><label>Link label</label><input type="text" class="e-linklabel" value="'+esc(o.link?o.link.label:'')+'"></div>'
-    +'<div><label>Link URL</label><input type="text" class="e-linkurl" value="'+esc(o.link?o.link.url:'')+'"></div></div>'
-    +'<div class="row"><div><label>PDF label</label><input type="text" class="e-pdflabel" value="'+esc(o.pdf?o.pdf.label:'')+'"></div>'
-    +'<div><label>PDF file (e.g. pdf/name.pdf)</label><input type="text" class="e-pdf" value="'+esc(o.pdf?o.pdf.file:'')+'"></div></div>';
-}
-function tplPost(o,idx){
-  return '<input type="hidden" class="b-id" value="'+esc(o.id)+'">'
-    +'<div class="row3"><div><label>Category</label><select class="b-cat">'+catOpts(o.cat)+'</select></div>'
-    +'<div><label>Date (YYYY-MM-DD)</label><input type="text" class="b-date" value="'+esc(o.date)+'"></div>'
-    +'<div><label>Read time</label><input type="text" class="b-read" value="'+esc(o.readTime)+'"></div></div>'
-    +'<label>Title</label><input type="text" class="b-title" value="'+esc(o.title)+'">'
-    +'<label>Excerpt (1–2 sentences)</label><textarea class="b-excerpt" style="min-height:54px;">'+esc(o.excerpt)+'</textarea>'
-    +'<label>Body (Markdown)</label>'
-    +'<div class="editor-split"><textarea class="b-body" data-preview="prev-'+idx+'" style="min-height:300px;">'+esc(o.body)+'</textarea>'
-    +'<div class="preview" id="prev-'+idx+'">'+md(o.body)+'</div></div>'
-    +'<div class="hint">Markdown: <code>## Heading</code>, <code>**bold**</code>, <code>*italic*</code>, <code>&gt; quote</code>, <code>- list</code>, <code>[link](url)</code>. Preview updates live.</div>';
-}
-function tplSkill(o){
-  return '<label>Group name</label><input type="text" class="s-group" value="'+esc(o.group)+'">'
-    +'<label>Items — comma separated</label><textarea class="s-items" style="min-height:60px;">'+esc((o.items||[]).join(', '))+'</textarea>';
-}
-function tplAward(o){
-  return '<label>Title</label><input type="text" class="a-title" value="'+esc(o.title)+'">'
-    +'<label>Detail</label><input type="text" class="a-detail" value="'+esc(o.detail)+'">';
-}
-function tplGal(o){
-  return '<label>Title</label><input type="text" class="g-title" value="'+esc(o.title)+'">'
-    +'<label>Caption</label><input type="text" class="g-caption" value="'+esc(o.caption)+'">'
-    +'<label>Image path</label><input type="text" class="g-file" value="'+esc(o.file)+'">'
-    +'<div class="uprow"><img class="thumb" src="'+esc(o.file)+'" alt=""><div><input type="file" class="g-upload" accept="image/*"><div class="hint">Upload commits to <code>img/</code> and fills the path. Requires connection.</div></div></div>';
-}
+function itemShell(kind,o,idx,total,body){var name=o.title||o.group||o.description||o.file||'Item';var pill=o.cat?'<span class="pill">'+esc(o.cat)+'</span>':'';
+  return '<div class="item" data-kind="'+kind+'" data-idx="'+idx+'"><div class="item-head"><span class="t" data-toggle>'+esc(name)+'</span>'+pill+'<span class="item-actions"><button data-move="up" '+(idx===0?'disabled':'')+'>▲</button><button data-move="down" '+(idx===total-1?'disabled':'')+'>▼</button><button class="danger" data-del>Delete</button></span></div><div class="item-body">'+body+'</div></div>';}
 function catOpts(sel){return ['chip','mat','space'].map(function(c){return '<option value="'+c+'" '+(c===sel?'selected':'')+'>'+({chip:'Chip Design',mat:'Materials',space:'Space'}[c])+'</option>';}).join('');}
-
+function tplExp(o){return '<input type="hidden" class="e-id" value="'+esc(o.id)+'">'
+  +'<div class="row3"><div><label>Category</label><select class="e-cat">'+catOpts(o.cat)+'</select></div><div><label>Date</label><input type="text" class="e-date" value="'+esc(o.date)+'"></div><div><label style="text-transform:none;">Incoming?</label><input type="checkbox" class="e-incoming" '+(o.incoming?'checked':'')+' style="width:auto;margin-top:10px;"></div></div>'
+  +'<label>Title</label><input type="text" class="e-title" value="'+esc(o.title)+'"><label>Org / subtitle</label><input type="text" class="e-org" value="'+esc(o.org)+'">'
+  +'<label>Personal note — shown to friends (the “why”)</label><textarea class="e-personal" style="min-height:64px;">'+esc(o.personal)+'</textarea>'
+  +'<label>Bullets — shown to recruiters, one per line</label><textarea class="e-bullets" style="min-height:80px;">'+esc(lines(o.bullets))+'</textarea>'
+  +'<div class="row"><div><label>Tags — comma separated</label><input type="text" class="e-tags" value="'+esc((o.tags||[]).join(', '))+'"></div><div><label>Stats — <code>value | label</code> per line</label><textarea class="e-stats" style="min-height:60px;">'+esc(lines((o.stats||[]).map(function(s){return s.v+' | '+s.l;})))+'</textarea></div></div>'
+  +'<div class="row"><div><label>Link label</label><input type="text" class="e-linklabel" value="'+esc(o.link?o.link.label:'')+'"></div><div><label>Link URL</label><input type="text" class="e-linkurl" value="'+esc(o.link?o.link.url:'')+'"></div></div>'
+  +'<div class="row"><div><label>PDF label</label><input type="text" class="e-pdflabel" value="'+esc(o.pdf?o.pdf.label:'')+'"></div><div><label>PDF file</label><input type="text" class="e-pdf" value="'+esc(o.pdf?o.pdf.file:'')+'"></div></div>';}
+function tplPost(o,idx){return '<input type="hidden" class="b-id" value="'+esc(o.id)+'">'
+  +'<div class="row3"><div><label>Category</label><select class="b-cat">'+catOpts(o.cat)+'</select></div><div><label>Date (YYYY-MM-DD)</label><input type="text" class="b-date" value="'+esc(o.date)+'"></div><div><label>Read time</label><input type="text" class="b-read" value="'+esc(o.readTime)+'"></div></div>'
+  +'<label>Title</label><input type="text" class="b-title" value="'+esc(o.title)+'"><label>Excerpt</label><textarea class="b-excerpt" style="min-height:54px;">'+esc(o.excerpt)+'</textarea>'
+  +'<label>Body (Markdown)</label><div class="editor-split"><textarea class="b-body" data-preview="prev-'+idx+'" style="min-height:300px;">'+esc(o.body)+'</textarea><div class="preview" id="prev-'+idx+'">'+md(o.body)+'</div></div>'
+  +'<div class="hint">Markdown: <code>## Heading</code>, <code>**bold**</code>, <code>*italic*</code>, <code>&gt; quote</code>, <code>- list</code>, <code>[link](url)</code>.</div>';}
+function tplSkill(o){return '<label>Group name</label><input type="text" class="s-group" value="'+esc(o.group)+'"><label>Items — comma separated</label><textarea class="s-items" style="min-height:60px;">'+esc((o.items||[]).join(', '))+'</textarea>';}
+function tplAward(o){return '<label>Title</label><input type="text" class="a-title" value="'+esc(o.title)+'"><label>Detail</label><input type="text" class="a-detail" value="'+esc(o.detail)+'">';}
+function tplMom(o){return '<label>Title</label><input type="text" class="m-title" value="'+esc(o.title)+'"><label>Caption</label><input type="text" class="m-caption" value="'+esc(o.caption)+'"><label>Image path</label><input type="text" class="m-file" value="'+esc(o.file)+'"><div class="uprow"><img class="thumb" src="'+esc(o.file)+'" alt=""><div><input type="file" class="m-upload" accept="image/*"><div class="hint">Upload commits to <code>img/</code>. Needs connection.</div></div></div>';}
+function tplGal(o){return '<label>Date (YYYY-MM-DD)</label><input type="text" class="g-date" value="'+esc(o.date)+'"><label>Description</label><textarea class="g-desc" style="min-height:60px;">'+esc(o.description)+'</textarea><label>Image path</label><input type="text" class="g-file" value="'+esc(o.file)+'"><div class="uprow"><img class="thumb" src="'+esc(o.file)+'" alt=""><div><input type="file" class="g-upload" accept="image/*"><div class="hint">Drop a photo — commits to <code>img/</code>. Needs connection.</div></div></div>';}
 function collectIfRendered(){try{collect();}catch(e){}}
 
-/* ===================== image upload ===================== */
-function uploadImage(file,onDone){
-  if(!connected){msg('Connect with a GitHub token first to upload images.','err');return;}
-  var name=file.name.toLowerCase().replace(/[^a-z0-9.]+/g,'-');
-  var path='img/'+name;
-  var reader=new FileReader();
-  reader.onload=function(){
-    var b64=reader.result.split(',')[1];
-    msg('Uploading '+path+'…');
-    getSha(path).then(function(sha){return commitFile(path,b64,'studio: upload '+path,sha);})
-      .then(function(){msg('Uploaded '+path+'. Remember to Publish to update the page.','ok');onDone(path);})
-      .catch(function(e){msg('Upload failed: '+e.message,'err');});
-  };
-  reader.readAsDataURL(file);
-}
+/* image upload */
+function uploadImage(file,onDone){if(!connected){msg('Connect with a GitHub token first to upload images.','err');return;}var name=Date.now()+'-'+file.name.toLowerCase().replace(/[^a-z0-9.]+/g,'-');var path='img/'+name;var reader=new FileReader();reader.onload=function(){var b64=reader.result.split(',')[1];msg('Uploading '+path+'…');getSha(path).then(function(sha){return commitFile(path,b64,'studio: upload '+path,sha);}).then(function(){msg('Uploaded '+path+'. Click Publish to update the page.','ok');onDone(path);}).catch(function(e){msg('Upload failed: '+e.message,'err');});};reader.readAsDataURL(file);}
 
-/* ===================== publish ===================== */
-function publish(){
-  collect();
-  var json=JSON.stringify(state,null,2)+'\n';
-  if(!connected){msg('Not connected — use “Download content.json” instead, or connect a token.','err');return;}
-  $('publishBtn').disabled=true;msg('Publishing to GitHub…');
-  // refresh sha then commit
-  getSha(FILE).then(function(sha){fileSha=sha;return commitFile(FILE,b64encode(json),'studio: update site content',fileSha);})
-    .then(function(){msg('Published! Your site will update in about a minute at janierlani.github.io/portfolio.','ok');})
-    .catch(function(e){msg('Publish failed: '+e.message,'err');})
-    .then(function(){$('publishBtn').disabled=false;});
-}
-function download(){
-  collect();
-  var json=JSON.stringify(state,null,2)+'\n';
-  var blob=new Blob([json],{type:'application/json'});
-  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='content.json';a.click();
-  msg('Downloaded content.json. Upload it to the root of your repo (replacing the old one) to publish.','ok');
-}
+/* publish / download */
+function publish(){collect();var json=JSON.stringify(state,null,2)+'\n';if(!connected){msg('Not connected — use “Download content.json”, or connect a token.','err');return;}$('publishBtn').disabled=true;msg('Publishing to GitHub…');getSha(FILE).then(function(sha){fileSha=sha;return commitFile(FILE,b64encode(json),'studio: update site content',fileSha);}).then(function(){msg('Published! Your site updates in about a minute at janierlani.github.io/portfolio.','ok');}).catch(function(e){msg('Publish failed: '+e.message,'err');}).then(function(){$('publishBtn').disabled=false;});}
+function download(){collect();var json=JSON.stringify(state,null,2)+'\n';var blob=new Blob([json],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='content.json';a.click();msg('Downloaded content.json. Upload it to the repo root (replacing the old one) to publish.','ok');}
 
-/* ===================== connect flow ===================== */
-function showEditor(){
-  $('gate').style.display='none';$('editor').style.display='block';
-  $('downloadBtn').style.display='';$('publishBtn').style.display='';$('reloadBtn').style.display=connected?'':'none';
-  $('status').textContent=connected?'Connected · janierlani/portfolio':'Editing (not connected)';
-  $('status').className='status '+(connected?'on':'off');
-  setTab('profile');
-}
-function connect(){
-  var t=$('tokenInput').value.trim();
-  if(!t){msg('Paste a GitHub token first.','err');return;}
-  token=t;$('connectBtn').disabled=true;msg('Connecting…');
-  loadFromGitHub().then(function(){
-    connected=true;
-    if($('remember').checked)localStorage.setItem('studio_token',t);
-    msg('Connected. Loaded your live content.','ok');showEditor();
-  }).catch(function(e){
-    token=null;msg('Could not connect: '+e.message+' — check the token has Contents: Read and write on janierlani/portfolio.','err');
-  }).then(function(){$('connectBtn').disabled=false;});
-}
+/* connect */
+function showEditor(){$('gate').style.display='none';$('editor').style.display='block';$('downloadBtn').style.display='';$('publishBtn').style.display='';$('reloadBtn').style.display=connected?'':'none';$('status').textContent=connected?'Connected · janierlani/portfolio':'Editing (not connected)';$('status').className='status '+(connected?'on':'off');setTab('profile');}
+function connect(){var t=$('tokenInput').value.trim();if(!t){msg('Paste a GitHub token first.','err');return;}token=t;$('connectBtn').disabled=true;msg('Connecting…');loadFromGitHub().then(function(){connected=true;if($('remember').checked)localStorage.setItem('studio_token',t);msg('Connected. Loaded your live content.','ok');showEditor();}).catch(function(e){token=null;msg('Could not connect: '+e.message+' — check Contents: Read and write on janierlani/portfolio.','err');}).then(function(){$('connectBtn').disabled=false;});}
+function arrFor(kind){return state[{exp:'experiences',post:'posts',skill:'skills',award:'awards',mom:'moments',gal:'gallery'}[kind]];}
 
-/* ===================== events ===================== */
-document.addEventListener('click',function(e){
-  var t=e.target;
+document.addEventListener('click',function(e){var t=e.target;
   if(t.id==='connectBtn')connect();
   else if(t.id==='previewOnlyBtn'){connected=false;loadLocal().then(function(){showEditor();msg('Editing locally. Changes export via “Download content.json”.','');});}
   else if(t.id==='publishBtn')publish();
   else if(t.id==='downloadBtn')download();
   else if(t.id==='reloadBtn'){loadFromGitHub().then(function(){renderTab();msg('Reloaded from GitHub.','ok');}).catch(function(e){msg('Reload failed: '+e.message,'err');});}
   else if(t.dataset&&t.dataset.tab)setTab(t.dataset.tab);
-  else if(t.dataset&&t.dataset.add){collect();var k=t.dataset.add;var arrName={exp:'experiences',post:'posts',skill:'skills',award:'awards',gal:'gallery'}[k];var blanks={exp:{id:'',cat:'chip',title:'New experience',org:'',date:'',bullets:[],tags:[]},post:{id:'',cat:'chip',title:'New essay',date:new Date().toISOString().slice(0,10),readTime:'3 min read',excerpt:'',body:'Write here.'},skill:{group:'New group',items:[]},award:{title:'New honor',detail:''},gal:{file:'',title:'New photo',caption:''}};(state[arrName]=state[arrName]||[]).push(JSON.parse(JSON.stringify(blanks[k])));renderTab();}
+  else if(t.dataset&&t.dataset.add){collect();var k=t.dataset.add;var an={exp:'experiences',post:'posts',skill:'skills',award:'awards',mom:'moments',gal:'gallery'}[k];var bl={exp:{id:'',cat:'chip',title:'New experience',org:'',date:'',bullets:[],tags:[],personal:''},post:{id:'',cat:'chip',title:'New essay',date:new Date().toISOString().slice(0,10),readTime:'3 min read',excerpt:'',body:'Write here.'},skill:{group:'New group',items:[]},award:{title:'New honor',detail:''},mom:{file:'',title:'New moment',caption:''},gal:{file:'',date:new Date().toISOString().slice(0,10),description:''}};(state[an]=state[an]||[]).push(JSON.parse(JSON.stringify(bl[k])));renderTab();}
   else if(t.dataset&&t.dataset.move){var item=t.closest('.item');var idx=+item.dataset.idx;var arr=arrFor(item.dataset.kind);collect();var ni=t.dataset.move==='up'?idx-1:idx+1;if(ni>=0&&ni<arr.length){var tmp=arr[idx];arr[idx]=arr[ni];arr[ni]=tmp;renderTab();}}
-  else if(t.dataset&&t.dataset.del!==undefined&&t.hasAttribute('data-del')){var it=t.closest('.item');var i=+it.dataset.idx;var a=arrFor(it.dataset.kind);collect();a.splice(i,1);renderTab();}
+  else if(t.hasAttribute&&t.hasAttribute('data-del')){var it=t.closest('.item');var i=+it.dataset.idx;var a=arrFor(it.dataset.kind);collect();a.splice(i,1);renderTab();}
   else if(t.hasAttribute&&t.hasAttribute('data-toggle')){t.closest('.item').classList.toggle('collapsed');}
 });
-function arrFor(kind){return state[{exp:'experiences',post:'posts',skill:'skills',award:'awards',gal:'gallery'}[kind]];}
-
-/* live preview + photo thumb + uploads */
-document.addEventListener('input',function(e){
-  var t=e.target;
-  if(t.dataset&&t.dataset.preview){var pv=$(t.dataset.preview);if(pv)pv.innerHTML=md(t.value);}
-  if(t.id==='p-photo'){var th=$('p-photo-thumb');if(th)th.src=t.value;}
-});
-document.addEventListener('change',function(e){
-  var t=e.target;
+document.addEventListener('input',function(e){var t=e.target;if(t.dataset&&t.dataset.preview){var pv=$(t.dataset.preview);if(pv)pv.innerHTML=md(t.value);}if(t.id==='p-photo'){var th=$('p-photo-thumb');if(th)th.src=t.value;}});
+document.addEventListener('change',function(e){var t=e.target;
   if(t.id==='p-photo-file'&&t.files[0]){uploadImage(t.files[0],function(path){$('p-photo').value=path;$('p-photo-thumb').src=path;});}
-  else if(t.classList&&t.classList.contains('g-upload')&&t.files[0]){var item=t.closest('.item');uploadImage(t.files[0],function(path){item.querySelector('.g-file').value=path;item.querySelector('.thumb').src=path;});}
+  else if(t.classList&&t.classList.contains('m-upload')&&t.files[0]){var it=t.closest('.item');uploadImage(t.files[0],function(p){it.querySelector('.m-file').value=p;it.querySelector('.thumb').src=p;});}
+  else if(t.classList&&t.classList.contains('g-upload')&&t.files[0]){var it2=t.closest('.item');uploadImage(t.files[0],function(p){it2.querySelector('.g-file').value=p;it2.querySelector('.thumb').src=p;});}
 });
-
-/* ===================== boot ===================== */
-(function(){
-  var saved=localStorage.getItem('studio_token');
-  if(saved){$('tokenInput').value=saved;token=saved;msg('Found a saved token — connecting…');
-    loadFromGitHub().then(function(){connected=true;showEditor();msg('Connected. Loaded your live content.','ok');})
-      .catch(function(){token=null;msg('Saved token didn’t work — reconnect below.','err');});
-  }
-})();
+(function(){var saved=localStorage.getItem('studio_token');if(saved){$('tokenInput').value=saved;token=saved;msg('Found a saved token — connecting…');loadFromGitHub().then(function(){connected=true;showEditor();msg('Connected. Loaded your live content.','ok');}).catch(function(){token=null;msg('Saved token didn’t work — reconnect below.','err');});}})();
 </script>
 </body>
 </html>

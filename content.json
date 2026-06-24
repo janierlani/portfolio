@@ -1,9 +1,34 @@
 {
+  "config": {
+    "formspree": ""
+  },
+  "ui": {
+    "audience": {
+      "title": "Before you scroll —",
+      "subtitle": "Who's visiting? I'll tailor what you see.",
+      "options": [
+        { "key": "recruiter", "mode": "pro", "label": "I'm a recruiter", "desc": "Roles, results, and the technical detail — the functional case." },
+        { "key": "partner", "mode": "personal", "label": "Friend / potential partner", "desc": "Why I actually built these things, and where I'm headed." },
+        { "key": "curious", "mode": "personal", "label": "Just here to learn about me", "desc": "The personal version — thoughts, story, and all." }
+      ]
+    },
+    "cta": {
+      "title": "So — what now?",
+      "subtitle": "If something here resonated, tell me. I read every message.",
+      "options": [
+        { "key": "work", "label": "Work with me" },
+        { "key": "friends", "label": "Become friends" },
+        { "key": "talk", "label": "Just talk" }
+      ],
+      "thanks": "Thank you — I've got it, and I'll be in touch."
+    }
+  },
   "profile": {
     "name": "Zhaniya Turganova",
+    "kicker": "Technologist · Builder · Perpetually curious",
     "tagline": "Materials Science · Chip Design · Aerospace",
-    "kicker": "Technologist & builder",
-    "bio": "I work at the intersection of materials science and chip design — studying how atomic-scale physics shapes what's possible in semiconductors, and building the hardware that brings those devices to life. I care as much about the philosophy of why we build as the engineering of how.",
+    "bio": "I work at the intersection of materials science and chip design — studying how atomic-scale physics shapes what's possible in semiconductors, and building the hardware that brings those devices to life.",
+    "personalBio": "[Edit me in your Studio] I'm someone who can't look at a piece of technology without asking why it exists and who it's for. I came to engineering through a love of physics and a stubborn belief that the most interesting problems live where materials, computation, and people overlap. I build because making something real is the most honest way I know to think.",
     "photo": "img/headshot.jpg",
     "location": "Georgia Institute of Technology",
     "email": "zturganova3@gatech.edu",
@@ -15,6 +40,11 @@
       { "value": "3", "label": "Research Labs" },
       { "value": "0", "label": "DRC Violations" },
       { "value": "3", "label": "Papers" }
+    ],
+    "thoughtsTitle": "Thoughts & what's next",
+    "thoughts": [
+      { "title": "On building", "body": "[Edit me] I think the next decade of hardware belongs to people who can move fluidly between the chip and the material it's made of. That's the seam I want to live on — and the reason I keep collecting skills that don't obviously go together yet." },
+      { "title": "What's next", "body": "[Edit me] I want to start something at the intersection of advanced materials and semiconductor manufacturing. Short term: get exceptional in the lab and the layout tool. Long term: build the company I wish existed." }
     ]
   },
   "experiences": [
@@ -37,6 +67,7 @@
         "Full RTL-to-GDS in Innovus + OpenLane; resolved 1,000+ DRC violations via LEF OBS analysis, routing-layer expansion, placement halos",
         "Timing closure: WNS −2.701 ns → +0.01 ns via SDC iteration; custom Tcl procs for path viz & fanout"
       ],
+      "personal": "[Edit me] I joined because I wanted to feel a design go all the way from a line of code to silicon — and learn how much of engineering is really just patience with a timing report that refuses to close.",
       "link": { "label": "View full project", "url": "https://janierlani.github.io/sj_project" }
     },
     {
@@ -47,7 +78,8 @@
       "date": "Aug 2025 – Present",
       "bullets": [
         "Designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC"
-      ]
+      ],
+      "personal": "[Edit me] I love that a race car gives hardware an unforgiving deadline. You can't argue with a lap time."
     },
     {
       "id": "unisat",
@@ -57,7 +89,8 @@
       "date": "2024",
       "bullets": [
         "Nanosatellite assembly, 3D modeling, PCB design, IoT systems; designed and tested onboard data-collection sensors"
-      ]
+      ],
+      "personal": "[Edit me] My first taste of building something meant to leave the planet. It rearranged what I thought I was allowed to work on."
     },
     {
       "id": "facchetti",
@@ -68,7 +101,8 @@
       "bullets": [
         "Fabricating OECTs for neuromorphic computing — e-beam evaporation of gold contacts, photolithographic mask alignment, spin coating of semiconducting polymers",
         "Measuring transfer curves and transconductance across device geometries"
-      ]
+      ],
+      "personal": "[Edit me] Neuromorphic devices feel like the place where my materials and chip interests finally meet. I find that genuinely thrilling."
     },
     {
       "id": "heterostructure",
@@ -79,7 +113,8 @@
       "bullets": [
         "MBE growth of γ-InSe on Si(100); characterizing via RHEED, XRD, AFM/SEM, and Hall mobility across Se/In flux ratios and temperatures",
         "Developing mechanical transfer of InSe films from sapphire → silicon for industry-standard 2D channel integration"
-      ]
+      ],
+      "personal": "[Edit me] Growing a crystal atom by atom taught me patience as a technical skill. The film does not care about your deadline."
     },
     {
       "id": "kacher",
@@ -90,7 +125,8 @@
       "bullets": [
         "TGA, DSC, SEM, XRD characterization of hydrogen-reduced iron oxide → steel; casting, heat treatment, mounting, polishing of stainless steel pellets",
         "Customer discovery, market research, and TEA modeling for ARPA-E-funded green steel manufacturing"
-      ]
+      ],
+      "personal": "[Edit me] Green steel is where I learned that a technology only matters if someone can afford to use it. The market math is part of the science."
     },
     {
       "id": "geopolymer",
@@ -101,6 +137,7 @@
       "bullets": [
         "Optimized NaOH molarity in metakaolin-based geopolymer for lunar ISRU habitat construction; tested setting time and compressive strength"
       ],
+      "personal": "[Edit me] Building with what's already on the Moon is the kind of constraint I find beautiful — necessity as a design tool.",
       "pdf": { "label": "View paper", "file": "pdf/geopolymers.pdf" }
     },
     {
@@ -112,6 +149,7 @@
       "bullets": [
         "Lagrange-multiplier optimization of hemispherical habitat geometry; Taylor-series tolerance analysis for 3D-printed lunar structures"
       ],
+      "personal": "[Edit me] I like when pure math turns out to have a body — when an optimization is also a place someone could one day live.",
       "pdf": { "label": "View paper", "file": "pdf/lunar-dome-stress-analysis.pdf" }
     },
     {
@@ -121,7 +159,8 @@
       "org": "Materials & Processing Engineering Intern · Vero Beach, FL",
       "date": "Jun – Aug 2026",
       "incoming": true,
-      "bullets": []
+      "bullets": [],
+      "personal": "[Edit me] Excited to see materials engineering at the scale of a flying machine, where every choice has to survive the real world."
     },
     {
       "id": "alsib",
@@ -131,7 +170,8 @@
       "date": "Aug – Sep 2024",
       "bullets": [
         "Operated decoilers, roll-forming lines, hydraulic shearing and press-forming systems; calibrated parameters to maintain sheet geometry and reduce scrap"
-      ]
+      ],
+      "personal": "[Edit me] My first factory floor. Watching raw steel become something useful made manufacturing feel like a craft, not a black box."
     },
     {
       "id": "united-space-school",
@@ -141,7 +181,9 @@
       "date": "Apr – Aug 2025",
       "bullets": [
         "CAD + CFD analysis of thermal protection systems for inflatable decelerators and crewed Mars landers; researched C-C composites and refractory materials"
-      ]
+      ],
+      "personal": "[Edit me] Six weeks at JSC taught me that designing for space is really about being honest about which compromise you're making.",
+      "pdf": { "label": "", "file": "" }
     },
     {
       "id": "upenn-mt",
@@ -151,7 +193,8 @@
       "date": "Jul – Aug 2024",
       "bullets": [
         "Built smart IoT dog collar (CAD, Swift, Arduino, Raspberry Pi); top 5 of 15 teams; Google IPO simulation at Morgan Stanley NYC"
-      ]
+      ],
+      "personal": "[Edit me] M&T is where I started seeing myself as someone who could build a company, not just a project."
     },
     {
       "id": "yale",
@@ -162,7 +205,8 @@
       "bullets": [
         "Designed a research proposal on ALS, studying inhibition of the C9ORF72 gene",
         "Completed advanced seminars and a capstone project with an international team"
-      ]
+      ],
+      "personal": "[Edit me] The first room where I felt the size of the world and how much of it I still wanted to learn."
     },
     {
       "id": "ai-chatbots",
@@ -173,6 +217,7 @@
       "bullets": [
         "11,000+ word IRB-approved study (8 participants: NASA HI-SEAS + Kazakhstan Space Agency); fine-tuned Alpaca-7B; developed LorelAI social assistant"
       ],
+      "personal": "[Edit me] I cared about the loneliness of long missions as much as the model. The human question is what kept me up at night.",
       "pdf": { "label": "View paper", "file": "pdf/space-chatbots.pdf" }
     },
     {
@@ -184,6 +229,7 @@
       "bullets": [
         "Prospect-Theory analysis of spaceflight-driven neurophysiological changes on astronaut decision-making"
       ],
+      "personal": "[Edit me] How do you make good decisions when your own brain is changing? That question is too good to leave alone.",
       "pdf": { "label": "View paper", "file": "pdf/neuroeconomics-orbit.pdf" }
     },
     {
@@ -195,7 +241,7 @@
       "bullets": [
         "7,500-word paper published in the National High School Journal of Science; mentored by a Georgetown M.D./Ph.D."
       ],
-      "pdf": { "label": "View paper", "file": "pdf/neuropathic-pain.pdf" }
+      "personal": "[Edit me] My first long piece of real research. It taught me I could sit with one hard question for a year and come out with something true."
     }
   ],
   "skills": [
@@ -214,13 +260,17 @@
     { "title": "AWSD Youth Movement", "detail": "Top 9 Inspiring Young Leaders" },
     { "title": "Republican Remote Olympiad — Chemistry", "detail": "2nd place" }
   ],
-  "gallery": [
+  "moments": [
     { "file": "img/space-tech-battle.jpg", "title": "Space Tech Battle Winner", "caption": "Top 10 of 200 companies — developed LorelAI, an AI social assistant for long-duration space missions" },
+    { "file": "img/united-space-school.jpg", "title": "United Space School 2025", "caption": "1 of 40 global delegates — Mars mission design at NASA JSC" },
     { "file": "img/suni-williams.jpg", "title": "With Astronaut Suni Williams", "caption": "NASA Johnson Space Center" },
-    { "file": "img/luca-parmitano.jpg", "title": "With ESA Astronaut Luca Parmitano", "caption": "ISS veteran and spacewalk record holder" },
     { "file": "img/presenting-upenn.jpg", "title": "UPenn Final Project Presentation", "caption": "UPenn M&T Summer Institute" },
-    { "file": "img/upenn-mtsi.jpg", "title": "UPenn M&T Summer Institute", "caption": "Top 5 of 15 teams — smart IoT device, Morgan Stanley NYC" },
-    { "file": "img/united-space-school.jpg", "title": "United Space School 2025", "caption": "1 of 40 global delegates — Mars mission design at NASA JSC" }
+    { "file": "img/luca-parmitano.jpg", "title": "With ESA Astronaut Luca Parmitano", "caption": "ISS veteran and spacewalk record holder" },
+    { "file": "img/upenn-mtsi.jpg", "title": "UPenn M&T Summer Institute", "caption": "Top 5 of 15 teams — smart IoT device, Morgan Stanley NYC" }
+  ],
+  "gallery": [
+    { "file": "img/space-tech-battle.jpg", "date": "2024-11-01", "description": "[Example — edit or delete] Pitching LorelAI at Space Tech Battle. Upload your own photos here from the Studio." },
+    { "file": "img/united-space-school.jpg", "date": "2025-07-15", "description": "[Example — edit or delete] Mars mission design week at NASA Johnson Space Center." }
   ],
   "posts": [
     {
