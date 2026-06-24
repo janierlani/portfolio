@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NASA">
+  <circle cx="50" cy="50" r="50" fill="#0b3d91"/>
+  <!-- orbit -->
+  <ellipse cx="50" cy="51" rx="40" ry="13" transform="rotate(-16 50 51)" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+  <!-- stars -->
+  <circle cx="26" cy="33" r="1.1" fill="#ffffff"/>
+  <circle cx="72" cy="30" r="0.9" fill="#ffffff"/>
+  <circle cx="78" cy="60" r="1.1" fill="#ffffff"/>
+  <circle cx="33" cy="70" r="0.9" fill="#ffffff"/>
+  <!-- red vector swoosh -->
+  <path d="M16 62 Q48 30 88 42 Q82 41 78 42 Q50 38 30 64 Q22 63 16 62 Z" fill="#fc3d21"/>
+  <!-- wordmark -->
+  <text x="50" y="57" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="21" letter-spacing="0.5" fill="#ffffff">NASA</text>
+</svg>
