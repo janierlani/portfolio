@@ -3,296 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog · Zhaniya Turganova</title>
-    <meta name="description" content="Notes on chip design, materials science, and aerospace research by Zhaniya Turganova.">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --accent:  #4a90d9;
-            --accent2: #9b2335;
-            --ink:     #0e1a2e;
-            --muted:   #5b6b85;
-            --border:  #d9e2f0;
-        }
-
-        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.65; color: var(--ink); background: #f4f5f8;
-        }
-
-        /* ── TOP NAV (shared look with index) ── */
-        .topnav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 14px 40px;
-            background: rgba(9,13,26,.9);
-            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(74,144,217,.14);
-        }
-        .nav-brand {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: .82rem; letter-spacing: .14em; text-transform: uppercase;
-            color: #fff; text-decoration: none; font-weight: 600;
-            display: flex; align-items: center; gap: 9px;
-        }
-        .nav-brand .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
-        .nav-links { display: flex; align-items: center; gap: 6px; }
-        .nav-links a {
-            font-size: .82rem; color: rgba(255,255,255,.66); text-decoration: none;
-            padding: 7px 13px; border-radius: 7px; transition: color .2s, background .2s;
-        }
-        .nav-links a:hover { color: #fff; background: rgba(74,144,217,.16); }
-        .nav-links a.active { color: #fff; background: rgba(74,144,217,.22); }
-        .nav-links a.nav-cta { color: #fff; background: rgba(74,144,217,.22); border: 1px solid rgba(74,144,217,.4); }
-        .nav-links a.nav-cta:hover { background: rgba(74,144,217,.38); }
-        .nav-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; padding: 6px; }
-
-        @media (max-width: 860px) {
-            .topnav { padding: 12px 18px; }
-            .nav-toggle { display: block; }
-            .nav-links {
-                position: absolute; top: 100%; right: 0; left: 0;
-                flex-direction: column; align-items: stretch; gap: 2px;
-                background: rgba(9,13,26,.97);
-                backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-                border-bottom: 1px solid rgba(74,144,217,.14);
-                max-height: 0; overflow: hidden; opacity: 0; padding: 0 16px;
-                transition: max-height .3s, opacity .25s, padding .3s;
-            }
-            .nav-links.open { max-height: 420px; opacity: 1; padding: 10px 16px 16px; }
-            .nav-links a { padding: 12px 13px; }
-        }
-
-        /* ── BLOG HEADER ── */
-        .blog-hero {
-            background: #090d1a; color: #fff;
-            padding: 150px 24px 70px; position: relative; overflow: hidden;
-            border-bottom: 1px solid rgba(74,144,217,.15);
-        }
-        .blog-hero::before {
-            content: ''; position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(74,144,217,.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(74,144,217,.05) 1px, transparent 1px);
-            background-size: 44px 44px; pointer-events: none;
-        }
-        .blog-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
-        .blog-eyebrow {
-            font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
-            letter-spacing: .18em; text-transform: uppercase; color: var(--accent);
-            display: flex; align-items: center; gap: 12px; margin-bottom: 22px;
-        }
-        .blog-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--accent); }
-        .blog-hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
-        .blog-hero p { color: rgba(255,255,255,.62); font-weight: 300; font-size: 1.12rem; margin-top: 18px; max-width: 560px; }
-
-        /* ── LAYOUT ── */
-        .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 90px; }
-
-        /* ── POST CARD (index list) ── */
-        .post-list { display: flex; flex-direction: column; gap: 22px; margin-bottom: 70px; }
-        .post-card {
-            display: block; text-decoration: none; color: inherit;
-            background: #fff; border: 1px solid var(--border); border-radius: 12px;
-            padding: 26px 28px; transition: transform .2s, box-shadow .2s, border-color .2s;
-        }
-        .post-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(14,26,46,.1); border-color: var(--accent); }
-        .post-meta { display: flex; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: .72rem; letter-spacing: .04em; color: var(--muted); margin-bottom: 12px; }
-        .tag { padding: 3px 10px; border-radius: 999px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: .66rem; }
-        .tag-chip  { background: #e8f0fb; color: #2c5d96; }
-        .tag-mat   { background: #fdeaec; color: #9b2335; }
-        .tag-space { background: #ece9fb; color: #4a3b9b; }
-        .post-card h2 { font-size: 1.45rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 8px; }
-        .post-card p { color: var(--muted); font-size: .98rem; }
-        .read-more { display: inline-block; margin-top: 14px; color: var(--accent); font-size: .85rem; font-weight: 600; }
-
-        /* ── FULL ARTICLES ── */
-        .article { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 48px 52px; margin-bottom: 34px; scroll-margin-top: 90px; }
-        .article > .post-meta { margin-bottom: 14px; }
-        .article h2.title { font-size: clamp(1.7rem, 3.4vw, 2.3rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.15; margin-bottom: 6px; }
-        .article .dek { color: var(--muted); font-size: 1.05rem; font-weight: 300; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
-        .article p { margin-bottom: 18px; font-size: 1.02rem; color: #25334a; }
-        .article h3 { font-size: 1.18rem; font-weight: 700; margin: 30px 0 12px; color: var(--ink); }
-        .article ul { margin: 0 0 18px 22px; }
-        .article li { margin-bottom: 8px; color: #25334a; }
-        .article strong { color: var(--ink); }
-        .article .pull {
-            border-left: 3px solid var(--accent2); padding: 4px 0 4px 20px;
-            margin: 24px 0; font-size: 1.12rem; font-style: italic; color: var(--ink);
-        }
-        .article code { font-family: 'IBM Plex Mono', monospace; font-size: .86em; background: #eef2f8; padding: 2px 6px; border-radius: 4px; color: #2c5d96; }
-        .back-top { display: inline-block; margin-top: 14px; font-size: .82rem; color: var(--muted); text-decoration: none; }
-        .back-top:hover { color: var(--accent); }
-
-        footer { background: #090d1a; color: rgba(255,255,255,.5); text-align: center; padding: 40px 20px; font-size: .85rem; }
-        footer a { color: rgba(255,255,255,.7); text-decoration: none; }
-
-        @media (max-width: 600px) {
-            .article { padding: 32px 22px; }
-            .post-card { padding: 22px 20px; }
-        }
-    </style>
+    <title>The Notebook · Zhaniya Turganova</title>
+    <meta name="description" content="Essays and field notes on semiconductors, materials, and the philosophy of building, by Zhaniya Turganova.">
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-    <!-- ═══════════ TOP NAV ═══════════ -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <button class="to-top" id="toTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
     <nav class="topnav" id="topnav">
-        <a href="index.html" class="nav-brand"><span class="dot"></span>Z. Turganova</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <a href="index.html" class="nav-brand"><span class="mark"></span>Z. Turganova</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
         <div class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="index.html#work">Work</a>
             <a href="index.html#gallery">Moments</a>
-            <a href="blog.html" class="active">Blog</a>
+            <a href="blog.html" class="current">Notebook</a>
             <a href="mailto:zturganova3@gatech.edu" class="nav-cta">Contact</a>
         </div>
     </nav>
 
-    <!-- ═══════════ HEADER ═══════════ -->
-    <header class="blog-hero" id="top">
-        <div class="blog-hero-inner">
-            <div class="blog-eyebrow">Field Notes</div>
-            <h1>Blog</h1>
-            <p>Working notes from the lab and the layout tool &mdash; on semiconductors, materials, and building things for space.</p>
-        </div>
-    </header>
-
-    <main class="wrap">
-
-        <!-- ═══════════ POST INDEX ═══════════ -->
-        <!-- To add a post: copy one <a class="post-card"> block below AND one matching
-             <article> block further down. Keep their href/id in sync (e.g. #post-4). -->
-        <div class="post-list">
-
-            <a class="post-card" href="#post-1">
-                <div class="post-meta"><span class="tag tag-chip">Chip Design</span><span>Mar 2026</span><span>&middot; 6 min read</span></div>
-                <h2>From &minus;2.7 ns to passing: closing timing on my first RTL-to-GDS chip</h2>
-                <p>What I learned taking a 64-bit SystemVerilog calculator all the way to a clean GDS &mdash; and why worst negative slack became my favorite number to hate.</p>
-                <span class="read-more">Read more &rarr;</span>
-            </a>
-
-            <a class="post-card" href="#post-2">
-                <div class="post-meta"><span class="tag tag-mat">Materials</span><span>Feb 2026</span><span>&middot; 5 min read</span></div>
-                <h2>Growing &gamma;-InSe, one RHEED streak at a time</h2>
-                <p>Notes on MBE growth of a 2D semiconductor on silicon &mdash; reading diffraction patterns, chasing flux ratios, and learning that good films reward patience.</p>
-                <span class="read-more">Read more &rarr;</span>
-            </a>
-
-            <a class="post-card" href="#post-3">
-                <div class="post-meta"><span class="tag tag-space">Space</span><span>Aug 2025</span><span>&middot; 5 min read</span></div>
-                <h2>Picking a heat shield for Mars at NASA Johnson</h2>
-                <p>Six weeks at United Space School designing thermal protection for a crewed Mars lander &mdash; and why materials selection is mostly about choosing which problem you'd rather have.</p>
-                <span class="read-more">Read more &rarr;</span>
-            </a>
-
-        </div>
-
-        <!-- ═══════════ FULL ARTICLES ═══════════ -->
-
-        <article class="article" id="post-1">
-            <div class="post-meta"><span class="tag tag-chip">Chip Design</span><span>Mar 2026</span><span>&middot; 6 min read</span></div>
-            <h2 class="title">From &minus;2.7 ns to passing: closing timing on my first RTL-to-GDS chip</h2>
-            <p class="dek">What I learned taking a 64-bit SystemVerilog calculator all the way to a clean GDS &mdash; and why worst negative slack became my favorite number to hate.</p>
-
-            <p>When I joined Silicon Jackets, I thought the hard part of chip design would be writing the RTL. Describe the logic, simulate it, done. The actual lesson came much later, somewhere around the four-hundredth design rule violation, when I realized that getting a circuit to <em>work</em> and getting it to <em>close</em> are two very different jobs.</p>
-
-            <p>The project was a 64-bit, SRAM-backed calculator in SystemVerilog &mdash; a 7-state FSM driving a parameterized ripple-carry adder against a dual 1024&times;32 SRAM interface. In simulation it behaved. The interesting part started when we pushed it through the full flow: synthesis in Genus, place-and-route in Innovus, and a parallel run through OpenLane.</p>
-
-            <h3>Worst negative slack, my new nemesis</h3>
-            <p>The first timing report came back with a worst negative slack of <code>&minus;2.701 ns</code>. For anyone who hasn't stared at one of these: that number means the longest path in the design takes 2.7 nanoseconds longer than the clock allows. The chip, as drawn, would simply give the wrong answer at speed.</p>
-
-            <p>Closing that gap was iterative and unglamorous. I worked the SDC constraints path by path &mdash; tightening, re-running static timing analysis, reading where the slack was being spent. A lot of it lived in the carry chain, which is exactly where a ripple-carry adder is supposed to hurt. I wrote some custom Tcl procedures just to visualize critical paths and fan-out, because clicking through the GUI for the hundredth time was not a life.</p>
-
-            <p class="pull">Eventually the report flipped to <code>+0.01 ns</code>. One hundredth of a nanosecond of margin. I have never been so happy about such a small number.</p>
-
-            <h3>The 1,000-violation wall</h3>
-            <p>Timing was only half of it. Physical design threw over a thousand DRC violations at me &mdash; shorts, spacing problems, routing that had nowhere to go. The fixes that mattered most:</p>
-            <ul>
-                <li><strong>LEF OBS analysis</strong> to understand where the macro was blocking routing layers in the first place.</li>
-                <li><strong>Expanding the routing layers</strong> so the tool had room to escape congested regions.</li>
-                <li><strong>Placement halos</strong> around the SRAM to stop cells from crowding the macro pins.</li>
-            </ul>
-
-            <p>By the end the design had 98.94% coverage in Cadence IMC, 100% of assertions passing, and zero DRC violations. The thing I'll actually carry forward isn't any single command &mdash; it's the habit of treating timing and DRC as conversations with the tool, not one-shot checks.</p>
-
-            <h3>What I'd tell past me</h3>
-            <p>Start reading timing reports earlier. Don't wait until the design "works" in sim to think about the clock. And keep a scratchpad of every fix that moved slack &mdash; future you will want that list.</p>
-
-            <p>You can see the full project write-up <a href="https://janierlani.github.io/sj_project" target="_blank" rel="noopener">here</a>.</p>
-            <a class="back-top" href="#top">&uarr; Back to all posts</a>
-        </article>
-
-        <article class="article" id="post-2">
-            <div class="post-meta"><span class="tag tag-mat">Materials</span><span>Feb 2026</span><span>&middot; 5 min read</span></div>
-            <h2 class="title">Growing &gamma;-InSe, one RHEED streak at a time</h2>
-            <p class="dek">Notes on MBE growth of a 2D semiconductor on silicon &mdash; reading diffraction patterns, chasing flux ratios, and learning that good films reward patience.</p>
-
-            <p>Most of semiconductor research happens at human speed: you set conditions, you wait, you measure. Molecular beam epitaxy is the slowest and most addictive version of that loop I've found. In our VIP we're growing &gamma;-InSe &mdash; a layered indium selenide &mdash; on Si(100), and trying to make it good enough that someone could eventually use it as a 2D channel material.</p>
-
-            <h3>Learning to read the streaks</h3>
-            <p>The first instrument I learned to trust was RHEED &mdash; reflection high-energy electron diffraction. You fire electrons at a glancing angle across the surface while it grows, and the pattern on the phosphor screen tells you what's happening atom by atom. Sharp, streaky lines mean a smooth crystalline surface. Spotty patterns mean you're growing islands instead of layers. Watching those streaks sharpen in real time is the closest thing materials science has to a heartbeat monitor.</p>
-
-            <p class="pull">A film is a record of every decision you made while it grew &mdash; flux, temperature, timing &mdash; written in atoms.</p>
-
-            <h3>The flux-ratio hunt</h3>
-            <p>The variable I spend the most time on is the Se/In flux ratio. Too little selenium and the film is defective; too much and it doesn't incorporate the way you want. We sweep it against substrate temperature and then characterize what comes out:</p>
-            <ul>
-                <li><strong>XRD</strong> to confirm we actually grew the &gamma; phase and not something else.</li>
-                <li><strong>AFM and SEM</strong> to see how smooth and continuous the surface really is.</li>
-                <li><strong>Hall measurements</strong> for carrier mobility &mdash; the number that ultimately decides if a film is device-worthy.</li>
-            </ul>
-
-            <h3>From sapphire to silicon</h3>
-            <p>The longer-term piece I'm working on is mechanical transfer &mdash; growing InSe on sapphire and then lifting it onto silicon. The point is integration: industry runs on silicon, so a 2D material that can't get onto a Si wafer is a beautiful lab curiosity and nothing more. That's the part I find most motivating &mdash; the gap between a result that's interesting and a result that's <em>usable</em>.</p>
-
-            <p>If there's a theme to this work, it's patience as a technical skill. The film does not care about your deadline.</p>
-            <a class="back-top" href="#top">&uarr; Back to all posts</a>
-        </article>
-
-        <article class="article" id="post-3">
-            <div class="post-meta"><span class="tag tag-space">Space</span><span>Aug 2025</span><span>&middot; 5 min read</span></div>
-            <h2 class="title">Picking a heat shield for Mars at NASA Johnson</h2>
-            <p class="dek">Six weeks at United Space School designing thermal protection for a crewed Mars lander &mdash; and why materials selection is mostly about choosing which problem you'd rather have.</p>
-
-            <p>I spent part of last summer as one of 40 delegates at United Space School, working out of NASA Johnson Space Center. My role on the team was materials selection lead, which sounds official until you realize it mostly means being the person who says "yes, but it'll melt" a lot.</p>
-
-            <p>Our task was the thermal protection system &mdash; the heat shield &mdash; for a crewed Mars lander and its inflatable decelerator. When you hit the Martian atmosphere, you're carrying enormous kinetic energy that has to go somewhere, and most of it turns into heat. The materials problem is deciding how to survive that.</p>
-
-            <h3>The actual trade-off</h3>
-            <p>I came in assuming there'd be a "best" material. There isn't. There's a set of bad options and you pick the one whose downsides you can live with:</p>
-            <ul>
-                <li><strong>Carbon-carbon composites</strong> &mdash; gorgeous high-temperature performance, reusable, and expensive and heavy in ways that fight your mass budget.</li>
-                <li><strong>Ablatives</strong> &mdash; they protect by deliberately burning away, which is wonderfully effective and means your shield is gone after one use.</li>
-                <li><strong>Refractory metals</strong> &mdash; high melting points, but density that a launch vehicle resents.</li>
-            </ul>
-
-            <p>We ran CAD models and CFD analysis on the decelerator geometry to see where the heat actually concentrated, then mapped materials onto those zones rather than picking one material for the whole vehicle. The stagnation point and the flexible decelerator have completely different needs.</p>
-
-            <p class="pull">Engineering for space isn't about finding the perfect material. It's about being honest about which compromise you're making.</p>
-
-            <h3>What stuck with me</h3>
-            <p>The most valuable thing wasn't the CFD or the composites &mdash; it was watching how a real mission team reasons under constraints. Mass, cost, reusability, crew safety, and schedule all pull in different directions, and the materials choice is where a lot of those tensions get resolved. I left more interested in that decision-making than I expected to be.</p>
-
-            <p>It's also the cleanest illustration I know of why I like materials engineering: it sits exactly at the point where physics meets a deadline.</p>
-            <a class="back-top" href="#top">&uarr; Back to all posts</a>
-        </article>
-
+    <main>
+        <div id="blogHero"></div>
+        <div id="blogList"><div class="loading">Loading…</div></div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Zhaniya Turganova &middot; <a href="index.html">Back to portfolio</a></p>
+        <div>Zhaniya Turganova — The Notebook</div>
+        <div><a href="index.html">Back to portfolio</a> &nbsp;·&nbsp; <a href="admin.html">Edit site</a></div>
     </footer>
 
-    <script>
-        var toggle = document.getElementById('navToggle');
-        var links = document.getElementById('navLinks');
-        toggle.addEventListener('click', function () { links.classList.toggle('open'); });
-        links.addEventListener('click', function (e) { if (e.target.tagName === 'A') links.classList.remove('open'); });
-    </script>
+    <script src="assets/render.js"></script>
 </body>
 </html>

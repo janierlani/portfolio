@@ -1,0 +1,254 @@
+{
+  "profile": {
+    "name": "Zhaniya Turganova",
+    "tagline": "Materials Science · Chip Design · Aerospace",
+    "kicker": "Technologist & builder",
+    "bio": "I work at the intersection of materials science and chip design — studying how atomic-scale physics shapes what's possible in semiconductors, and building the hardware that brings those devices to life. I care as much about the philosophy of why we build as the engineering of how.",
+    "photo": "img/headshot.jpg",
+    "location": "Georgia Institute of Technology",
+    "email": "zturganova3@gatech.edu",
+    "phone": "(678) 656-5140",
+    "linkedin": "https://www.linkedin.com/in/janierlani",
+    "github": "https://github.com/janierlani",
+    "stats": [
+      { "value": "3.91", "label": "GPA" },
+      { "value": "3", "label": "Research Labs" },
+      { "value": "0", "label": "DRC Violations" },
+      { "value": "3", "label": "Papers" }
+    ]
+  },
+  "experiences": [
+    {
+      "id": "silicon-jackets",
+      "cat": "chip",
+      "title": "Silicon Jackets — DD · DV · PD",
+      "org": "Georgia Tech Chip Design Club",
+      "date": "Aug 2025 – Present",
+      "tags": ["SystemVerilog", "Physical Design", "Verification"],
+      "stats": [
+        { "v": "98.94%", "l": "Coverage" },
+        { "v": "100%", "l": "Assertions" },
+        { "v": "0", "l": "DRC Violations" },
+        { "v": "+0.01 ns", "l": "WNS" }
+      ],
+      "bullets": [
+        "64-bit SRAM-backed calculator in SystemVerilog — 7-state FSM, parameterized ripple-carry adder, dual 1024×32 SRAM interface",
+        "UVM-style testbench: constrained-random driver, monitor, scoreboard; 98.94% coverage in Cadence IMC",
+        "Full RTL-to-GDS in Innovus + OpenLane; resolved 1,000+ DRC violations via LEF OBS analysis, routing-layer expansion, placement halos",
+        "Timing closure: WNS −2.701 ns → +0.01 ns via SDC iteration; custom Tcl procs for path viz & fanout"
+      ],
+      "link": { "label": "View full project", "url": "https://janierlani.github.io/sj_project" }
+    },
+    {
+      "id": "hytech",
+      "cat": "chip",
+      "title": "HyTech Formula SAE Racing",
+      "org": "Electrical Engineering · Georgia Tech",
+      "date": "Aug 2025 – Present",
+      "bullets": [
+        "Designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC"
+      ]
+    },
+    {
+      "id": "unisat",
+      "cat": "chip",
+      "title": "UniSAT Nano-Satellite Programme",
+      "org": "1 of 20 Selected",
+      "date": "2024",
+      "bullets": [
+        "Nanosatellite assembly, 3D modeling, PCB design, IoT systems; designed and tested onboard data-collection sensors"
+      ]
+    },
+    {
+      "id": "facchetti",
+      "cat": "mat",
+      "title": "Facchetti Laboratory, Georgia Tech",
+      "org": "Undergraduate Researcher · Organic Electrochemical Transistors",
+      "date": "Jan 2026 – Present",
+      "bullets": [
+        "Fabricating OECTs for neuromorphic computing — e-beam evaporation of gold contacts, photolithographic mask alignment, spin coating of semiconducting polymers",
+        "Measuring transfer curves and transconductance across device geometries"
+      ]
+    },
+    {
+      "id": "heterostructure",
+      "cat": "mat",
+      "title": "2D Heterostructure Synthesis VIP",
+      "org": "Undergraduate Researcher · MBE Growth of γ-InSe · Georgia Tech",
+      "date": "Jan 2026 – Present",
+      "bullets": [
+        "MBE growth of γ-InSe on Si(100); characterizing via RHEED, XRD, AFM/SEM, and Hall mobility across Se/In flux ratios and temperatures",
+        "Developing mechanical transfer of InSe films from sapphire → silicon for industry-standard 2D channel integration"
+      ]
+    },
+    {
+      "id": "kacher",
+      "cat": "mat",
+      "title": "Kacher Laboratory, Georgia Tech",
+      "org": "Researcher & Entrepreneurship Assistant · ARPA-E ROSIE",
+      "date": "Aug 2025 – Present",
+      "bullets": [
+        "TGA, DSC, SEM, XRD characterization of hydrogen-reduced iron oxide → steel; casting, heat treatment, mounting, polishing of stainless steel pellets",
+        "Customer discovery, market research, and TEA modeling for ARPA-E-funded green steel manufacturing"
+      ]
+    },
+    {
+      "id": "geopolymer",
+      "cat": "mat",
+      "title": "Lunar Regolith Geopolymer Concrete",
+      "org": "Nazarbayev University",
+      "date": "Aug 2024 – Apr 2025",
+      "bullets": [
+        "Optimized NaOH molarity in metakaolin-based geopolymer for lunar ISRU habitat construction; tested setting time and compressive strength"
+      ],
+      "pdf": { "label": "View paper", "file": "pdf/geopolymers.pdf" }
+    },
+    {
+      "id": "lunar-dome",
+      "cat": "mat",
+      "title": "Stress Analysis of Dome-Shaped Lunar Bases",
+      "org": "Applied mathematics · structural optimization",
+      "date": "Jan 2025",
+      "bullets": [
+        "Lagrange-multiplier optimization of hemispherical habitat geometry; Taylor-series tolerance analysis for 3D-printed lunar structures"
+      ],
+      "pdf": { "label": "View paper", "file": "pdf/lunar-dome-stress-analysis.pdf" }
+    },
+    {
+      "id": "piper",
+      "cat": "mat",
+      "title": "Piper Aircraft",
+      "org": "Materials & Processing Engineering Intern · Vero Beach, FL",
+      "date": "Jun – Aug 2026",
+      "incoming": true,
+      "bullets": []
+    },
+    {
+      "id": "alsib",
+      "cat": "mat",
+      "title": "ALSIB & Standart Steel LLC",
+      "org": "Manufacturing & Process Engineering Intern · Almaty, Kazakhstan",
+      "date": "Aug – Sep 2024",
+      "bullets": [
+        "Operated decoilers, roll-forming lines, hydraulic shearing and press-forming systems; calibrated parameters to maintain sheet geometry and reduce scrap"
+      ]
+    },
+    {
+      "id": "united-space-school",
+      "cat": "space",
+      "title": "NASA Johnson Space Center — United Space School",
+      "org": "Materials Selection Lead · 1 of 40 Global Delegates",
+      "date": "Apr – Aug 2025",
+      "bullets": [
+        "CAD + CFD analysis of thermal protection systems for inflatable decelerators and crewed Mars landers; researched C-C composites and refractory materials"
+      ]
+    },
+    {
+      "id": "upenn-mt",
+      "cat": "space",
+      "title": "UPenn Jerome Fisher M&T Summer Institute",
+      "org": "1 of 75 selected from 1,000+ applicants",
+      "date": "Jul – Aug 2024",
+      "bullets": [
+        "Built smart IoT dog collar (CAD, Swift, Arduino, Raspberry Pi); top 5 of 15 teams; Google IPO simulation at Morgan Stanley NYC"
+      ]
+    },
+    {
+      "id": "yale",
+      "cat": "space",
+      "title": "Yale Young Global Scholars — Innovations in Science & Technology",
+      "org": "Yale University · 1 of 8,500+ applicants worldwide",
+      "date": "2023",
+      "bullets": [
+        "Designed a research proposal on ALS, studying inhibition of the C9ORF72 gene",
+        "Completed advanced seminars and a capstone project with an international team"
+      ]
+    },
+    {
+      "id": "ai-chatbots",
+      "cat": "space",
+      "title": "AI Chatbots for Space Missions",
+      "org": "University of Hawai‘i at Mānoa",
+      "date": "2023 – 2024",
+      "bullets": [
+        "11,000+ word IRB-approved study (8 participants: NASA HI-SEAS + Kazakhstan Space Agency); fine-tuned Alpaca-7B; developed LorelAI social assistant"
+      ],
+      "pdf": { "label": "View paper", "file": "pdf/space-chatbots.pdf" }
+    },
+    {
+      "id": "neuroeconomics",
+      "cat": "space",
+      "title": "Neuroeconomics in Orbit",
+      "org": "Mentored by a Dartmouth professor",
+      "date": "2024",
+      "bullets": [
+        "Prospect-Theory analysis of spaceflight-driven neurophysiological changes on astronaut decision-making"
+      ],
+      "pdf": { "label": "View paper", "file": "pdf/neuroeconomics-orbit.pdf" }
+    },
+    {
+      "id": "neuropathic",
+      "cat": "space",
+      "title": "Neuropathic Pain in Degenerative Diseases",
+      "org": "National High School Journal of Science",
+      "date": "Mar 2023 – Oct 2024",
+      "bullets": [
+        "7,500-word paper published in the National High School Journal of Science; mentored by a Georgetown M.D./Ph.D."
+      ],
+      "pdf": { "label": "View paper", "file": "pdf/neuropathic-pain.pdf" }
+    }
+  ],
+  "skills": [
+    { "group": "EDA & Physical Design", "items": ["Cadence Innovus", "Cadence Genus", "Cadence IMC", "Xcelium", "OpenLane", "Altium Designer", "Tcl", "YAML flow"] },
+    { "group": "HDL & Programming", "items": ["SystemVerilog", "Verilog", "Python", "MATLAB"] },
+    { "group": "Lab & Characterization", "items": ["SEM", "XRD", "TGA", "DSC", "AFM", "e-beam evaporation", "photolithography", "spin coating"] },
+    { "group": "Concepts", "items": ["RTL-to-GDS", "STA", "DRC", "CTS", "LEF/DEF", "SRAM integration", "UVM", "floorplanning"] }
+  ],
+  "awards": [
+    { "title": "Rhodes Trust & Schmidt Futures RISE Global Finalist", "detail": "1 of 500 from 100,000+ applicants" },
+    { "title": "Nursultan Nazarbayev Educational Foundation Grant", "detail": "$25,000 · 1 of 17 selected from 110" },
+    { "title": "Georgia Tech MSE Department Scholarship", "detail": "$16,000 (4-year)" },
+    { "title": "Space Tech Battle — Astana Hub", "detail": "Top 10 of 200 company finalists" },
+    { "title": "NASA Space Apps Challenge", "detail": "Top 10% of 5,500+ teams · Global Judging Nominee" },
+    { "title": "Eurasian Tumaris Tech Startup Incubator", "detail": "Top 15 of 200+ teams" },
+    { "title": "AWSD Youth Movement", "detail": "Top 9 Inspiring Young Leaders" },
+    { "title": "Republican Remote Olympiad — Chemistry", "detail": "2nd place" }
+  ],
+  "gallery": [
+    { "file": "img/space-tech-battle.jpg", "title": "Space Tech Battle Winner", "caption": "Top 10 of 200 companies — developed LorelAI, an AI social assistant for long-duration space missions" },
+    { "file": "img/suni-williams.jpg", "title": "With Astronaut Suni Williams", "caption": "NASA Johnson Space Center" },
+    { "file": "img/luca-parmitano.jpg", "title": "With ESA Astronaut Luca Parmitano", "caption": "ISS veteran and spacewalk record holder" },
+    { "file": "img/presenting-upenn.jpg", "title": "UPenn Final Project Presentation", "caption": "UPenn M&T Summer Institute" },
+    { "file": "img/upenn-mtsi.jpg", "title": "UPenn M&T Summer Institute", "caption": "Top 5 of 15 teams — smart IoT device, Morgan Stanley NYC" },
+    { "file": "img/united-space-school.jpg", "title": "United Space School 2025", "caption": "1 of 40 global delegates — Mars mission design at NASA JSC" }
+  ],
+  "posts": [
+    {
+      "id": "closing-timing",
+      "cat": "chip",
+      "title": "From −2.7 ns to passing: closing timing on my first RTL-to-GDS chip",
+      "date": "2026-03-12",
+      "readTime": "6 min read",
+      "excerpt": "What I learned taking a 64-bit SystemVerilog calculator all the way to a clean GDS — and why worst negative slack became my favorite number to hate.",
+      "body": "When I joined Silicon Jackets, I thought the hard part of chip design would be writing the RTL. Describe the logic, simulate it, done. The actual lesson came much later, somewhere around the four-hundredth design rule violation, when I realized that getting a circuit to *work* and getting it to *close* are two very different jobs.\n\nThe project was a 64-bit, SRAM-backed calculator in SystemVerilog — a 7-state FSM driving a parameterized ripple-carry adder against a dual 1024×32 SRAM interface. In simulation it behaved. The interesting part started when we pushed it through the full flow: synthesis in Genus, place-and-route in Innovus, and a parallel run through OpenLane.\n\n## Worst negative slack, my new nemesis\n\nThe first timing report came back with a worst negative slack of `−2.701 ns`. For anyone who hasn't stared at one of these: that number means the longest path in the design takes 2.7 nanoseconds longer than the clock allows. The chip, as drawn, would simply give the wrong answer at speed.\n\nClosing that gap was iterative and unglamorous. I worked the SDC constraints path by path — tightening, re-running static timing analysis, reading where the slack was being spent. A lot of it lived in the carry chain, which is exactly where a ripple-carry adder is supposed to hurt.\n\n> Eventually the report flipped to +0.01 ns. One hundredth of a nanosecond of margin. I have never been so happy about such a small number.\n\n## The 1,000-violation wall\n\nTiming was only half of it. Physical design threw over a thousand DRC violations at me — shorts, spacing problems, routing that had nowhere to go. The fixes that mattered most were LEF OBS analysis to understand where the macro blocked routing, expanding the routing layers, and placement halos around the SRAM.\n\nBy the end the design had 98.94% coverage, 100% of assertions passing, and zero DRC violations. The thing I'll carry forward isn't any single command — it's the habit of treating timing and DRC as conversations with the tool, not one-shot checks.\n\nYou can see the full project write-up [here](https://janierlani.github.io/sj_project)."
+    },
+    {
+      "id": "growing-inse",
+      "cat": "mat",
+      "title": "Growing γ-InSe, one RHEED streak at a time",
+      "date": "2026-02-04",
+      "readTime": "5 min read",
+      "excerpt": "Notes on MBE growth of a 2D semiconductor on silicon — reading diffraction patterns, chasing flux ratios, and learning that good films reward patience.",
+      "body": "Most of semiconductor research happens at human speed: you set conditions, you wait, you measure. Molecular beam epitaxy is the slowest and most addictive version of that loop I've found. In our VIP we're growing γ-InSe — a layered indium selenide — on Si(100), and trying to make it good enough that someone could eventually use it as a 2D channel material.\n\n## Learning to read the streaks\n\nThe first instrument I learned to trust was RHEED — reflection high-energy electron diffraction. You fire electrons at a glancing angle across the surface while it grows, and the pattern on the screen tells you what's happening atom by atom. Sharp, streaky lines mean a smooth crystalline surface. Spotty patterns mean you're growing islands instead of layers.\n\n> A film is a record of every decision you made while it grew — flux, temperature, timing — written in atoms.\n\n## The flux-ratio hunt\n\nThe variable I spend the most time on is the Se/In flux ratio. Too little selenium and the film is defective; too much and it doesn't incorporate the way you want. We sweep it against substrate temperature and then characterize what comes out with XRD, AFM, SEM, and Hall measurements for carrier mobility — the number that ultimately decides if a film is device-worthy.\n\n## From sapphire to silicon\n\nThe longer-term piece I'm working on is mechanical transfer — growing InSe on sapphire and then lifting it onto silicon. The point is integration: industry runs on silicon, so a 2D material that can't get onto a Si wafer is a beautiful lab curiosity and nothing more. That gap between *interesting* and *usable* is the part I find most motivating."
+    },
+    {
+      "id": "mars-heat-shield",
+      "cat": "space",
+      "title": "Picking a heat shield for Mars at NASA Johnson",
+      "date": "2025-08-18",
+      "readTime": "5 min read",
+      "excerpt": "Six weeks at United Space School designing thermal protection for a crewed Mars lander — and why materials selection is mostly about choosing which problem you'd rather have.",
+      "body": "I spent part of last summer as one of 40 delegates at United Space School, working out of NASA Johnson Space Center. My role on the team was materials selection lead, which sounds official until you realize it mostly means being the person who says \"yes, but it'll melt\" a lot.\n\nOur task was the thermal protection system — the heat shield — for a crewed Mars lander and its inflatable decelerator. When you hit the Martian atmosphere, you're carrying enormous kinetic energy that has to go somewhere, and most of it turns into heat.\n\n## The actual trade-off\n\nI came in assuming there'd be a \"best\" material. There isn't. There's a set of bad options and you pick the one whose downsides you can live with:\n\n- **Carbon-carbon composites** — gorgeous high-temperature performance, and expensive and heavy in ways that fight your mass budget.\n- **Ablatives** — they protect by deliberately burning away, which is effective and means your shield is gone after one use.\n- **Refractory metals** — high melting points, but density that a launch vehicle resents.\n\nWe ran CAD models and CFD analysis on the decelerator geometry to see where the heat concentrated, then mapped materials onto those zones rather than picking one material for the whole vehicle.\n\n> Engineering for space isn't about finding the perfect material. It's about being honest about which compromise you're making.\n\n## What stuck with me\n\nThe most valuable thing wasn't the CFD or the composites — it was watching how a real mission team reasons under constraints. It's the cleanest illustration I know of why I like materials engineering: it sits exactly at the point where physics meets a deadline."
+    }
+  ]
+}
