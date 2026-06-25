@@ -52,9 +52,9 @@
     "kicker": "Technologist · Conversationalist ",
     "tagline": "Materials Science · Chip Design · Aerospace",
     "bio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. my mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\n\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about.  ",
-    "personalBio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. my mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about. ",
+    "personalBio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. \n\n\nmy mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about. ",
     "photo": "img/headshot.jpg",
-    "location": "Georgia Institute of Technology",
+    "location": "Georgia Institute of Technology, Atlanta, GA, USA",
     "email": "zturganova3@gatech.edu",
     "phone": "(678) 656-5140",
     "linkedin": "https://www.linkedin.com/in/janierlani",
@@ -81,11 +81,15 @@
     "thoughts": [
       {
         "title": "On building",
-        "body": "[Edit me] I think the next decade of hardware belongs to people who can move fluidly between the chip and the material it's made of. That's the seam I want to live on — and the reason I keep collecting skills that don't obviously go together yet."
+        "body": "problems are great because you're forced to solve them, whether there is decades worth of research to rationalise your decision on or it's a topic on which there's one paper written - and it's yours. i am excited about issues where i have to consider physical constraints and explore designs that have never been explored, and small-scale phenomena that is completely new and in which a phd will tell you they have no clue (fun fact - we are closer to being the size of the whole universe than the size of a fundamental particle!)."
+      },
+      {
+        "title": "as we have seen, technological progress is like a pigeon you fed once - the more you give it, the more it wants. we will always be busy with problems of our own doing (did someone say ai?).",
+        "body": ""
       },
       {
         "title": "What's next",
-        "body": "[Edit me] I want to start something at the intersection of advanced materials and semiconductor manufacturing. Short term: get exceptional in the lab and the layout tool. Long term: build the company I wish existed."
+        "body": "my current focus is computing infrastructure for ai. i research novel computing paradigms and would love to see universal shift from Von Neumann computing to - you name it - neuromorphic, in-memory, quantum. i used to be wary and disliking of numbers when i was younger, but turns out it's all just physics, which is, obviously, more likeable."
       }
     ]
   },
