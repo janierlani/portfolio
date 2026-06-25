@@ -261,19 +261,6 @@
       "incoming": true
     },
     {
-      "id": "alsib",
-      "cat": "mat",
-      "title": "ALSIB & Standart Steel LLC",
-      "org": "Manufacturing & Process Engineering Intern · Almaty, Kazakhstan",
-      "date": "Aug – Sep 2024",
-      "bullets": [
-        "Operated decoilers, roll-forming lines, hydraulic shearing and press-forming systems; calibrated parameters to maintain sheet geometry and reduce scrap"
-      ],
-      "tags": [],
-      "personal": "m first factory floor. Watching raw steel become something useful made manufacturing feel like a craft, not a black box.",
-      "incoming": false
-    },
-    {
       "id": "united-space-school",
       "cat": "space",
       "title": "NASA Johnson Space Center — United Space School",

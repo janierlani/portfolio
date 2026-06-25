@@ -68,7 +68,7 @@
     if(p.linkedin) links+='<a href="'+esc(p.linkedin)+'" target="_blank" rel="noopener">'+ICON.linkedin+'linkedin</a>';
     if(p.github) links+='<a href="'+esc(p.github)+'" target="_blank" rel="noopener">'+ICON.github+'github</a>';
     if(p.phone) links+='<a href="tel:'+esc(p.phone.replace(/[^0-9+]/g,''))+'">'+ICON.phone+esc(p.phone)+'</a>';
-    host.innerHTML='<div class="intro-band reveal"><p>'+inlineMd(clean(p.bio||''))+'</p>'+
+    host.innerHTML='<div class="intro-band reveal"><div class="intro-bio">'+markdown(clean(p.bio||''))+'</div>'+
       '<div class="hero-stats">'+stats+'</div><div class="hero-links">'+links+'</div></div>';
   }
 
@@ -110,7 +110,10 @@
     var host=document.getElementById('thoughts'); if(!host) return;
     if(!p.thoughts||!p.thoughts.length){ host.style.display='none'; return; }
     host.innerHTML='<div class="section-head reveal"><span class="eyebrow">mind</span><h2>'+esc((p.thoughtsTitle||'thoughts'))+'</h2></div>'+
-      '<div class="thoughts">'+p.thoughts.map(function(t){return '<div class="thought reveal"><h3>'+esc(t.title)+'</h3><p>'+inlineMd(clean(t.body))+'</p></div>';}).join('')+'</div>';
+      '<div class="thoughts">'+p.thoughts.map(function(t){
+        if(t.body && t.body.trim()) return '<div class="thought reveal"><h3>'+esc(t.title)+'</h3><p>'+inlineMd(clean(t.body))+'</p></div>';
+        return '<div class="thought reveal thought-standalone"><p>'+inlineMd(clean(t.title))+'</p></div>';
+      }).join('')+'</div>';
   }
 
   /* ---------- WORK (unified: technical + personal side by side) ---------- */
