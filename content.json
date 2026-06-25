@@ -48,10 +48,10 @@
     }
   },
   "profile": {
-    "name": "Zhaniya Turganova",
-    "kicker": "Technologist · Rationalist",
-    "tagline": "Materials Science · Chip Design · Aerospace",
-    "bio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. my mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about.  ",
+    "name": "zhaniya turganova",
+    "kicker": "technologist · rationalist",
+    "tagline": "materials Science · chip design · aerospace",
+    "bio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. my mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about.  ",
     "personalBio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. \n\nmy mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about. ",
     "photo": "img/headshot.jpg",
     "location": "Georgia Institute of Technology, Atlanta, GA, USA",
@@ -66,21 +66,21 @@
       },
       {
         "value": "3",
-        "label": "Research Labs"
+        "label": "research labs"
       },
       {
         "value": "0",
-        "label": "DRC Violations"
+        "label": "DRC violations"
       },
       {
         "value": "3",
-        "label": "Papers"
+        "label": "papers"
       }
     ],
-    "thoughtsTitle": "Thoughts & what's next",
+    "thoughtsTitle": "thoughts & what's next",
     "thoughts": [
       {
-        "title": "On building",
+        "title": "on building",
         "body": "problems are great because you're forced to solve them, whether there is decades worth of research to rationalise yourself or there's 1 paper written on the topic - and it's yours. i am excited about issues where i have to consider physical interactions and explore novel designs, especially small-scale phenomena about which a phd will tell you they have no clue (fun fact - we are closer to being the size of the whole universe than the size of a fundamental particle!)"
       },
       {
@@ -88,7 +88,7 @@
         "body": ""
       },
       {
-        "title": "What's next",
+        "title": "what's next",
         "body": "my current focus is computing infrastructure for ai. i research novel computing paradigms and would love to see universal shift from Von Neumann computing to - you name it - neuromorphic, in-memory, quantum. i used to be wary and disliking of numbers when i was younger, but turns out it's all just physics, which is, obviously, more likeable."
       }
     ]
@@ -97,14 +97,22 @@
     {
       "id": "silicon-jackets",
       "cat": "chip",
-      "title": "Silicon Jackets — DD · DV · PD",
+      "title": "Silicon Jackets — Digital Design · Digital Verification · Physical Design",
       "org": "Georgia Tech Chip Design Club",
       "date": "Aug 2025 – Present",
+      "bullets": [
+        "64-bit SRAM-backed calculator in SystemVerilog — 7-state FSM, parameterized ripple-carry adder, dual 1024×32 SRAM interface",
+        "UVM-style testbench: constrained-random driver, monitor, scoreboard; 98.94% coverage in Cadence IMC",
+        "Full RTL-to-GDS in Innovus + OpenLane; resolved 1,000+ DRC violations via LEF OBS analysis, routing-layer expansion, placement halos",
+        "Timing closure: WNS −2.701 ns → +0.01 ns via SDC iteration; custom Tcl procs for path viz & fanout"
+      ],
       "tags": [
         "SystemVerilog",
         "Physical Design",
         "Verification"
       ],
+      "personal": "i joined because I wanted to feel a design go all the way from a line of code to silicon. for anyone thinking of joining - absolutely do! it took me a few grey hairs, but the leads are super supportive, and the onboarding program is very well-developed.",
+      "incoming": false,
       "stats": [
         {
           "v": "98.94%",
@@ -123,13 +131,6 @@
           "l": "WNS"
         }
       ],
-      "bullets": [
-        "64-bit SRAM-backed calculator in SystemVerilog — 7-state FSM, parameterized ripple-carry adder, dual 1024×32 SRAM interface",
-        "UVM-style testbench: constrained-random driver, monitor, scoreboard; 98.94% coverage in Cadence IMC",
-        "Full RTL-to-GDS in Innovus + OpenLane; resolved 1,000+ DRC violations via LEF OBS analysis, routing-layer expansion, placement halos",
-        "Timing closure: WNS −2.701 ns → +0.01 ns via SDC iteration; custom Tcl procs for path viz & fanout"
-      ],
-      "personal": "[Edit me] I joined because I wanted to feel a design go all the way from a line of code to silicon — and learn how much of engineering is really just patience with a timing report that refuses to close.",
       "link": {
         "label": "View full project",
         "url": "https://janierlani.github.io/sj_project"
@@ -142,9 +143,11 @@
       "org": "Electrical Engineering · Georgia Tech",
       "date": "Aug 2025 – Present",
       "bullets": [
-        "Designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC"
+        "designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC"
       ],
-      "personal": "[Edit me] I love that a race car gives hardware an unforgiving deadline. You can't argue with a lap time."
+      "tags": [],
+      "personal": "joined because i loved tesla. ",
+      "incoming": false
     },
     {
       "id": "unisat",
@@ -155,7 +158,9 @@
       "bullets": [
         "Nanosatellite assembly, 3D modeling, PCB design, IoT systems; designed and tested onboard data-collection sensors"
       ],
-      "personal": "[Edit me] My first taste of building something meant to leave the planet. It rearranged what I thought I was allowed to work on."
+      "tags": [],
+      "personal": "one of my first exposures to aerospace.",
+      "incoming": false
     },
     {
       "id": "facchetti",
@@ -164,10 +169,12 @@
       "org": "Undergraduate Researcher · Organic Electrochemical Transistors",
       "date": "Jan 2026 – Present",
       "bullets": [
-        "Fabricating OECTs for neuromorphic computing — e-beam evaporation of gold contacts, photolithographic mask alignment, spin coating of semiconducting polymers",
-        "Measuring transfer curves and transconductance across device geometries"
+        "fabricating OECTs  — e-beam evaporation of gold contacts, photolithographic mask alignment, spin coating of semiconducting polymers",
+        "measuring transfer curves and transconductance across device geometries"
       ],
-      "personal": "[Edit me] Neuromorphic devices feel like the place where my materials and chip interests finally meet. I find that genuinely thrilling."
+      "tags": [],
+      "personal": "the lab culture is great, i enjoyed being taught by my mentors and getting hands on experience with very cool metrology tech and cleanrooms was genuinely so rewarding and taught me a lot of the knowledge i build my current project on.",
+      "incoming": false
     },
     {
       "id": "heterostructure",
@@ -177,9 +184,15 @@
       "date": "Jan 2026 – Present",
       "bullets": [
         "MBE growth of γ-InSe on Si(100); characterizing via RHEED, XRD, AFM/SEM, and Hall mobility across Se/In flux ratios and temperatures",
-        "Developing mechanical transfer of InSe films from sapphire → silicon for industry-standard 2D channel integration"
+        "developing mechanical transfer of InSe films from sapphire → silicon for industry-standard 2D channel integration"
       ],
-      "personal": "[Edit me] Growing a crystal atom by atom taught me patience as a technical skill. The film does not care about your deadline."
+      "tags": [
+        "MBE Growth",
+        "Research",
+        "Analysis"
+      ],
+      "personal": "once again, loved the people i worked with. most were incredibly curious physics majors, and i liked the approach of us discussing new papers, findings together. it was a great opportunity to use, once again, very cool tech. i joined it because i wanted to research a frontier material and i plan to continue being in this vip!",
+      "incoming": false
     },
     {
       "id": "kacher",
@@ -191,7 +204,9 @@
         "TGA, DSC, SEM, XRD characterization of hydrogen-reduced iron oxide → steel; casting, heat treatment, mounting, polishing of stainless steel pellets",
         "Customer discovery, market research, and TEA modeling for ARPA-E-funded green steel manufacturing"
       ],
-      "personal": "[Edit me] Green steel is where I learned that a technology only matters if someone can afford to use it. The market math is part of the science."
+      "tags": [],
+      "personal": "i am incredibly thankful for all the experiences i had in this lab - all our PIs and PhDs took time to mentor a very, at the time, green freshman. the skills i got in this lab are incredibly versatile and i was able to be involved in research both from the science and commercialization perspective. ",
+      "incoming": false
     },
     {
       "id": "geopolymer",
@@ -202,7 +217,9 @@
       "bullets": [
         "Optimized NaOH molarity in metakaolin-based geopolymer for lunar ISRU habitat construction; tested setting time and compressive strength"
       ],
-      "personal": "[Edit me] Building with what's already on the Moon is the kind of constraint I find beautiful — necessity as a design tool.",
+      "tags": [],
+      "personal": "i loved concrete - because it's so common. my thought was, if i can make new, cheaper, stronger concrete - i could be a billionaire! but, realism - researching concrete for normal daily applications - turned out to be boring. anytime i feel a research topic is lacking novelty - i just add space to it - and it's exciting, every time. always been involved with space, and i researched how we can chemically produce concrete from lunar regolith (lunar soil), process it, and build lunar bases! two years later, i was not surprised to see gru space, a lunar regolith moon hotel startup, raise $500k from ycombinator. ",
+      "incoming": false,
       "pdf": {
         "label": "View paper",
         "file": "pdf/geopolymers.pdf"
@@ -217,7 +234,9 @@
       "bullets": [
         "Lagrange-multiplier optimization of hemispherical habitat geometry; Taylor-series tolerance analysis for 3D-printed lunar structures"
       ],
-      "personal": "[Edit me] I like when pure math turns out to have a body — when an optimization is also a place someone could one day live.",
+      "tags": [],
+      "personal": "",
+      "incoming": false,
       "pdf": {
         "label": "View paper",
         "file": "pdf/lunar-dome-stress-analysis.pdf"
@@ -229,9 +248,17 @@
       "title": "Piper Aircraft",
       "org": "Materials & Processing Engineering Intern · Vero Beach, FL",
       "date": "Jun – Aug 2026",
-      "incoming": true,
-      "bullets": [],
-      "personal": "[Edit me] Excited to see materials engineering at the scale of a flying machine, where every choice has to survive the real world."
+      "bullets": [
+        "optimizing thermoforming process parameters (sheet temperature, heating cycle, and forming conditions) for PVC and ABS thermoplastic components, correlating thermal inputs to part quality and dimensional stability",
+        "instrumenting the thermoforming process with thermocouples to capture in-process temperature profiles, characterizing material thermal response across forming conditions",
+        "implementing 3D scanning to quantify post-form warpage against nominal geometry, enabling tolerance analysis and data-driven parameter iteration",
+        "authoring test plans for thermoforming characterization studies and reviewing heat-transfer and CFD literature to build foundational thermal/fluid modeling knowledge",
+        "resolved HDR engineering tickets covering process documentation and specifications, supporting manufacturing-line consistency and quality compliance",
+        "collaborating cross-functionally with mechanical engineering teams to align material processes with design and production requirements"
+      ],
+      "tags": [],
+      "personal": "incredibly happy to intern there. it was always my dream to work in aviation, because the tech is more exciting than cars, but the timelines aren't stretched out for years like rockets. and the team culture is great as well! so many smart and welcoming people.",
+      "incoming": true
     },
     {
       "id": "alsib",
@@ -242,7 +269,9 @@
       "bullets": [
         "Operated decoilers, roll-forming lines, hydraulic shearing and press-forming systems; calibrated parameters to maintain sheet geometry and reduce scrap"
       ],
-      "personal": "[Edit me] My first factory floor. Watching raw steel become something useful made manufacturing feel like a craft, not a black box."
+      "tags": [],
+      "personal": "m first factory floor. Watching raw steel become something useful made manufacturing feel like a craft, not a black box.",
+      "incoming": false
     },
     {
       "id": "united-space-school",
@@ -253,11 +282,9 @@
       "bullets": [
         "CAD + CFD analysis of thermal protection systems for inflatable decelerators and crewed Mars landers; researched C-C composites and refractory materials"
       ],
-      "personal": "[Edit me] Six weeks at JSC taught me that designing for space is really about being honest about which compromise you're making.",
-      "pdf": {
-        "label": "",
-        "file": ""
-      }
+      "tags": [],
+      "personal": "probably the most inspiring summer of my life. i met suni williams (the astronaut who was stuck on the iss for 9 months!!) and current artemis astronaut luca parmitano handed me my diploma at our graduation. the hospitality of the nasa community and my host parents, along with the genuine hope and belief the engineers and astronauts have for the future of space exploration, was incredibly inspiring—especially when program funding isn't always certain. suni williams told me she hopes us young people stay hopeful and keep dreaming. that has been the driver of my work in uncertain times, whether it's something silly like getting a b on a test, something big like choosing a career trajectory or wondering whether building a hotel on the moon is totally insane or not. ",
+      "incoming": false
     },
     {
       "id": "upenn-mt",
@@ -268,7 +295,9 @@
       "bullets": [
         "Built smart IoT dog collar (CAD, Swift, Arduino, Raspberry Pi); top 5 of 15 teams; Google IPO simulation at Morgan Stanley NYC"
       ],
-      "personal": "[Edit me] M&T is where I started seeing myself as someone who could build a company, not just a project."
+      "tags": [],
+      "personal": "first time i experienced the intensity of venture capital, wall street, and ib people. m&t took us to the morgan stanley headquarters in new york, where the man who led the google ipo—and recently the spacex ipo—michael grimes, taught our group of 70 ambitious kids how to run an ipo. that was insane. the knowledge i got from this program, like hearing the word safe for the very first time, came full circle when i was offered a $100k safe investment myself two years later. i met amazing people who i am still in touch with, whether they're in sf or new york.",
+      "incoming": false
     },
     {
       "id": "yale",
@@ -280,7 +309,9 @@
         "Designed a research proposal on ALS, studying inhibition of the C9ORF72 gene",
         "Completed advanced seminars and a capstone project with an international team"
       ],
-      "personal": "[Edit me] The first room where I felt the size of the world and how much of it I still wanted to learn."
+      "tags": [],
+      "personal": "the most friends i made and the most fun i had! it was awesome on yale's campus, spending time in the underground billiard area, discussing topics from philosophy to neuroscience to math, and meeting so many amazing people. ",
+      "incoming": false
     },
     {
       "id": "ai-chatbots",
@@ -291,7 +322,9 @@
       "bullets": [
         "11,000+ word IRB-approved study (8 participants: NASA HI-SEAS + Kazakhstan Space Agency); fine-tuned Alpaca-7B; developed LorelAI social assistant"
       ],
-      "personal": "[Edit me] I cared about the loneliness of long missions as much as the model. The human question is what kept me up at night.",
+      "tags": [],
+      "personal": "my longest-running project. i had the opportunity to research social isolation and actually interview people who participated in a 6-month mars simulation study in hawaii. my teammate and i did everything from fine-tuning very early models of llama (if i played the sound of the ai voice, you would actually laugh), to building a physical robot, testing it, and analyzing every word the interviewees said about our product—and iterating on it, over and over again.",
+      "incoming": false,
       "pdf": {
         "label": "View paper",
         "file": "pdf/space-chatbots.pdf"
@@ -306,7 +339,9 @@
       "bullets": [
         "Prospect-Theory analysis of spaceflight-driven neurophysiological changes on astronaut decision-making"
       ],
-      "personal": "[Edit me] How do you make good decisions when your own brain is changing? That question is too good to leave alone.",
+      "tags": [],
+      "personal": "i was excited about neuroscience and space, and this project was the result. i don't tend to trust people's decision-making on earth—why would i trust them in space? i knew there had to be neurophysiological changes in the brain from all the radiation and gravitational effects, and i wanted to quantify exactly how much their risky behavior could change.",
+      "incoming": false,
       "pdf": {
         "label": "View paper",
         "file": "pdf/neuroeconomics-orbit.pdf"
@@ -321,7 +356,9 @@
       "bullets": [
         "7,500-word paper published in the National High School Journal of Science; mentored by a Georgetown M.D./Ph.D."
       ],
-      "personal": "[Edit me] My first long piece of real research. It taught me I could sit with one hard question for a year and come out with something true."
+      "tags": [],
+      "personal": "my first deep dive into neuroscience. it was a reeeeeeeeeeeeeeally long paper. ",
+      "incoming": false
     }
   ],
   "skills": [
