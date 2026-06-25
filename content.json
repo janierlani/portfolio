@@ -7,28 +7,52 @@
       "title": "Before you scroll —",
       "subtitle": "Who's visiting? I'll tailor what you see.",
       "options": [
-        { "key": "recruiter", "mode": "pro", "label": "I'm a recruiter", "desc": "Roles, results, and the technical detail — the functional case." },
-        { "key": "partner", "mode": "personal", "label": "Friend / potential partner", "desc": "Why I actually built these things, and where I'm headed." },
-        { "key": "curious", "mode": "personal", "label": "Just here to learn about me", "desc": "The personal version — thoughts, story, and all." }
+        {
+          "key": "recruiter",
+          "mode": "pro",
+          "label": "I'm a recruiter",
+          "desc": "Roles, results, and the technical detail — the functional case."
+        },
+        {
+          "key": "partner",
+          "mode": "personal",
+          "label": "Friend / potential partner",
+          "desc": "Why I actually built these things, and where I'm headed."
+        },
+        {
+          "key": "curious",
+          "mode": "personal",
+          "label": "Just here to learn about me",
+          "desc": "The personal version — thoughts, story, and all."
+        }
       ]
     },
     "cta": {
       "title": "So — what now?",
       "subtitle": "If something here resonated, tell me. I read every message.",
       "options": [
-        { "key": "work", "label": "Work with me" },
-        { "key": "friends", "label": "Become friends" },
-        { "key": "talk", "label": "Just talk" }
+        {
+          "key": "work",
+          "label": "Work with me"
+        },
+        {
+          "key": "friends",
+          "label": "Become friends"
+        },
+        {
+          "key": "talk",
+          "label": "Just talk"
+        }
       ],
       "thanks": "Thank you — I've got it, and I'll be in touch."
     }
   },
   "profile": {
     "name": "Zhaniya Turganova",
-    "kicker": "Technologist · Builder · Perpetually curious",
+    "kicker": "Technologist · Conversationalist ",
     "tagline": "Materials Science · Chip Design · Aerospace",
-    "bio": "I work at the intersection of materials science and chip design — studying how atomic-scale physics shapes what's possible in semiconductors, and building the hardware that brings those devices to life.",
-    "personalBio": "[Edit me in your Studio] I'm someone who can't look at a piece of technology without asking why it exists and who it's for. I came to engineering through a love of physics and a stubborn belief that the most interesting problems live where materials, computation, and people overlap. I build because making something real is the most honest way I know to think.",
+    "bio": "how can i affect as many people with as much positive economic impact in the shortest period of time? \nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at - sciences, programming and architecture - which you can just call engineering, but i wanted it sound fancy. my mission is to be a world-class general architect of systems, processes, reactions and make naturally occurring things serve our society. \ni find coincidences beautiful - math operations that happen naturally in physics - and if you tell me the answer is (as it always is) actually just zero - i won't hate it! \nlook at my profile and tell me where you think we are the same and different. i often say that, all i am is a conversation - and all i do is for a conversation too.",
+    "personalBio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. my mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about. ",
     "photo": "img/headshot.jpg",
     "location": "Georgia Institute of Technology",
     "email": "zturganova3@gatech.edu",
@@ -36,15 +60,33 @@
     "linkedin": "https://www.linkedin.com/in/janierlani",
     "github": "https://github.com/janierlani",
     "stats": [
-      { "value": "3.91", "label": "GPA" },
-      { "value": "3", "label": "Research Labs" },
-      { "value": "0", "label": "DRC Violations" },
-      { "value": "3", "label": "Papers" }
+      {
+        "value": "3.91",
+        "label": "GPA"
+      },
+      {
+        "value": "3",
+        "label": "Research Labs"
+      },
+      {
+        "value": "0",
+        "label": "DRC Violations"
+      },
+      {
+        "value": "3",
+        "label": "Papers"
+      }
     ],
     "thoughtsTitle": "Thoughts & what's next",
     "thoughts": [
-      { "title": "On building", "body": "[Edit me] I think the next decade of hardware belongs to people who can move fluidly between the chip and the material it's made of. That's the seam I want to live on — and the reason I keep collecting skills that don't obviously go together yet." },
-      { "title": "What's next", "body": "[Edit me] I want to start something at the intersection of advanced materials and semiconductor manufacturing. Short term: get exceptional in the lab and the layout tool. Long term: build the company I wish existed." }
+      {
+        "title": "On building",
+        "body": "[Edit me] I think the next decade of hardware belongs to people who can move fluidly between the chip and the material it's made of. That's the seam I want to live on — and the reason I keep collecting skills that don't obviously go together yet."
+      },
+      {
+        "title": "What's next",
+        "body": "[Edit me] I want to start something at the intersection of advanced materials and semiconductor manufacturing. Short term: get exceptional in the lab and the layout tool. Long term: build the company I wish existed."
+      }
     ]
   },
   "experiences": [
@@ -54,12 +96,28 @@
       "title": "Silicon Jackets — DD · DV · PD",
       "org": "Georgia Tech Chip Design Club",
       "date": "Aug 2025 – Present",
-      "tags": ["SystemVerilog", "Physical Design", "Verification"],
+      "tags": [
+        "SystemVerilog",
+        "Physical Design",
+        "Verification"
+      ],
       "stats": [
-        { "v": "98.94%", "l": "Coverage" },
-        { "v": "100%", "l": "Assertions" },
-        { "v": "0", "l": "DRC Violations" },
-        { "v": "+0.01 ns", "l": "WNS" }
+        {
+          "v": "98.94%",
+          "l": "Coverage"
+        },
+        {
+          "v": "100%",
+          "l": "Assertions"
+        },
+        {
+          "v": "0",
+          "l": "DRC Violations"
+        },
+        {
+          "v": "+0.01 ns",
+          "l": "WNS"
+        }
       ],
       "bullets": [
         "64-bit SRAM-backed calculator in SystemVerilog — 7-state FSM, parameterized ripple-carry adder, dual 1024×32 SRAM interface",
@@ -68,7 +126,10 @@
         "Timing closure: WNS −2.701 ns → +0.01 ns via SDC iteration; custom Tcl procs for path viz & fanout"
       ],
       "personal": "[Edit me] I joined because I wanted to feel a design go all the way from a line of code to silicon — and learn how much of engineering is really just patience with a timing report that refuses to close.",
-      "link": { "label": "View full project", "url": "https://janierlani.github.io/sj_project" }
+      "link": {
+        "label": "View full project",
+        "url": "https://janierlani.github.io/sj_project"
+      }
     },
     {
       "id": "hytech",
@@ -138,7 +199,10 @@
         "Optimized NaOH molarity in metakaolin-based geopolymer for lunar ISRU habitat construction; tested setting time and compressive strength"
       ],
       "personal": "[Edit me] Building with what's already on the Moon is the kind of constraint I find beautiful — necessity as a design tool.",
-      "pdf": { "label": "View paper", "file": "pdf/geopolymers.pdf" }
+      "pdf": {
+        "label": "View paper",
+        "file": "pdf/geopolymers.pdf"
+      }
     },
     {
       "id": "lunar-dome",
@@ -150,7 +214,10 @@
         "Lagrange-multiplier optimization of hemispherical habitat geometry; Taylor-series tolerance analysis for 3D-printed lunar structures"
       ],
       "personal": "[Edit me] I like when pure math turns out to have a body — when an optimization is also a place someone could one day live.",
-      "pdf": { "label": "View paper", "file": "pdf/lunar-dome-stress-analysis.pdf" }
+      "pdf": {
+        "label": "View paper",
+        "file": "pdf/lunar-dome-stress-analysis.pdf"
+      }
     },
     {
       "id": "piper",
@@ -183,7 +250,10 @@
         "CAD + CFD analysis of thermal protection systems for inflatable decelerators and crewed Mars landers; researched C-C composites and refractory materials"
       ],
       "personal": "[Edit me] Six weeks at JSC taught me that designing for space is really about being honest about which compromise you're making.",
-      "pdf": { "label": "", "file": "" }
+      "pdf": {
+        "label": "",
+        "file": ""
+      }
     },
     {
       "id": "upenn-mt",
@@ -218,7 +288,10 @@
         "11,000+ word IRB-approved study (8 participants: NASA HI-SEAS + Kazakhstan Space Agency); fine-tuned Alpaca-7B; developed LorelAI social assistant"
       ],
       "personal": "[Edit me] I cared about the loneliness of long missions as much as the model. The human question is what kept me up at night.",
-      "pdf": { "label": "View paper", "file": "pdf/space-chatbots.pdf" }
+      "pdf": {
+        "label": "View paper",
+        "file": "pdf/space-chatbots.pdf"
+      }
     },
     {
       "id": "neuroeconomics",
@@ -230,7 +303,10 @@
         "Prospect-Theory analysis of spaceflight-driven neurophysiological changes on astronaut decision-making"
       ],
       "personal": "[Edit me] How do you make good decisions when your own brain is changing? That question is too good to leave alone.",
-      "pdf": { "label": "View paper", "file": "pdf/neuroeconomics-orbit.pdf" }
+      "pdf": {
+        "label": "View paper",
+        "file": "pdf/neuroeconomics-orbit.pdf"
+      }
     },
     {
       "id": "neuropathic",
@@ -245,32 +321,132 @@
     }
   ],
   "skills": [
-    { "group": "EDA & Physical Design", "items": ["Cadence Innovus", "Cadence Genus", "Cadence IMC", "Xcelium", "OpenLane", "Altium Designer", "Tcl", "YAML flow"] },
-    { "group": "HDL & Programming", "items": ["SystemVerilog", "Verilog", "Python", "MATLAB"] },
-    { "group": "Lab & Characterization", "items": ["SEM", "XRD", "TGA", "DSC", "AFM", "e-beam evaporation", "photolithography", "spin coating"] },
-    { "group": "Concepts", "items": ["RTL-to-GDS", "STA", "DRC", "CTS", "LEF/DEF", "SRAM integration", "UVM", "floorplanning"] }
+    {
+      "group": "EDA & Physical Design",
+      "items": [
+        "Cadence Innovus",
+        "Cadence Genus",
+        "Cadence IMC",
+        "Xcelium",
+        "OpenLane",
+        "Altium Designer",
+        "Tcl",
+        "YAML flow"
+      ]
+    },
+    {
+      "group": "HDL & Programming",
+      "items": [
+        "SystemVerilog",
+        "Verilog",
+        "Python",
+        "MATLAB"
+      ]
+    },
+    {
+      "group": "Lab & Characterization",
+      "items": [
+        "SEM",
+        "XRD",
+        "TGA",
+        "DSC",
+        "AFM",
+        "e-beam evaporation",
+        "photolithography",
+        "spin coating"
+      ]
+    },
+    {
+      "group": "Concepts",
+      "items": [
+        "RTL-to-GDS",
+        "STA",
+        "DRC",
+        "CTS",
+        "LEF/DEF",
+        "SRAM integration",
+        "UVM",
+        "floorplanning"
+      ]
+    }
   ],
   "awards": [
-    { "title": "Rhodes Trust & Schmidt Futures RISE Global Finalist", "detail": "1 of 500 from 100,000+ applicants" },
-    { "title": "Nursultan Nazarbayev Educational Foundation Grant", "detail": "$25,000 · 1 of 17 selected from 110" },
-    { "title": "Georgia Tech MSE Department Scholarship", "detail": "$16,000 (4-year)" },
-    { "title": "Space Tech Battle — Astana Hub", "detail": "Top 10 of 200 company finalists" },
-    { "title": "NASA Space Apps Challenge", "detail": "Top 10% of 5,500+ teams · Global Judging Nominee" },
-    { "title": "Eurasian Tumaris Tech Startup Incubator", "detail": "Top 15 of 200+ teams" },
-    { "title": "AWSD Youth Movement", "detail": "Top 9 Inspiring Young Leaders" },
-    { "title": "Republican Remote Olympiad — Chemistry", "detail": "2nd place" }
+    {
+      "title": "Rhodes Trust & Schmidt Futures RISE Global Finalist",
+      "detail": "1 of 500 from 100,000+ applicants"
+    },
+    {
+      "title": "Nursultan Nazarbayev Educational Foundation Grant",
+      "detail": "$25,000 · 1 of 17 selected from 110"
+    },
+    {
+      "title": "Georgia Tech MSE Department Scholarship",
+      "detail": "$16,000 (4-year)"
+    },
+    {
+      "title": "Space Tech Battle — Astana Hub",
+      "detail": "Top 10 of 200 company finalists"
+    },
+    {
+      "title": "NASA Space Apps Challenge",
+      "detail": "Top 10% of 5,500+ teams · Global Judging Nominee"
+    },
+    {
+      "title": "Eurasian Tumaris Tech Startup Incubator",
+      "detail": "Top 15 of 200+ teams"
+    },
+    {
+      "title": "AWSD Youth Movement",
+      "detail": "Top 9 Inspiring Young Leaders"
+    },
+    {
+      "title": "Republican Remote Olympiad — Chemistry",
+      "detail": "2nd place"
+    }
   ],
   "moments": [
-    { "file": "img/space-tech-battle.jpg", "title": "Space Tech Battle Winner", "caption": "Top 10 of 200 companies — developed LorelAI, an AI social assistant for long-duration space missions" },
-    { "file": "img/united-space-school.jpg", "title": "United Space School 2025", "caption": "1 of 40 global delegates — Mars mission design at NASA JSC" },
-    { "file": "img/suni-williams.jpg", "title": "With Astronaut Suni Williams", "caption": "NASA Johnson Space Center" },
-    { "file": "img/presenting-upenn.jpg", "title": "UPenn Final Project Presentation", "caption": "UPenn M&T Summer Institute" },
-    { "file": "img/luca-parmitano.jpg", "title": "With ESA Astronaut Luca Parmitano", "caption": "ISS veteran and spacewalk record holder" },
-    { "file": "img/upenn-mtsi.jpg", "title": "UPenn M&T Summer Institute", "caption": "Top 5 of 15 teams — smart IoT device, Morgan Stanley NYC" }
+    {
+      "file": "img/space-tech-battle.jpg",
+      "title": "Space Tech Battle Winner",
+      "caption": "Top 10 of 200 companies — developed LorelAI, an AI social assistant for long-duration space missions"
+    },
+    {
+      "file": "img/united-space-school.jpg",
+      "title": "United Space School 2025",
+      "caption": "1 of 40 global delegates — Mars mission design at NASA JSC"
+    },
+    {
+      "file": "img/suni-williams.jpg",
+      "title": "With Astronaut Suni Williams",
+      "caption": "NASA Johnson Space Center"
+    },
+    {
+      "file": "img/presenting-upenn.jpg",
+      "title": "UPenn Final Project Presentation",
+      "caption": "UPenn M&T Summer Institute"
+    },
+    {
+      "file": "img/luca-parmitano.jpg",
+      "title": "With ESA Astronaut Luca Parmitano",
+      "caption": "ISS veteran and spacewalk record holder"
+    },
+    {
+      "file": "img/upenn-mtsi.jpg",
+      "title": "UPenn M&T Summer Institute",
+      "caption": "Top 5 of 15 teams — smart IoT device, Morgan Stanley NYC"
+    }
   ],
   "gallery": [
-    { "file": "img/space-tech-battle.jpg", "date": "2024-11-01", "description": "[Example — edit or delete] Pitching LorelAI at Space Tech Battle. Upload your own photos here from the Studio." },
-    { "file": "img/united-space-school.jpg", "date": "2025-07-15", "description": "[Example — edit or delete] Mars mission design week at NASA Johnson Space Center." }
+    {
+      "file": "img/space-tech-battle.jpg",
+      "date": "2024-11-01",
+      "description": "[Example — edit or delete] Pitching LorelAI at Space Tech Battle. Upload your own photos here from the Studio."
+    },
+    {
+      "file": "img/united-space-school.jpg",
+      "date": "2025-07-15",
+      "description": "[Example — edit or delete] Mars mission design week at NASA Johnson Space Center."
+    }
   ],
   "posts": [
     {
