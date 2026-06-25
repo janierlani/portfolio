@@ -16,7 +16,7 @@
         {
           "key": "partner",
           "mode": "personal",
-          "label": "Friend / potential project partner",
+          "label": "Friend / potential partner",
           "desc": "Why I actually built these things, and where I'm headed."
         },
         {
@@ -49,10 +49,10 @@
   },
   "profile": {
     "name": "Zhaniya Turganova",
-    "kicker": "Technologist · Conversationalist ",
+    "kicker": "Technologist · Rationalist",
     "tagline": "Materials Science · Chip Design · Aerospace",
-    "bio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. my mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\n\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about.  ",
-    "personalBio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. \n\n\nmy mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about. ",
+    "bio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. my mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about.  ",
+    "personalBio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. \n\nmy mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about. ",
     "photo": "img/headshot.jpg",
     "location": "Georgia Institute of Technology, Atlanta, GA, USA",
     "email": "zturganova3@gatech.edu",
@@ -81,7 +81,7 @@
     "thoughts": [
       {
         "title": "On building",
-        "body": "problems are great because you're forced to solve them, whether there is decades worth of research to rationalise your decision on or it's a topic on which there's one paper written - and it's yours. i am excited about issues where i have to consider physical constraints and explore designs that have never been explored, and small-scale phenomena that is completely new and in which a phd will tell you they have no clue (fun fact - we are closer to being the size of the whole universe than the size of a fundamental particle!)."
+        "body": "problems are great because you're forced to solve them, whether there is decades worth of research to rationalise yourself or there's 1 paper written on the topic - and it's yours. i am excited about issues where i have to consider physical interactions and explore novel designs, especially small-scale phenomena about which a phd will tell you they have no clue (fun fact - we are closer to being the size of the whole universe than the size of a fundamental particle!)"
       },
       {
         "title": "as we have seen, technological progress is like a pigeon you fed once - the more you give it, the more it wants. we will always be busy with problems of our own doing (did someone say ai?).",
