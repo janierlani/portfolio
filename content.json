@@ -81,15 +81,15 @@
     "thoughts": [
       {
         "title": "on building",
-        "body": "problems are great because you're forced to solve them, whether there is decades worth of research to rationalise yourself or there's 1 paper written on the topic - and it's yours. i am excited about issues where i have to consider physical interactions and explore novel designs, especially small-scale phenomena about which a phd will tell you they have no clue (fun fact - we are closer to being the size of the whole universe than the size of a fundamental particle!)"
+        "body": "problems are great because you're forced to solve them, whether there is decades worth of research to rationalise yourself or there's 1 paper written on the topic — and it's yours. i am excited about issues where i have to consider physical interactions and explore novel designs, especially small-scale phenomena about which a phd will tell you they have no clue (fun fact — we are closer to being the size of the whole universe than the size of a fundamental particle!)"
       },
       {
-        "title": "as we have seen, technological progress is like a pigeon you fed once - the more you give it, the more it wants. we will always be busy with problems of our own doing (did someone say ai?).",
+        "title": "as we have seen, technological progress is like a pigeon you fed once — the more you give it, the more it wants. we will always be busy with problems of our own doing (did someone say ai?).",
         "body": ""
       },
       {
         "title": "what's next",
-        "body": "my current focus is computing infrastructure for ai. i research novel computing paradigms and would love to see universal shift from Von Neumann computing to - you name it - neuromorphic, in-memory, quantum. i used to be wary and disliking of numbers when i was younger, but turns out it's all just physics, which is, obviously, more likeable."
+        "body": "my current focus is computing infrastructure for ai. i research novel computing paradigms and would love to see universal shift from Von Neumann computing to — you name it — neuromorphic, in-memory, quantum. i used to be wary and disliking of numbers when i was younger, but turns out it's all just physics, which is, obviously, more likeable."
       }
     ]
   },
@@ -111,7 +111,7 @@
         "Physical Design",
         "Verification"
       ],
-      "personal": "i joined because I wanted to feel a design go all the way from a line of code to silicon. for anyone thinking of joining - absolutely do! it took me a few grey hairs, but the leads are super supportive, and the onboarding program is very well-developed.",
+      "personal": "i joined because I wanted to feel a design go all the way from a line of code to silicon. for anyone thinking of joining — absolutely do! it took me a few grey hairs, but the leads are super supportive, and the onboarding program is very well-developed.",
       "incoming": false,
       "stats": [
         {
@@ -169,7 +169,7 @@
       "org": "Undergraduate Researcher · Organic Electrochemical Transistors",
       "date": "Jan 2026 – Present",
       "bullets": [
-        "fabricating OECTs  — e-beam evaporation of gold contacts, photolithographic mask alignment, spin coating of semiconducting polymers",
+        "fabricating OECTs — e-beam evaporation of gold contacts, photolithographic mask alignment, spin coating of semiconducting polymers",
         "measuring transfer curves and transconductance across device geometries"
       ],
       "tags": [],
@@ -205,7 +205,7 @@
         "Customer discovery, market research, and TEA modeling for ARPA-E-funded green steel manufacturing"
       ],
       "tags": [],
-      "personal": "i am incredibly thankful for all the experiences i had in this lab - all our PIs and PhDs took time to mentor a very, at the time, green freshman. the skills i got in this lab are incredibly versatile and i was able to be involved in research both from the science and commercialization perspective. ",
+      "personal": "i am incredibly thankful for all the experiences i had in this lab — all our PIs and PhDs took time to mentor a very, at the time, green freshman. the skills i got in this lab are incredibly versatile and i was able to be involved in research both from the science and commercialization perspective. ",
       "incoming": false
     },
     {
@@ -218,7 +218,7 @@
         "Optimized NaOH molarity in metakaolin-based geopolymer for lunar ISRU habitat construction; tested setting time and compressive strength"
       ],
       "tags": [],
-      "personal": "i loved concrete - because it's so common. my thought was, if i can make new, cheaper, stronger concrete - i could be a billionaire! but, realism - researching concrete for normal daily applications - turned out to be boring. anytime i feel a research topic is lacking novelty - i just add space to it - and it's exciting, every time. always been involved with space, and i researched how we can chemically produce concrete from lunar regolith (lunar soil), process it, and build lunar bases! two years later, i was not surprised to see gru space, a lunar regolith moon hotel startup, raise $500k from ycombinator. ",
+      "personal": "i loved concrete — because it's so common. my thought was, if i can make new, cheaper, stronger concrete — i could be a billionaire! but, realism — researching concrete for normal daily applications — turned out to be boring. anytime i feel a research topic is lacking novelty — i just add space to it — and it's exciting, every time. always been involved with space, and i researched how we can chemically produce concrete from lunar regolith (lunar soil), process it, and build lunar bases! two years later, i was not surprised to see gru space, a lunar regolith moon hotel startup, raise $500k from ycombinator. ",
       "incoming": false,
       "pdf": {
         "label": "View paper",
