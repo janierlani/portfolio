@@ -1,6 +1,6 @@
 {
   "config": {
-    "formspree": ""
+    "formspree": "https://formspree.io/f/xjgqgqrj"
   },
   "ui": {
     "audience": {
@@ -137,19 +137,6 @@
       }
     },
     {
-      "id": "hytech",
-      "cat": "chip",
-      "title": "HyTech Formula SAE Racing",
-      "org": "Electrical Engineering · Georgia Tech",
-      "date": "Aug 2025 – Present",
-      "bullets": [
-        "designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC"
-      ],
-      "tags": [],
-      "personal": "joined because i loved tesla. ",
-      "incoming": false
-    },
-    {
       "id": "unisat",
       "cat": "chip",
       "title": "UniSAT Nano-Satellite Programme",
@@ -160,6 +147,19 @@
       ],
       "tags": [],
       "personal": "one of my first exposures to aerospace.",
+      "incoming": false
+    },
+    {
+      "id": "hytech",
+      "cat": "chip",
+      "title": "HyTech Formula SAE Racing",
+      "org": "Electrical Engineering · Georgia Tech",
+      "date": "Aug 2025 – Present",
+      "bullets": [
+        "designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC"
+      ],
+      "tags": [],
+      "personal": "joined because i loved tesla. ",
       "incoming": false
     },
     {
@@ -209,6 +209,24 @@
       "incoming": false
     },
     {
+      "id": "piper",
+      "cat": "mat",
+      "title": "Piper Aircraft",
+      "org": "Materials & Processing Engineering Intern · Vero Beach, FL",
+      "date": "Jun – Aug 2026",
+      "bullets": [
+        "optimizing thermoforming process parameters (sheet temperature, heating cycle, and forming conditions) for PVC and ABS thermoplastic components, correlating thermal inputs to part quality and dimensional stability",
+        "instrumenting the thermoforming process with thermocouples to capture in-process temperature profiles, characterizing material thermal response across forming conditions",
+        "implementing 3D scanning to quantify post-form warpage against nominal geometry, enabling tolerance analysis and data-driven parameter iteration",
+        "authoring test plans for thermoforming characterization studies and reviewing heat-transfer and CFD literature to build foundational thermal/fluid modeling knowledge",
+        "resolved HDR engineering tickets covering process documentation and specifications, supporting manufacturing-line consistency and quality compliance",
+        "collaborating cross-functionally with mechanical engineering teams to align material processes with design and production requirements"
+      ],
+      "tags": [],
+      "personal": "incredibly happy to intern there. it was always my dream to work in aviation, because the tech is more exciting than cars, but the timelines aren't stretched out for years like rockets. and the team culture is great as well! so many smart and welcoming people.",
+      "incoming": true
+    },
+    {
       "id": "geopolymer",
       "cat": "mat",
       "title": "Lunar Regolith Geopolymer Concrete",
@@ -243,24 +261,6 @@
       }
     },
     {
-      "id": "piper",
-      "cat": "mat",
-      "title": "Piper Aircraft",
-      "org": "Materials & Processing Engineering Intern · Vero Beach, FL",
-      "date": "Jun – Aug 2026",
-      "bullets": [
-        "optimizing thermoforming process parameters (sheet temperature, heating cycle, and forming conditions) for PVC and ABS thermoplastic components, correlating thermal inputs to part quality and dimensional stability",
-        "instrumenting the thermoforming process with thermocouples to capture in-process temperature profiles, characterizing material thermal response across forming conditions",
-        "implementing 3D scanning to quantify post-form warpage against nominal geometry, enabling tolerance analysis and data-driven parameter iteration",
-        "authoring test plans for thermoforming characterization studies and reviewing heat-transfer and CFD literature to build foundational thermal/fluid modeling knowledge",
-        "resolved HDR engineering tickets covering process documentation and specifications, supporting manufacturing-line consistency and quality compliance",
-        "collaborating cross-functionally with mechanical engineering teams to align material processes with design and production requirements"
-      ],
-      "tags": [],
-      "personal": "incredibly happy to intern there. it was always my dream to work in aviation, because the tech is more exciting than cars, but the timelines aren't stretched out for years like rockets. and the team culture is great as well! so many smart and welcoming people.",
-      "incoming": true
-    },
-    {
       "id": "united-space-school",
       "cat": "space",
       "title": "NASA Johnson Space Center — United Space School",
@@ -287,20 +287,6 @@
       "incoming": false
     },
     {
-      "id": "yale",
-      "cat": "space",
-      "title": "Yale Young Global Scholars — Innovations in Science & Technology",
-      "org": "Yale University · 1 of 8,500+ applicants worldwide",
-      "date": "2023",
-      "bullets": [
-        "Designed a research proposal on ALS, studying inhibition of the C9ORF72 gene",
-        "Completed advanced seminars and a capstone project with an international team"
-      ],
-      "tags": [],
-      "personal": "the most friends i made and the most fun i had! it was awesome on yale's campus, spending time in the underground billiard area, discussing topics from philosophy to neuroscience to math, and meeting so many amazing people. ",
-      "incoming": false
-    },
-    {
       "id": "ai-chatbots",
       "cat": "space",
       "title": "AI Chatbots for Space Missions",
@@ -316,6 +302,20 @@
         "label": "View paper",
         "file": "pdf/space-chatbots.pdf"
       }
+    },
+    {
+      "id": "yale",
+      "cat": "space",
+      "title": "Yale Young Global Scholars — Innovations in Science & Technology",
+      "org": "Yale University · 1 of 8,500+ applicants worldwide",
+      "date": "2023",
+      "bullets": [
+        "Designed a research proposal on ALS, studying inhibition of the C9ORF72 gene",
+        "Completed advanced seminars and a capstone project with an international team"
+      ],
+      "tags": [],
+      "personal": "the most friends i made and the most fun i had! it was awesome on yale's campus, spending time in the underground billiard area, discussing topics from philosophy to neuroscience to math, and meeting so many amazing people. ",
+      "incoming": false
     },
     {
       "id": "neuroeconomics",

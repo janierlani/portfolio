@@ -19,6 +19,9 @@
     --teal-deep:#155b56;
     --rasp-tint:#f6dde2;
     --teal-tint:#d9ece9;
+    --gold:     #b5822a;   /* fourth accent — metrics & honors */
+    --gold-deep:#8a601a;
+    --gold-tint:#f0e6cd;
     --rule:     rgba(24,32,58,0.18);
     --rule-soft:rgba(24,32,58,0.10);
     --warm-rule:#d8cbb2;
@@ -190,7 +193,7 @@ body.mode-personal .only-personal { display: block; }
 .hero-stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; margin: 30px auto 26px; }
 .hero-stat { padding: 4px 26px; position: relative; }
 .hero-stat + .hero-stat::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px; background: var(--rule); }
-.hero-stat .n { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--ink); display: block; line-height: 1; }
+.hero-stat .n { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); display: block; line-height: 1; }
 .hero-stat .l { font-family: 'IBM Plex Mono', monospace; font-size: .64rem; letter-spacing: .1em; text-transform: lowercase; color: var(--faint); margin-top: 8px; }
 .hero-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 22px; margin-top: 6px; }
 .hero-links a { font-family: 'IBM Plex Mono', monospace; font-size: .82rem; color: var(--soft); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; padding-bottom: 2px; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
@@ -263,7 +266,10 @@ body.mode-personal .only-personal { display: block; }
 .skill-items span:hover { border-color: var(--accent); color: var(--accent); }
 .award { display: grid; grid-template-columns: 22px 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--rule); }
 .award:first-child { border-top: none; }
-.award .a-mark { color: var(--accent); }
+.award .a-mark { color: var(--gold); }
+.sa-wrap .sa-col:nth-of-type(2) h3 { border-bottom-color: var(--gold); }
+.xp:hover .xp-main > h4 { color: var(--accent); }
+.xp-main > h4 { transition: color .2s ease; }
 .award .a-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.02rem; font-weight: 700; line-height: 1.3; }
 .award .a-detail { font-size: .9rem; color: var(--soft); }
 @media (max-width: 700px) { .sa-wrap { grid-template-columns: 1fr; gap: 36px; } }
