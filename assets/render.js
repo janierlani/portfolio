@@ -7,9 +7,9 @@
   'use strict';
 
   var CAT = {
-    chip:  { label: 'chip design & hardware', mark: 'I', name: 'chip' },
-    mat:   { label: 'materials science & devices', mark: 'II', name: 'materials' },
-    space: { label: 'space & entrepreneurship', mark: 'III', name: 'space' }
+    chip:  { label: 'Chip Design & Hardware', mark: 'I', name: 'Chip' },
+    mat:   { label: 'Materials Science & Devices', mark: 'II', name: 'Materials' },
+    space: { label: 'Space & Entrepreneurship', mark: 'III', name: 'Space' }
   };
   var DATA = null;
 
@@ -75,8 +75,8 @@
   /* ---------- MOMENTS (cinematic) ---------- */
   function renderMoments(moments){
     var host=document.getElementById('moments'); if(!host||!moments||!moments.length){ if(host) host.style.display='none'; return; }
-    host.innerHTML='<div class="moments-intro reveal"><span class="eyebrow">moments</span><h2>where the work has taken me</h2>'+
-      '<p>astronauts, labs, launch pads, and a few rooms i never expected to be in.</p></div><div id="moments-stream"></div>';
+    host.innerHTML='<div class="moments-intro reveal"><span class="eyebrow">moments</span><h2>Where the work has taken me</h2>'+
+      '<p>Astronauts, labs, launch pads, and a few rooms I never expected to be in.</p></div><div id="moments-stream"></div>';
     var stream=document.getElementById('moments-stream');
     Promise.all(moments.map(loadDim)).then(function(items){ stream.innerHTML=buildMoments(items); observePhotos(); });
   }
@@ -126,8 +126,8 @@
       if(!g.length) return '';
       return '<div class="cat-block reveal" id="cat-'+c+'"><div class="cat-title"><span class="ct-mark">'+CAT[c].mark+'</span><h3>'+esc(CAT[c].label)+'</h3><span class="ct-count">'+g.length+(g.length===1?' entry':' entries')+'</span></div><div class="cat-rule"></div>'+g.map(renderXp).join('')+'</div>';
     }).join('');
-    host.innerHTML='<div class="section-head reveal"><span class="eyebrow">portfolio</span><h2>selected work</h2>'+
-      '<p class="lead">research, hardware, and mission projects — the technical work and why each one mattered to me.</p></div>'+
+    host.innerHTML='<div class="section-head reveal"><span class="eyebrow">portfolio</span><h2>Selected Work</h2>'+
+      '<p class="lead">Research, hardware, and mission projects — the technical work and why each one mattered to me.</p></div>'+
       '<div class="work-nav reveal">'+nav+'</div>'+blocks;
   }
   function renderXp(e){
@@ -152,7 +152,7 @@
     var host=document.getElementById('gallery'); if(!host) return;
     if(!gallery||!gallery.length){ host.style.display='none'; return; }
     var photos=gallery.slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'');});
-    host.innerHTML='<div class="section-head reveal"><span class="eyebrow">off the clock</span><h2>and i\'m not a robot!</h2>'+
+    host.innerHTML='<div class="section-head reveal"><span class="eyebrow">off the clock</span><h2>And I\'m not a robot!</h2>'+
       '<p class="lead">proof of life — a running photo log. <a href="gallery.html">see the full gallery &rarr;</a></p></div>'+
       '<div class="gallery-grid reveal">'+photos.map(function(ph){
         return '<figure class="gphoto"><img loading="lazy" decoding="async" src="'+esc(ph.file)+'" alt="'+esc(clean(ph.description)||'')+'">'+
@@ -165,21 +165,22 @@
     var host=document.getElementById('skills'); if(!host) return;
     var sk=(skills||[]).map(function(g){return '<div class="skill-group"><div class="sg-label">'+esc(g.group)+'</div><div class="skill-items">'+(g.items||[]).map(function(i){return '<span>'+esc(i)+'</span>';}).join('')+'</div></div>';}).join('');
     var aw=(awards||[]).map(function(a){return '<div class="award"><div class="a-mark">&#9670;</div><div><div class="a-title">'+esc(a.title)+'</div><div class="a-detail">'+esc(a.detail||'')+'</div></div></div>';}).join('');
-    host.innerHTML='<div class="section-head reveal"><span class="eyebrow">toolkit</span><h2>skills &amp; honors</h2></div>'+
-      '<div class="sa-wrap reveal"><div class="sa-col"><h3>skills</h3>'+sk+'</div><div class="sa-col"><h3>honors &amp; awards</h3>'+aw+'</div></div>';
+    host.innerHTML='<div class="section-head reveal"><span class="eyebrow">toolkit</span><h2>Skills &amp; Honors</h2></div>'+
+      '<div class="sa-wrap reveal"><div class="sa-col"><h3>Skills</h3>'+sk+'</div><div class="sa-col"><h3>Honors &amp; Awards</h3>'+aw+'</div></div>';
   }
 
   /* ---------- NOTEBOOK teaser ---------- */
   function renderNotebook(posts){
     var host=document.getElementById('blog'); if(!host) return;
+    if(!posts||!posts.length){ host.style.display='none'; return; }
     var sorted=posts.slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'');});
     var items=sorted.slice(0,2).map(function(post){
       return '<article class="nb-item reveal"><div class="nb-meta"><span class="cat">'+esc((CAT[post.cat]||{}).name||'')+'</span>'+esc(fmtDate(post.date))+'<br>'+esc(post.readTime||'')+'</div>'+
         '<div class="nb-body"><h3><a href="blog.html?p='+encodeURIComponent(post.id)+'">'+esc(post.title)+'</a></h3><p>'+esc(post.excerpt||'')+'</p>'+
         '<a class="more" href="blog.html?p='+encodeURIComponent(post.id)+'">read essay &rarr;</a></div></article>';
     }).join('');
-    host.innerHTML='<div class="section-head reveal"><span class="eyebrow">the notebook</span><h2>writing &amp; essays</h2>'+
-      '<p class="lead">working notes on semiconductors, materials, and the philosophy of building.</p></div>'+
+    host.innerHTML='<div class="section-head reveal"><span class="eyebrow">the notebook</span><h2>Writing &amp; Essays</h2>'+
+      '<p class="lead">Working notes on semiconductors, materials, and the philosophy of building.</p></div>'+
       '<div class="notebook">'+items+'<div class="nb-foot"><a class="more" href="blog.html">view all '+posts.length+' posts &rarr;</a></div></div>';
   }
 
@@ -226,7 +227,7 @@
     var grid=photos.length?('<div class="gallery-grid">'+photos.map(function(ph){
       return '<figure class="gphoto reveal"><img loading="lazy" decoding="async" src="'+esc(ph.file)+'" alt="'+esc(clean(ph.description)||'')+'"><figcaption class="g-meta"><div class="g-date">'+esc(fmtDate(ph.date))+'</div><div class="g-desc">'+esc(clean(ph.description)||'')+'</div></figcaption></figure>';
     }).join('')+'</div>'):'<p class="loading">no photos yet — add some from the studio.</p>';
-    host.innerHTML='<div class="article-hero"><span class="a-cat">gallery</span><h1>gallery</h1><p class="a-meta">a running photo log — moments big and small.</p></div>'+grid+
+    host.innerHTML='<div class="article-hero"><span class="a-cat">gallery</span><h1>Gallery</h1><p class="a-meta">A running photo log — moments big and small.</p></div>'+grid+
       '<div class="post-list"><a class="back-link" href="index.html">&larr; back to portfolio</a></div>';
   }
 
@@ -237,7 +238,7 @@
     var pid=new URLSearchParams(location.search).get('p');
     if(pid){ var post=posts.filter(function(x){return x.id===pid;})[0]; if(post){ renderSinglePost(post); return; } }
     var hero=document.getElementById('blogHero');
-    if(hero) hero.innerHTML='<div class="article-hero"><span class="a-cat">the notebook</span><h1>essays &amp; field notes</h1><p class="a-meta">writing on semiconductors, materials, and the philosophy of building.</p></div>';
+    if(hero) hero.innerHTML='<div class="article-hero"><span class="a-cat">the notebook</span><h1>Essays &amp; Field Notes</h1><p class="a-meta">Writing on semiconductors, materials, and the philosophy of building.</p></div>';
     listHost.innerHTML='<div class="notebook">'+posts.map(function(post){
       return '<article class="nb-item reveal"><div class="nb-meta"><span class="cat">'+esc((CAT[post.cat]||{}).name||'')+'</span>'+esc(fmtDate(post.date))+'<br>'+esc(post.readTime||'')+'</div>'+
         '<div class="nb-body"><h3><a href="blog.html?p='+encodeURIComponent(post.id)+'">'+esc(post.title)+'</a></h3><p>'+esc(post.excerpt||'')+'</p>'+
