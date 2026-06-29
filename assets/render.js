@@ -76,7 +76,7 @@
   function renderMoments(moments){
     var host=document.getElementById('moments'); if(!host||!moments||!moments.length){ if(host) host.style.display='none'; return; }
     host.innerHTML='<div class="moments-intro reveal"><span class="eyebrow">moments</span><h2>Where the work has taken me</h2>'+
-      '<p>Astronauts, labs, launch pads, and a few rooms I never expected to be in.</p></div><div id="moments-stream"></div>';
+      '</div><div id="moments-stream"></div>';
     var stream=document.getElementById('moments-stream');
     Promise.all(moments.map(loadDim)).then(function(items){ stream.innerHTML=buildMoments(items); observePhotos(); });
   }

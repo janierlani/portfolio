@@ -49,10 +49,10 @@
   },
   "profile": {
     "name": "Zhaniya Turganova",
-    "kicker": "technologist · rationalist",
-    "tagline": "materials Science · chip design · aerospace",
-    "bio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. my mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about.  ",
-    "personalBio": "how can i affect as many people with as much positive economic impact in the shortest period of time?\n\nfunctional hardware (i like things that do things!) has allowed me to follow this goal in conjunction with what i am good at—sciences, programming, and architecture—which you can just call engineering, but i think the specifics allow for a clearer comprehension of what i do. \n\nmy mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\ni find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, i won't hate it!\n\nlook at my profile and tell me where you think we are the same and different. all i do is for a conversation and i am curious of your perspective on things i care and may not care about. ",
+    "kicker": "Technologist · Rationalist",
+    "tagline": "Materials Science · Chip Design · Aerospace",
+    "bio": "How can I affect as many people with as much positive economic impact in the shortest period of time?\n\nFunctional hardware (I like things that do things!) has allowed me to follow this goal in conjunction with what I am good at—sciences, programming, and architecture—which you can just call engineering, but I think the specifics allow for a clearer comprehension of what I do. My mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\nI find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, I won't hate it!\n\nLook at my profile and tell me where you think we are the same and different. All I do is for a conversation and I am curious of your perspective on things I care and may not care about.  ",
+    "personalBio": "How can I affect as many people with as much positive economic impact in the shortest period of time?\n\nFunctional hardware (I like things that do things!) has allowed me to follow this goal in conjunction with what I am good at—sciences, programming, and architecture—which you can just call engineering, but I think the specifics allow for a clearer comprehension of what I do. \n\nMy mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\nI find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, I won't hate it!\n\nLook at my profile and tell me where you think we are the same and different. All I do is for a conversation and I am curious of your perspective on things I care and may not care about. ",
     "photo": "img/headshot.jpg",
     "location": "Georgia Institute of Technology, Atlanta, GA, USA",
     "email": "zturganova3@gatech.edu",
@@ -77,19 +77,19 @@
         "label": "papers"
       }
     ],
-    "thoughtsTitle": "thoughts & what's next",
+    "thoughtsTitle": "Thoughts & What's Next",
     "thoughts": [
       {
-        "title": "on building",
-        "body": "problems are great because you're forced to solve them, whether there is decades worth of research to rationalise yourself or there's 1 paper written on the topic — and it's yours. i am excited about issues where i have to consider physical interactions and explore novel designs, especially small-scale phenomena about which a phd will tell you they have no clue (fun fact — we are closer to being the size of the whole universe than the size of a fundamental particle!)"
+        "title": "On Building",
+        "body": "Problems are great because you're forced to solve them, whether there is decades worth of research to rationalise yourself or there's 1 paper written on the topic — and it's yours. I am excited about issues where I have to consider physical interactions and explore novel designs, especially small-scale phenomena about which a PhD will tell you they have no clue (fun fact — we are closer to being the size of the whole universe than the size of a fundamental particle!)"
       },
       {
-        "title": "as we have seen, technological progress is like a pigeon you fed once — the more you give it, the more it wants. we will always be busy with problems of our own doing (did someone say ai?).",
+        "title": "As we have seen, technological progress is like a pigeon you fed once — the more you give it, the more it wants. We will always be busy with problems of our own doing (did someone say AI?).",
         "body": ""
       },
       {
-        "title": "what's next",
-        "body": "my current focus is computing infrastructure for ai. i research novel computing paradigms and would love to see universal shift from Von Neumann computing to — you name it — neuromorphic, in-memory, quantum. i used to be wary and disliking of numbers when i was younger, but turns out it's all just physics, which is, obviously, more likeable."
+        "title": "What's Next",
+        "body": "My current focus is computing infrastructure for AI. I research novel computing paradigms and would love to see universal shift from Von Neumann computing to — you name it — neuromorphic, in-memory, quantum. I used to be wary and disliking of numbers when I was younger, but turns out it's all just physics, which is, obviously, more likeable."
       }
     ]
   },
@@ -111,7 +111,7 @@
         "Physical Design",
         "Verification"
       ],
-      "personal": "i joined because I wanted to feel a design go all the way from a line of code to silicon. for anyone thinking of joining — absolutely do! it took me a few grey hairs, but the leads are super supportive, and the onboarding program is very well-developed.",
+      "personal": "I joined because I wanted to feel a design go all the way from a line of code to silicon. For anyone thinking of joining — absolutely do! It took me a few grey hairs, but the leads are super supportive, and the onboarding program is very well-developed.",
       "incoming": false,
       "stats": [
         {
@@ -146,7 +146,7 @@
         "Nanosatellite assembly, 3D modeling, PCB design, IoT systems; designed and tested onboard data-collection sensors"
       ],
       "tags": [],
-      "personal": "one of my first exposures to aerospace.",
+      "personal": "One of my first exposures to aerospace.",
       "incoming": false
     },
     {
@@ -159,7 +159,7 @@
         "designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC"
       ],
       "tags": [],
-      "personal": "joined because i loved tesla. ",
+      "personal": "Joined because I loved Tesla. ",
       "incoming": false
     },
     {
@@ -173,7 +173,7 @@
         "measuring transfer curves and transconductance across device geometries"
       ],
       "tags": [],
-      "personal": "the lab culture is great, i enjoyed being taught by my mentors and getting hands on experience with very cool metrology tech and cleanrooms was genuinely so rewarding and taught me a lot of the knowledge i build my current project on.",
+      "personal": "The lab culture is great, I enjoyed being taught by my mentors and getting hands on experience with very cool metrology tech and cleanrooms was genuinely so rewarding and taught me a lot of the knowledge I build my current project on.",
       "incoming": false
     },
     {
@@ -191,7 +191,7 @@
         "Research",
         "Analysis"
       ],
-      "personal": "once again, loved the people i worked with. most were incredibly curious physics majors, and i liked the approach of us discussing new papers, findings together. it was a great opportunity to use, once again, very cool tech. i joined it because i wanted to research a frontier material and i plan to continue being in this vip!",
+      "personal": "Once again, loved the people I worked with. Most were incredibly curious physics majors, and I liked the approach of us discussing new papers, findings together. It was a great opportunity to use, once again, very cool tech. I joined it because I wanted to research a frontier material and I plan to continue being in this VIP!",
       "incoming": false
     },
     {
@@ -205,7 +205,7 @@
         "Customer discovery, market research, and TEA modeling for ARPA-E-funded green steel manufacturing"
       ],
       "tags": [],
-      "personal": "i am incredibly thankful for all the experiences i had in this lab — all our PIs and PhDs took time to mentor a very, at the time, green freshman. the skills i got in this lab are incredibly versatile and i was able to be involved in research both from the science and commercialization perspective. ",
+      "personal": "I am incredibly thankful for all the experiences I had in this lab — all our PIs and PhDs took time to mentor a very, at the time, green freshman. The skills I got in this lab are incredibly versatile and I was able to be involved in research both from the science and commercialization perspective. ",
       "incoming": false
     },
     {
@@ -223,7 +223,7 @@
         "collaborating cross-functionally with mechanical engineering teams to align material processes with design and production requirements"
       ],
       "tags": [],
-      "personal": "incredibly happy to intern there. it was always my dream to work in aviation, because the tech is more exciting than cars, but the timelines aren't stretched out for years like rockets. and the team culture is great as well! so many smart and welcoming people.",
+      "personal": "Incredibly happy to intern there. It was always my dream to work in aviation, because the tech is more exciting than cars, but the timelines aren't stretched out for years like rockets. And the team culture is great as well! So many smart and welcoming people.",
       "incoming": true
     },
     {
@@ -236,7 +236,7 @@
         "Optimized NaOH molarity in metakaolin-based geopolymer for lunar ISRU habitat construction; tested setting time and compressive strength"
       ],
       "tags": [],
-      "personal": "i loved concrete — because it's so common. my thought was, if i can make new, cheaper, stronger concrete — i could be a billionaire! but, realism — researching concrete for normal daily applications — turned out to be boring. anytime i feel a research topic is lacking novelty — i just add space to it — and it's exciting, every time. always been involved with space, and i researched how we can chemically produce concrete from lunar regolith (lunar soil), process it, and build lunar bases! two years later, i was not surprised to see gru space, a lunar regolith moon hotel startup, raise $500k from ycombinator. ",
+      "personal": "I loved concrete — because it's so common. My thought was, if I can make new, cheaper, stronger concrete — I could be a billionaire! But, realism — researching concrete for normal daily applications — turned out to be boring. Anytime I feel a research topic is lacking novelty — I just add space to it — and it's exciting, every time. Always been involved with space, and I researched how we can chemically produce concrete from lunar regolith (lunar soil), process it, and build lunar bases! Two years later, I was not surprised to see GRU Space, a lunar regolith moon hotel startup, raise $500k from YCombinator. ",
       "incoming": false,
       "pdf": {
         "label": "View paper",
@@ -270,7 +270,7 @@
         "CAD + CFD analysis of thermal protection systems for inflatable decelerators and crewed Mars landers; researched C-C composites and refractory materials"
       ],
       "tags": [],
-      "personal": "probably the most inspiring summer of my life. i met suni williams (the astronaut who was stuck on the iss for 9 months!!) and current artemis astronaut luca parmitano handed me my diploma at our graduation. the hospitality of the nasa community and my host parents, along with the genuine hope and belief the engineers and astronauts have for the future of space exploration, was incredibly inspiring—especially when program funding isn't always certain. suni williams told me she hopes us young people stay hopeful and keep dreaming. that has been the driver of my work in uncertain times, whether it's something silly like getting a b on a test, something big like choosing a career trajectory or wondering whether building a hotel on the moon is totally insane or not. ",
+      "personal": "Probably the most inspiring summer of my life. I met Suni Williams (the astronaut who was stuck on the ISS for 9 months!!) and current Artemis astronaut Luca Parmitano handed me my diploma at our graduation. The hospitality of the NASA community and my host parents, along with the genuine hope and belief the engineers and astronauts have for the future of space exploration, was incredibly inspiring—especially when program funding isn't always certain. Suni Williams told me she hopes us young people stay hopeful and keep dreaming. That has been the driver of my work in uncertain times, whether it's something silly like getting a B on a test, something big like choosing a career trajectory or wondering whether building a hotel on the moon is totally insane or not. ",
       "incoming": false
     },
     {
@@ -283,7 +283,7 @@
         "Built smart IoT dog collar (CAD, Swift, Arduino, Raspberry Pi); top 5 of 15 teams; Google IPO simulation at Morgan Stanley NYC"
       ],
       "tags": [],
-      "personal": "first time i experienced the intensity of venture capital, wall street, and ib people. m&t took us to the morgan stanley headquarters in new york, where the man who led the google ipo—and recently the spacex ipo—michael grimes, taught our group of 70 ambitious kids how to run an ipo. that was insane. the knowledge i got from this program, like hearing the word safe for the very first time, came full circle when i was offered a $100k safe investment myself two years later. i met amazing people who i am still in touch with, whether they're in sf or new york.",
+      "personal": "First time I experienced the intensity of venture capital, Wall Street, and IB people. M&T took us to the Morgan Stanley headquarters in New York, where the man who led the Google IPO—and recently the SpaceX IPO—Michael Grimes, taught our group of 70 ambitious kids how to run an IPO. That was insane. The knowledge I got from this program, like hearing the word SAFE for the very first time, came full circle when I was offered a $100k SAFE investment myself two years later. I met amazing people who I am still in touch with, whether they're in SF or New York.",
       "incoming": false
     },
     {
@@ -296,7 +296,7 @@
         "11,000+ word IRB-approved study (8 participants: NASA HI-SEAS + Kazakhstan Space Agency); fine-tuned Alpaca-7B; developed LorelAI social assistant"
       ],
       "tags": [],
-      "personal": "my longest-running project. i had the opportunity to research social isolation and actually interview people who participated in a 6-month mars simulation study in hawaii. my teammate and i did everything from fine-tuning very early models of llama (if i played the sound of the ai voice, you would actually laugh), to building a physical robot, testing it, and analyzing every word the interviewees said about our product—and iterating on it, over and over again.",
+      "personal": "My longest-running project. I had the opportunity to research social isolation and actually interview people who participated in a 6-month Mars simulation study in Hawaii. My teammate and I did everything from fine-tuning very early models of Llama (if I played the sound of the AI voice, you would actually laugh), to building a physical robot, testing it, and analyzing every word the interviewees said about our product—and iterating on it, over and over again.",
       "incoming": false,
       "pdf": {
         "label": "View paper",
@@ -314,7 +314,7 @@
         "Completed advanced seminars and a capstone project with an international team"
       ],
       "tags": [],
-      "personal": "the most friends i made and the most fun i had! it was awesome on yale's campus, spending time in the underground billiard area, discussing topics from philosophy to neuroscience to math, and meeting so many amazing people. ",
+      "personal": "The most friends I made and the most fun I had! It was awesome on Yale's campus, spending time in the underground billiard area, discussing topics from philosophy to neuroscience to math, and meeting so many amazing people. ",
       "incoming": false
     },
     {
@@ -327,7 +327,7 @@
         "Prospect-Theory analysis of spaceflight-driven neurophysiological changes on astronaut decision-making"
       ],
       "tags": [],
-      "personal": "i was excited about neuroscience and space, and this project was the result. i don't tend to trust people's decision-making on earth—why would i trust them in space? i knew there had to be neurophysiological changes in the brain from all the radiation and gravitational effects, and i wanted to quantify exactly how much their risky behavior could change.",
+      "personal": "I was excited about neuroscience and space, and this project was the result. I don't tend to trust people's decision-making on Earth—why would I trust them in space? I knew there had to be neurophysiological changes in the brain from all the radiation and gravitational effects, and I wanted to quantify exactly how much their risky behavior could change.",
       "incoming": false,
       "pdf": {
         "label": "View paper",
@@ -344,7 +344,7 @@
         "7,500-word paper published in the National High School Journal of Science; mentored by a Georgetown M.D./Ph.D."
       ],
       "tags": [],
-      "personal": "my first deep dive into neuroscience. it was a reeeeeeeeeeeeeeally long paper. ",
+      "personal": "My first deep dive into neuroscience. It was a reeeeeeeeeeeeeeally long paper. ",
       "incoming": false
     }
   ],
