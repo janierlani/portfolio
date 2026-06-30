@@ -47,7 +47,7 @@
       para = para.replace(/\n+/g,' ').trim();
       if(!para) return '';
       var sents = para.split(/(?<=[.!?])\s+/);
-      return '<p>'+sents.map(function(s){ return inlineMd(s); }).join('<br>')+'</p>';
+      return '<p>'+sents.map(function(s){ return '<span class="sent">'+inlineMd(s)+'</span>'; }).join('')+'</p>';
     }).join('');
   }
   var ICON = {
