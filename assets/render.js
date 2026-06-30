@@ -296,6 +296,29 @@
     els.forEach(function(e){revealObserver.observe(e);});
   }
 
+  /* ---------- interactive effects: cursor glow, tilt, magnetic ---------- */
+  function fx(){
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var fine = window.matchMedia && matchMedia('(pointer: fine)').matches;
+    if(reduce || !fine) return;
+    // cursor glow
+    var glow=document.createElement('div'); glow.className='cursor-glow'; document.body.appendChild(glow);
+    var gx=innerWidth/2, gy=innerHeight/2, tx=gx, ty=gy, raf=null;
+    function loop(){ gx+=(tx-gx)*.16; gy+=(ty-gy)*.16; glow.style.transform='translate3d('+gx+'px,'+gy+'px,0)'; if(Math.abs(tx-gx)>.4||Math.abs(ty-gy)>.4) raf=requestAnimationFrame(loop); else raf=null; }
+    window.addEventListener('pointermove',function(e){ tx=e.clientX; ty=e.clientY; if(!raf) raf=requestAnimationFrame(loop); },{passive:true});
+    // 3D tilt
+    [].forEach.call(document.querySelectorAll('.moment-full, .moment-pair .moment-cell, .hero-portrait'),function(el){
+      el.classList.add('tilt-3d');
+      el.addEventListener('pointermove',function(e){ var r=el.getBoundingClientRect(); var px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5; el.style.transform='perspective(1000px) rotateX('+(-py*7).toFixed(2)+'deg) rotateY('+(px*9).toFixed(2)+'deg)'; });
+      el.addEventListener('pointerleave',function(){ el.style.transform=''; });
+    });
+    // magnetic buttons
+    [].forEach.call(document.querySelectorAll('.nav-cta, .cta-submit, .cta-opt, .to-top'),function(el){
+      el.addEventListener('pointermove',function(e){ var r=el.getBoundingClientRect(); var x=((e.clientX-r.left)/r.width-.5)*r.width*.3, y=((e.clientY-r.top)/r.height-.5)*r.height*.45; el.style.transform='translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px) scale(1.06)'; });
+      el.addEventListener('pointerleave',function(){ el.style.transform=''; });
+    });
+  }
+
   window.openPDF=function(url,title){ var m=document.getElementById('pdf-modal'); if(!m){window.open(url,'_blank');return;} m.querySelector('strong').textContent=title||'document'; m.querySelector('.pm-dl').href=url; m.querySelector('iframe').src=url+'#view=FitH'; m.style.display='flex'; document.body.style.overflow='hidden'; };
   window.closePDF=function(){ var m=document.getElementById('pdf-modal'); if(!m)return; m.style.display='none'; m.querySelector('iframe').src=''; document.body.style.overflow=''; };
 
@@ -315,6 +338,7 @@
     renderGalleryPage(data);
     renderBlog(data);
     wire();
+    fx();
     var pm=document.getElementById('pdf-modal');
     if(pm){ pm.addEventListener('click',function(e){if(e.target===pm)window.closePDF();}); document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closePDF();}); }
   }
