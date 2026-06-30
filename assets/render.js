@@ -39,6 +39,17 @@
     }
     return out.join('\n');
   }
+  /* prose -> one sentence per line (keeps paragraphs on blank lines) */
+  function proseLines(text){
+    text = clean(text);
+    if(!text) return '';
+    return String(text).split(/\n\n+/).map(function(para){
+      para = para.replace(/\n+/g,' ').trim();
+      if(!para) return '';
+      var sents = para.split(/(?<=[.!?])\s+/);
+      return '<p>'+sents.map(function(s){ return inlineMd(s); }).join('<br>')+'</p>';
+    }).join('');
+  }
   var ICON = {
     mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>',
     linkedin:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',
@@ -68,7 +79,7 @@
     if(p.linkedin) links+='<a href="'+esc(p.linkedin)+'" target="_blank" rel="noopener">'+ICON.linkedin+'linkedin</a>';
     if(p.github) links+='<a href="'+esc(p.github)+'" target="_blank" rel="noopener">'+ICON.github+'github</a>';
     if(p.phone) links+='<a href="tel:'+esc(p.phone.replace(/[^0-9+]/g,''))+'">'+ICON.phone+esc(p.phone)+'</a>';
-    host.innerHTML='<div class="intro-band reveal"><div class="intro-bio">'+markdown(clean(p.bio||''))+'</div>'+
+    host.innerHTML='<div class="intro-band reveal"><div class="intro-bio">'+proseLines(p.bio||'')+'</div>'+
       '<div class="hero-stats">'+stats+'</div><div class="hero-links">'+links+'</div></div>';
   }
 
@@ -111,7 +122,7 @@
     if(!p.thoughts||!p.thoughts.length){ host.style.display='none'; return; }
     host.innerHTML='<div class="section-head reveal"><span class="eyebrow">mind</span><h2>'+esc((p.thoughtsTitle||'thoughts'))+'</h2></div>'+
       '<div class="thoughts">'+p.thoughts.map(function(t){
-        if(t.body && t.body.trim()) return '<div class="thought reveal"><h3>'+esc(t.title)+'</h3><p>'+inlineMd(clean(t.body))+'</p></div>';
+        if(t.body && t.body.trim()) return '<div class="thought reveal"><h3>'+esc(t.title)+'</h3>'+proseLines(t.body)+'</div>';
         return '<div class="thought reveal thought-standalone"><p>'+inlineMd(clean(t.title))+'</p></div>';
       }).join('')+'</div>';
   }
@@ -140,7 +151,7 @@
     var incoming=e.incoming?'<span class="xp-incoming">incoming</span>':'';
     var tech=stats+tags+bullets+link;
     var pers=clean(e.personal);
-    var personalCol=pers?'<div class="xp-personal"><span class="xp-pl">in my words</span><p>'+inlineMd(pers)+'</p></div>':'';
+    var personalCol=pers?'<div class="xp-personal"><span class="xp-pl">in my words</span>'+proseLines(pers)+'</div>':'';
     var body;
     if(tech && personalCol) body='<div class="xp-cols"><div class="xp-tech">'+tech+'</div>'+personalCol+'</div>';
     else body='<div class="xp-cols single">'+(tech?'<div class="xp-tech">'+tech+'</div>':'')+personalCol+'</div>';
