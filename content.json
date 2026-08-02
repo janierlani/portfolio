@@ -65,16 +65,16 @@
         "label": "GPA"
       },
       {
-        "value": "3",
+        "value": "$100K",
+        "label": "investment offer"
+      },
+      {
+        "value": "4",
         "label": "research labs"
       },
       {
         "value": "0",
         "label": "DRC violations"
-      },
-      {
-        "value": "3",
-        "label": "papers"
       }
     ],
     "thoughtsTitle": "Thoughts & What's Next",
@@ -95,16 +95,51 @@
   },
   "experiences": [
     {
+      "id": "ferroelectric",
+      "cat": "chip",
+      "title": "Ferroelectric Transistors for Compute-in-Memory",
+      "org": "Founder & Research Lead · 1517 Fund Flux Capacitor program",
+      "date": "Apr 2026 – Present",
+      "bullets": [
+        "received a $100K investment offer from the 1517 Fund Flux Capacitor program — selected as 1 of 10 funded projects from 300+ applications — to develop an all-van-der-Waals ferroelectric field-effect transistor (FeFET) for analog compute-in-memory AI inference",
+        "designed an MFIS (metal-ferroelectric-insulator-semiconductor) stack — sapphire (Al₂O₃) substrate for high-quality van der Waals epitaxy, few-layer InSe channel grown by MBE for electron mobility well above silicon, α-In₂Se₃ ferroelectric gate stable at atomic thickness, self-passivating native oxide as the insulating barrier, indium source/drain contacts for low-resistance Ohmic injection",
+        "core thesis: a single indium-material-family stack grown in one vacuum cycle eliminates the reactive heterogeneous interfaces and charge-trap states that limit silicon-based FeFETs, while retaining InSe's intrinsic high electron mobility",
+        "evaluated SRAM, RRAM, PCM, and HfO₂-on-silicon FeFETs; compared MFIS vs. MFMIS and double-gated architectures to select the prototype path",
+        "target metrics: electron mobility ≥200 cm²/V·s (~2× silicon), on/off ratio >10⁴, memory window ≥1 V, retention >10⁴ s, endurance to 10⁵ cycles — followed by a 4×4–8×8 crossbar array demonstrating vector-matrix multiplication",
+        "validation plan: in-situ RHEED and post-growth AFM for channel crystal quality, piezoresponse force microscopy for clean polarization switching, full fabrication and electrical characterization across ~10 devices",
+        "advised by Dr. Asif Khan (GT ECE/MSE; Editor-in-Chief, IEEE JxCDC) and Prof. Lauren Garten (In₂Se₃ materials expert); authored a technical white paper and a 6-month milestone plan with provisional patent filing"
+      ],
+      "tags": [
+        "FeFET",
+        "MBE",
+        "Compute-in-Memory"
+      ],
+      "personal": "",
+      "incoming": false,
+      "stats": [
+        {
+          "v": "$100K",
+          "l": "investment offer"
+        },
+        {
+          "v": "1 of 10",
+          "l": "funded from 300+"
+        }
+      ]
+    },
+    {
       "id": "silicon-jackets",
       "cat": "chip",
       "title": "Silicon Jackets — Digital Design · Digital Verification · Physical Design",
-      "org": "Georgia Tech Chip Design Club",
+      "org": "Physical Design Engineer · Georgia Tech Chip Design Club",
       "date": "Aug 2025 – Present",
       "bullets": [
-        "64-bit SRAM-backed calculator in SystemVerilog — 7-state FSM, parameterized ripple-carry adder, dual 1024×32 SRAM interface",
-        "UVM-style testbench: constrained-random driver, monitor, scoreboard; 98.94% coverage in Cadence IMC",
-        "Full RTL-to-GDS in Innovus + OpenLane; resolved 1,000+ DRC violations via LEF OBS analysis, routing-layer expansion, placement halos",
-        "Timing closure: WNS −2.701 ns → +0.01 ns via SDC iteration; custom Tcl procs for path viz & fanout"
+        "contributed to a student-led team building a custom digital ASIC from scratch — driving the processor pipeline from RTL all the way to a fully verified, manufacturable GDSII layout",
+        "designed a 32/64-bit SRAM-backed calculator in SystemVerilog — 7-state FSM controller, parameterized ripple-carry adder, two-stage carry-chained 64-bit addition, dual CF_SRAM_1024x32 hard macros",
+        "built a parameterized UVM-style testbench — constrained-random sequences, clocking-block driver, one-cycle read-latency monitor, dual-memory golden-model scoreboard; 98.94% functional coverage and 100% SVA pass rate in Cadence IMC",
+        "performed manual STA across all FF-to-FF paths; parsed post-simulation timing reports with Python to extract 50 violated paths and compute the optimal clock frequency (943 MHz)",
+        "executed a complete RTL-to-GDS flow in Cadence Genus/Innovus — synthesis, floorplanning, PDN generation, CTS, macro-aware routing, STA in Tempus; ported YAML-abstracted flows to a fully Tcl-driven methodology in Innovus Stylus and benchmarked against OpenLane",
+        "diagnosed and resolved 1,000+ DRC violations to zero by tracing root cause to SRAM LEF OBS constraints; fixed via routing-layer expansion, placement halos, and macro routing blockages — timing closure from WNS −2.701 ns to +0.01 ns"
       ],
       "tags": [
         "SystemVerilog",
@@ -153,10 +188,11 @@
       "id": "hytech",
       "cat": "chip",
       "title": "HyTech Formula SAE Racing",
-      "org": "Electrical Engineering · Georgia Tech",
-      "date": "Aug 2025 – Present",
+      "org": "Electrical Engineer · Georgia Tech's student-run electric race car team",
+      "date": "Aug 2025 – 2026",
       "bullets": [
-        "designed 2-layer PCB in Altium: 555 timer circuit, custom footprints from datasheets, RC calculations, trace routing, copper pour, DRC"
+        "designed a 2-layer PCB in Altium Designer — created custom schematic symbols and footprints from component datasheets, calculated RC values to meet target frequency and duty-cycle specifications",
+        "integrated USB-C power delivery into the board design; performed full trace routing, via placement, copper pour, and complete DRC verification for fabrication readiness"
       ],
       "tags": [],
       "personal": "Joined because I loved Tesla. ",
@@ -169,8 +205,10 @@
       "org": "Undergraduate Researcher · Organic Electrochemical Transistors",
       "date": "Jan 2026 – Present",
       "bullets": [
-        "fabricating OECTs — e-beam evaporation of gold contacts, photolithographic mask alignment, spin coating of semiconducting polymers",
-        "measuring transfer curves and transconductance across device geometries"
+        "fabricate organic electrochemical transistors (OECTs) from novel conducting polymers for neuromorphic computing — executing the complete cleanroom flow: photolithographic mask alignment, e-beam gold evaporation of source/drain contacts, spin coating of polymer active layers",
+        "electrically characterize devices on a Signatone probe station, extracting transfer curves and transconductance to evaluate electrochemical switching behavior",
+        "screen NMOS/PMOS polarity of previously uncharacterized polymers by interpreting I-V curve directionality — determining carrier type, accumulation vs. depletion mode operation, and channel performance for novel materials",
+        "document fabrication procedures and measurement protocols for lab repeatability"
       ],
       "tags": [],
       "personal": "The lab culture is great, I enjoyed being taught by my mentors and getting hands on experience with very cool metrology tech and cleanrooms was genuinely so rewarding and taught me a lot of the knowledge I build my current project on.",
@@ -183,8 +221,11 @@
       "org": "Undergraduate Researcher · MBE Growth of γ-InSe · Georgia Tech",
       "date": "Jan 2026 – Present",
       "bullets": [
-        "MBE growth of γ-InSe on Si(100); characterizing via RHEED, XRD, AFM/SEM, and Hall mobility across Se/In flux ratios and temperatures",
-        "developing mechanical transfer of InSe films from sapphire → silicon for industry-standard 2D channel integration"
+        "performed molecular beam epitaxy (MBE) growth of γ-InSe thin films on sapphire and Si(100) substrates under ultra-high vacuum (UHV)",
+        "researched optimization of Se/In flux ratio and substrate temperature to stabilize the target crystal phase — interpreting RHEED, XRD, AFM, SEM, TEM, profilometry, and Hall mobility data to guide growth parameters",
+        "applied machine learning to modulate substrate temperature and source flux in real time during growth runs",
+        "built an automated mechanical exfoliation and transfer tool to reliably move MBE-grown InSe flakes from sapphire onto silicon — enabling high-mobility 2D channel layers on industry-standard wafers",
+        "used profilometry to measure differential film thickness across the wafer; deposited a patterned Georgia Tech logo onto a wafer as a process demonstration"
       ],
       "tags": [
         "MBE Growth",
@@ -201,30 +242,49 @@
       "org": "Researcher & Entrepreneurship Assistant · ARPA-E ROSIE",
       "date": "Aug 2025 – Present",
       "bullets": [
-        "TGA, DSC, SEM, XRD characterization of hydrogen-reduced iron oxide → steel; casting, heat treatment, mounting, polishing of stainless steel pellets",
-        "Customer discovery, market research, and TEA modeling for ARPA-E-funded green steel manufacturing"
+        "perform TGA and DSC thermal analysis to characterize phase transformations during hydrogen reduction of iron oxide to steel — tracking mass loss to directly quantify reduction extent — for the ARPA-E-funded ROSIE program on sustainable steel manufacturing",
+        "conduct SEM imaging and EDS elemental analysis to evaluate microstructural evolution across reduction stages; run density measurements on stainless steel samples",
+        "process stainless steel pellets through full metallographic preparation — casting, heat treatment, sectioning, mounting, grinding, polishing; use ImageJ for grain-size analysis and feature extraction",
+        "lead customer discovery and market validation for ROSIE commercialization — ran technical and commercial interviews with engineering teams at NASA and Blue Origin to represent voice-of-customer and surface market requirements",
+        "assessed commercialization verticals from hydrogen precooler heat exchangers to semiconductor UHP gas delivery; built an autonomous outreach agent targeting defense, aerospace, and solar PV verticals"
       ],
       "tags": [],
       "personal": "I am incredibly thankful for all the experiences I had in this lab — all our PIs and PhDs took time to mentor a very, at the time, green freshman. The skills I got in this lab are incredibly versatile and I was able to be involved in research both from the science and commercialization perspective. ",
       "incoming": false
     },
     {
+      "id": "mil-lab",
+      "cat": "mat",
+      "title": "Materials Innovation & Learning Laboratory, Georgia Tech",
+      "org": "Measurement Team Staffer",
+      "date": "2025",
+      "bullets": [
+        "trained on and operated shared characterization instrumentation — Instron and Mark-10 mechanical testers, microhardness tester, DSC, TGA, IR camera, UV-Vis spectrophotometer, and contact angle goniometer",
+        "supported sample preparation, instrument maintenance, and user training across the facility"
+      ],
+      "tags": [],
+      "personal": "",
+      "incoming": false
+    },
+    {
       "id": "piper",
       "cat": "mat",
       "title": "Piper Aircraft",
-      "org": "Materials & Processing Engineering Intern · Vero Beach, FL",
+      "org": "Materials & Process (M&P) Engineering Intern · Vero Beach, FL",
       "date": "Jun – Aug 2026",
       "bullets": [
-        "optimizing thermoforming process parameters (sheet temperature, heating cycle, and forming conditions) for PVC and ABS thermoplastic components, correlating thermal inputs to part quality and dimensional stability",
-        "instrumenting the thermoforming process with thermocouples to capture in-process temperature profiles, characterizing material thermal response across forming conditions",
-        "implementing 3D scanning to quantify post-form warpage against nominal geometry, enabling tolerance analysis and data-driven parameter iteration",
-        "authoring test plans for thermoforming characterization studies and reviewing heat-transfer and CFD literature to build foundational thermal/fluid modeling knowledge",
-        "resolved HDR engineering tickets covering process documentation and specifications, supporting manufacturing-line consistency and quality compliance",
-        "collaborating cross-functionally with mechanical engineering teams to align material processes with design and production requirements"
+        "owned a thermoforming defect and yield reduction project end-to-end — independently conceived and designed a full Design of Experiments across a 14-channel thermocouple array, then ran the tests personally and installed the thermocouples myself",
+        "researched the plastic deformation and thermal behavior of acrylic-PVC polymer blends — dimensional stability, heat deflection temperature, and structural/phase characteristics that diverge from published neat-material datasheet values",
+        "applied statistical process control (ANOVA, Pearson/Spearman correlation, coefficient-of-variation repeatability testing) to isolate the process parameters driving part warpage and distinguish genuine defects from sensor-mounting artifacts",
+        "solved a critical instrumentation failure from first principles — derived sheet temperature analytically from thermodynamic heat-transfer equations when the thermocouple repeatedly detached, then remounted the sensor on an insulating layer as a cross-check; both approaches agreed within uncertainty",
+        "built custom thermal-mapping software in-house — a Python/SciPy pipeline with automated artifact cleaning and radial basis function (RBF) interpolation over CAD geometry, visualized in PyVista and Three.js/WebGL; also produced a thermal map in Siemens NX",
+        "quantified substrate warpage using 3D structured-light scanning (Creaform/VXelements); traced a diagonal warpage signature to a specific thermal imbalance between tool zones",
+        "designed an A/B-basis qualification test plan for 4130 steel, statistically establishing material allowables to FAA-regulated standards",
+        "audited the aircraft pre-paint surface preparation process to identify the mechanism driving observed corrosion; authored Standard Manufacturing Procedures for alkaline-wash adhesion and aluminum surface preparation"
       ],
       "tags": [],
       "personal": "Incredibly happy to intern there. It was always my dream to work in aviation, because the tech is more exciting than cars, but the timelines aren't stretched out for years like rockets. And the team culture is great as well! So many smart and welcoming people.",
-      "incoming": true
+      "incoming": false
     },
     {
       "id": "geopolymer",
@@ -264,10 +324,12 @@
       "id": "united-space-school",
       "cat": "space",
       "title": "NASA Johnson Space Center — United Space School",
-      "org": "Materials Selection Lead · 1 of 40 Global Delegates",
+      "org": "Materials Selection Lead · 1 of 40 Global Delegates · the only person chosen to represent Kazakhstan",
       "date": "Apr – Aug 2025",
       "bullets": [
-        "CAD + CFD analysis of thermal protection systems for inflatable decelerators and crewed Mars landers; researched C-C composites and refractory materials"
+        "performed materials selection for thermal protection systems on inflatable cargo decelerators and crew landers for a crewed Mars mission design project",
+        "researched carbon-carbon composites and refractory alloys for extreme re-entry thermal environments; applied CAD modeling and thermal CFD analysis to simulate aerothermal loads on lander and vehicle structures",
+        "evaluated material candidates against mass, thermal conductivity, ablation resistance, and structural integrity constraints"
       ],
       "tags": [],
       "personal": "Probably the most inspiring summer of my life. I met Suni Williams (the astronaut who was stuck on the ISS for 9 months!!) and current Artemis astronaut Luca Parmitano handed me my diploma at our graduation. The hospitality of the NASA community and my host parents, along with the genuine hope and belief the engineers and astronauts have for the future of space exploration, was incredibly inspiring—especially when program funding isn't always certain. Suni Williams told me she hopes us young people stay hopeful and keep dreaming. That has been the driver of my work in uncertain times, whether it's something silly like getting a B on a test, something big like choosing a career trajectory or wondering whether building a hotel on the moon is totally insane or not. ",
@@ -277,10 +339,11 @@
       "id": "upenn-mt",
       "cat": "space",
       "title": "UPenn Jerome Fisher M&T Summer Institute",
-      "org": "1 of 75 selected from 1,000+ applicants",
+      "org": "Software Engineer · 1 of 75 students from 1,000+ applicants · Penn Engineering & the Wharton School",
       "date": "Jul – Aug 2024",
       "bullets": [
-        "Built smart IoT dog collar (CAD, Swift, Arduino, Raspberry Pi); top 5 of 15 teams; Google IPO simulation at Morgan Stanley NYC"
+        "designed an app for a smart dog collar using Swift; applied unit economics and market sizing to develop a full business plan — recognized as 1 of 5 award winners among 15 teams",
+        "participated in a Google IPO simulation at Morgan Stanley NYC; attended lectures taught by Michael Grimes, lead banker on the SpaceX and Tesla IPOs"
       ],
       "tags": [],
       "personal": "First time I experienced the intensity of venture capital, Wall Street, and IB people. M&T took us to the Morgan Stanley headquarters in New York, where the man who led the Google IPO—and recently the SpaceX IPO—Michael Grimes, taught our group of 70 ambitious kids how to run an IPO. That was insane. The knowledge I got from this program, like hearing the word SAFE for the very first time, came full circle when I was offered a $100k SAFE investment myself two years later. I met amazing people who I am still in touch with, whether they're in SF or New York.",
@@ -350,55 +413,130 @@
   ],
   "skills": [
     {
-      "group": "EDA & Physical Design",
-      "items": [
-        "Cadence Innovus",
-        "Cadence Genus",
-        "Cadence IMC",
-        "Xcelium",
-        "OpenLane",
-        "Altium Designer",
-        "Tcl",
-        "YAML flow"
-      ]
-    },
-    {
-      "group": "HDL & Programming",
+      "group": "Chip Design & Verification",
       "items": [
         "SystemVerilog",
         "Verilog",
-        "Python",
-        "MATLAB"
-      ]
-    },
-    {
-      "group": "Lab & Characterization",
-      "items": [
-        "SEM",
-        "XRD",
-        "TGA",
-        "DSC",
-        "AFM",
-        "e-beam evaporation",
-        "photolithography",
-        "spin coating"
-      ]
-    },
-    {
-      "group": "Concepts",
-      "items": [
+        "Tcl",
+        "Cadence Genus",
+        "Innovus / Innovus Stylus",
+        "Tempus",
+        "Xcelium",
+        "IMC",
+        "OpenLane",
         "RTL-to-GDS",
         "STA",
-        "DRC",
         "CTS",
+        "PDN generation",
+        "macro-aware routing",
+        "DRC/LVS",
         "LEF/DEF",
-        "SRAM integration",
-        "UVM",
-        "floorplanning"
+        "SDC constraints",
+        "SRAM macro integration",
+        "UVM testbench architecture",
+        "SVA",
+        "functional coverage"
+      ]
+    },
+    {
+      "group": "Semiconductor Processing & Microfabrication",
+      "items": [
+        "photolithography",
+        "PVD",
+        "CVD",
+        "e-beam evaporation",
+        "MBE (UHV)",
+        "spin coating",
+        "metal liftoff",
+        "wet/dry etch",
+        "wet clean & alkaline processing",
+        "metallography",
+        "cleanroom process discipline"
+      ]
+    },
+    {
+      "group": "Characterization & Metrology",
+      "items": [
+        "SEM (Hitachi SU-8230)",
+        "EDS",
+        "TEM",
+        "AFM",
+        "XRD",
+        "RHEED",
+        "profilometry",
+        "TGA",
+        "DSC",
+        "UV-Vis",
+        "FTIR",
+        "contact angle goniometry",
+        "probe station (Signatone)",
+        "I-V characterization",
+        "optical microscopy",
+        "Instron & Mark-10 mechanical testing",
+        "microhardness testing",
+        "ImageJ",
+        "3D structured-light scanning"
+      ]
+    },
+    {
+      "group": "Process & Yield Engineering",
+      "items": [
+        "Design of Experiments (DoE)",
+        "statistical process control (SPC)",
+        "A/B-basis material qualification",
+        "root-cause analysis",
+        "defect & warpage inspection",
+        "yield improvement",
+        "DFM/DFA",
+        "FAA-compliant process documentation",
+        "SOP/SMP authoring"
+      ]
+    },
+    {
+      "group": "Software & Programming",
+      "items": [
+        "Python (NumPy, SciPy, Pandas, PyVista, Matplotlib)",
+        "MATLAB",
+        "Tcl",
+        "Swift",
+        "Three.js/WebGL",
+        "AI coding tools & agents"
+      ]
+    },
+    {
+      "group": "CAD & Simulation",
+      "items": [
+        "Siemens NX",
+        "SolidWorks",
+        "COMSOL Multiphysics",
+        "Altium Designer",
+        "RBF interpolation",
+        "reduced-order thermal modeling"
+      ]
+    },
+    {
+      "group": "Quantum",
+      "items": [
+        "Qiskit",
+        "quantum error correction (QEC)",
+        "Quantum Sciences & Technology coursework"
+      ]
+    },
+    {
+      "group": "Languages",
+      "items": [
+        "English",
+        "Russian",
+        "Kazakh",
+        "French"
       ]
     }
   ],
   "awards": [
+    {
+      "title": "1517 Fund Flux Capacitor Finalist",
+      "detail": "$100K investment offer · 1 of 10 projects funded from 300+ applications"
+    },
     {
       "title": "Rhodes Trust & Schmidt Futures RISE Global Finalist",
       "detail": "1 of 500 from 100,000+ applicants"
@@ -417,7 +555,7 @@
     },
     {
       "title": "NASA Space Apps Challenge",
-      "detail": "Top 10% of 5,500+ teams · Global Judging Nominee"
+      "detail": "1st Place, State"
     },
     {
       "title": "Eurasian Tumaris Tech Startup Incubator",
@@ -430,6 +568,14 @@
     {
       "title": "Republican Remote Olympiad — Chemistry",
       "detail": "2nd place"
+    },
+    {
+      "title": "Lumiere Foundation Full Scholarship",
+      "detail": "sponsored participation in the Lumiere Research Program"
+    },
+    {
+      "title": "Cambridge Center for International Research",
+      "detail": "STEM Scholar"
     }
   ],
   "moments": [
