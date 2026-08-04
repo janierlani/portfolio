@@ -60,29 +60,23 @@
     phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>'
   };
 
-  /* ---------- SIDEBAR ---------- */
-  function renderSide(p, navItems){
-    var top=document.getElementById('sideTop');
-    if(top){
-      var role=(p.location||'').indexOf('Georgia')>-1 ? 'electrical engineering · georgia tech' : (p.tagline||'');
-      var nav=navItems.map(function(n){ return '<a href="#'+n.id+'">'+esc(n.label)+'</a>'; }).join('');
-      top.innerHTML=
-        '<div class="side-hi">hi. i\'m</div>'+
-        (p.photo?'<div class="side-portrait"><img src="'+esc(p.photo)+'" alt="'+esc(p.name)+'" fetchpriority="high"></div>':'')+
-        '<h1 class="side-name"><a href="index.html">'+esc(p.name)+'</a></h1>'+
-        '<p class="side-role">'+esc(role)+'</p>'+
-        (p.tagline?'<p class="side-tag">'+esc(p.tagline)+'</p>':'')+
-        '<nav class="side-nav" id="sideNav" aria-label="sections">'+nav+'</nav>';
-    }
-    var links=document.getElementById('sideLinks');
-    if(links){
-      var h='';
-      if(p.email) h+='<a href="mailto:'+esc(p.email)+'">'+ICON.mail+'email</a>';
-      if(p.linkedin) h+='<a href="'+esc(p.linkedin)+'" target="_blank" rel="noopener">'+ICON.linkedin+'linkedin</a>';
-      if(p.github) h+='<a href="'+esc(p.github)+'" target="_blank" rel="noopener">'+ICON.github+'github</a>';
-      if(p.phone) h+='<a href="tel:'+esc(p.phone.replace(/[^0-9+]/g,''))+'">'+ICON.phone+esc(p.phone)+'</a>';
-      links.innerHTML=h;
-    }
+  /* ---------- HERO (compact identity) ---------- */
+  function renderHero(p){
+    var host=document.getElementById('hero'); if(!host) return;
+    var role=(p.location||'').indexOf('Georgia')>-1 ? 'electrical engineering · georgia tech' : (p.tagline||'');
+    var links='';
+    if(p.email) links+='<a href="mailto:'+esc(p.email)+'">'+ICON.mail+'email</a>';
+    if(p.linkedin) links+='<a href="'+esc(p.linkedin)+'" target="_blank" rel="noopener">'+ICON.linkedin+'linkedin</a>';
+    if(p.github) links+='<a href="'+esc(p.github)+'" target="_blank" rel="noopener">'+ICON.github+'github</a>';
+    if(p.phone) links+='<a href="tel:'+esc(p.phone.replace(/[^0-9+]/g,''))+'">'+ICON.phone+esc(p.phone)+'</a>';
+    host.innerHTML='<div class="hero-c">'+
+      '<div class="side-hi">hi. i\'m</div>'+
+      (p.photo?'<div class="hero-portrait"><img src="'+esc(p.photo)+'" alt="'+esc(p.name)+'" fetchpriority="high"></div>':'')+
+      '<h1>'+esc(p.name)+'</h1>'+
+      '<p class="hero-role">'+esc(role)+'</p>'+
+      (p.tagline?'<p class="hero-tag">'+esc(p.tagline)+'</p>':'')+
+      '<div class="side-links hero-links-row">'+links+'</div>'+
+    '</div>';
   }
 
   /* ---------- ABOUT ---------- */
@@ -212,27 +206,52 @@
     svg+='</svg>';
     return svg;
   }
+  var EXPS_BY_ID = {};
   function renderWork(exps){
     var host=document.getElementById('work'); if(!host) return;
-    /* ledger order mirrors the map reading order */
-    var orderIdx={}; Object.keys(VENN_NODES).forEach(function(k,i){ orderIdx[k]=i; });
-    var sorted=exps.slice().sort(function(a,b){ return (orderIdx[a.id]!==undefined?orderIdx[a.id]:99) - (orderIdx[b.id]!==undefined?orderIdx[b.id]:99); });
-    host.innerHTML='<h2 class="sec-label">work</h2>'+
-      '<p class="sec-sub">everything i\'ve worked on, mapped by field — every project sits where its fields overlap. click any dot to jump to the full story.</p>'+
-      '<div class="venn-wrap reveal">'+buildVennSvg(exps)+'</div>'+
-      '<div class="venn-legend reveal">'+Object.keys(FIELDS).map(function(f){ return '<span class="vleg" style="--fc:'+FIELDS[f].color+'">'+esc(FIELDS[f].label)+'</span>'; }).join('')+'</div>'+
-      '<div class="cat-entries venn-ledger">'+sorted.map(renderXp).join('')+'</div>';
-    /* map click / keyboard -> jump + flash */
+    EXPS_BY_ID={}; exps.forEach(function(e){ EXPS_BY_ID[e.id]=e; });
+    var unplaced=exps.filter(function(e){ return !VENN_NODES[e.id]; });
+    var moreRow=unplaced.length?('<div class="venn-more reveal">'+unplaced.map(function(e){
+        return '<button class="vmore" data-xp="'+esc(e.id)+'">'+esc(e.title)+'</button>';
+      }).join('')+'</div>'):'';
+    host.innerHTML='<h2 class="sec-label">work — a map of my fields</h2>'+
+      '<p class="sec-sub">everything i\'ve worked on, placed where its fields overlap. click any dot for the full story.</p>'+
+      '<div class="venn-wrap centered reveal">'+buildVennSvg(exps)+'</div>'+
+      '<div class="venn-legend reveal">'+Object.keys(FIELDS).map(function(f){ return '<span class="vleg" style="--fc:'+FIELDS[f].color+'">'+esc(FIELDS[f].label)+'</span>'; }).join('')+'</div>'+moreRow;
     var svg=host.querySelector('.venn');
     if(svg){
-      function jump(g){
-        var t=document.getElementById(g.getAttribute('data-target')); if(!t) return;
-        t.scrollIntoView({behavior: REDUCE?'auto':'smooth', block:'center'});
-        t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash');
-      }
-      svg.addEventListener('click', function(e){ var g=e.target.closest('.vnode'); if(g) jump(g); });
-      svg.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ var g=e.target.closest('.vnode'); if(g){ e.preventDefault(); jump(g); } } });
+      function open(g){ var id=(g.getAttribute('data-target')||'').replace(/^xp-/,''); if(EXPS_BY_ID[id]) openXpModal(EXPS_BY_ID[id]); }
+      svg.addEventListener('click', function(e){ var g=e.target.closest('.vnode'); if(g) open(g); });
+      svg.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ var g=e.target.closest('.vnode'); if(g){ e.preventDefault(); open(g); } } });
     }
+    host.addEventListener('click', function(e){ var b=e.target.closest('.vmore'); if(b && EXPS_BY_ID[b.getAttribute('data-xp')]) openXpModal(EXPS_BY_ID[b.getAttribute('data-xp')]); });
+  }
+  /* ---------- experience detail modal ---------- */
+  function xpDetail(e){
+    var bullets=(e.bullets&&e.bullets.length)?'<ul class="xp-list">'+e.bullets.map(function(b){return '<li>'+inlineMd(b)+'</li>';}).join('')+'</ul>':'';
+    var stats=(e.stats&&e.stats.length)?'<div class="xp-stats">'+e.stats.map(function(s){return '<div class="xp-stat"><span class="v">'+esc(s.v)+'</span> <span class="l">'+esc(s.l)+'</span></div>';}).join('')+'</div>':'';
+    var tags=(e.tags&&e.tags.length)?'<div class="xp-tags">'+e.tags.map(function(t){return '<span class="xp-tag">'+esc(t)+'</span>';}).join('')+'</div>':'';
+    var link='';
+    if(e.link&&e.link.url) link='<a class="xp-link" href="'+esc(e.link.url)+'" target="_blank" rel="noopener">'+esc(e.link.label||'view')+' &rarr;</a>';
+    else if(e.pdf&&e.pdf.file) link='<a class="xp-link" href="#" onclick="openPDF(\''+esc(e.pdf.file)+'\',\''+esc(e.title).replace(/'/g,"\\'")+'\');return false;">'+esc(e.pdf.label||'view paper')+' &rarr;</a>';
+    var incoming=e.incoming?'<span class="xp-incoming">incoming</span>':'';
+    var fchips=fieldsFor(e).map(function(f){ var fd=FIELDS[f]||{label:f,color:'#9b9ba4'}; return '<span class="fchip" style="--fc:'+fd.color+'">'+esc(fd.label)+'</span>'; }).join('');
+    var pers=clean(e.personal);
+    var personalBlock=pers?'<div class="xp-personal"><span class="xp-pl">in my words</span>'+proseLines(pers)+'</div>':'';
+    return '<div class="xp-fields">'+fchips+'</div>'+
+      '<h3 class="xpm-title">'+esc(e.title)+incoming+'</h3>'+
+      '<div class="xpm-meta">'+esc(e.date||'')+(e.org?' &nbsp;·&nbsp; '+esc(e.org):'')+'</div>'+
+      personalBlock+stats+tags+bullets+link;
+  }
+  function openXpModal(e){
+    var m=document.getElementById('xp-modal'); if(!m) return;
+    document.getElementById('xpmBody').innerHTML=xpDetail(e);
+    m.style.display='flex'; document.body.style.overflow='hidden';
+    var c=document.getElementById('xpmClose'); if(c) c.focus();
+  }
+  function closeXpModal(){
+    var m=document.getElementById('xp-modal'); if(!m) return;
+    m.style.display='none'; document.body.style.overflow='';
   }
   function renderXp(e, idx){
     var bullets=(e.bullets&&e.bullets.length)?'<ul class="xp-list">'+e.bullets.map(function(b){return '<li>'+inlineMd(b)+'</li>';}).join('')+'</ul>':'';
@@ -381,9 +400,8 @@
     var nav=document.getElementById('topnav'), toggle=document.getElementById('navToggle'), links=document.getElementById('navLinks');
     if(toggle&&links){ toggle.addEventListener('click',function(){links.classList.toggle('open');}); links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('open');}); }
     var prog=document.getElementById('scrollProgress'), top=document.getElementById('toTop');
-    /* sidebar scrollspy */
-    var sideNav=document.getElementById('sideNav');
-    var spyLinks=sideNav?[].slice.call(sideNav.querySelectorAll('a[href^="#"]')):[];
+    /* nav scrollspy (anchor links only) */
+    var spyLinks=links?[].slice.call(links.querySelectorAll('a[href^="#"]')):[];
     var spyTargets=spyLinks.map(function(a){var t=document.querySelector(a.getAttribute('href'));return t?{a:a,t:t}:null;}).filter(Boolean);
     function onScroll(){
       var h=document.documentElement, y=window.scrollY;
@@ -453,27 +471,24 @@
 
   /* ---------- boot ---------- */
   function boot(data){
-    if(document.getElementById('sideTop')){
+    if(document.getElementById('work') && document.getElementById('hero')){
       var p=data.profile||{};
-      /* sections present -> sidebar nav */
-      var navItems=[{id:'about',label:'about'}];
-      if((data.moments||[]).length) navItems.push({id:'moments',label:'moments'});
-      if((p.thoughts||[]).length) navItems.push({id:'thoughts',label:'thoughts'});
-      if((data.experiences||[]).length) navItems.push({id:'work',label:'work'});
-      if((data.skills||[]).length||(data.awards||[]).length) navItems.push({id:'skills',label:'skills'});
-      if((data.gallery||[]).length) navItems.push({id:'gallery',label:'gallery'});
-      if((data.posts||[]).length) navItems.push({id:'blog',label:'writing'});
-      navItems.push({id:'cta',label:'connect'});
-      renderSide(p, navItems);
+      renderHero(p);
+      renderWork(data.experiences||[]);
       renderAbout(p);
       renderMoments(data.moments||[]);
       renderThoughts(p);
-      renderWork(data.experiences||[]);
       renderSkillsAwards(data.skills||[],data.awards||[]);
       renderNotRobot(data.gallery||[]);
       renderNotebook(data.posts||[]);
       renderCTA(data.ui||{},data.profile||{},data.config||{});
       renderClock();
+      /* experience modal close wiring */
+      var xm=document.getElementById('xp-modal');
+      if(xm){
+        xm.addEventListener('click', function(e){ if(e.target===xm) closeXpModal(); });
+        var xc=document.getElementById('xpmClose'); if(xc) xc.addEventListener('click', closeXpModal);
+      }
     }
     renderGalleryPage(data);
     renderBlog(data);
@@ -482,7 +497,8 @@
     var loader=document.getElementById('loader');
     setTimeout(function(){ if(loader) loader.classList.add('done'); }, loader && !REDUCE ? 450 : 0);
     var pm=document.getElementById('pdf-modal');
-    if(pm){ pm.addEventListener('click',function(e){if(e.target===pm)window.closePDF();}); document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closePDF();}); }
+    if(pm){ pm.addEventListener('click',function(e){if(e.target===pm)window.closePDF();}); }
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ window.closePDF(); closeXpModal(); } });
   }
 
   fetch('content.json',{cache:'no-cache'})
