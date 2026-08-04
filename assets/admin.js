@@ -16,10 +16,16 @@ function collect(){
   if($('p-name')){var st=state.profile||{};
     st.name=val('p-name');st.kicker=val('p-kicker');st.tagline=val('p-tagline');st.bio=val('p-bio');st.personalBio=val('p-personalbio');
     st.location=val('p-location');st.email=val('p-email');st.phone=val('p-phone');st.linkedin=val('p-linkedin');st.github=val('p-github');st.photo=val('p-photo');
+    st.mapIntro=val('p-mapintro');
     st.stats=parsePairs(val('p-stats'),'value','label');
     st.thoughtsTitle=val('p-thoughtstitle');
     st.thoughts=splitLines(val('p-thoughts')).map(function(line){var pp=line.split('::');return {title:(pp[0]||'').trim(),body:(pp.slice(1).join('::')||'').trim()};});
     state.profile=st;}
+  if($('venn-circles')){
+    state.venn=state.venn||{};
+    state.venn.circles=splitLines(val('venn-circles')).map(function(l){var p=l.split('|').map(function(s){return s.trim();});return {f:p[0]||'',label:p[1]||'',color:p[2]||'#4f46e5',cx:+p[3]||0,cy:+p[4]||0,r:+p[5]||0,lx:+p[6]||0,ly:+p[7]||0};});
+    state.venn.nodes=splitLines(val('venn-nodes')).map(function(l){var p=l.split('|').map(function(s){return s.trim();});var flags=(p[6]||'').toLowerCase();var o={id:p[0]||'',x:+p[1]||0,y:+p[2]||0,fields:(p[3]||'').split(',').map(function(s){return s.trim();}).filter(Boolean),l1:p[4]||'',l2:p[5]||''};if(flags.indexOf('big')>-1)o.big=true;if(flags.indexOf('flip')>-1)o.flip=true;return o;});
+  }
   if(document.querySelector('#exp-list')){state.experiences=[].map.call(document.querySelectorAll('#exp-list .item'),function(it){function f(c){var e=it.querySelector('.'+c);return e?e.value:'';}var o={id:f('e-id')||slug(f('e-title')),cat:f('e-cat'),title:f('e-title'),org:f('e-org'),date:f('e-date'),bullets:splitLines(f('e-bullets')),tags:f('e-tags').split(',').map(function(s){return s.trim();}).filter(Boolean),personal:f('e-personal'),incoming:it.querySelector('.e-incoming').checked};var stats=parsePairs(f('e-stats'),'v','l').filter(function(s){return s.v||s.l;});if(stats.length)o.stats=stats;if(f('e-linkurl'))o.link={label:f('e-linklabel')||'View',url:f('e-linkurl')};if(f('e-pdf'))o.pdf={label:f('e-pdflabel')||'View paper',file:f('e-pdf')};return o;});}
   if(document.querySelector('#post-list')){state.posts=[].map.call(document.querySelectorAll('#post-list .item'),function(it){function f(c){var e=it.querySelector('.'+c);return e?e.value:'';}return {id:f('b-id')||slug(f('b-title')),cat:f('b-cat'),title:f('b-title'),date:f('b-date'),readTime:f('b-read'),excerpt:f('b-excerpt'),body:f('b-body')};});}
   if(document.querySelector('#skill-list')){state.skills=[].map.call(document.querySelectorAll('#skill-list .item'),function(it){return {group:it.querySelector('.s-group').value,items:it.querySelector('.s-items').value.split(',').map(function(s){return s.trim();}).filter(Boolean)};});}
@@ -39,6 +45,7 @@ function renderTab(){var c=$('tabContent');
   if(activeTab==='write')c.innerHTML=tplWrite();
   else if(activeTab==='profile')c.innerHTML=tplProfile(state.profile||{});
   else if(activeTab==='experiences')renderList('exp');
+  else if(activeTab==='map')c.innerHTML=tplMap(state.venn||{circles:[],nodes:[]});
   else if(activeTab==='blog')renderList('post');
   else if(activeTab==='moments')renderList('mom');
   else if(activeTab==='gallery')renderList('gal');
@@ -50,17 +57,31 @@ function tplProfile(p){
   return '<div class="panel"><h2>profile</h2><p class="muted">the hero and intro of your home page.</p>'
     +'<label>Name</label><input type="text" id="p-name" value="'+esc(p.name)+'">'
     +'<div class="row"><div><label>Kicker</label><input type="text" id="p-kicker" value="'+esc(p.kicker)+'"></div><div><label>Tagline</label><input type="text" id="p-tagline" value="'+esc(p.tagline)+'"></div></div>'
+    +'<label>Map intro (the line above the Venn diagram)</label><textarea id="p-mapintro" style="min-height:54px;">'+esc(p.mapIntro)+'</textarea>'
     +'<label>Bio (blank line = new paragraph)</label><textarea id="p-bio" style="min-height:120px;">'+esc(p.bio)+'</textarea><div class="hint">supports *italics*, **bold**, and — em dashes.</div>'
     +'<label>Personal bio (optional, currently unused on page)</label><textarea id="p-personalbio" style="min-height:80px;">'+esc(p.personalBio)+'</textarea>'
     +'<div class="row"><div><label>Email</label><input type="text" id="p-email" value="'+esc(p.email)+'"></div><div><label>Phone</label><input type="text" id="p-phone" value="'+esc(p.phone)+'"></div></div>'
     +'<div class="row"><div><label>LinkedIn URL</label><input type="text" id="p-linkedin" value="'+esc(p.linkedin)+'"></div><div><label>GitHub URL</label><input type="text" id="p-github" value="'+esc(p.github)+'"></div></div>'
     +'<label>Location</label><input type="text" id="p-location" value="'+esc(p.location)+'">'
-    +'<label>Stats — one per line, <code>value | label</code></label><textarea id="p-stats" style="min-height:96px;">'+esc(lines((p.stats||[]).map(function(s){return s.value+' | '+s.label;})))+'</textarea>'
+    +'<label>Stats — one per line, <code>value | label</code> (kept in the file but no longer shown on the page)</label><textarea id="p-stats" style="min-height:96px;">'+esc(lines((p.stats||[]).map(function(s){return s.value+' | '+s.label;})))+'</textarea>'
     +'<hr style="margin:18px 0;border:none;border-top:1px solid var(--rule);">'
     +'<label>Thoughts section title</label><input type="text" id="p-thoughtstitle" value="'+esc(p.thoughtsTitle)+'">'
     +'<label>Thoughts — one per line, <code>Title :: body</code> (leave body empty for a standalone statement)</label><textarea id="p-thoughts" style="min-height:120px;">'+esc(lines((p.thoughts||[]).map(function(t){return t.title+' :: '+t.body;})))+'</textarea>'
     +'<label>Photo path</label><input type="text" id="p-photo" value="'+esc(p.photo)+'"> <img class="thumb" src="'+esc(p.photo)+'" alt="">'
     +'<div class="hint">to change photos: add the image file to the <code>img/</code> folder in your repo, then put its path here (e.g. <code>img/me.jpg</code>).</div></div>';
+}
+function tplMap(v){
+  var circles=lines((v.circles||[]).map(function(c){return [c.f,c.label,c.color,c.cx,c.cy,c.r,c.lx,c.ly].join(' | ');}));
+  var nodes=lines((v.nodes||[]).map(function(n){var flags=[];if(n.big)flags.push('big');if(n.flip)flags.push('flip');return [n.id,n.x,n.y,(n.fields||[]).join(','),n.l1||'',n.l2||'',flags.join(',')].join(' | ');}));
+  var ids=(state.experiences||[]).map(function(e){return e.id;}).join(', ');
+  return '<div class="panel"><h2>venn map</h2><p class="muted">The diagram on your home page. Coordinates live on a 1100 × 900 canvas — x goes right, y goes down.</p>'
+    +'<label>Circles — one per line: <code>field-key | Label | #color | centerX | centerY | radius | labelX | labelY</code></label>'
+    +'<textarea id="venn-circles" style="min-height:130px;font-family:monospace;">'+esc(circles)+'</textarea>'
+    +'<div class="hint">field-key is what nodes refer to (e.g. <code>materials</code>). labelX/labelY position the circle\'s name — move it if names overlap.</div>'
+    +'<label>Dots — one per line: <code>experience-id | x | y | fields | label line 1 | label line 2 | flags</code></label>'
+    +'<textarea id="venn-nodes" style="min-height:280px;font-family:monospace;">'+esc(nodes)+'</textarea>'
+    +'<div class="hint">fields = comma-separated circle keys the dot belongs to (put it visually inside exactly those circles). flags: <code>big</code> = pulsing highlight dot, <code>flip</code> = label sits to the left of the dot. An experience with no dot here still shows as a small chip under the legend.<br>your experience ids: <code>'+esc(ids)+'</code></div>'
+    +'<div class="notice">tip: nudge numbers by 10–30 at a time, download, and refresh the site preview to see the change. label line 1 + 2 should say what it was, with keywords — e.g. “Materials internship” / “at Piper Aircraft”.</div></div>';
 }
 function tplSetup(s){
   s=s||{};var cfg=s.config||{};var ui=s.ui||{};var c=ui.cta||{};

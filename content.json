@@ -51,6 +51,7 @@
     "name": "Zhaniya Turganova",
     "kicker": "Technologist · Rationalist",
     "tagline": "Materials Science · Chip Design · Aerospace",
+    "mapIntro": "Hi — my experiences are multifaceted, so here's a Venn diagram that shows it best. I love intersections. Click any dot for the full story.",
     "bio": "How can I affect as many people with as much positive economic impact in the shortest period of time?\n\nFunctional hardware (I like things that do things!) has allowed me to follow this goal in conjunction with what I am good at—sciences, programming, and architecture—which you can just call engineering, but I think the specifics allow for a clearer comprehension of what I do. My mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\nI find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, I won't hate it!\n\nLook at my profile and tell me where you think we are the same and different. All I do is for a conversation and I am curious of your perspective on things I care and may not care about.  ",
     "personalBio": "How can I affect as many people with as much positive economic impact in the shortest period of time?\n\nFunctional hardware (I like things that do things!) has allowed me to follow this goal in conjunction with what I am good at—sciences, programming, and architecture—which you can just call engineering, but I think the specifics allow for a clearer comprehension of what I do. \n\nMy mission is to be a world-class general architect of systems, processes, and reactions to make naturally occurring things serve our society.\n\nI find coincidences beautiful—math operations that happen naturally in physics—and if you tell me the answer is (as it always is) actually just zero, I won't hate it!\n\nLook at my profile and tell me where you think we are the same and different. All I do is for a conversation and I am curious of your perspective on things I care and may not care about. ",
     "photo": "img/headshot.jpg",
@@ -611,5 +612,33 @@
     }
   ],
   "gallery": [],
-  "posts": []
+  "posts": [],
+  "venn": {
+    "circles": [
+      { "f": "materials",    "label": "Materials",    "color": "#4f46e5", "cx": 360, "cy": 370, "r": 250, "lx": 145, "ly": 258 },
+      { "f": "electrical",   "label": "Electrical",   "color": "#0d9488", "cx": 680, "cy": 330, "r": 230, "lx": 840, "ly": 170 },
+      { "f": "aerospace",    "label": "Aerospace",    "color": "#0284c7", "cx": 480, "cy": 650, "r": 225, "lx": 310, "ly": 780 },
+      { "f": "neuroscience", "label": "Neuroscience", "color": "#e11d48", "cx": 840, "cy": 680, "r": 180, "lx": 925, "ly": 805 },
+      { "f": "venture",      "label": "Venture",      "color": "#d97706", "cx": 560, "cy": 140, "r": 130, "lx": 605, "ly": 35 }
+    ],
+    "nodes": [
+      { "id": "ferroelectric",       "x": 525, "y": 285, "l1": "Ferroelectric transistors", "l2": "for AI compute-in-memory", "fields": ["materials", "electrical"], "big": true, "flip": true },
+      { "id": "facchetti",           "x": 520, "y": 375, "l1": "Organic transistors",       "l2": "for neuromorphic chips",   "fields": ["materials", "electrical"], "flip": true },
+      { "id": "heterostructure",     "x": 250, "y": 320, "l1": "MBE growth of",             "l2": "2D semiconductors",        "fields": ["materials"], "flip": true },
+      { "id": "mil-lab",             "x": 255, "y": 455, "l1": "Materials characterization","l2": "at the MIL Lab",           "fields": ["materials"], "flip": true },
+      { "id": "silicon-jackets",     "x": 762, "y": 282, "l1": "RTL-to-GDS",                "l2": "chip design (ASIC)",       "fields": ["electrical"] },
+      { "id": "hytech",              "x": 800, "y": 400, "l1": "Race car",                  "l2": "PCB design",               "fields": ["electrical"] },
+      { "id": "kacher",              "x": 475, "y": 190, "l1": "Green steel research",      "l2": "& commercialization",      "fields": ["materials", "venture"], "flip": true },
+      { "id": "upenn-mt",            "x": 640, "y": 95,  "l1": "Engineering + business",    "l2": "at UPenn M&T",             "fields": ["venture"] },
+      { "id": "unisat",              "x": 615, "y": 505, "l1": "Nanosatellite",             "l2": "engineering",              "fields": ["electrical", "aerospace"] },
+      { "id": "piper",               "x": 355, "y": 520, "l1": "Materials internship",      "l2": "at Piper Aircraft",        "fields": ["materials", "aerospace"], "flip": true },
+      { "id": "geopolymer",          "x": 455, "y": 575, "l1": "Lunar regolith",            "l2": "concrete research",        "fields": ["materials", "aerospace"] },
+      { "id": "united-space-school", "x": 400, "y": 610, "l1": "Mars mission design",       "l2": "at NASA JSC",              "fields": ["materials", "aerospace"], "flip": true },
+      { "id": "lunar-dome",          "x": 490, "y": 775, "l1": "Lunar dome",                "l2": "stress analysis",          "fields": ["aerospace"] },
+      { "id": "ai-chatbots",         "x": 680, "y": 610, "l1": "AI chatbots for",           "l2": "space missions",           "fields": ["aerospace", "neuroscience"] },
+      { "id": "neuroeconomics",      "x": 670, "y": 695, "l1": "Astronaut decision-making", "l2": "research (Prospect Theory)","fields": ["aerospace", "neuroscience"], "flip": true },
+      { "id": "yale",                "x": 890, "y": 620, "l1": "ALS research proposal",     "l2": "at Yale YYGS",             "fields": ["neuroscience"] },
+      { "id": "neuropathic",         "x": 870, "y": 750, "l1": "Neuropathic pain",          "l2": "publication (NHSJS)",      "fields": ["neuroscience"] }
+    ]
+  }
 }

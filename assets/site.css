@@ -1,7 +1,6 @@
 /* ============================================================
    Zhaniya Turganova — design system v5 "ledger"
-   Split layout: sticky identity sidebar + scrolling content.
-   White · monochrome · one quiet accent · left-aligned · lowercase
+   Map-first single column · white · one quiet accent · normal case
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Serif:ital@1&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
@@ -31,10 +30,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 40px; }
 
 body {
     font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
-    font-size: 17.5px; font-weight: 430; line-height: 1.68;
+    font-size: 18.5px; font-weight: 440; line-height: 1.68;
     color: var(--ink); background: var(--bg);
     -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-    text-transform: lowercase;
     overflow-x: hidden;
 }
 
@@ -77,7 +75,7 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .hero-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-c h1 { font-size: clamp(2.3rem, 5.4vw, 3.6rem); letter-spacing: -.03em; }
 .hero-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-top: 12px; }
-.hero-tag { font-size: .96rem; color: var(--soft); margin: 10px auto 0; max-width: 520px; }
+.hero-tag { font-size: 1.05rem; color: var(--soft); margin: 10px auto 0; max-width: 560px; }
 .hero-links-row { justify-content: center; margin-top: 20px; }
 .venn-wrap.centered { max-width: 960px; margin-left: auto; margin-right: auto; }
 
@@ -86,8 +84,8 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .xpm-box { position: relative; background: #fff; border: 1px solid var(--hair); border-radius: 20px; width: min(640px, 100%); max-height: 86vh; overflow-y: auto; padding: 36px 34px 40px; box-shadow: var(--shadow-2); }
 .xpm-close { position: sticky; top: 0; float: right; margin: -14px -10px 0 0; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--hair); background: #fff; color: var(--soft); font-size: 1.4rem; line-height: 1; cursor: pointer; transition: color .2s, background .2s; z-index: 2; }
 .xpm-close:hover { color: #fff; background: var(--ink); }
-.xpm-title { font-size: 1.4rem; margin: 10px 0 6px; line-height: 1.25; }
-.xpm-meta { font-family: 'IBM Plex Mono', monospace; font-size: .68rem; color: var(--faint); margin-bottom: 6px; }
+.xpm-title { font-size: 1.5rem; margin: 10px 0 6px; line-height: 1.25; }
+.xpm-meta { font-family: 'IBM Plex Mono', monospace; font-size: .76rem; color: var(--faint); margin-bottom: 6px; }
 .xpm-body .xp-personal { margin-top: 16px; }
 .venn-more { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .vmore { font-family: 'IBM Plex Mono', monospace; font-size: .66rem; color: var(--soft); border: 1px dashed var(--hair); background: #fff; border-radius: 999px; padding: 6px 14px; cursor: pointer; transition: all .2s; }
@@ -120,9 +118,9 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .content { padding: 84px 0 48px; min-width: 0; }
 .sec { padding-bottom: 88px; scroll-margin-top: 60px; }
 .sec:last-of-type { padding-bottom: 40px; }
-.sec-label { display: flex; align-items: center; gap: 16px; font-family: 'IBM Plex Mono', monospace; font-size: .74rem; letter-spacing: .24em; color: var(--ink); font-weight: 600; margin-bottom: 26px; }
+.sec-label { display: flex; align-items: center; gap: 16px; font-family: 'IBM Plex Mono', monospace; font-size: .84rem; letter-spacing: .2em; color: var(--ink); font-weight: 600; margin-bottom: 26px; }
 .sec-label::after { content: ''; height: 1px; flex: 1; max-width: 220px; background: var(--hair); }
-.sec-sub { color: var(--soft); font-size: .98rem; margin: -14px 0 26px; max-width: 560px; }
+.sec-sub { color: var(--soft); font-size: 1.08rem; margin: -14px 0 26px; max-width: 640px; }
 
 /* about */
 .about-bio p { font-size: 1.16rem; line-height: 1.72; color: var(--ink); margin-bottom: 28px; max-width: 640px; }
@@ -140,28 +138,24 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .sec-affil { padding-bottom: 88px; }
 .affil-label { font-family: 'IBM Plex Mono', monospace; font-size: .64rem; letter-spacing: .24em; color: var(--faint); margin-bottom: 20px; }
 .affil-row { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 38px; }
-.affil-row img { height: 52px; width: auto; max-width: 140px; object-fit: contain; filter: grayscale(1); opacity: .55; transition: filter .35s ease, opacity .35s ease, transform .35s var(--ease); }
-.affil-row img:hover { filter: none; opacity: 1; transform: translateY(-4px) scale(1.05); }
+.affil-row img { height: 52px; width: auto; max-width: 140px; object-fit: contain; transition: transform .35s var(--ease); }
+.affil-row img:hover { transform: translateY(-4px) scale(1.05); }
 @media (max-width: 600px) { .affil-row { gap: 16px 24px; } .affil-row img { height: 40px; } }
 
-/* ─────────────── MOMENTS — film strip ─────────────── */
-.strip-shell { position: relative; margin: 0 -8px; }
-.strip { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x proximity; padding: 6px 8px 22px; scrollbar-width: none; cursor: grab; }
-.strip::-webkit-scrollbar { display: none; }
-.strip.dragging { cursor: grabbing; scroll-snap-type: none; }
-.strip:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 12px; }
-.m-card { position: relative; flex: 0 0 auto; min-width: 220px; height: clamp(260px, 42vh, 400px); border-radius: 16px; overflow: hidden; scroll-snap-align: start; border: 1px solid var(--hair); background: var(--hair2); box-shadow: var(--shadow-1); transition: box-shadow .35s ease, transform .35s var(--ease); will-change: transform; }
-.m-card img { height: 100%; width: auto; max-width: min(78vw, 620px); object-fit: cover; display: block; transition: transform .9s var(--ease); user-select: none; -webkit-user-drag: none; }
-.m-card:hover { box-shadow: var(--shadow-2); }
-.m-card:hover img { transform: scale(1.05); }
-.moment-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 30px 18px 13px; color: #fff; background: linear-gradient(transparent, rgba(10,10,14,0.5) 40%, rgba(10,10,14,0.9)); pointer-events: none; }
-.moment-cap strong { font-family: 'Syne', sans-serif; font-size: .98rem; font-weight: 700; display: block; letter-spacing: -.01em; }
-.moment-cap span { font-family: 'IBM Plex Mono', monospace; font-size: .64rem; color: rgba(255,255,255,.75); display: block; margin-top: 4px; }
-.strip-ui { display: flex; align-items: center; gap: 16px; margin-top: 2px; }
-.strip-btn { width: 40px; height: 40px; border-radius: 50% 50% 48% 52% / 52% 48% 52% 48%; border: 1px solid var(--hair); background: #fff; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-1); transition: background .25s, color .25s, transform .25s, border-radius .4s; }
-.strip-btn:hover { background: var(--ink); color: #fff; transform: scale(1.08); border-radius: 48% 52% 52% 48% / 48% 52% 48% 52%; }
-.strip-progress { width: min(240px, 40vw); height: 2px; background: var(--hair); border-radius: 2px; overflow: hidden; }
-.strip-progress i { display: block; height: 100%; width: 12%; background: var(--ink); border-radius: 2px; transition: width .15s linear; }
+/* ─────────────── SNAPS — angled photos scattered between sections ─────────────── */
+.snap-slot { display: flex; flex-direction: column; gap: 48px; max-width: 880px; margin: 0 auto; padding: 6px 0 92px; }
+.snap-slot:empty { display: none; padding: 0; }
+.snap { --rot: -2deg; width: min(400px, 82vw); margin: 0; background: #fff; border: 1px solid var(--hair); border-radius: 6px; padding: 12px 12px 14px; box-shadow: var(--shadow-2); will-change: transform; }
+.snap.snap-l { align-self: flex-start; margin-left: 3%; }
+.snap.snap-r { align-self: flex-end; margin-right: 3%; }
+.snap img { width: 100%; height: auto; display: block; border-radius: 3px; user-select: none; -webkit-user-drag: none; }
+.snap figcaption { padding: 12px 6px 2px; }
+.snap figcaption strong { font-family: 'Syne', sans-serif; font-size: 1.02rem; font-weight: 700; display: block; letter-spacing: -.01em; }
+.snap figcaption span { font-family: 'IBM Plex Mono', monospace; font-size: .68rem; color: var(--faint); display: block; margin-top: 4px; }
+.snap.ph-reveal { opacity: 0; transform: rotate(var(--rot)) translateY(40px) scale(.97); }
+.snap.ph-reveal.in { opacity: 1; transform: rotate(var(--rot)); transition: opacity .7s ease, transform .45s var(--ease), box-shadow .35s ease; }
+.snap.ph-reveal.in:hover { transform: rotate(0deg) scale(1.025); box-shadow: 0 4px 8px rgba(18,18,23,.08), 0 26px 60px rgba(18,18,23,.14); z-index: 2; }
+@media (max-width: 640px) { .snap-slot { gap: 36px; padding-bottom: 72px; } .snap.snap-l { margin-left: 0; } .snap.snap-r { margin-right: 0; } }
 
 /* legacy vertical moments (blog/gallery reuse) */
 .moment-full, .moment-pair .moment-cell { position: relative; overflow: hidden; border-radius: 16px; border: 1px solid var(--hair); box-shadow: var(--shadow-1); }
@@ -178,7 +172,7 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .thought:hover { border-color: var(--accent); }
 .thought:last-child { margin-bottom: 0; }
 .thought h3 { font-size: 1.2rem; margin-bottom: 8px; }
-.thought p { color: var(--soft); font-size: 1.02rem; }
+.thought p { color: var(--soft); font-size: 1.08rem; }
 .thought-standalone p { font-family: 'Syne', sans-serif; font-size: 1.12rem; font-weight: 700; line-height: 1.45; color: var(--ink); }
 
 /* ─────────────── WORK — ledger with spotlight ─────────────── */
@@ -206,9 +200,9 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .xp-incoming { display: inline-block; margin-left: 9px; font-family: 'IBM Plex Mono', monospace; font-size: .54rem; letter-spacing: .1em; color: #fff; background: var(--ink); padding: 3px 9px; border-radius: 999px; vertical-align: middle; }
 .xp-personal { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 13px 16px; margin-top: 14px; }
 .xp-personal .xp-pl { display: block; font-family: 'IBM Plex Mono', monospace; font-size: .56rem; letter-spacing: .16em; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
-.xp-personal p { font-size: .94rem; line-height: 1.6; color: var(--ink); }
+.xp-personal p { font-size: 1.02rem; line-height: 1.62; color: var(--ink); }
 .xp-list { list-style: none; margin: 14px 0 0; }
-.xp-list li { position: relative; padding-left: 17px; font-size: .94rem; color: var(--soft); margin-bottom: 9px; line-height: 1.58; }
+.xp-list li { position: relative; padding-left: 17px; font-size: 1rem; color: var(--soft); margin-bottom: 9px; line-height: 1.6; }
 .xp-list li::before { content: ''; position: absolute; left: 0; top: 11px; width: 7px; height: 2px; background: var(--ink); }
 .xp-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 7px; }
 .xp-tag { font-family: 'IBM Plex Mono', monospace; font-size: .6rem; color: var(--soft); border: 1px solid var(--hair); padding: 3px 10px; border-radius: 999px; transition: all .2s; }
@@ -225,11 +219,11 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .venn { width: 100%; height: auto; display: block; }
 .venn .vc { transition: fill-opacity .3s ease, stroke-opacity .3s ease; }
 .venn .vc:hover { fill-opacity: .1; stroke-opacity: .6; }
-.venn .vlabel { font-family: 'IBM Plex Mono', monospace; font-size: 17px; letter-spacing: .14em; font-weight: 600; text-transform: lowercase; }
+.venn .vlabel { font-family: 'IBM Plex Mono', monospace; font-size: 19px; letter-spacing: .12em; font-weight: 600; }
 .venn .vnode { cursor: pointer; outline: none; }
 .venn .vnode .vdot { transition: r .25s var(--ease), fill .25s; }
 .venn .vnode:hover .vdot, .venn .vnode:focus-visible .vdot { r: 10; fill: var(--accent); }
-.venn .vnode .vtext { font-family: 'Hanken Grotesk', sans-serif; font-size: 16.5px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: #ffffff; stroke-width: 4px; stroke-linejoin: round; transition: fill .25s; }
+.venn .vnode .vtext { font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: #ffffff; stroke-width: 4.5px; stroke-linejoin: round; transition: fill .25s; }
 .venn .vnode:hover .vtext, .venn .vnode:focus-visible .vtext { fill: var(--accent); }
 .venn .vbig .vpulse { animation: vpulse 2.6s ease-out infinite; transform-origin: center; transform-box: fill-box; }
 @keyframes vpulse { 0% { transform: scale(1); opacity: .8; } 70% { transform: scale(2.4); opacity: 0; } 100% { transform: scale(2.4); opacity: 0; } }
@@ -249,14 +243,14 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .skill-group { margin-bottom: 18px; }
 .skill-group .sg-label { font-family: 'IBM Plex Mono', monospace; font-size: .6rem; letter-spacing: .14em; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
 .skill-items { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-items span { font-size: .78rem; font-weight: 470; color: var(--soft); border: 1px solid var(--hair); border-radius: 999px; padding: 3px 10px; background: #fff; opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s var(--ease), border-color .25s, color .25s; transition-delay: calc(var(--i, 0) * 18ms); }
+.skill-items span { font-size: .86rem; font-weight: 470; color: var(--soft); border: 1px solid var(--hair); border-radius: 999px; padding: 3px 10px; background: #fff; opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s var(--ease), border-color .25s, color .25s; transition-delay: calc(var(--i, 0) * 18ms); }
 .reveal.in .skill-items span, .sa-wrap.in .skill-items span { opacity: 1; transform: none; }
 .skill-items span:hover { border-color: var(--ink); color: var(--ink); }
 .award { display: grid; grid-template-columns: 18px 1fr; gap: 11px; padding: 12px 0; border-top: 1px solid var(--hair2); }
 .award:first-child { border-top: none; }
 .award .a-mark { color: var(--accent); font-size: .72rem; padding-top: 3px; }
-.award .a-title { font-family: 'Syne', sans-serif; font-size: .9rem; font-weight: 700; line-height: 1.34; }
-.award .a-detail { font-size: .82rem; color: var(--soft); }
+.award .a-title { font-family: 'Syne', sans-serif; font-size: .96rem; font-weight: 700; line-height: 1.34; }
+.award .a-detail { font-size: .9rem; color: var(--soft); }
 @media (max-width: 760px) { .sa-wrap { grid-template-columns: 1fr; gap: 34px; } }
 
 /* ─────────────── GALLERY ─────────────── */
