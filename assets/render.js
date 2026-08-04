@@ -436,7 +436,7 @@
       /* experience modal close wiring */
       var xm=document.getElementById('xp-modal');
       if(xm){
-        xm.addEventListener('click', function(e){ if(e.target===xm) closeXpModal(); });
+        xm.addEventListener('click', function(e){ if(e.target===xm || (e.target.classList && e.target.classList.contains('xpm-box'))) closeXpModal(); });
         var xc=document.getElementById('xpmClose'); if(xc) xc.addEventListener('click', closeXpModal);
       }
     }
