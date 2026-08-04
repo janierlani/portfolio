@@ -86,21 +86,20 @@
       '<div class="about-bio reveal">'+proseLines(p.bio||'')+'</div>';
   }
 
-  /* ---------- SNAPS — photos scattered through the page ---------- */
+  /* ---------- SNAPS — angled photo collage on the front page ---------- */
   function renderSnaps(moments){
-    var slots=[].slice.call(document.querySelectorAll('.snap-slot'));
-    if(!slots.length||!moments||!moments.length) return;
-    var rots=[-3.5, 2.5, -2, 3, -3, 2.2];
+    var host=document.getElementById('heroSnaps');
+    if(!host||!moments||!moments.length) return;
+    var rots=[-3.2, 2.4, -2, 3, -2.8, 2.2];
     moments.forEach(function(m, i){
-      var slot=slots[i % slots.length];
       var side=(i % 2 === 0) ? 'snap-l' : 'snap-r';
       var fig=document.createElement('figure');
       fig.className='snap ph-reveal '+side;
       fig.style.setProperty('--rot', rots[i % rots.length]+'deg');
-      fig.style.setProperty('--d', '0s');
+      fig.style.setProperty('--d', (i % 3)*0.09+'s');
       fig.innerHTML='<img loading="lazy" decoding="async" src="'+esc(m.file)+'" alt="'+esc(m.title||'')+'">'+
         '<figcaption><strong>'+esc(m.title||'')+'</strong><span>'+esc(m.caption||'')+'</span></figcaption>';
-      slot.appendChild(fig);
+      host.appendChild(fig);
     });
   }
 
@@ -148,7 +147,7 @@
         '<title>'+esc(e.title)+'</title>'+
         '<circle class="vhit" cx="'+n.x+'" cy="'+n.y+'" r="26" fill="transparent"></circle>'+
         (n.big?'<circle class="vpulse" cx="'+n.x+'" cy="'+n.y+'" r="'+r+'" fill="none" stroke="#4f46e5" stroke-width="1.4"></circle>':'')+
-        '<circle class="vdot" cx="'+n.x+'" cy="'+n.y+'" r="'+r+'" fill="#121217"></circle>'+
+        '<circle class="vdot" cx="'+n.x+'" cy="'+n.y+'" r="'+r+'" fill="#211d16"></circle>'+
         '<text class="vtext" text-anchor="'+anchor+'"><tspan x="'+(n.x+tdx)+'" y="'+ty+'">'+esc(l1)+'</tspan>'+(l2?'<tspan x="'+(n.x+tdx)+'" dy="23">'+esc(l2)+'</tspan>':'')+'</text>'+
       '</g>';
     });
@@ -187,10 +186,11 @@
     var fchips=fieldsFor(e).map(function(f){ var fd=FIELDS[f]||{label:f,color:'#9b9ba4'}; return '<span class="fchip" style="--fc:'+fd.color+'">'+esc(fd.label)+'</span>'; }).join('');
     var pers=clean(e.personal);
     var personalBlock=pers?'<div class="xp-personal"><span class="xp-pl">in my words</span>'+proseLines(pers)+'</div>':'';
+    var cta=link?'<div class="xpm-cta">'+link+'</div>':'';
     return '<div class="xp-fields">'+fchips+'</div>'+
       '<h3 class="xpm-title">'+esc(e.title)+incoming+'</h3>'+
       '<div class="xpm-meta">'+esc(e.date||'')+(e.org?' &nbsp;·&nbsp; '+esc(e.org):'')+'</div>'+
-      personalBlock+stats+tags+bullets+link;
+      cta+personalBlock+stats+tags+bullets;
   }
   function openXpModal(e){
     var m=document.getElementById('xp-modal'); if(!m) return;
