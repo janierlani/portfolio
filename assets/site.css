@@ -194,6 +194,29 @@ body.cursor-on .cursor-ring { opacity: 1; }
 .xp-link:hover { gap: 11px; color: var(--accent); }
 @media (max-width: 640px) { .xp { grid-template-columns: 1fr; gap: 4px; padding: 22px 12px; margin: 0 -12px; } .xp-date { padding-top: 0; } }
 
+/* ─────────────── VENN FIELD MAP ─────────────── */
+.venn-wrap { margin: 6px -8px 4px; }
+.venn { width: 100%; height: auto; display: block; }
+.venn .vc { transition: fill-opacity .3s ease, stroke-opacity .3s ease; }
+.venn .vc:hover { fill-opacity: .1; stroke-opacity: .6; }
+.venn .vlabel { font-family: 'IBM Plex Mono', monospace; font-size: 17px; letter-spacing: .14em; font-weight: 600; text-transform: lowercase; }
+.venn .vnode { cursor: pointer; outline: none; }
+.venn .vnode .vdot { transition: r .25s var(--ease), fill .25s; }
+.venn .vnode:hover .vdot, .venn .vnode:focus-visible .vdot { r: 10; fill: var(--accent); }
+.venn .vnode .vtext { font-family: 'Hanken Grotesk', sans-serif; font-size: 16.5px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: #ffffff; stroke-width: 4px; stroke-linejoin: round; transition: fill .25s; }
+.venn .vnode:hover .vtext, .venn .vnode:focus-visible .vtext { fill: var(--accent); }
+.venn .vbig .vpulse { animation: vpulse 2.6s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes vpulse { 0% { transform: scale(1); opacity: .8; } 70% { transform: scale(2.4); opacity: 0; } 100% { transform: scale(2.4); opacity: 0; } }
+.venn-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 2px 0 40px; }
+.vleg { font-family: 'IBM Plex Mono', monospace; font-size: .64rem; letter-spacing: .1em; color: var(--soft); display: inline-flex; align-items: center; gap: 7px; }
+.vleg::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--fc); opacity: .75; }
+.xp-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.xp-fields { display: inline-flex; gap: 6px; flex-shrink: 0; }
+.fchip { font-family: 'IBM Plex Mono', monospace; font-size: .56rem; letter-spacing: .08em; color: var(--fc); border: 1px solid color-mix(in srgb, var(--fc) 35%, transparent); background: color-mix(in srgb, var(--fc) 7%, transparent); padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.xp.flash { animation: flashBg 1.8s ease; }
+@keyframes flashBg { 0% { background: var(--accent-soft); } 100% { background: transparent; } }
+@media (max-width: 640px) { .venn .vtext { font-size: 21px; } .venn .vlabel { font-size: 21px; } }
+
 /* ─────────────── SKILLS + AWARDS ─────────────── */
 .sa-wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 44px; }
 .sa-col h3 { font-size: 1.1rem; margin-bottom: 18px; padding-bottom: 9px; border-bottom: 2px solid var(--ink); }

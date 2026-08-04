@@ -148,17 +148,91 @@
       }).join('')+'</div>';
   }
 
-  /* ---------- WORK ---------- */
+  /* ---------- WORK — venn field map + flat ledger ---------- */
+  var FIELDS = {
+    materials:    { label: 'materials',     color: '#4f46e5' },
+    electrical:   { label: 'electrical',    color: '#0d9488' },
+    aerospace:    { label: 'aerospace',     color: '#0284c7' },
+    neuroscience: { label: 'neuroscience',  color: '#e11d48' },
+    venture:      { label: 'venture',       color: '#d97706' }
+  };
+  var VENN_CIRCLES = [
+    { f:'materials',    cx:330, cy:330, r:240, lx:185, ly:180 },
+    { f:'electrical',   cx:620, cy:300, r:220, lx:770, ly:150 },
+    { f:'aerospace',    cx:430, cy:590, r:215, lx:300, ly:700 },
+    { f:'neuroscience', cx:760, cy:620, r:175, lx:835, ly:700 },
+    { f:'venture',      cx:560, cy:135, r:125, lx:600, ly:45 }
+  ];
+  var VENN_NODES = {
+    'ferroelectric':       { x:490, y:240, short:'fefet founder', fields:['materials','electrical'], big:true },
+    'facchetti':           { x:485, y:345, short:'oects',          fields:['materials','electrical'] },
+    'heterostructure':     { x:240, y:290, short:'mbe γ-inse',     fields:['materials'], flip:true },
+    'mil-lab':             { x:230, y:420, short:'mil lab',        fields:['materials'], flip:true },
+    'silicon-jackets':     { x:700, y:255, short:'silicon jackets',fields:['electrical'] },
+    'hytech':              { x:760, y:350, short:'hytech fsae',    fields:['electrical'] },
+    'kacher':              { x:450, y:150, short:'green steel',    fields:['materials','venture'], flip:true },
+    'upenn-mt':            { x:600, y:70,  short:'upenn m&t',      fields:['venture'] },
+    'unisat':              { x:595, y:485, short:'unisat',         fields:['electrical','aerospace'] },
+    'piper':               { x:345, y:495, short:'piper aircraft', fields:['materials','aerospace'], flip:true },
+    'geopolymer':          { x:432, y:520, short:'lunar concrete', fields:['materials','aerospace'] },
+    'united-space-school': { x:380, y:558, short:'nasa uss',       fields:['materials','aerospace'], flip:true },
+    'lunar-dome':          { x:455, y:690, short:'dome stress',    fields:['aerospace'], flip:true },
+    'ai-chatbots':         { x:640, y:585, short:'lorelai',        fields:['aerospace','neuroscience'] },
+    'neuroeconomics':      { x:605, y:655, short:'neuroeconomics', fields:['aerospace','neuroscience'], flip:true },
+    'yale':                { x:815, y:585, short:'yale yygs',      fields:['neuroscience'] },
+    'neuropathic':         { x:800, y:690, short:'neuropathic pain', fields:['neuroscience'] }
+  };
+  function fieldsFor(e){
+    if(VENN_NODES[e.id] && VENN_NODES[e.id].fields) return VENN_NODES[e.id].fields;
+    return e.cat==='chip'?['electrical']:e.cat==='mat'?['materials']:['aerospace'];
+  }
+  function buildVennSvg(exps){
+    var svg='<svg class="venn" viewBox="0 0 1000 830" role="img" aria-label="a map of my fields — every project sits where its fields overlap">';
+    VENN_CIRCLES.forEach(function(c){
+      var col=FIELDS[c.f].color;
+      svg+='<circle class="vc" data-field="'+c.f+'" cx="'+c.cx+'" cy="'+c.cy+'" r="'+c.r+'" fill="'+col+'" fill-opacity="0.055" stroke="'+col+'" stroke-opacity="0.35" stroke-width="1.6"></circle>';
+    });
+    VENN_CIRCLES.forEach(function(c){
+      var col=FIELDS[c.f].color;
+      svg+='<text class="vlabel" x="'+c.lx+'" y="'+c.ly+'" fill="'+col+'">'+esc(FIELDS[c.f].label)+'</text>';
+    });
+    exps.forEach(function(e){
+      var n=VENN_NODES[e.id]; if(!n) return;
+      var r=n.big?9:6;
+      var anchor=n.flip?'end':'start';
+      var tdx=n.flip?-14:14;
+      svg+='<g class="vnode'+(n.big?' vbig':'')+'" data-target="xp-'+esc(e.id)+'" tabindex="0" role="button" aria-label="'+esc(e.title)+'">'+
+        '<title>'+esc(e.title)+'</title>'+
+        '<circle class="vhit" cx="'+n.x+'" cy="'+n.y+'" r="22" fill="transparent"></circle>'+
+        (n.big?'<circle class="vpulse" cx="'+n.x+'" cy="'+n.y+'" r="'+r+'" fill="none" stroke="#4f46e5" stroke-width="1.4"></circle>':'')+
+        '<circle class="vdot" cx="'+n.x+'" cy="'+n.y+'" r="'+r+'" fill="#121217"></circle>'+
+        '<text class="vtext" x="'+(n.x+tdx)+'" y="'+(n.y+5)+'" text-anchor="'+anchor+'">'+esc(n.short)+'</text>'+
+      '</g>';
+    });
+    svg+='</svg>';
+    return svg;
+  }
   function renderWork(exps){
     var host=document.getElementById('work'); if(!host) return;
-    var order=['chip','mat','space'];
-    var blocks=order.map(function(c){
-      var g=exps.filter(function(e){return e.cat===c;});
-      if(!g.length) return '';
-      return '<div class="cat-block reveal" id="cat-'+c+'"><div class="cat-title"><span class="ct-mark">'+CAT[c].mark+'</span><h3>'+esc(CAT[c].label)+'</h3><span class="ct-count">'+g.length+(g.length===1?' entry':' entries')+'</span></div><div class="cat-rule"></div><div class="cat-entries">'+g.map(renderXp).join('')+'</div></div>';
-    }).join('');
+    /* ledger order mirrors the map reading order */
+    var orderIdx={}; Object.keys(VENN_NODES).forEach(function(k,i){ orderIdx[k]=i; });
+    var sorted=exps.slice().sort(function(a,b){ return (orderIdx[a.id]!==undefined?orderIdx[a.id]:99) - (orderIdx[b.id]!==undefined?orderIdx[b.id]:99); });
     host.innerHTML='<h2 class="sec-label">work</h2>'+
-      '<p class="sec-sub">research, hardware, and mission projects — the technical work and why each one mattered to me.</p>'+blocks;
+      '<p class="sec-sub">everything i\'ve worked on, mapped by field — every project sits where its fields overlap. click any dot to jump to the full story.</p>'+
+      '<div class="venn-wrap reveal">'+buildVennSvg(exps)+'</div>'+
+      '<div class="venn-legend reveal">'+Object.keys(FIELDS).map(function(f){ return '<span class="vleg" style="--fc:'+FIELDS[f].color+'">'+esc(FIELDS[f].label)+'</span>'; }).join('')+'</div>'+
+      '<div class="cat-entries venn-ledger">'+sorted.map(renderXp).join('')+'</div>';
+    /* map click / keyboard -> jump + flash */
+    var svg=host.querySelector('.venn');
+    if(svg){
+      function jump(g){
+        var t=document.getElementById(g.getAttribute('data-target')); if(!t) return;
+        t.scrollIntoView({behavior: REDUCE?'auto':'smooth', block:'center'});
+        t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash');
+      }
+      svg.addEventListener('click', function(e){ var g=e.target.closest('.vnode'); if(g) jump(g); });
+      svg.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ var g=e.target.closest('.vnode'); if(g){ e.preventDefault(); jump(g); } } });
+    }
   }
   function renderXp(e, idx){
     var bullets=(e.bullets&&e.bullets.length)?'<ul class="xp-list">'+e.bullets.map(function(b){return '<li>'+inlineMd(b)+'</li>';}).join('')+'</ul>':'';
@@ -168,9 +242,10 @@
     if(e.link&&e.link.url) link='<a class="xp-link" href="'+esc(e.link.url)+'" target="_blank" rel="noopener">'+esc(e.link.label||'view')+' &rarr;</a>';
     else if(e.pdf&&e.pdf.file) link='<a class="xp-link" href="#" onclick="openPDF(\''+esc(e.pdf.file)+'\',\''+esc(e.title).replace(/'/g,"\\'")+'\');return false;">'+esc(e.pdf.label||'view paper')+' &rarr;</a>';
     var incoming=e.incoming?'<span class="xp-incoming">incoming</span>':'';
+    var fchips=fieldsFor(e).map(function(f){ var fd=FIELDS[f]||{label:f,color:'#9b9ba4'}; return '<span class="fchip" style="--fc:'+fd.color+'">'+esc(fd.label)+'</span>'; }).join('');
     var pers=clean(e.personal);
     var personalBlock=pers?'<div class="xp-personal"><span class="xp-pl">in my words</span>'+proseLines(pers)+'</div>':'';
-    return '<div class="xp reveal" style="--d:'+(Math.min(idx||0,5)*0.05)+'s"><div class="xp-date">'+esc(e.date||'')+'</div><div class="xp-main"><h4>'+esc(e.title)+incoming+'</h4>'+(e.org?'<div class="xp-org">'+esc(e.org)+'</div>':'')+personalBlock+stats+tags+bullets+link+'</div></div>';
+    return '<div class="xp reveal" id="xp-'+esc(e.id)+'" style="--d:'+(Math.min(idx||0,5)*0.05)+'s"><div class="xp-date">'+esc(e.date||'')+'</div><div class="xp-main"><div class="xp-head"><h4>'+esc(e.title)+incoming+'</h4><span class="xp-fields">'+fchips+'</span></div>'+(e.org?'<div class="xp-org">'+esc(e.org)+'</div>':'')+personalBlock+stats+tags+bullets+link+'</div></div>';
   }
 
   /* ---------- SKILLS + AWARDS ---------- */
