@@ -19,40 +19,118 @@
 </script>
 <link rel="canonical" href="https://zhaniyaturganova.com/">
 <style>
-body { margin: 32px auto 64px; padding: 0 20px; max-width: 640px; background: #fff; color: #000; font: 18px/1.45 "Times New Roman", Times, serif; }
-a { color: #0000ee; }
-a:visited { color: #551a8b; }
+body { margin: 0; background: #fff; color: #000; font: 18px/1.45 "Times New Roman", Times, serif; }
+a, summary .t { color: #0000ee; text-decoration: underline; }
+a:visited { color: #0000ee; }
 a:active { color: #ee0000; }
-h1 { font-size: 32px; line-height: 1.15; margin: 0 0 4px; }
-h2 { font-size: 22px; margin: 32px 0 8px; }
+h1 { font-size: 30px; line-height: 1.1; margin: 0 0 4px; }
+h1 a, h1 a:visited { color: #000; text-decoration: none; }
+h2 { font-size: 22px; line-height: 1.2; margin: 44px 0 12px; padding-top: 12px; border-top: 1px solid #000; }
 h4 { font-size: 18px; margin: 20px 0 6px; }
 h4 small { font-size: 16px; font-weight: normal; }
-p { margin: 0 0 14px; }
-ul, ol { margin: 0 0 14px; padding-left: 28px; }
+p { margin: 0 0 12px; }
+ul, ol { margin: 0 0 12px; padding-left: 26px; }
 li { margin-bottom: 7px; }
-summary { color: #0000ee; text-decoration: underline; cursor: pointer; list-style: none; }
-summary::-webkit-details-marker { display: none; }
-details[open] > summary { margin-bottom: 10px; }
 sub { line-height: 0; }
-img { width: auto; height: auto; max-width: 100%; max-height: 280px; border: 1px solid #000; }
-hr { margin: 32px 0 16px; }
-#ask li { margin-bottom: 10px; }
-#map { display: block; width: 100%; max-width: 440px; height: auto; margin: 8px 0 4px; }
-#map circle { fill: none; stroke: #000; stroke-width: 2; }
+[hidden] { display: none !important; }
+
+.home { max-width: 640px; margin: 0 auto; padding: 48px 20px; }
+.home h1 { font-size: 36px; }
+.home h2 { font-size: 24px; border: 0; padding: 0; margin: 40px 0 14px; }
+#ask { list-style: none; padding: 0; margin: 0 0 40px; }
+#ask li { margin: 0; }
+#ask a { display: inline-block; padding: 6px 0; font-size: 20px; }
+
+.page { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 52px; max-width: 1120px; margin: 0 auto; padding: 36px 24px 80px; }
+.side { position: sticky; top: 36px; align-self: start; }
+.side h1 { font-size: 24px; }
+.side p { margin-bottom: 18px; }
+.side b { display: block; margin: 0 0 4px; }
+.side ul { list-style: none; padding: 0; margin: 0 0 22px; }
+.side li { margin: 0; }
+.side li a { display: block; padding: 3px 0; line-height: 1.25; }
+.side a[aria-current] { color: #000; font-weight: bold; text-decoration: none; }
+#pick { display: none; }
+
+#where { font-size: 32px; line-height: 1.1; margin: 0 0 8px; padding: 0; border: 0; }
+#where:focus { outline: none; }
+.jump a { margin-right: 18px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 36px; }
+.cols > figure { margin: 0; position: sticky; top: 36px; align-self: start; }
+figcaption { font-size: 15px; margin-top: 6px; }
+#work { padding-left: 30px; }
+#work > li { margin: 0 0 4px; padding: 5px 8px; scroll-margin-top: 16px; }
+#work > li.on { background: #ffffcc; }
+summary { cursor: pointer; list-style: none; position: relative; padding-right: 24px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 0; top: -2px; font-size: 22px; }
+details[open] > summary::after { content: "−"; }
+summary .t { font-weight: bold; }
+summary .o { display: block; }
+.b { padding: 12px 0 8px; }
+.b ul { padding-left: 20px; }
+#skills { list-style: none; padding: 0; }
+#skills li { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 24px; padding: 8px 0; margin: 0; }
+#skills li + li { border-top: 1px solid #ccc; }
+#map { display: block; width: 100%; height: auto; }
+#map circle { fill: none; stroke: #000; stroke-width: 2.5; }
 #map circle.on { fill: #000; fill-opacity: .08; }
 #map .hit { fill: transparent; stroke: none; }
-#map text { font: 34px "Times New Roman", Times, serif; }
-#map .d text { font-size: 38px; fill: #0000ee; text-anchor: middle; text-decoration: underline; }
-[hidden] { display: none; }
-@media print { #ask, #nav, #change { display: none; } }
+#map text { font: 44px "Times New Roman", Times, serif; }
+#map text.on { font-weight: bold; }
+#map .d { text-decoration: none; cursor: pointer; }
+#map .d text { font-size: 50px; fill: #0000ee; text-anchor: middle; text-decoration: underline; }
+#map .d.on .hit { fill: #ffff66; }
+.photos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: end; }
+.photos img { display: block; width: 100%; height: 220px; object-fit: contain; object-position: left bottom; }
+.photos p { margin: 0; }
+#interests-v div { max-width: 640px; }
+
+@media (max-width: 1000px) {
+  .cols { grid-template-columns: 1fr; gap: 8px; }
+  .cols > figure { position: static; max-width: 380px; }
+}
+@media (max-width: 740px) {
+  .page { display: block; padding: 20px 20px 64px; }
+  .side { position: static; padding-bottom: 16px; margin-bottom: 20px; border-bottom: 1px solid #000; }
+  .side p { margin-bottom: 10px; }
+  .side ul, .side b { display: none; }
+  #pick { display: block; margin-bottom: 12px; }
+  #pick select { display: block; width: 100%; margin-top: 4px; padding: 10px; font: 18px "Times New Roman", Times, serif; color: #000; background: #fff; border: 1px solid #000; border-radius: 0; }
+  #work { padding-left: 26px; }
+  #work > li { padding: 7px 0 7px 4px; }
+  #skills li { grid-template-columns: 1fr; gap: 0; }
+  .photos { grid-template-columns: 1fr; }
+  .photos img { height: auto; }
+}
+@media print { .side ul, .side b, #pick, .jump, .x, figure { display: none; } .page { display: block; } }
 </style>
 </head>
 <body>
+<div class="home" id="home" hidden>
 <h1>Zhaniya Turganova</h1>
 <p>Electrical Engineering, Georgia Tech</p>
+<h2>What field are you from?</h2>
+<ul id="ask">
+<li><a href="#chips">Chip design</a></li>
+<li><a href="#devices">Semiconductor devices and materials</a></li>
+<li><a href="#manufacturing">Manufacturing and process engineering</a></li>
+<li><a href="#aerospace">Aerospace</a></li>
+<li><a href="#neuro">Neuroscience</a></li>
+<li><a href="#software">AI and software</a></li>
+<li><a href="#business">Business and venture</a></li>
+<li><a href="#everything">Other, show me everything</a></li>
+</ul>
+<p><a href="#interests">What I'm interested in</a> | <a href="#photos">Photos</a> | <a href="mailto:zturganova3@gatech.edu">Email</a> | <a href="https://www.linkedin.com/in/janierlani">LinkedIn</a> | <a href="https://github.com/janierlani">GitHub</a></p>
+</div>
 
-<div id="ask" hidden>
-<p style="margin-top:32px">What field are you from?</p>
+<div class="page" id="page">
+<div class="side">
+<h1><a href="#">Zhaniya Turganova</a></h1>
+<p>Electrical Engineering, Georgia Tech</p>
+<label id="pick">Show me
+<select><optgroup label="Your field"><option value="chips">Chip design</option><option value="devices">Semiconductor devices and materials</option><option value="manufacturing">Manufacturing and process engineering</option><option value="aerospace">Aerospace</option><option value="neuro">Neuroscience</option><option value="software">AI and software</option><option value="business">Business and venture</option><option value="everything">Everything</option></optgroup><optgroup label="More"><option value="interests">What I'm interested in</option><option value="photos">Photos</option></optgroup></select></label>
+<b>Your field</b>
 <ul>
 <li><a href="#chips">Chip design</a></li>
 <li><a href="#devices">Semiconductor devices and materials</a></li>
@@ -61,24 +139,33 @@ hr { margin: 32px 0 16px; }
 <li><a href="#neuro">Neuroscience</a></li>
 <li><a href="#software">AI and software</a></li>
 <li><a href="#business">Business and venture</a></li>
-<li><a href="#everything">Another field, or just looking</a></li>
+<li><a href="#everything">Everything</a></li>
+</ul>
+<b>More</b>
+<ul>
+<li><a href="#interests">What I'm interested in</a></li>
+<li><a href="#photos">Photos</a></li>
+</ul>
+<b>Contact</b>
+<ul>
+<li><a href="mailto:zturganova3@gatech.edu">Email</a></li><li><a href="https://www.linkedin.com/in/janierlani">LinkedIn</a></li><li><a href="https://github.com/janierlani">GitHub</a></li>
 </ul>
 </div>
 
-<div id="change" hidden><p><a href="#">Choose another field</a></p></div>
-
+<main>
+<h2 id="where" tabindex="-1">Everything</h2>
 <div id="main">
-<h2 id="where">Everything</h2>
-<svg id="map" viewBox="40 0 1030 905" role="group" aria-label="Diagram of fields; numbers match the list of work below"><circle data-c="materials" cx="360" cy="370" r="250"/><circle data-c="electrical" cx="680" cy="330" r="230"/><circle data-c="aerospace" cx="480" cy="650" r="225"/><circle data-c="neuroscience" cx="800" cy="680" r="180"/><circle data-c="venture" cx="560" cy="140" r="130"/><text class="f" data-c="materials" x="60" y="150">Materials</text><text class="f" data-c="electrical" x="880" y="170">Electrical</text><text class="f" data-c="aerospace" x="165" y="850">Aerospace</text><text class="f" data-c="neuroscience" x="860" y="885">Neuroscience</text><text class="f" data-c="venture" x="690" y="40">Venture</text><a class="d" data-k="ferroelectric" href="#" tabindex="0"><circle class="hit" cx="525" cy="285" r="38"/><text x="525" y="298"></text></a><a class="d" data-k="silicon-jackets" href="#" tabindex="0"><circle class="hit" cx="762" cy="282" r="38"/><text x="762" y="295"></text></a><a class="d" data-k="facchetti" href="#" tabindex="0"><circle class="hit" cx="520" cy="375" r="38"/><text x="520" y="388"></text></a><a class="d" data-k="piper" href="#" tabindex="0"><circle class="hit" cx="355" cy="520" r="38"/><text x="355" y="533"></text></a><a class="d" data-k="kacher" href="#" tabindex="0"><circle class="hit" cx="460" cy="180" r="38"/><text x="460" y="193"></text></a><a class="d" data-k="mil-lab" href="#" tabindex="0"><circle class="hit" cx="255" cy="455" r="38"/><text x="255" y="468"></text></a><a class="d" data-k="hytech" href="#" tabindex="0"><circle class="hit" cx="800" cy="400" r="38"/><text x="800" y="413"></text></a><a class="d" data-k="unisat" href="#" tabindex="0"><circle class="hit" cx="615" cy="505" r="38"/><text x="615" y="518"></text></a><a class="d" data-k="united-space-school" href="#" tabindex="0"><circle class="hit" cx="400" cy="590" r="38"/><text x="400" y="603"></text></a><a class="d" data-k="lunar" href="#" tabindex="0"><circle class="hit" cx="480" cy="545" r="38"/><text x="480" y="558"></text></a><a class="d" data-k="lunar" href="#" tabindex="0"><circle class="hit" cx="490" cy="775" r="38"/><text x="490" y="788"></text></a><a class="d" data-k="ai-chatbots" href="#" tabindex="0"><circle class="hit" cx="663" cy="625" r="38"/><text x="663" y="638"></text></a><a class="d" data-k="neuroeconomics" href="#" tabindex="0"><circle class="hit" cx="663" cy="705" r="38"/><text x="663" y="718"></text></a><a class="d" data-k="neuropathic" href="#" tabindex="0"><circle class="hit" cx="840" cy="760" r="38"/><text x="840" y="773"></text></a><a class="d" data-k="yale" href="#" tabindex="0"><circle class="hit" cx="850" cy="620" r="38"/><text x="850" y="633"></text></a><a class="d" data-k="upenn-mt" href="#" tabindex="0"><circle class="hit" cx="605" cy="75" r="38"/><text x="605" y="88"></text></a></svg>
+<p class="jump"><a href="#" data-j="work">Work</a> <a href="#" data-j="skills">Skills</a> <a href="#" data-j="papers">Papers</a> <a href="#" data-j="honors">Honors</a> <a href="#" data-j="education">Education</a></p>
 
-<h2>Work</h2>
+<h2 id="j-work">Work</h2>
+<div class="cols">
 <ol id="work">
-<li data-f="chips devices neuro" data-k="ferroelectric"><details><summary>2D ferroelectrics, Garten Lab &amp; Heterostructure VIP (2026–present)</summary>
+<li data-f="chips devices neuro" data-k="ferroelectric" id="w-ferroelectric"><details><summary><span class="t">2D ferroelectrics</span><span class="o">Garten Lab &amp; Heterostructure VIP, 2026 to present</span></summary>
+<div class="b">
         <h4>Ferroelectric Devices</h4>
         <p>Undergraduate Researcher · Garten Laboratory, Georgia Institute of Technology · August 2026 – Present</p>
         <h4>MBE Growth &amp; 2D Materials</h4>
         <p>Undergraduate Researcher · 2D Heterostructure Vertically Integrated Project (VIP), Georgia Institute of Technology · January – May 2026</p>
-        <p><strong>Skills &amp; concepts:</strong> Two-dimensional semiconductors; In<sub>x</sub>Se<sub>y</sub>; molecular beam epitaxy (MBE) literature and process research; SolidWorks; 3D CAD; deposition-mask design; mechanical exfoliation; flake transfer; automated laboratory tooling; Arduino-based control; sapphire and silicon substrates; growth flux ratios; substrate temperature; phase stabilization; in-situ machine learning and artificial intelligence for growth-process control.</p>
         <section>
           <ul>
             <li>Built an automated tool for mechanical exfoliation and transfer of In<sub>x</sub>Se<sub>y</sub> flakes from sapphire onto silicon, incorporating Arduino-based actuation/control.</li>
@@ -88,10 +175,13 @@ hr { margin: 32px 0 16px; }
           </ul>
           <p><strong>Scope:</strong> Tool construction, mask design, and growth-method research.</p>
         </section>
-</details></li>
-<li data-f="chips devices software" data-k="silicon-jackets"><details><summary>Physical design, Silicon Jackets</summary>
+<p><strong>Skills &amp; concepts:</strong> Two-dimensional semiconductors; In<sub>x</sub>Se<sub>y</sub>; molecular beam epitaxy (MBE) literature and process research; SolidWorks; 3D CAD; deposition-mask design; mechanical exfoliation; flake transfer; automated laboratory tooling; Arduino-based control; sapphire and silicon substrates; growth flux ratios; substrate temperature; phase stabilization; in-situ machine learning and artificial intelligence for growth-process control.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="chips devices software" data-k="silicon-jackets" id="w-silicon-jackets"><details><summary><span class="t">Physical design</span><span class="o">Silicon Jackets</span></summary>
+<div class="b">
         <p>Physical Design Engineer · Silicon Jackets, Georgia Institute of Technology</p>
-        <p><strong>Skills &amp; concepts:</strong> Digital hardware design; RTL-to-GDSII; SystemVerilog; SRAM macro integration; Cadence Genus; Innovus; Tempus; Virtuoso; Pegasus; Xcelium; IMC; KLayout; OpenROAD; OpenLane; SKY130; synthesis; floorplanning; power distribution network (PDN) design; placement; clock tree synthesis (CTS); routing; static timing analysis (STA); timing closure; Synopsys Design Constraints (SDC); worst negative slack (WNS); total negative slack (TNS); design rule checking (DRC); layout-versus-schematic (LVS); SRAM compiler views; GDS; LEF; SPICE; Liberty timing models; verification scripting; Tcl; Python; UVM-style constrained-random testing; functional coverage.</p>
         <section>
           <h4>64-bit SRAM-Backed Datapath: RTL-to-GDSII</h4>
           <ul>
@@ -128,10 +218,13 @@ hr { margin: 32px 0 16px; }
           </ul>
         </section>
         <p><a href="https://janierlani.github.io/sj_project">View project page</a></p>
-</details></li>
-<li data-f="chips devices neuro" data-k="facchetti"><details><summary>Organic semiconductor devices, Facchetti Lab</summary>
+<p><strong>Skills &amp; concepts:</strong> Digital hardware design; RTL-to-GDSII; SystemVerilog; SRAM macro integration; Cadence Genus; Innovus; Tempus; Virtuoso; Pegasus; Xcelium; IMC; KLayout; OpenROAD; OpenLane; SKY130; synthesis; floorplanning; power distribution network (PDN) design; placement; clock tree synthesis (CTS); routing; static timing analysis (STA); timing closure; Synopsys Design Constraints (SDC); worst negative slack (WNS); total negative slack (TNS); design rule checking (DRC); layout-versus-schematic (LVS); SRAM compiler views; GDS; LEF; SPICE; Liberty timing models; verification scripting; Tcl; Python; UVM-style constrained-random testing; functional coverage.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="chips devices neuro" data-k="facchetti" id="w-facchetti"><details><summary><span class="t">Organic semiconductor devices</span><span class="o">Facchetti Lab</span></summary>
+<div class="b">
         <p>Undergraduate Researcher · Facchetti Laboratory, Georgia Institute of Technology</p>
-        <p><strong>Skills &amp; concepts:</strong> Cleanroom semiconductor fabrication; organic thin-film transistors (OTFTs); photolithography; mask alignment; electron-beam gold evaporation; spin coating of conducting polymers; Signatone probe station; transistor electrical characterization; transfer curves; transconductance; n-type and p-type behavior; electrolyte-gated transistor physics; organic electrochemical transistors; neuromorphic hardware concepts.</p>
         <section>
           <ul>
             <li>Fabricated organic thin-film transistor structures through photolithographic mask alignment, electron-beam evaporation of gold electrodes, and spin coating of conducting polymers.</li>
@@ -140,14 +233,19 @@ hr { margin: 32px 0 16px; }
             <li>Studied electrolyte-gated transistor physics and potential neuromorphic applications of organic electrochemical transistors.</li>
           </ul>
         </section>
-</details></li>
-<li data-f="manufacturing aerospace" data-k="piper"><details><summary>Materials &amp; Process Engineering Intern, Piper Aircraft (2026)</summary>
+<p><strong>Skills &amp; concepts:</strong> Cleanroom semiconductor fabrication; organic thin-film transistors (OTFTs); photolithography; mask alignment; electron-beam gold evaporation; spin coating of conducting polymers; Signatone probe station; transistor electrical characterization; transfer curves; transconductance; n-type and p-type behavior; electrolyte-gated transistor physics; organic electrochemical transistors; neuromorphic hardware concepts.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="manufacturing aerospace" data-k="piper" id="w-piper"><details><summary><span class="t">Materials &amp; Process Engineering Intern</span><span class="o">Piper Aircraft, 2026</span></summary>
+<div class="b">
         <p>Materials &amp; Process Engineering Intern · Piper Aircraft · Vero Beach, Florida, USA · June – August 2026</p>
-</details></li>
-<li data-f="devices manufacturing business" data-k="kacher"><details><summary>Sustainable steel &amp; commercialization, Kacher Lab</summary>
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="devices manufacturing business" data-k="kacher" id="w-kacher"><details><summary><span class="t">Sustainable steel &amp; commercialization</span><span class="o">Kacher Lab</span></summary>
+<div class="b">
         <p>Undergraduate Researcher · Kacher Laboratory, Georgia Institute of Technology</p>
         <p>ARPA-E-funded ROSIE sustainable steel research</p>
-        <p><strong>Skills &amp; concepts:</strong> Thermogravimetric analysis (TGA); differential scanning calorimetry (DSC); hydrogen reduction of iron oxide; phase transformations; thermal analysis; reduction mass loss; scanning electron microscopy (SEM); energy-dispersive X-ray spectroscopy (EDS); metallographic preparation; casting; heat treatment; sectioning; mounting; grinding; polishing; stainless-steel density measurements; ImageJ grain-size analysis; microstructural feature extraction; customer discovery; technical commercialization; ultra-high-purity (UHP) semiconductor gas delivery systems; hydrogen precooling heat exchangers.</p>
         <section>
           <ul>
             <li>Perform TGA and DSC measurements to characterize thermal behavior and phase transformations during hydrogen reduction of iron oxide for the ARPA-E ROSIE project.</li>
@@ -160,10 +258,13 @@ hr { margin: 32px 0 16px; }
             <li>Lead customer-discovery and market-validation work, holding technical/commercial conversations with engineering teams at NASA and Blue Origin to identify requirements and potential applications.</li>
           </ul>
         </section>
-</details></li>
-<li data-f="devices manufacturing" data-k="mil-lab"><details><summary>Materials characterization, Materials Innovation &amp; Learning Lab</summary>
+<p><strong>Skills &amp; concepts:</strong> Thermogravimetric analysis (TGA); differential scanning calorimetry (DSC); hydrogen reduction of iron oxide; phase transformations; thermal analysis; reduction mass loss; scanning electron microscopy (SEM); energy-dispersive X-ray spectroscopy (EDS); metallographic preparation; casting; heat treatment; sectioning; mounting; grinding; polishing; stainless-steel density measurements; ImageJ grain-size analysis; microstructural feature extraction; customer discovery; technical commercialization; ultra-high-purity (UHP) semiconductor gas delivery systems; hydrogen precooling heat exchangers.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="devices manufacturing" data-k="mil-lab" id="w-mil-lab"><details><summary><span class="t">Materials characterization</span><span class="o">Materials Innovation &amp; Learning Lab</span></summary>
+<div class="b">
         <p>Laboratory Staff · Materials Innovation &amp; Learning Lab, Georgia Institute of Technology</p>
-        <p><strong>Skills &amp; instruments:</strong> Instron mechanical testers; Mark-10 force measurement; microhardness testing; DSC; TGA; infrared thermography; UV–Vis spectrophotometry; contact-angle goniometry; specimen preparation; equipment setup; instrument maintenance; laboratory procedures; user training.</p>
         <section>
           <ul>
             <li>Support laboratory users in operating Instron and Mark-10 mechanical testing systems, microhardness testers, DSC/TGA systems, infrared cameras, UV–Vis spectrophotometers, and contact-angle goniometers.</li>
@@ -171,10 +272,13 @@ hr { margin: 32px 0 16px; }
             <li>Provide user support and training on instrumentation and standard laboratory procedures.</li>
           </ul>
         </section>
-</details></li>
-<li data-f="chips manufacturing" data-k="hytech"><details><summary>Low-voltage electronics, HyTech Racing, Formula SAE</summary>
+<p><strong>Skills &amp; instruments:</strong> Instron mechanical testers; Mark-10 force measurement; microhardness testing; DSC; TGA; infrared thermography; UV–Vis spectrophotometry; contact-angle goniometry; specimen preparation; equipment setup; instrument maintenance; laboratory procedures; user training.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="chips manufacturing" data-k="hytech" id="w-hytech"><details><summary><span class="t">Low-voltage electronics</span><span class="o">HyTech Racing, Formula SAE</span></summary>
+<div class="b">
         <p>Low-Voltage Electrical Engineer · HyTech Racing, Formula SAE, Georgia Institute of Technology</p>
-        <p><strong>Skills &amp; concepts:</strong> Altium Designer; schematic capture; component libraries; custom schematic symbols; SOIC-8 footprints; two-layer PCB design; PCB placement and routing; LM555 timer; astable oscillator topology; RC timing calculations; 2–5 Hz flashing circuits; LEDs; 0603 surface-mount packages; USB-C 5 V input; device-side USB-C configuration; decoupling; GND planes; 5 mil trace widths; solder-mask apertures; board mechanical constraints; JLCPCB design rules; Formula SAE Ready-to-Move requirements; op-amps; MOSFETs; analog-to-digital converters; microcontrollers; comparator design.</p>
         <section>
           <h4>Formula SAE Ready-to-Move (RTM) Indicator PCB</h4>
           <ul>
@@ -192,11 +296,14 @@ hr { margin: 32px 0 16px; }
           </ul>
           <p><strong>Development stage:</strong> PCB designed and design-rule checked.</p>
         </section>
-</details></li>
-<li data-f="aerospace" data-k="united-space-school"><details><summary>Mars mission materials selection, United Space School (2025)</summary>
+<p><strong>Skills &amp; concepts:</strong> Altium Designer; schematic capture; component libraries; custom schematic symbols; SOIC-8 footprints; two-layer PCB design; PCB placement and routing; LM555 timer; astable oscillator topology; RC timing calculations; 2–5 Hz flashing circuits; LEDs; 0603 surface-mount packages; USB-C 5 V input; device-side USB-C configuration; decoupling; GND planes; 5 mil trace widths; solder-mask apertures; board mechanical constraints; JLCPCB design rules; Formula SAE Ready-to-Move requirements; op-amps; MOSFETs; analog-to-digital converters; microcontrollers; comparator design.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="aerospace" data-k="united-space-school" id="w-united-space-school"><details><summary><span class="t">Mars mission materials selection</span><span class="o">United Space School, 2025</span></summary>
+<div class="b">
         <p>Materials Selection Lead · United Space School, conducted in connection with the NASA Johnson Space Center community · April – August 2025</p>
         <p><strong>Selection:</strong> 1 of 40 international delegates; sole representative of Kazakhstan</p>
-        <p><strong>Skills &amp; concepts:</strong> Thermal protection systems (TPS); atmospheric entry; inflatable aerodynamic decelerators; crewed Mars landers; carbon–carbon composites; refractory metal alloys; high-temperature structural materials; thermal conductivity; ablation resistance; specific mass; aerothermal loading; CAD; computational fluid dynamics (CFD); thermal analysis; thermal-structural material selection.</p>
         <section>
           <ul>
             <li>Led materials-selection work for thermal protection systems on <strong>inflatable aerodynamic decelerators and crewed Mars landers</strong> during an interdisciplinary Mars mission design program.</li>
@@ -205,21 +312,27 @@ hr { margin: 32px 0 16px; }
           </ul>
           <p><strong>Program:</strong> An educational Mars mission design program.</p>
         </section>
-</details></li>
-<li data-f="chips aerospace" data-k="unisat"><details><summary>Nanosatellite engineering, UniSAT (2024)</summary>
+<p><strong>Skills &amp; concepts:</strong> Thermal protection systems (TPS); atmospheric entry; inflatable aerodynamic decelerators; crewed Mars landers; carbon–carbon composites; refractory metal alloys; high-temperature structural materials; thermal conductivity; ablation resistance; specific mass; aerothermal loading; CAD; computational fluid dynamics (CFD); thermal analysis; thermal-structural material selection.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="chips aerospace" data-k="unisat" id="w-unisat"><details><summary><span class="t">Nanosatellite engineering</span><span class="o">UniSAT, 2024</span></summary>
+<div class="b">
         <p>Selected Participant · UniSAT Nano-Satellite Programme · 2024</p>
         <p><strong>Selection:</strong> 1 of 20 participants</p>
-        <p><strong>Skills &amp; concepts:</strong> Nanosatellite assembly; spacecraft subsystems; 3D CAD modeling; PCB design; Internet of Things (IoT); onboard data acquisition; sensors; spacecraft instrumentation; embedded-system integration.</p>
         <section>
           <ul>
             <li>Participated in nanosatellite assembly and subsystem development, using 3D CAD models and PCB/IoT design concepts in spacecraft hardware integration.</li>
             <li>Designed and tested onboard data-collection sensors for nanosatellite instrumentation and sensing applications.</li>
           </ul>
         </section>
-</details></li>
-<li data-f="manufacturing aerospace" data-k="lunar"><details><summary>Lunar habitat materials &amp; structures, Nazarbayev University (2024–25)</summary>
+<p><strong>Skills &amp; concepts:</strong> Nanosatellite assembly; spacecraft subsystems; 3D CAD modeling; PCB design; Internet of Things (IoT); onboard data acquisition; sensors; spacecraft instrumentation; embedded-system integration.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="manufacturing aerospace" data-k="lunar" id="w-lunar"><details><summary><span class="t">Lunar habitat materials &amp; structures</span><span class="o">Nazarbayev University, 2024–25</span></summary>
+<div class="b">
         <p>Researcher · Nazarbayev University · August 2024 – April 2025</p>
-        <p><strong>Skills &amp; concepts:</strong> Alkali-activated aluminosilicate binders; geopolymers; metakaolin; sodium hydroxide activators; 1–4 M NaOH solutions; setting-time measurements; penetration testing; compressive strength testing; geopolymerization; curing; lunar regolith; lunar in-situ resource utilization (ISRU); low-water construction; additive manufacturing; lunar habitat design; Lagrange multiplier optimization; Taylor-series approximation; sensitivity analysis.</p>
         <section data-part="geopolymer">
           <h4>Lunar Regolith Geopolymer Concrete: Materials Processing &amp; Mechanical Characterization</h4>
           <ul>
@@ -243,11 +356,14 @@ hr { margin: 32px 0 16px; }
             <li>Used <strong>Taylor-series approximations</strong> and <strong>sensitivity analysis</strong> to examine the effects of dimensional tolerances on geometries proposed for 3D-printed lunar dome structures.</li>
           </ul>
         </section>
-</details></li>
-<li data-f="aerospace neuro software" data-k="ai-chatbots"><details><summary>AI for space missions, University of Hawai‘i at Mānoa (2023–24)</summary>
+<p><strong>Skills &amp; concepts:</strong> Alkali-activated aluminosilicate binders; geopolymers; metakaolin; sodium hydroxide activators; 1–4 M NaOH solutions; setting-time measurements; penetration testing; compressive strength testing; geopolymerization; curing; lunar regolith; lunar in-situ resource utilization (ISRU); low-water construction; additive manufacturing; lunar habitat design; Lagrange multiplier optimization; Taylor-series approximation; sensitivity analysis.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="aerospace neuro software" data-k="ai-chatbots" id="w-ai-chatbots"><details><summary><span class="t">AI for space missions</span><span class="o">University of Hawai‘i at Mānoa, 2023–24</span></summary>
+<div class="b">
         <p>AI Researcher · University of Hawai‘i at Mānoa · 2023–2024</p>
         <p><strong>Research mentorship:</strong> Dr. Peter Washington; additional guidance from <strong>Dr. Kimberly Binsted</strong>, University of Hawai‘i at Mānoa professor and principal investigator of NASA-funded Hawai‘i Space Exploration Analog and Simulation (HI-SEAS).</p>
-        <p><strong>Skills &amp; concepts:</strong> Large language models (LLMs); Alpaca-7B; domain fine-tuning; psychologist–patient conversational data; natural language generation; contextual response generation; web-interface development; speech-to-text interaction; audio responses; human–computer interaction (HCI); embodied human–robot interaction; user-experience testing; IRB-approved human-subjects research; semi-structured interviews; qualitative thematic analysis; independent coding and adjudication; conversational memory; communication delay; human factors for isolated and confined environments.</p>
         <section>
           <h4>LorelAI: Conversational AI for Long-Duration Space Missions</h4>
           <ul>
@@ -267,11 +383,14 @@ hr { margin: 32px 0 16px; }
           </ul>
           <p><strong>Scope:</strong> Small pilot study (n = 8) with former HI-SEAS analog participants and space-communications specialists.</p>
         </section>
-</details></li>
-<li data-f="neuro" data-k="neuropathic"><details><summary>Neuropathic pain, Lumiere Research Foundation (2024)</summary>
+<p><strong>Skills &amp; concepts:</strong> Large language models (LLMs); Alpaca-7B; domain fine-tuning; psychologist–patient conversational data; natural language generation; contextual response generation; web-interface development; speech-to-text interaction; audio responses; human–computer interaction (HCI); embodied human–robot interaction; user-experience testing; IRB-approved human-subjects research; semi-structured interviews; qualitative thematic analysis; independent coding and adjudication; conversational memory; communication delay; human factors for isolated and confined environments.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="neuro" data-k="neuropathic" id="w-neuropathic"><details><summary><span class="t">Neuropathic pain</span><span class="o">Lumiere Research Foundation, 2024</span></summary>
+<div class="b">
         <p>Researcher · Lumiere Research Foundation · Published 2024</p>
         <p><strong>Research mentorship:</strong> Georgetown University; Dr. Safwan Hyder</p>
-        <p><strong>Skills &amp; concepts:</strong> Peer-reviewed literature synthesis; scientific writing; peripheral and central sensitization; TRP ion channels; voltage-gated sodium (Nav) channels; ectopic neuronal firing; collateral sprouting; sympathetic–sensory coupling; NMDA-mediated plasticity; spinal cord reorganization; microglia; astrocytes; neuroinflammation; spinal cord stimulation; dorsal root ganglion (DRG) stimulation; pharmacological pain treatment.</p>
         <section>
           <ul>
             <li>Received a Lumiere Inclusion Foundation research scholarship.</li>
@@ -282,11 +401,14 @@ hr { margin: 32px 0 16px; }
           </ul>
           <p><strong>Research type:</strong> Literature review and synthesis.</p>
         </section>
-</details></li>
-<li data-f="aerospace neuro" data-k="neuroeconomics"><details><summary>Neuroeconomics in spaceflight, Cambridge Centre for International Research</summary>
+<p><strong>Skills &amp; concepts:</strong> Peer-reviewed literature synthesis; scientific writing; peripheral and central sensitization; TRP ion channels; voltage-gated sodium (Nav) channels; ectopic neuronal firing; collateral sprouting; sympathetic–sensory coupling; NMDA-mediated plasticity; spinal cord reorganization; microglia; astrocytes; neuroinflammation; spinal cord stimulation; dorsal root ganglion (DRG) stimulation; pharmacological pain treatment.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="aerospace neuro" data-k="neuroeconomics" id="w-neuroeconomics"><details><summary><span class="t">Neuroeconomics in spaceflight</span><span class="o">Cambridge Centre for International Research</span></summary>
+<div class="b">
         <p>Researcher · Cambridge Centre for International Research</p>
         <p><strong>Research mentorship:</strong> Dartmouth University professor</p>
-        <p><strong>Skills &amp; concepts:</strong> Neuroeconomics; prospect theory; subjective value functions; probability weighting; decision framing; reward valuation; decision-making under uncertainty; nucleus accumbens (NAcc); dorsal anterior cingulate cortex (dACC); ventromedial prefrontal cortex (vmPFC); microgravity-associated neurophysiology; striatal dopamine D1/D2 receptor signaling; risk perception; scientific literature synthesis.</p>
         <section>
           <ul>
             <li>Received a research scholarship for an independent investigation into astronaut decision-making under spaceflight-associated neurophysiological conditions.</li>
@@ -297,11 +419,14 @@ hr { margin: 32px 0 16px; }
           </ul>
           <p><strong>Research type:</strong> Independent theoretical and literature research.</p>
         </section>
-</details></li>
-<li data-f="neuro" data-k="yale"><details><summary>ALS research proposal, Yale Young Global Scholars (2023)</summary>
+<p><strong>Skills &amp; concepts:</strong> Neuroeconomics; prospect theory; subjective value functions; probability weighting; decision framing; reward valuation; decision-making under uncertainty; nucleus accumbens (NAcc); dorsal anterior cingulate cortex (dACC); ventromedial prefrontal cortex (vmPFC); microgravity-associated neurophysiology; striatal dopamine D1/D2 receptor signaling; risk perception; scientific literature synthesis.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="neuro" data-k="yale" id="w-yale"><details><summary><span class="t">ALS research proposal</span><span class="o">Yale Young Global Scholars, 2023</span></summary>
+<div class="b">
         <p>Participant · Yale Young Global Scholars, Yale University · 2023</p>
         <p><strong>Selection:</strong> Drawn from an international applicant pool of more than 8,500</p>
-        <p><strong>Skills &amp; concepts:</strong> Molecular genetics; C9ORF72; amyotrophic lateral sclerosis (ALS); neurodegenerative mechanisms; scientific proposal writing; interdisciplinary STEM teamwork.</p>
         <section>
           <ul>
             <li>Developed a research proposal examining <strong>C9ORF72 gene inhibition</strong> as a possible therapeutic avenue for <strong>amyotrophic lateral sclerosis (ALS)</strong>.</li>
@@ -309,10 +434,13 @@ hr { margin: 32px 0 16px; }
             <li>Participated in advanced science and technology seminars and collaborated with an international team on a capstone research project.</li>
           </ul>
         </section>
-</details></li>
-<li data-f="software business" data-k="upenn-mt"><details><summary>iOS prototype &amp; venture, M&amp;T Summer Institute, Penn (2024)</summary>
+<p><strong>Skills &amp; concepts:</strong> Molecular genetics; C9ORF72; amyotrophic lateral sclerosis (ALS); neurodegenerative mechanisms; scientific proposal writing; interdisciplinary STEM teamwork.</p>
+
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+<li data-f="software business" data-k="upenn-mt" id="w-upenn-mt"><details><summary><span class="t">iOS prototype &amp; venture</span><span class="o">M&amp;T Summer Institute, Penn, 2024</span></summary>
+<div class="b">
         <p>Software Engineer &amp; UI/UX Designer · Management &amp; Technology Summer Institute, Penn Engineering &amp; Wharton, University of Pennsylvania · July – August 2024</p>
-        <p><strong>Skills &amp; concepts:</strong> Swift; iOS application prototyping; user-interface design; user-experience design; screen layouts; application navigation; product strategy; business-model development; startup formation; market sizing; unit economics; company valuation; capital markets; IPO simulation.</p>
         <section>
           <h4>Smart Dog Collar iOS Application and Venture</h4>
           <ul>
@@ -323,47 +451,55 @@ hr { margin: 32px 0 16px; }
             <li>Completed a <strong>Google IPO simulation at Morgan Stanley's New York headquarters</strong>, studying technology-company valuation, public offerings, capital markets, and investment banking.</li>
           </ul>
         </section>
-</details></li>
-</ol>
+<p><strong>Skills &amp; concepts:</strong> Swift; iOS application prototyping; user-interface design; user-experience design; screen layouts; application navigation; product strategy; business-model development; startup formation; market sizing; unit economics; company valuation; capital markets; IPO simulation.</p>
 
-<h2>Skills</h2>
+<p><a href="#" class="x">Close</a></p>
+</div></details></li>
+</ol>
+<figure>
+<svg id="map" viewBox="20 -10 1130 925" role="group" aria-label="Where each item sits across my fields"><circle data-c="materials" cx="360" cy="370" r="250"/><circle data-c="electrical" cx="680" cy="330" r="230"/><circle data-c="aerospace" cx="480" cy="650" r="225"/><circle data-c="neuroscience" cx="800" cy="680" r="180"/><circle data-c="venture" cx="560" cy="140" r="130"/><text class="f" data-c="materials" x="60" y="150">Materials</text><text class="f" data-c="electrical" x="880" y="170">Electrical</text><text class="f" data-c="aerospace" x="165" y="850">Aerospace</text><text class="f" data-c="neuroscience" x="860" y="885">Neuroscience</text><text class="f" data-c="venture" x="690" y="40">Venture</text><a class="d" data-k="ferroelectric" href="#" tabindex="0"><circle class="hit" cx="525" cy="285" r="38"/><text x="525" y="298"></text></a><a class="d" data-k="silicon-jackets" href="#" tabindex="0"><circle class="hit" cx="762" cy="282" r="38"/><text x="762" y="295"></text></a><a class="d" data-k="facchetti" href="#" tabindex="0"><circle class="hit" cx="520" cy="375" r="38"/><text x="520" y="388"></text></a><a class="d" data-k="piper" href="#" tabindex="0"><circle class="hit" cx="355" cy="520" r="38"/><text x="355" y="533"></text></a><a class="d" data-k="kacher" href="#" tabindex="0"><circle class="hit" cx="460" cy="180" r="38"/><text x="460" y="193"></text></a><a class="d" data-k="mil-lab" href="#" tabindex="0"><circle class="hit" cx="255" cy="455" r="38"/><text x="255" y="468"></text></a><a class="d" data-k="hytech" href="#" tabindex="0"><circle class="hit" cx="800" cy="400" r="38"/><text x="800" y="413"></text></a><a class="d" data-k="unisat" href="#" tabindex="0"><circle class="hit" cx="615" cy="505" r="38"/><text x="615" y="518"></text></a><a class="d" data-k="united-space-school" href="#" tabindex="0"><circle class="hit" cx="400" cy="590" r="38"/><text x="400" y="603"></text></a><a class="d" data-k="lunar" href="#" tabindex="0"><circle class="hit" cx="480" cy="545" r="38"/><text x="480" y="558"></text></a><a class="d" data-k="lunar" href="#" tabindex="0"><circle class="hit" cx="490" cy="775" r="38"/><text x="490" y="788"></text></a><a class="d" data-k="ai-chatbots" href="#" tabindex="0"><circle class="hit" cx="663" cy="625" r="38"/><text x="663" y="638"></text></a><a class="d" data-k="neuroeconomics" href="#" tabindex="0"><circle class="hit" cx="663" cy="705" r="38"/><text x="663" y="718"></text></a><a class="d" data-k="neuropathic" href="#" tabindex="0"><circle class="hit" cx="840" cy="760" r="38"/><text x="840" y="773"></text></a><a class="d" data-k="yale" href="#" tabindex="0"><circle class="hit" cx="850" cy="620" r="38"/><text x="850" y="633"></text></a><a class="d" data-k="upenn-mt" href="#" tabindex="0"><circle class="hit" cx="605" cy="75" r="38"/><text x="605" y="88"></text></a></svg>
+<figcaption>Where each item sits across my fields. Select a number to open it.</figcaption>
+</figure>
+</div>
+
+<h2 id="j-skills">Skills</h2>
 <ul id="skills">
-<li data-f="chips" data-n="HDL &amp; Verification"><b>HDL &amp; Verification:</b> SystemVerilog, Verilog, SystemVerilog Assertions (SVA), UVM-Style Testbench Architecture, Constrained-Random Verification, Functional Coverage, Finite-State Machine Design, RTL Development.</li>
-<li data-f="chips" data-n="Electronic Design Automation (EDA)"><b>Electronic Design Automation (EDA):</b> Cadence Genus, Innovus, Innovus Stylus, Tempus, Virtuoso, Pegasus, Xcelium, IMC, OpenROAD, OpenLane, KLayout.</li>
-<li data-f="chips" data-n="Digital Physical Design"><b>Digital Physical Design:</b> RTL-to-GDSII, Logic Synthesis, Floorplanning, Placement, Clock Tree Synthesis (CTS), Static Timing Analysis (STA), Timing Closure, Power Distribution Network (PDN) Design, Routing, Macro-Aware Routing, DRC/LVS, Physical Signoff.</li>
-<li data-f="chips" data-n="Memory &amp; Design Integration"><b>Memory &amp; Design Integration:</b> SRAM Macro Integration, SRAM Compiler Qualification, GDSII, LEF/DEF, SPICE Netlists, Liberty Timing Models, SDC Constraints, PDK Integration, SKY130.</li>
-<li data-f="chips software" data-n="Design Automation"><b>Design Automation:</b> Tcl, Python, EDA Flow Scripting, Timing Report Analysis, DRC/LVS Automation.</li>
-<li data-f="devices" data-n="Thin-Film Deposition"><b>Thin-Film Deposition:</b> Physical Vapor Deposition (PVD), Chemical Vapor Deposition (CVD), Electron-Beam Evaporation, Spin Coating, Molecular Beam Epitaxy (MBE) Growth Process Research, Ultrahigh-Vacuum (UHV) Concepts.</li>
-<li data-f="devices neuro" data-n="Microfabrication"><b>Microfabrication:</b> Photolithography, Mask Alignment, Metal Lift-Off, Wet/Dry Etching, Wet Cleaning, Alkaline Processing, Oxygen Plasma Treatment, Mechanical Exfoliation, 2D Material Transfer.</li>
-<li data-f="devices" data-n="Semiconductor Materials"><b>Semiconductor Materials:</b> In<sub>x</sub>Se<sub>y</sub>, In<sub>2</sub>Se<sub>3</sub>, SnSe, Two-Dimensional Semiconductors, Van der Waals Heterostructures, Ferroelectric Materials, Organic Semiconductors, Conducting Polymers.</li>
-<li data-f="devices" data-n="Device Physics &amp; Fabrication"><b>Device Physics &amp; Fabrication:</b> Ferroelectric Tunnel Junctions, Organic Thin-Film Transistors, Electrolyte-Gated Transistors, Semiconductor Band Diagrams, Electron Transport, Tunneling Behavior, Thin-Film Nucleation, Crystal Phase Control, Substrate Preparation.</li>
-<li data-f="devices" data-n="Laboratory Practice"><b>Laboratory Practice:</b> Cleanroom Process Procedures, Chemical Handling Protocols, Sample Preparation, Process Documentation, Fabrication Workflow Development.</li>
-<li data-f="devices manufacturing" data-n="Microscopy &amp; Structural Characterization"><b>Microscopy &amp; Structural Characterization:</b> Scanning Electron Microscopy (SEM; Hitachi SU-8230), Energy-Dispersive X-Ray Spectroscopy (EDS), Transmission Electron Microscopy (TEM), Atomic Force Microscopy (AFM), Optical Microscopy, Raman Spectroscopy.</li>
-<li data-f="devices" data-n="Crystallographic &amp; Surface Analysis"><b>Crystallographic &amp; Surface Analysis:</b> X-Ray Diffraction (XRD), Reflection High-Energy Electron Diffraction (RHEED), Profilometry, Contact Angle Goniometry.</li>
-<li data-f="devices neuro" data-n="Electrical Characterization"><b>Electrical Characterization:</b> Signatone Probe Station, Current–Voltage (I–V) Characterization, Transistor Transfer Curves, Transconductance Extraction, Four-Point Probe, Sheet Resistance, LCR Capacitance/Loss Measurements, Ferroelectric Polarization–Voltage (P–V) Hysteresis.</li>
-<li data-f="manufacturing" data-n="Thermal &amp; Spectroscopic Analysis"><b>Thermal &amp; Spectroscopic Analysis:</b> Thermogravimetric Analysis (TGA), Differential Scanning Calorimetry (DSC), UV–Visible Spectrophotometry, Fourier-Transform Infrared Spectroscopy (FTIR).</li>
-<li data-f="manufacturing aerospace" data-n="Mechanical Testing &amp; Metrology"><b>Mechanical Testing &amp; Metrology:</b> Instron Mechanical Testing, Mark-10 Force Measurement, Microhardness Testing, Compressive Strength Testing, Metallographic Sample Preparation, ImageJ, Creaform 3D Structured-Light Scanning, VXelements.</li>
-<li data-f="manufacturing software" data-n="Statistical Methods"><b>Statistical Methods:</b> Design of Experiments (DOE), Analysis of Variance (ANOVA), Pearson and Spearman Correlation, Statistical Process Control (SPC), Data Analysis.</li>
-<li data-f="manufacturing" data-n="Process Engineering"><b>Process Engineering:</b> Root-Cause Analysis, Process Optimization, Yield Improvement, Defect Investigation, Warpage Analysis, Thermoforming, Thermal Process Mapping.</li>
-<li data-f="manufacturing aerospace" data-n="Materials Engineering"><b>Materials Engineering:</b> Aluminum Corrosion Analysis, Surface Preparation, Metallography, Phase Transformations, Hydrogen Reduction of Iron Oxides, Polymer Thermomechanical Behavior.</li>
-<li data-f="manufacturing aerospace" data-n="Quality &amp; Qualification"><b>Quality &amp; Qualification:</b> A/B-Basis Material Qualification, FAA Materials Requirements, Design for Manufacturability and Assembly (DFM/DFA), Standard Operating Procedures (SOP), Standard Manufacturing Procedures (SMP), Process Specification Development.</li>
-<li data-f="software" data-n="Languages"><b>Languages:</b> Python, C, Assembly, MATLAB, Tcl, Swift, SystemVerilog, Verilog.</li>
-<li data-f="software" data-n="Python Scientific Computing"><b>Python Scientific Computing:</b> NumPy, SciPy, Pandas, Matplotlib, PyVista.</li>
-<li data-f="software business" data-n="Visualization &amp; Applications"><b>Visualization &amp; Applications:</b> Three.js, WebGL, Interactive 3D Visualization, iOS Application Prototyping, UI/UX Design.</li>
-<li data-f="neuro software" data-n="Automation &amp; AI"><b>Automation &amp; AI:</b> Engineering Workflow Automation, AI Coding Tools and Agents, Large Language Model Fine-Tuning, Conversational AI, Speech Interfaces, Human–AI Interaction.</li>
-<li data-f="chips manufacturing aerospace" data-n="CAD &amp; Electronic Design"><b>CAD &amp; Electronic Design:</b> Siemens NX, SolidWorks, Altium Designer, 3D CAD Modeling, PCB Schematic Capture, PCB Layout and Routing.</li>
-<li data-f="aerospace" data-n="Multiphysics &amp; Engineering Simulation"><b>Multiphysics &amp; Engineering Simulation:</b> COMSOL Multiphysics, Computational Fluid Dynamics (CFD), Thermal Modeling, Radial Basis Function (RBF) Interpolation, Reduced-Order Thermal Modeling.</li>
-<li data-f="aerospace" data-n="Structural &amp; Mathematical Analysis"><b>Structural &amp; Mathematical Analysis:</b> Constrained Optimization, Lagrange Multipliers, Taylor-Series Approximation, Sensitivity Analysis, Geometric Modeling.</li>
-<li data-f="chips" data-n="Circuit Design"><b>Circuit Design:</b> Analog and Digital Circuits, LM555 Oscillators, RC Timing Networks, Operational Amplifiers, Comparators, MOSFETs, USB-C Integration, PCB Design Rules.</li>
-<li data-f="devices" data-n="Quantum Computing"><b>Quantum Computing:</b> Qiskit, Quantum Error Correction (QEC), Quantum Sciences &amp; Technology Coursework.</li>
-<li data-f="devices neuro" data-n="Emerging Devices"><b>Emerging Devices:</b> Ferroelectric Transistors, Ferroelectric Tunnel Junctions, Two-Dimensional Semiconductor Devices, Organic Electrochemical Transistors, Neuromorphic Computing Concepts.</li>
-<li data-f="neuro business" data-n="Research Methods"><b>Research Methods:</b> Experimental Design, Literature Review, Scientific Writing, Technical Reports, Qualitative Thematic Analysis, Human-Subject Research, Research Presentations.</li>
-<li data-f="aerospace neuro" data-n="Interdisciplinary Research"><b>Interdisciplinary Research:</b> Semiconductor Materials, Spaceflight Human Factors, Human–Computer Interaction, Neuroscience, Neuroeconomics, Aerospace Materials, Lunar Construction Materials.</li>
-<li data-f="business" data-n="Innovation &amp; Commercialization"><b>Innovation &amp; Commercialization:</b> Customer Discovery, Market Validation, Technical Stakeholder Interviews, Product Development, Business Modeling.</li>
-<li data-f=""><b>Spoken languages:</b> English, Russian, Kazakh, French.</li>
+<li data-f="chips" data-n="HDL &amp; Verification"><b>HDL &amp; Verification</b><span>SystemVerilog, Verilog, SystemVerilog Assertions (SVA), UVM-Style Testbench Architecture, Constrained-Random Verification, Functional Coverage, Finite-State Machine Design, RTL Development.</span></li>
+<li data-f="chips" data-n="Electronic Design Automation (EDA)"><b>Electronic Design Automation (EDA)</b><span>Cadence Genus, Innovus, Innovus Stylus, Tempus, Virtuoso, Pegasus, Xcelium, IMC, OpenROAD, OpenLane, KLayout.</span></li>
+<li data-f="chips" data-n="Digital Physical Design"><b>Digital Physical Design</b><span>RTL-to-GDSII, Logic Synthesis, Floorplanning, Placement, Clock Tree Synthesis (CTS), Static Timing Analysis (STA), Timing Closure, Power Distribution Network (PDN) Design, Routing, Macro-Aware Routing, DRC/LVS, Physical Signoff.</span></li>
+<li data-f="chips" data-n="Memory &amp; Design Integration"><b>Memory &amp; Design Integration</b><span>SRAM Macro Integration, SRAM Compiler Qualification, GDSII, LEF/DEF, SPICE Netlists, Liberty Timing Models, SDC Constraints, PDK Integration, SKY130.</span></li>
+<li data-f="chips software" data-n="Design Automation"><b>Design Automation</b><span>Tcl, Python, EDA Flow Scripting, Timing Report Analysis, DRC/LVS Automation.</span></li>
+<li data-f="devices" data-n="Thin-Film Deposition"><b>Thin-Film Deposition</b><span>Physical Vapor Deposition (PVD), Chemical Vapor Deposition (CVD), Electron-Beam Evaporation, Spin Coating, Molecular Beam Epitaxy (MBE) Growth Process Research, Ultrahigh-Vacuum (UHV) Concepts.</span></li>
+<li data-f="devices neuro" data-n="Microfabrication"><b>Microfabrication</b><span>Photolithography, Mask Alignment, Metal Lift-Off, Wet/Dry Etching, Wet Cleaning, Alkaline Processing, Oxygen Plasma Treatment, Mechanical Exfoliation, 2D Material Transfer.</span></li>
+<li data-f="devices" data-n="Semiconductor Materials"><b>Semiconductor Materials</b><span>In<sub>x</sub>Se<sub>y</sub>, In<sub>2</sub>Se<sub>3</sub>, SnSe, Two-Dimensional Semiconductors, Van der Waals Heterostructures, Ferroelectric Materials, Organic Semiconductors, Conducting Polymers.</span></li>
+<li data-f="devices" data-n="Device Physics &amp; Fabrication"><b>Device Physics &amp; Fabrication</b><span>Ferroelectric Tunnel Junctions, Organic Thin-Film Transistors, Electrolyte-Gated Transistors, Semiconductor Band Diagrams, Electron Transport, Tunneling Behavior, Thin-Film Nucleation, Crystal Phase Control, Substrate Preparation.</span></li>
+<li data-f="devices" data-n="Laboratory Practice"><b>Laboratory Practice</b><span>Cleanroom Process Procedures, Chemical Handling Protocols, Sample Preparation, Process Documentation, Fabrication Workflow Development.</span></li>
+<li data-f="devices manufacturing" data-n="Microscopy &amp; Structural Characterization"><b>Microscopy &amp; Structural Characterization</b><span>Scanning Electron Microscopy (SEM; Hitachi SU-8230), Energy-Dispersive X-Ray Spectroscopy (EDS), Transmission Electron Microscopy (TEM), Atomic Force Microscopy (AFM), Optical Microscopy, Raman Spectroscopy.</span></li>
+<li data-f="devices" data-n="Crystallographic &amp; Surface Analysis"><b>Crystallographic &amp; Surface Analysis</b><span>X-Ray Diffraction (XRD), Reflection High-Energy Electron Diffraction (RHEED), Profilometry, Contact Angle Goniometry.</span></li>
+<li data-f="devices neuro" data-n="Electrical Characterization"><b>Electrical Characterization</b><span>Signatone Probe Station, Current–Voltage (I–V) Characterization, Transistor Transfer Curves, Transconductance Extraction, Four-Point Probe, Sheet Resistance, LCR Capacitance/Loss Measurements, Ferroelectric Polarization–Voltage (P–V) Hysteresis.</span></li>
+<li data-f="manufacturing" data-n="Thermal &amp; Spectroscopic Analysis"><b>Thermal &amp; Spectroscopic Analysis</b><span>Thermogravimetric Analysis (TGA), Differential Scanning Calorimetry (DSC), UV–Visible Spectrophotometry, Fourier-Transform Infrared Spectroscopy (FTIR).</span></li>
+<li data-f="manufacturing aerospace" data-n="Mechanical Testing &amp; Metrology"><b>Mechanical Testing &amp; Metrology</b><span>Instron Mechanical Testing, Mark-10 Force Measurement, Microhardness Testing, Compressive Strength Testing, Metallographic Sample Preparation, ImageJ, Creaform 3D Structured-Light Scanning, VXelements.</span></li>
+<li data-f="manufacturing software" data-n="Statistical Methods"><b>Statistical Methods</b><span>Design of Experiments (DOE), Analysis of Variance (ANOVA), Pearson and Spearman Correlation, Statistical Process Control (SPC), Data Analysis.</span></li>
+<li data-f="manufacturing" data-n="Process Engineering"><b>Process Engineering</b><span>Root-Cause Analysis, Process Optimization, Yield Improvement, Defect Investigation, Warpage Analysis, Thermoforming, Thermal Process Mapping.</span></li>
+<li data-f="manufacturing aerospace" data-n="Materials Engineering"><b>Materials Engineering</b><span>Aluminum Corrosion Analysis, Surface Preparation, Metallography, Phase Transformations, Hydrogen Reduction of Iron Oxides, Polymer Thermomechanical Behavior.</span></li>
+<li data-f="manufacturing aerospace" data-n="Quality &amp; Qualification"><b>Quality &amp; Qualification</b><span>A/B-Basis Material Qualification, FAA Materials Requirements, Design for Manufacturability and Assembly (DFM/DFA), Standard Operating Procedures (SOP), Standard Manufacturing Procedures (SMP), Process Specification Development.</span></li>
+<li data-f="software" data-n="Languages"><b>Languages</b><span>Python, C, Assembly, MATLAB, Tcl, Swift, SystemVerilog, Verilog.</span></li>
+<li data-f="software" data-n="Python Scientific Computing"><b>Python Scientific Computing</b><span>NumPy, SciPy, Pandas, Matplotlib, PyVista.</span></li>
+<li data-f="software business" data-n="Visualization &amp; Applications"><b>Visualization &amp; Applications</b><span>Three.js, WebGL, Interactive 3D Visualization, iOS Application Prototyping, UI/UX Design.</span></li>
+<li data-f="neuro software" data-n="Automation &amp; AI"><b>Automation &amp; AI</b><span>Engineering Workflow Automation, AI Coding Tools and Agents, Large Language Model Fine-Tuning, Conversational AI, Speech Interfaces, Human–AI Interaction.</span></li>
+<li data-f="chips manufacturing aerospace" data-n="CAD &amp; Electronic Design"><b>CAD &amp; Electronic Design</b><span>Siemens NX, SolidWorks, Altium Designer, 3D CAD Modeling, PCB Schematic Capture, PCB Layout and Routing.</span></li>
+<li data-f="aerospace" data-n="Multiphysics &amp; Engineering Simulation"><b>Multiphysics &amp; Engineering Simulation</b><span>COMSOL Multiphysics, Computational Fluid Dynamics (CFD), Thermal Modeling, Radial Basis Function (RBF) Interpolation, Reduced-Order Thermal Modeling.</span></li>
+<li data-f="aerospace" data-n="Structural &amp; Mathematical Analysis"><b>Structural &amp; Mathematical Analysis</b><span>Constrained Optimization, Lagrange Multipliers, Taylor-Series Approximation, Sensitivity Analysis, Geometric Modeling.</span></li>
+<li data-f="chips" data-n="Circuit Design"><b>Circuit Design</b><span>Analog and Digital Circuits, LM555 Oscillators, RC Timing Networks, Operational Amplifiers, Comparators, MOSFETs, USB-C Integration, PCB Design Rules.</span></li>
+<li data-f="devices" data-n="Quantum Computing"><b>Quantum Computing</b><span>Qiskit, Quantum Error Correction (QEC), Quantum Sciences &amp; Technology Coursework.</span></li>
+<li data-f="devices neuro" data-n="Emerging Devices"><b>Emerging Devices</b><span>Ferroelectric Transistors, Ferroelectric Tunnel Junctions, Two-Dimensional Semiconductor Devices, Organic Electrochemical Transistors, Neuromorphic Computing Concepts.</span></li>
+<li data-f="neuro business" data-n="Research Methods"><b>Research Methods</b><span>Experimental Design, Literature Review, Scientific Writing, Technical Reports, Qualitative Thematic Analysis, Human-Subject Research, Research Presentations.</span></li>
+<li data-f="aerospace neuro" data-n="Interdisciplinary Research"><b>Interdisciplinary Research</b><span>Semiconductor Materials, Spaceflight Human Factors, Human–Computer Interaction, Neuroscience, Neuroeconomics, Aerospace Materials, Lunar Construction Materials.</span></li>
+<li data-f="business" data-n="Innovation &amp; Commercialization"><b>Innovation &amp; Commercialization</b><span>Customer Discovery, Market Validation, Technical Stakeholder Interviews, Product Development, Business Modeling.</span></li>
+<li data-f=""><b>Spoken languages</b><span>English, Russian, Kazakh, French.</span></li>
 </ul>
 
-<div class="opt"><h2>Papers and writing</h2>
+<div class="opt" id="o-papers"><h2 id="j-papers">Papers and writing</h2>
 <ul>
 <li data-f="neuro"><a href="pdf/neuropathic-pain.pdf">Neuropathic Pain: Mechanisms and Treatment Approaches</a>, <i>National High School Journal of Science</i>. Peer-reviewed review, about 7,500 words (2024)</li>
 <li data-f="aerospace neuro software"><a href="pdf/space-chatbots.pdf">Design Recommendations for Interactive Mental Health Chatbots Used in Space Missions: A Pilot Study</a>, research manuscript, more than 11,000 words</li>
@@ -373,7 +509,7 @@ hr { margin: 32px 0 16px; }
 <li data-f="neuro">C9ORF72 and ALS, research proposal, Yale Young Global Scholars</li>
 </ul></div>
 
-<div class="opt"><h2>Honors and programs</h2>
+<div class="opt" id="o-honors"><h2 id="j-honors">Honors and programs</h2>
 <ul>
 <li data-f="chips devices manufacturing">TSMC–Georgia Tech STAR Program, 1 of 36 from approximately 300 applicants</li>
 <li data-f="chips devices business">1517 Fund Flux Capacitor, Finalist</li>
@@ -388,8 +524,8 @@ hr { margin: 32px 0 16px; }
 <li data-f="aerospace chips">UniSAT Nano-Satellite Programme, 1 of 20 participants</li>
 </ul></div>
 
-<h2>Education</h2>
-<p>B.S. Electrical Engineering, Georgia Institute of Technology</p>
+<h2 id="j-education">Education</h2>
+<p><b>B.S. Electrical Engineering</b>, Georgia Institute of Technology</p>
         <p>Electronic Devices &amp; Circuit Technology thread · Minor in Quantum Sciences &amp; Technology · GPA 3.91 · Expected May 2029 · Atlanta, Georgia</p>
         <p><strong>Relevant coursework:</strong> Digital Design; Signal Processing; Circuit Analysis; C &amp; Assembly Programming; Engineering Materials; MATLAB / Computing for Engineers; Calculus; Differential Equations; Linear Algebra; Physics I–II (Mechanics and Electromagnetism); General Chemistry I–II.</p>
         <p><strong>Non-credit study:</strong> Electrical, Optical &amp; Magnetic Properties of Materials (MSE 3015).</p>
@@ -402,66 +538,88 @@ hr { margin: 32px 0 16px; }
         </section>
 </div>
 
-<div id="interests-v">
-<h2>What I'm interested in</h2>
+<div id="interests-v"><div>
 <p>I'm interested in hardware that makes something possible for the first time, especially hardware that has to survive where electronics usually can't.</p>
     <p>Most of all, that means the brain. I want to build devices that don't just record from it but act on it: implants that last decades instead of months, tiny wireless stimulators, and nanoscale devices that could one day help repair neural tissue. The brain is warm, wet, and actively fights anything placed inside it, which makes it one of the hardest environments to make a chip work in.</p>
     <p>I'm also interested in data centers in orbit, where chips have to run with no air to cool them and constant radiation wearing them down.</p>
     <p>Underneath both is computing. I'm interested in post-von Neumann computing, ways to compute that don't spend most of their energy moving data between memory and processor, and I approach it from the device and circuit side: new physical devices, and the circuits that turn them into working computers. Right now I work on ferroelectric capacitors and tunnel junctions, devices that can store and compute in the same place. That matters most where power is scarce, like a processor sitting inside an implant or a satellite.</p>
-</div>
+</div></div>
 
-<div id="photos-v">
-<h2>Photos</h2>
-<p><a href="img/suni-williams.jpg"><img src="img/suni-williams.jpg" width="639" height="1100" alt="With Astronaut Suni Williams" loading="lazy"></a><br>
+<div id="photos-v"><div class="photos">
+<p><a href="img/suni-williams.jpg"><img src="img/suni-williams.jpg" width="639" height="1100" alt="With Astronaut Suni Williams"></a>
 With Astronaut Suni Williams. NASA Johnson Space Center</p>
-<p><a href="img/space-tech-battle.jpg"><img src="img/space-tech-battle.jpg" width="1100" height="622" alt="Space Tech Battle" loading="lazy"></a><br>
+<p><a href="img/space-tech-battle.jpg"><img src="img/space-tech-battle.jpg" width="1100" height="622" alt="Space Tech Battle"></a>
 Space Tech Battle. Top 10 of 200 companies, with LorelAI, an AI social assistant for long-duration space missions</p>
-<p><a href="img/luca-parmitano.jpg"><img src="img/luca-parmitano.jpg" width="1100" height="744" alt="With ESA Astronaut Luca Parmitano" loading="lazy"></a><br>
+<p><a href="img/luca-parmitano.jpg"><img src="img/luca-parmitano.jpg" width="1100" height="744" alt="With ESA Astronaut Luca Parmitano"></a>
 With ESA Astronaut Luca Parmitano. ISS veteran</p>
-<p><a href="img/united-space-school.jpg"><img src="img/united-space-school.jpg" width="1100" height="733" alt="United Space School 2025" loading="lazy"></a><br>
+<p><a href="img/united-space-school.jpg"><img src="img/united-space-school.jpg" width="1100" height="733" alt="United Space School 2025"></a>
 United Space School 2025. 1 of 40 global delegates. Mars mission design</p>
-<p><a href="img/presenting-upenn.jpg"><img src="img/presenting-upenn.jpg" width="822" height="1100" alt="UPenn Final Project Presentation" loading="lazy"></a><br>
+<p><a href="img/presenting-upenn.jpg"><img src="img/presenting-upenn.jpg" width="822" height="1100" alt="UPenn Final Project Presentation"></a>
 UPenn Final Project Presentation. UPenn M&amp;T Summer Institute</p>
-<p><a href="img/upenn-mtsi.jpg"><img src="img/upenn-mtsi.jpg" width="1100" height="735" alt="UPenn M&amp;T Summer Institute" loading="lazy"></a><br>
+<p><a href="img/upenn-mtsi.jpg"><img src="img/upenn-mtsi.jpg" width="1100" height="735" alt="UPenn M&amp;T Summer Institute"></a>
 UPenn M&amp;T Summer Institute. Top 5 of 15 teams. Smart IoT device, Morgan Stanley NYC</p>
+</div></div>
+</main>
 </div>
-
-<div id="nav"><hr>
-<p><a href="#interests">What I'm interested in</a> | <a href="#photos">Photos</a> | <a href="#everything">Everything</a><br>
-<a href="mailto:zturganova3@gatech.edu">Email</a> | <a href="https://www.linkedin.com/in/janierlani">LinkedIn</a> | <a href="https://github.com/janierlani">GitHub</a></p></div>
 
 <script>
 (function () {
   var F = {"chips": ["Chip design", ["electrical"], ["silicon-jackets", "ferroelectric", "facchetti", "hytech", "unisat"], ["HDL & Verification", "Electronic Design Automation (EDA)", "Digital Physical Design", "Memory & Design Integration", "Design Automation", "Circuit Design", "CAD & Electronic Design"]], "devices": ["Semiconductor devices and materials", ["materials", "electrical"], ["ferroelectric", "facchetti", "silicon-jackets", "kacher", "mil-lab"], ["Thin-Film Deposition", "Microfabrication", "Semiconductor Materials", "Device Physics & Fabrication", "Laboratory Practice", "Microscopy & Structural Characterization", "Crystallographic & Surface Analysis", "Electrical Characterization", "Emerging Devices", "Quantum Computing"]], "manufacturing": ["Manufacturing and process engineering", ["materials"], ["piper", "kacher", "mil-lab", "lunar", "hytech"], ["Statistical Methods", "Process Engineering", "Materials Engineering", "Quality & Qualification", "Mechanical Testing & Metrology", "Thermal & Spectroscopic Analysis", "Microscopy & Structural Characterization", "CAD & Electronic Design"]], "aerospace": ["Aerospace", ["aerospace"], ["united-space-school", "piper", "unisat", "lunar", "ai-chatbots", "neuroeconomics"], ["Materials Engineering", "Quality & Qualification", "Mechanical Testing & Metrology", "CAD & Electronic Design", "Multiphysics & Engineering Simulation", "Structural & Mathematical Analysis", "Interdisciplinary Research"]], "neuro": ["Neuroscience", ["neuroscience"], ["neuropathic", "neuroeconomics", "ai-chatbots", "yale", "facchetti", "ferroelectric"], ["Research Methods", "Interdisciplinary Research", "Emerging Devices", "Microfabrication", "Electrical Characterization", "Automation & AI"]], "software": ["AI and software", [], ["ai-chatbots", "silicon-jackets", "upenn-mt"], ["Languages", "Python Scientific Computing", "Visualization & Applications", "Automation & AI", "Design Automation", "Statistical Methods"]], "business": ["Business and venture", ["venture"], ["kacher", "upenn-mt"], ["Innovation & Commercialization", "Visualization & Applications", "Research Methods"]]};
   var ALL = ["ferroelectric", "silicon-jackets", "facchetti", "piper", "kacher", "mil-lab", "hytech", "united-space-school", "unisat", "lunar", "ai-chatbots", "neuropathic", "neuroeconomics", "yale", "upenn-mt"], NAMES = ["HDL & Verification", "Electronic Design Automation (EDA)", "Digital Physical Design", "Memory & Design Integration", "Design Automation", "Thin-Film Deposition", "Microfabrication", "Semiconductor Materials", "Device Physics & Fabrication", "Laboratory Practice", "Microscopy & Structural Characterization", "Crystallographic & Surface Analysis", "Electrical Characterization", "Thermal & Spectroscopic Analysis", "Mechanical Testing & Metrology", "Statistical Methods", "Process Engineering", "Materials Engineering", "Quality & Qualification", "Languages", "Python Scientific Computing", "Visualization & Applications", "Automation & AI", "CAD & Electronic Design", "Multiphysics & Engineering Simulation", "Structural & Mathematical Analysis", "Circuit Design", "Quantum Computing", "Emerging Devices", "Research Methods", "Interdisciplinary Research", "Innovation & Commercialization"];
-  var $ = function (i) { return document.getElementById(i); };
+  var $ = function (i) { return document.getElementById(i); }, first = true;
   function each(q, f) { Array.prototype.forEach.call(document.querySelectorAll(q), f); }
+  function item(k) { return $('w-' + k); }
   function order(list, attr, keys) {
-    keys.forEach(function (k) { var li = list.querySelector('[' + attr + '="' + k.replace(/"/g, '') + '"]'); if (li) list.appendChild(li); });
+    keys.forEach(function (k) { var li = list.querySelector('[' + attr + '="' + k + '"]'); if (li) list.appendChild(li); });
   }
   function show() {
-    var h = location.hash.slice(1), f = F[h], all = h === 'everything', home = !f && !all && h !== 'interests' && h !== 'photos';
-    $('ask').hidden = !home; $('change').hidden = home; $('main').hidden = !(f || all);
-    $('interests-v').hidden = h !== 'interests'; $('photos-v').hidden = h !== 'photos';
-    document.title = (f ? f[0] + ' - ' : h === 'interests' ? 'Interests - ' : h === 'photos' ? 'Photos - ' : '') + 'Zhaniya Turganova';
+    var h = location.hash.slice(1), f = F[h], all = h === 'everything', other = h === 'interests' || h === 'photos', home = !(f || all || other);
+    $('home').hidden = !home; $('page').hidden = home;
+    $('main').hidden = !(f || all); $('interests-v').hidden = h !== 'interests'; $('photos-v').hidden = h !== 'photos';
+    var name = f ? f[0] : all ? 'Everything' : h === 'interests' ? "What I'm interested in" : 'Photos';
+    document.title = (home ? '' : name + ' - ') + 'Zhaniya Turganova';
+    $('where').textContent = name;
+    each('.side a', function (a) { if (!home && a.getAttribute('href') === '#' + h) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    if (!home) document.querySelector('#pick select').value = h;
     if (f || all) {
-      $('where').textContent = f ? f[0] : 'Everything';
       each('#main [data-f]', function (e) { e.hidden = !!f && e.getAttribute('data-f').split(' ').indexOf(h) < 0; var d = e.querySelector('details'); if (d) d.open = false; });
       order($('work'), 'data-k', f ? f[2] : ALL); order($('skills'), 'data-n', f ? f[3] : NAMES);
       if (!f) $('skills').appendChild($('skills').querySelector('[data-f=""]:not([data-n])'));
       each('.opt', function (o) { o.hidden = !o.querySelector('li:not([hidden])'); });
+      each('.jump a', function (a) { var o = $('o-' + a.getAttribute('data-j')); a.hidden = !!o && o.hidden; });
       var keys = f ? f[2] : ALL;
-      each('#map .d', function (a) { var i = keys.indexOf(a.getAttribute('data-k')); a.style.display = i < 0 ? 'none' : ''; a.querySelector('text').textContent = i + 1; a.setAttribute('aria-label', i < 0 ? '' : (i + 1) + '. ' + $('work').querySelector('[data-k="' + a.getAttribute('data-k') + '"] summary').textContent); });
-      each('#map circle[data-c]', function (c) { c.setAttribute('class', f && f[1].indexOf(c.getAttribute('data-c')) >= 0 ? 'on' : ''); });
+      each('#map .d', function (a) {
+        var k = a.getAttribute('data-k'), i = keys.indexOf(k); a.style.display = i < 0 ? 'none' : '';
+        a.querySelector('text').textContent = i + 1; a.querySelector('title').textContent = item(k).querySelector('.t').textContent;
+        a.setAttribute('aria-label', (i + 1) + '. ' + item(k).querySelector('.t').textContent);
+      });
+      each('#map [data-c]', function (c) { c.classList.toggle('on', !!f && f[1].indexOf(c.getAttribute('data-c')) >= 0); });
     }
     scrollTo(0, 0);
+    if (!first && !home) $('where').focus({ preventScroll: true });
+    first = false;
+  }
+  function mark(k, on) {
+    item(k).classList.toggle('on', on);
+    each('#map .d[data-k="' + k + '"]', function (a) { a.classList.toggle('on', on); });
   }
   each('#map .d', function (a) {
+    var k = a.getAttribute('data-k');
+    a.insertBefore(document.createElementNS('http://www.w3.org/2000/svg', 'title'), a.firstChild);
     a.addEventListener('click', function (e) {
-      e.preventDefault(); var li = $('work').querySelector('[data-k="' + a.getAttribute('data-k') + '"]'), d = li.querySelector('details');
-      d.open = true; li.scrollIntoView(); d.querySelector('summary').focus({ preventScroll: true });
+      e.preventDefault(); item(k).querySelector('details').open = true; item(k).scrollIntoView(); item(k).querySelector('summary').focus({ preventScroll: true });
     });
   });
+  each('#map .d, #work > li', function (e) {
+    var k = e.getAttribute('data-k');
+    e.addEventListener('mouseenter', function () { mark(k, true); }); e.addEventListener('mouseleave', function () { mark(k, false); });
+    e.addEventListener('focusin', function () { mark(k, true); }); e.addEventListener('focusout', function () { mark(k, false); });
+  });
+  each('.x', function (x) {
+    x.addEventListener('click', function (e) { e.preventDefault(); var d = x.closest('details'); d.open = false; d.parentNode.scrollIntoView({ block: 'nearest' }); d.querySelector('summary').focus({ preventScroll: true }); });
+  });
+  each('.jump a', function (a) { a.addEventListener('click', function (e) { e.preventDefault(); $('j-' + a.getAttribute('data-j')).scrollIntoView(); }); });
+  document.querySelector('#pick select').addEventListener('change', function () { location.hash = this.value; });
   addEventListener('hashchange', show); show();
 })();
 </script>
